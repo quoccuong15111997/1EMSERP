@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.firstems.erp">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <application
+        android:name=".common.Application"
+        android:allowBackup="true"
+        android:configChanges="locale|layoutDirection"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.more.password.ChangePasswordActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize" ></activity>
+        <activity android:name=".ui.home.HomeActivity" />
+        <activity android:name=".ui.document.detail.DocumnetDetailActivity" />
+        <activity android:name=".ui.document.list.DocumentListActivity" />
+        <activity android:name=".ui.signature.defaultsignature.DefaultSignatureActivity" />
+        <activity
+            android:name=".ui.shared.camera.CameraUIKitActivity"
+            android:hardwareAccelerated="true" />
+        <activity android:name=".ui.shared.loaidoituongnhan.DoiTuongNhanActivity" />
+        <activity android:name=".ui.shared.image.ImageViewActivity" />
+        <activity android:name=".ui.shared.viewer.PDFViewerActivity" />
+        <activity android:name=".ui.shared.province.ProvinceActivity" />
+        <activity android:name=".ui.shared.national.NationalActivity" />
+        <activity android:name=".WebViewActivity" />
+        <activity android:name=".ui.shared.relatedfields.RelatedFieldsActivity" />
+        <activity android:name=".TestActivity" />
+        <activity android:name=".ui.shared.department.DepartmentActivity" />
+        <activity android:name=".ui.shared.employee.EmployeeActivity" />
+        <activity android:name=".ui.company.SelectCompanyActivity" />
+        <activity android:name=".ui.more.help.HelpActivity" />
+        <activity android:name=".ui.table.TableActivity" />
+        <activity android:name=".ui.date.SelectDateActivity" />
+        <activity
+            android:name=".ui.chart.ChartViewActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".ui.more.report.ReporttingActivity" />
+        <activity android:name=".ui.dashboard.DashboardActivity" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseTheme"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity android:name=".ui.config.ConfigActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.signature.businessregistration.info.BusinessRegistrationInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.approved.detail.ApproveDetailActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.signature.filtersignature.FilterSignatureActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.signature.advanceproposalform.AdvanceProposalFormActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.signature.billpaymentrequest.ticket.TicketBillPaymentRequestActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.signature.billpaymentrequest.BillPaymentRequestActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.signature.businessregistration.BusinessRegistrationActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.signature.servicecontacts.ServiceContactsActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.signature.askpermission.AskPermissionActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.signature.switchshift.info.SwitchShiftInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.signature.switchshift.SwitchShiftActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.signature.askpermission.info.AskPermissionInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".loading.LoadingActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        <provider
+            android:name=".common.GenericFileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application>
+
+</manifest>

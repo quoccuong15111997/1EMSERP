@@ -1,0 +1,1 @@
+package com.firstems.erp.callback;/** * Created by Nguyen Quoc Cuong on 9/1/2020. */public interface LoadContentCallback {    void Loaded();}

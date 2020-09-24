@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/ic_outline_home_24"
+        android:iconTint="@color/colorPrimary"
+        android:title="Tổng quan" />
+    <item
+        android:id="@+id/navigation_submission"
+        android:icon="@drawable/ic_outline_edit_24"
+        android:title="Trình ký" />
+
+    <item
+        android:id="@+id/navigation_approved"
+        android:icon="@drawable/ic_outline_library_add_check_24"
+        android:title="Phê duyệt" />
+
+    <item
+        android:id="@+id/navigation_document"
+        android:icon="@drawable/ic_outline_folder_24"
+        android:title="Tài liệu" />
+    <item
+        android:id="@+id/navigation_more"
+        android:icon="@drawable/ic_baseline_apps_24"
+        android:iconTint="@color/colorPrimary"
+        android:title="Thêm" />
+
+</menu>

@@ -1,0 +1,1 @@
+package com.firstems.erp.callback;import com.firstems.erp.api.model.response.signature.SignatureItemApiResponse;import java.util.HashMap;import java.util.List;public interface LoadSignatureDataCallback {    void onLoaded(HashMap<String, List<SignatureItemApiResponse>> hashMap);}

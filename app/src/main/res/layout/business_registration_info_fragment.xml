@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.signature.businessregistration.info.BusinessRegistrationInfoFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_5">
+
+        <include
+            android:id="@+id/include10"
+            layout="@layout/custom_toolbar_done"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutLocate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include10">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutLocateType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/txtTileNoiCongTac"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nơi công tác"
+                    android:textAppearance="@android:style/TextAppearance.Material.Small"
+                    android:textSize="14sp" />
+
+                <Spinner
+                    android:id="@+id/spinerLocateType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/bg_spinner"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:singleLine="true"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutLocateDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/txtTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Đến ngày"
+                    android:textAppearance="@android:style/TextAppearance.Material.Small"
+                    android:textSize="14sp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/txtLocate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:paddingLeft="10dp"
+                    android:background="@drawable/bg_spinner"
+                    android:imeOptions="actionDone"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/grey_80"
+                    android:singleLine="true"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutLocate">
+
+            <LinearLayout
+                android:id="@+id/linearLayout6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/txtTitleDateBegin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Từ ngày"
+                    android:textAppearance="@android:style/TextAppearance.Material.Small"
+                    android:textSize="14sp" />
+
+                <com.firstems.erp.helper.widgets.EMSConstrainLayoutBorder
+                    android:id="@+id/layoutDateForm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:padding="10dp"
+                    android:layout_weight="1"
+
+                    android:background="@color/text__white">
+
+                    <com.firstems.erp.helper.widgets.EMSTextviewHighLineNonBorder
+                        android:id="@+id/txtDateBegin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/text__white"
+                        android:text="15/05/2020"
+                        android:textAlignment="center"
+                        android:textColor="@color/grey_80"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView24"
+                        android:layout_width="@dimen/space_20"
+                        android:layout_height="@dimen/space_20"
+                        app:layout_constraintBottom_toBottomOf="@+id/txtDateBegin"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toEndOf="@+id/txtDateBegin"
+                        app:layout_constraintTop_toTopOf="@+id/txtDateBegin"
+                        app:srcCompat="@drawable/ic_calenda"
+                        android:tint="@color/colorPrimary"/>
+                </com.firstems.erp.helper.widgets.EMSConstrainLayoutBorder>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/txtTitleDateEnd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Đến ngày"
+                    android:textAppearance="@android:style/TextAppearance.Material.Small"
+                    android:textSize="14sp" />
+
+                <com.firstems.erp.helper.widgets.EMSConstrainLayoutBorder
+                    android:id="@+id/layoutDateEnd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:background="@color/text__white">
+
+                    <com.firstems.erp.helper.widgets.EMSTextviewHighLineNonBorder
+                        android:id="@+id/txtDateEnd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/text__white"
+                        android:text="15/05/2020"
+                        android:textAlignment="center"
+                        android:textColor="@color/grey_80"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView242"
+                        android:layout_width="@dimen/space_20"
+                        android:layout_height="@dimen/space_20"
+                        app:layout_constraintBottom_toBottomOf="@+id/txtDateFrom"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toEndOf="@+id/txtDateFrom"
+                        app:layout_constraintTop_toTopOf="@+id/txtDateFrom"
+                        android:tint="@color/colorPrimary"
+                        app:srcCompat="@drawable/ic_calenda" />
+                </com.firstems.erp.helper.widgets.EMSConstrainLayoutBorder>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="5dp"
+                android:elevation="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+                    <CheckBox
+                        android:id="@+id/chkMorning"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/colorPrimary"
+                        android:text="Sáng" />
+                    <LinearLayout
+                        android:id="@+id/linearLayoutLoaiChamCongSang"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+                        <TextView
+                            android:id="@+id/txtTitleLoaiChamCongSang"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Loại chấm công"
+                            android:textAppearance="@android:style/TextAppearance.Material.Small"
+                            android:textSize="14sp" />
+
+                        <Spinner
+                            android:id="@+id/spinerLoaiChamCongSang"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/bg_spinner"
+                            android:imeOptions="actionDone"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:singleLine="true"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="5dp"
+                android:elevation="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+                <LinearLayout
+                    android:id="@+id/linearLayout222"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayoutLoaiChamCongSang">
+
+                    <CheckBox
+                        android:id="@+id/chkAfternoon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/colorPrimary"
+                        android:text="Chiều" />
+                    <LinearLayout
+                        android:id="@+id/linearLayoutLoaiChamCongChieu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout222">
+
+                        <TextView
+                            android:id="@+id/txtTitleLoaiChamCongChieu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Loại chấm công"
+                            android:textAppearance="@android:style/TextAppearance.Material.Small"
+                            android:textSize="14sp" />
+
+                        <Spinner
+                            android:id="@+id/spinerLoaiChamCongChieu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/bg_spinner"
+                            android:imeOptions="actionDone"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:singleLine="true"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="5dp"
+                android:elevation="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+                <LinearLayout
+                    android:id="@+id/linearLayout22222"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayoutLoaiChamCongChieu">
+
+                    <CheckBox
+                        android:id="@+id/chkEverning"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/colorPrimary"
+                        android:text="Tối" />
+                    <LinearLayout
+                        android:id="@+id/linearLayoutLoaiChamCongToi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout22222">
+
+                        <TextView
+                            android:id="@+id/txtTitleLoaiChamCongToi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Loại chấm công"
+                            android:textAppearance="@android:style/TextAppearance.Material.Small"
+                            android:textSize="14sp" />
+
+                        <Spinner
+                            android:id="@+id/spinerLoaiChamCongToi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/bg_spinner"
+                            android:imeOptions="actionDone"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:singleLine="true"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+
+
+        </LinearLayout>
+
+        <com.firstems.erp.helper.widgets.EMSButtonSecond
+            android:id="@+id/btnDone"
+            android:layout_width="0dp"
+            android:textColor="@color/text__white"
+            android:text="Hoàn thành"
+            android:textAllCaps="false"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,1 @@
+package com.firstems.erp.callback;import com.firstems.erp.adapter.signature.SignatureModel;import java.util.List;public interface LoadSignatureDataDiffListCallback {    void onLoaded(List<SignatureModel> signatureModels);}

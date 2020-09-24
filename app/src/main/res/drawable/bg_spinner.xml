@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="true">
+
+        <layer-list>
+
+            <item>
+                <shape>
+                    <gradient android:angle="90" android:endColor="#ffffff" android:startColor="#ffffff" android:type="linear" />
+
+                    <stroke android:width="0.33dp" android:color="@color/colorTransparent" />
+
+                    <corners android:radius="3dp" />
+
+                    <padding android:bottom="3dp" android:left="3dp" android:right="3dp" android:top="3dp" />
+                </shape>
+            </item>
+
+            <item android:drawable="@drawable/ic_up" android:gravity="center_vertical|right" android:right="5dp" android:width="20dp" android:height="20dp"/>
+
+        </layer-list>
+
+    </item>
+    <item android:state_enabled="false">
+
+        <layer-list>
+
+            <item>
+                <shape>
+                    <solid android:color="@color/grey_10"/>
+                    <stroke android:width="0.33dp" android:color="@color/colorTransparent" />
+
+                    <corners android:radius="3dp" />
+
+                    <padding android:bottom="3dp" android:left="3dp" android:right="3dp" android:top="3dp" />
+                </shape>
+            </item>
+
+            <item android:drawable="@drawable/ic_up" android:gravity="center_vertical|right" android:right="5dp" android:width="20dp" android:height="20dp"/>
+
+        </layer-list>
+
+    </item>
+
+</selector>

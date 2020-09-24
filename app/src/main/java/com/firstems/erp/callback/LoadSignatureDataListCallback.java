@@ -1,0 +1,1 @@
+package com.firstems.erp.callback;import com.firstems.erp.api.model.response.signature.SignatureItemApiResponse;import java.util.List;public interface LoadSignatureDataListCallback {    void onLoaded(List<SignatureItemApiResponse> models);}

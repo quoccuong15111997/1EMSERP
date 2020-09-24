@@ -1,0 +1,1 @@
+package com.firstems.erp.callback;import com.firstems.erp.api.model.response.employee.Employee;import java.util.List;/** * Created by Nguyen Quoc Cuong on 9/1/2020. */public interface LoadListEmployeeCallback {    void onLoaded(List<Employee> employees);}
