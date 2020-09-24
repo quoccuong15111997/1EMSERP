@@ -3,19 +3,16 @@ package com.firstems.erp.ui.shared.reviewprocess;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.MimeTypeMap;
-import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 import androidx.databinding.DataBindingUtil;
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -33,9 +30,10 @@ import com.firstems.erp.api.model.response.reviewprocess.ReviewProcessItem;
 import com.firstems.erp.api.model.response.reviewprocess.documentfile.DocumentFile;
 import com.firstems.erp.callback.ImageClickCallback;
 import com.firstems.erp.callback.ItemFileClick;
+import com.firstems.erp.callback.ServerCheckCallback;
+import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Constant;
 import com.firstems.erp.databinding.ReviewProcessFragmentBinding;
-import com.firstems.erp.helper.animation.ViewAnimation;
 import com.firstems.erp.helper.widgets.SpacingItemDecoration;
 import com.firstems.erp.model.FileIncludeModel;
 import com.firstems.erp.model.ImageModel;
@@ -49,7 +47,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReviewProcessFragment extends Fragment {
+public class ReviewProcessFragment extends CommonFragment {
 
     private ReviewProcessViewModel mViewModel;
     private List<ReviewProcessDetail> list;
@@ -63,8 +61,6 @@ public class ReviewProcessFragment extends Fragment {
     private String keyCode;
     private RecyclerView recyclerImage;
     private ImageIncludeAdapter imageIncludeAdapter;
-    private final static int LOADING_DURATION = 2000;
-    private LinearLayout lyt_progress;
     private Transition transition;
     private List<ImageModel> imageModelList;
 
@@ -134,9 +130,6 @@ public class ReviewProcessFragment extends Fragment {
         recyclerViewFileInclude=binding.recycleFile;
         recyclerImage = binding.recycleImage;
         list= new ArrayList<>();
-        lyt_progress = binding.lytProgress;
-        lyt_progress.setVisibility(View.VISIBLE);
-        lyt_progress.setAlpha(1.0f);
         recyclerView.setVisibility(View.GONE);
         recyclerViewFileInclude.setVisibility(View.GONE);
         recyclerImage.setVisibility(View.GONE);
@@ -180,24 +173,11 @@ public class ReviewProcessFragment extends Fragment {
             }
         });
         imageIncludeAdapter.setEditable(false);
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                ViewAnimation.fadeOut(lyt_progress);
-            }
-        }, LOADING_DURATION);
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                initComponent();
-            }
-        }, LOADING_DURATION + 400);
+        
+        initComponent();
     }
 
     private void initComponent() {
-        lyt_progress.setVisibility(View.GONE);
         recyclerView.setVisibility(View.VISIBLE);
         recyclerViewFileInclude.setVisibility(View.VISIBLE);
         recyclerView.setHasFixedSize(true);
@@ -205,21 +185,16 @@ public class ReviewProcessFragment extends Fragment {
         linearLayoutProgress.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setAdapter(reviewProgressAdapter);
         recyclerView.setLayoutManager(linearLayoutProgress);
-
-
-
-
+        
         LinearLayoutManager linearLayoutFile= new LinearLayoutManager(getContext());
         linearLayoutFile.setOrientation(RecyclerView.VERTICAL);
         recyclerViewFileInclude.setAdapter(fileInludeAdapter);
         recyclerViewFileInclude.setLayoutManager(linearLayoutFile);
-
-
-
+        
         recyclerImage.setVisibility(View.VISIBLE);
         recyclerImage.setHasFixedSize(true);
         recyclerImage.setAdapter(imageIncludeAdapter);
-
+        
         recyclerView.setVisibility(View.GONE);
     }
 
@@ -227,6 +202,12 @@ public class ReviewProcessFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(ReviewProcessViewModel.class);
+        mViewModel.setServerCheckCallback(new ServerCheckCallback() {
+            @Override
+            public void onServerLoadFail() {
+                showOutTOKEN();
+            }
+        });
         mViewModel.loadData(dcmnCode,keyCode);
        try {
            mViewModel.getLiveDataReviewProgressList().observe(getViewLifecycleOwner(), new Observer<List<ReviewProcessItem>>() {

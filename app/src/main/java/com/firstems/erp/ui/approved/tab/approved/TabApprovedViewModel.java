@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel;
 
 import com.firstems.erp.api.model.response.approved.ApprovedApiResponse;
 import com.firstems.erp.api.model.response.approved.ApprovedItemApiResponse;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.callback.data.ConvertJsonCallback;
 import com.firstems.erp.callback.data.DataApiCallback;
 import com.firstems.erp.callback.data.DataSourceProviderCallback;
@@ -20,13 +21,18 @@ import java.util.Date;
 import java.util.List;
 
 public class TabApprovedViewModel extends ViewModel {
+    private ServerCheckCallback serverCheckCallback;
     private MutableLiveData<List<ApprovedItemApiResponse>> dataListApprove;
     public TabApprovedViewModel() {
         dataListApprove= new MutableLiveData<>();
 
         loadDataApproved();
     }
-
+    
+    public void setServerCheckCallback(ServerCheckCallback serverCheckCallback) {
+        this.serverCheckCallback = serverCheckCallback;
+    }
+    
     public void loadDataApproved() {
         String beginDate = DateTimeHelper.getInstance().minusDate(SharedPreferencesManager.getInstance().getNumberDaySignature());
         String endDate = DateTimeHelper.getInstance().apiDateFormat.format(new Date(System.currentTimeMillis()));
@@ -38,7 +44,7 @@ public class TabApprovedViewModel extends ViewModel {
 
             @Override
             public void onApiLoadFail() {
-
+                serverCheckCallback.onServerLoadFail();
             }
         }, new DataSourceProviderCallback() {
             @Override

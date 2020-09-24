@@ -39,7 +39,6 @@ import com.firstems.erp.api.model.response.signature.switchshift.SwitchShiftApiR
 import com.firstems.erp.api.model.response.timekeeping.TimekeepingTypeCTApiResponse;
 import com.firstems.erp.api.model.response.timekeeping.TimekeepingTypeDCApiResponse;
 import com.firstems.erp.common.DateDeserializer;
-import com.firstems.erp.common.QCTCallback;
 import com.firstems.erp.common.Util;
 import com.firstems.erp.model.FileIncludeModel;
 import com.google.gson.Gson;
@@ -79,10 +78,10 @@ public class ApiServices {
                 .registerTypeAdapter(Date.class, new DateDeserializer.DateSerializer())
                 .create();
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder()
-                .callTimeout(2, TimeUnit.MINUTES)
-                .connectTimeout(20, TimeUnit.SECONDS)
-                .readTimeout(30, TimeUnit.SECONDS)
-                .writeTimeout(30, TimeUnit.SECONDS);
+                .callTimeout(10, TimeUnit.SECONDS)
+                .connectTimeout(10, TimeUnit.SECONDS)
+                .readTimeout(10, TimeUnit.SECONDS)
+                .writeTimeout(10, TimeUnit.SECONDS);
         if (TextUtils.isEmpty(baseUrl)) {
             return;
         }
@@ -119,7 +118,7 @@ public class ApiServices {
     }
 
     //Login
-    public void doSystemLogin(JsonObject body, QCTCallback<LoginReponse> callback){
+    public void doSystemLogin(JsonObject body, Callback<LoginReponse> callback){
         if (retrofit!=null){
             Call<LoginReponse> doSystemLogin = retrofit.create(RestApi.class).systemLogin(body);
             doSystemLogin.enqueue(callback);
@@ -324,57 +323,13 @@ public class ApiServices {
             apiResponseCall.enqueue(callback);
         }
     }
-
-    // Thêm mới phiếu tạm ứng
-    public void addNewPhieuTamUng(String token, JsonObject body, Callback<ApiResponse> callback){
-        if (retrofit!=null){
-            Call<ApiResponse> apiResponseCall =retrofit.create(RestApi.class).addNewPhieuTamUng(token,body);
-            apiResponseCall.enqueue(callback);
-        }
-    }
-    // Thêm mới và trình ký phiếu tạm ứng
-    public void addAndCommitPhieuTamUng(String token, JsonObject body, Callback<ApiResponse> callback){
-        if (retrofit!=null){
-            Call<ApiResponse> apiResponseCall =retrofit.create(RestApi.class).addAndCommitPhieuTamUng(token, body);
-            apiResponseCall.enqueue(callback);
-        }
-    }
-    // Chinh sửa phiếu tạm ứng
-    public void editPhieuTamUng(String token, JsonObject boby, Callback<ApiResponse> callback){
-        if (retrofit!=null){
-            Call<ApiResponse> apiResponseCall =retrofit.create(RestApi.class).editPhieuTamUng(token,boby);
-            apiResponseCall.enqueue(callback);
-        }
-    }
-    //Chi tiết phiếu đề nghị thanh toán
-    //Thêm mới phiếu đề nghị thanh toán
-    public void addNewPhieuDeNghiThanhToan(String token, JsonObject body, Callback<ApiResponse> callback){
-        if (retrofit!=null){
-            Call<ApiResponse> apiResponseCall = retrofit.create(RestApi.class).addNewPhieuDeNghiThanhToan(token,body);
-            apiResponseCall.enqueue(callback);
-        }
-    }
-    //Thêm mới và trình ký phiếu đề nghị thanh toán
-    public void addAndCommitDeNghiThanhToan(String token, JsonObject body, Callback<ApiResponse> callback){
-        if (retrofit!=null){
-            Call<ApiResponse> apiResponseCall = retrofit.create(RestApi.class).addAndCommitPhieudeNghiThanhToan(token, body);
-            apiResponseCall.enqueue(callback);
-        }
-    }
-    //Chỉnh sửa phiếu đề nghị thanh toán
-    public void editPhieuDeNghiThanhToan(String token, JsonObject body, Callback<ApiResponse> callback){
-        if (retrofit!=null){
-            Call<ApiResponse> apiResponseCall = retrofit.create(RestApi.class).editPhieuDeNghiThanhToan(token, body);
-            apiResponseCall.enqueue(callback);
-        }
-    }
+    
     //Chi tiết liên hệ công vụ
     public void getDetailSiganutureServiceContact(String token, JsonObject body,Callback<ServiceContactsApiResponse> callback){
         if (retrofit!=null){
             Call<ServiceContactsApiResponse> serviceContactsApiResponseCall= retrofit.create(RestApi.class).getDetailSiganutureServiceContact(token,body);
             serviceContactsApiResponseCall.enqueue(callback);
         }
-
     }
     //Thêm mới liên hệ công vụ
     public void addNewLienHeCongVu(String token, JsonObject body, Callback<AddNewServiceContactResponse> callback){

@@ -9,4 +9,5 @@ import com.firstems.erp.api.model.response.login.SystemLoginApiResponse;
 public interface LoginCallback {
     void onLoginSuccess(SystemLoginApiResponse loginApiResponse);
     void onLoginFail(LoginReponse loginReponse);
+    void onServerFail();
 }

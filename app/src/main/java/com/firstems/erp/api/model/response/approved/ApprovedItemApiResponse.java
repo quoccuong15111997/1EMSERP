@@ -1,6 +1,5 @@
 package com.firstems.erp.api.model.response.approved;
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
@@ -82,5 +81,14 @@ public class ApprovedItemApiResponse implements Serializable {
 
     public void setApprovedItemDetail_1List(List<ApprovedItemDetail_1> approvedItemDetail_1List) {
         this.approvedItemDetail_1List = approvedItemDetail_1List;
+    }
+    public int getItemCount(){
+        int res = 0;
+        if (approvedItemDetail_1List!=null){
+            for (ApprovedItemDetail_1 approvedItemDetail_1 : approvedItemDetail_1List){
+                res += approvedItemDetail_1.getApprovedItemDetail_2List().size();
+            }
+        }
+        return res;
     }
 }

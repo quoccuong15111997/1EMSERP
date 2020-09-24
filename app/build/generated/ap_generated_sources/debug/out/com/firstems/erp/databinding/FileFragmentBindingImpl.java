@@ -22,7 +22,6 @@ public class FileFragmentBindingImpl extends FileFragmentBinding  {
         sViewsWithIds.put(R.id.textView11, 6);
         sViewsWithIds.put(R.id.recycleImage, 7);
         sViewsWithIds.put(R.id.recycleFile, 8);
-        sViewsWithIds.put(R.id.lyt_progress, 9);
     }
     // views
     @NonNull
@@ -33,14 +32,13 @@ public class FileFragmentBindingImpl extends FileFragmentBinding  {
     // Inverse Binding Event Handlers
 
     public FileFragmentBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 10, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 9, sIncludes, sViewsWithIds));
     }
     private FileFragmentBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[1]
             , (android.widget.ImageView) bindings[3]
             , (android.widget.ImageView) bindings[4]
-            , (android.widget.LinearLayout) bindings[9]
             , (androidx.recyclerview.widget.RecyclerView) bindings[8]
             , (androidx.recyclerview.widget.RecyclerView) bindings[7]
             , (android.widget.TextView) bindings[6]

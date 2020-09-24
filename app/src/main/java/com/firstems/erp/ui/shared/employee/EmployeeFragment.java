@@ -15,7 +15,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -26,6 +25,8 @@ import com.firstems.erp.R;
 import com.firstems.erp.adapter.EmployeeAdapter;
 import com.firstems.erp.api.model.response.employee.Employee;
 import com.firstems.erp.callback.ItemCheckCallback;
+import com.firstems.erp.callback.ServerCheckCallback;
+import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Constant;
 import com.firstems.erp.databinding.EmployeeFragmentBinding;
 import com.firstems.erp.sharedpreferences.SharedPreferencesManager;
@@ -35,7 +36,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class EmployeeFragment extends Fragment implements ItemCheckCallback {
+public class EmployeeFragment extends CommonFragment implements ItemCheckCallback {
 
     private EmployeeViewModel mViewModel;
     private EmployeeFragmentBinding binding;
@@ -285,6 +286,12 @@ public class EmployeeFragment extends Fragment implements ItemCheckCallback {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(EmployeeViewModel.class);
+        mViewModel.setServerCheckCallback(new ServerCheckCallback() {
+            @Override
+            public void onServerLoadFail() {
+                showOutTOKEN();
+            }
+        });
         mViewModel.loadDataEmployee(departmentListCode);
         mViewModel.getListMutableLiveEmployee().observe(getViewLifecycleOwner(), new Observer<List<Employee>>() {
             @Override

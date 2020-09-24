@@ -10,6 +10,7 @@ import com.firstems.erp.api.model.response.timekeeping.TimekeepingTypeDC;
 import com.firstems.erp.api.model.response.timekeeping.TimekeepingTypeDCApiResponse;
 import com.firstems.erp.api.services.ApiServices;
 import com.firstems.erp.callback.LoadContentCallback;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.callback.data.ConvertJsonCallback;
 import com.firstems.erp.callback.data.DataApiCallback;
 import com.firstems.erp.callback.data.DataSourceProviderCallback;
@@ -28,6 +29,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class AskPermissionViewModel extends ViewModel {
+    private ServerCheckCallback serverCheckCallback;
+    
+    public void setServerCheckCallback(ServerCheckCallback serverCheckCallback) {
+        this.serverCheckCallback = serverCheckCallback;
+    }
+    
     private MutableLiveData<String> title;
     private MutableLiveData<AskPermistionHeader> permistionApiResponseMutableLiveData;
     private MutableLiveData<List<TimekeepingTypeDC>> liveDataTimeKeeping;
@@ -62,7 +69,7 @@ public class AskPermissionViewModel extends ViewModel {
 
                     @Override
                     public void onApiLoadFail() {
-
+                        serverCheckCallback.onServerLoadFail();
                     }
                 }, new DataSourceProviderCallback() {
                     @Override

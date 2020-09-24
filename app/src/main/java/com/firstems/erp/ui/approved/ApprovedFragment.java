@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.firstems.erp.R;
 import com.firstems.erp.callback.BackToHomeCallback;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.databinding.ApprovedFragmentBinding;
 import com.firstems.erp.sharedpreferences.SharedPreferencesManager;
@@ -89,6 +90,12 @@ public class ApprovedFragment extends CommonFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(ApprovedViewModel.class);
+        mViewModel.setServerCheckCallback(new ServerCheckCallback() {
+            @Override
+            public void onServerLoadFail() {
+                showOutTOKEN();
+            }
+        });
         mViewModel.getTitle().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {

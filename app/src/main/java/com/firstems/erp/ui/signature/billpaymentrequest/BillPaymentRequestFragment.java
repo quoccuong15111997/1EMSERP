@@ -40,6 +40,7 @@ import com.firstems.erp.api.model.response.signature.SignatureItemApiResponse;
 import com.firstems.erp.api.services.ApiServices;
 import com.firstems.erp.callback.ConfirmCallback;
 import com.firstems.erp.callback.SaveFileToLocalCallback;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.callback.runcode.LoadDataAsynCallback;
 import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Constant;
@@ -180,15 +181,14 @@ public class BillPaymentRequestFragment extends CommonFragment {
                                                 }
                                                 else {
                                                     progressdialog.dismiss();
-                                                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(60));
-                                                    System.out.println(response.message());
+                                                    showOutTOKEN();
                                                 }
                                             }
                     
                                             @Override
                                             public void onFailure(Call<ApiResponse> call, Throwable t) {
                                                 progressdialog.dismiss();
-                                                showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(60));
+                                                showOutTOKEN();
                                                 System.out.println(t.getMessage());
                                             }
                                         });
@@ -259,7 +259,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
                                 }
                                 else {
                                     progressdialog.dismiss();
-                                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(51));
+                                    showOutTOKEN();
                                     System.out.println(response.message());
                                 }
                             }
@@ -267,7 +267,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
                             @Override
                             public void onFailure(Call<ApiResponse> call, Throwable t) {
                                 progressdialog.dismiss();
-                                showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(51));
+                                showOutTOKEN();
                                 System.out.println(t.getMessage());
                             }
                         });
@@ -474,7 +474,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
                 else {
                     progressdialog.dismiss();
                     System.out.println(response.message());
-                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
+                    showOutTOKEN();
                 }
             }
         
@@ -482,7 +482,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
             public void onFailure(Call<AddNewPaymentResponse> call, Throwable t) {
                 progressdialog.dismiss();
                 System.out.println(t.getMessage());
-                showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(64));
+                showOutTOKEN();
             }
         });
     }
@@ -582,7 +582,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
                 else {
                     progressdialog.dismiss();
                     System.out.println(response.message());
-                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
+                    showOutTOKEN();
                 }
             }
         
@@ -590,7 +590,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
             public void onFailure(Call<AddNewPaymentResponse> call, Throwable t) {
                 progressdialog.dismiss();
                 System.out.println(t.getMessage());
-                showErrorDialog(SharedPreferencesManager.getSystemLabel(50), SharedPreferencesManager.getSystemLabel(64));
+                showOutTOKEN();
             }
         });
     }
@@ -670,7 +670,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
                 else {
                     progressdialog.dismiss();
                     System.out.println(response.message());
-                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
+                    showOutTOKEN();
                 }
             }
     
@@ -678,7 +678,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
             public void onFailure(Call<AddNewPaymentResponse> call, Throwable t) {
                 progressdialog.dismiss();
                 System.out.println(t.getMessage());
-                showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(64));
+                showOutTOKEN();
             }
         });
     }
@@ -722,8 +722,8 @@ public class BillPaymentRequestFragment extends CommonFragment {
                             }
                             else {
                                 progressdialog.dismiss();
-                                showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(64));
                                 System.out.println(response.message());
+                                showOutTOKEN();
                             }
                             
                         }
@@ -731,8 +731,8 @@ public class BillPaymentRequestFragment extends CommonFragment {
                         @Override
                         public void onFailure(Call<ApiResponse> call, Throwable t) {
                             progressdialog.dismiss();
-                            showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(64));
                             System.out.println(t.getMessage());
+                            showOutTOKEN();
                         }
                     });
         }
@@ -836,6 +836,12 @@ public class BillPaymentRequestFragment extends CommonFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(BillPaymentRequestViewModel.class);
+        mViewModel.setServerCheckCallback(new ServerCheckCallback() {
+            @Override
+            public void onServerLoadFail() {
+                showOutTOKEN();
+            }
+        });
         mViewModel.getTitle().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {

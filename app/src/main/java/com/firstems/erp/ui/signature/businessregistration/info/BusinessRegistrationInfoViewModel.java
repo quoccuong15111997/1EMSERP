@@ -10,6 +10,7 @@ import com.firstems.erp.api.model.response.national.National;
 import com.firstems.erp.api.model.response.national.NationalApiResponse;
 import com.firstems.erp.api.model.response.timekeeping.TimekeepingTypeCT;
 import com.firstems.erp.api.model.response.timekeeping.TimekeepingTypeCTApiResponse;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.callback.data.ConvertJsonCallback;
 import com.firstems.erp.callback.data.DataApiCallback;
 import com.firstems.erp.callback.data.DataSourceProviderCallback;
@@ -23,6 +24,12 @@ import com.firstems.erp.sharedpreferences.SharedPreferencesManager;
 import java.util.List;
 
 public class BusinessRegistrationInfoViewModel extends ViewModel {
+    private ServerCheckCallback serverCheckCallback;
+    
+    public void setServerCheckCallback(ServerCheckCallback serverCheckCallback) {
+        this.serverCheckCallback = serverCheckCallback;
+    }
+    
     private MutableLiveData<String> title;
     private MutableLiveData<List<LocationType>> liveDataLocateType;
     private MutableLiveData<List<National>> liveDataNationalList;
@@ -53,7 +60,7 @@ public class BusinessRegistrationInfoViewModel extends ViewModel {
 
                     @Override
                     public void onApiLoadFail() {
-
+                        serverCheckCallback.onServerLoadFail();
                     }
                 }, new DataSourceProviderCallback() {
                     @Override
@@ -79,7 +86,7 @@ public class BusinessRegistrationInfoViewModel extends ViewModel {
 
                     @Override
                     public void onApiLoadFail() {
-
+                        serverCheckCallback.onServerLoadFail();
                     }
                 }, new DataSourceProviderCallback() {
                     @Override
@@ -105,7 +112,7 @@ public class BusinessRegistrationInfoViewModel extends ViewModel {
 
                     @Override
                     public void onApiLoadFail() {
-
+                        serverCheckCallback.onServerLoadFail();
                     }
                 }, new DataSourceProviderCallback() {
                     @Override

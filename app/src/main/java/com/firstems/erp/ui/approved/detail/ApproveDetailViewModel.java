@@ -7,10 +7,7 @@ import com.firstems.erp.api.model.request.ApproveInfoRequest;
 import com.firstems.erp.api.model.response.approved.info.ApproveInfoApiResponse;
 import com.firstems.erp.api.services.ApiServices;
 import com.firstems.erp.callback.ApprovedModelLoadCallback;
-import com.firstems.erp.model.ApproveDetailModel;
-import com.firstems.erp.model.ApproveModel;
 import com.firstems.erp.model.FileIncludeModel;
-import com.firstems.erp.model.ProgressApproveModel;
 import com.firstems.erp.sharedpreferences.SharedPreferencesManager;
 
 import java.util.ArrayList;
@@ -46,17 +43,22 @@ public class ApproveDetailViewModel extends ViewModel {
                             public void onResponse(Call<ApproveInfoApiResponse> call, Response<ApproveInfoApiResponse> response) {
                                 if (response.isSuccessful()){
                                     ApproveInfoApiResponse approveInfoApiResponse = response.body();
-                                    dataApproveDetail.setValue(approveInfoApiResponse);
-                                    approvedModelLoadCallback.onDataLoaded(dataApproveDetail);
+                                    if (approveInfoApiResponse.isRETNCODE()){
+                                        dataApproveDetail.setValue(approveInfoApiResponse);
+                                        approvedModelLoadCallback.onDataLoaded(dataApproveDetail);
+                                    }
+                                    else {
+                                        approvedModelLoadCallback.onDataLoadFail(response.message());
+                                    }
                                 }
                                 else {
-                                    approvedModelLoadCallback.onDataLoadFail(response.message());
+                                    approvedModelLoadCallback.onServerFail();
                                 }
                             }
 
                             @Override
                             public void onFailure(Call<ApproveInfoApiResponse> call, Throwable t) {
-                                approvedModelLoadCallback.onDataLoadFail(t.getMessage());
+                                approvedModelLoadCallback.onServerFail();
                                 System.out.println(t.getMessage());
                             }
                         });

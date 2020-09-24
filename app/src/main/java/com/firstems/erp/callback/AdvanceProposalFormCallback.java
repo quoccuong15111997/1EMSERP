@@ -5,4 +5,5 @@ import com.firstems.erp.api.model.response.advance_proposal_form.AdvanceProposal
 public interface AdvanceProposalFormCallback {
     void onLoadSuccess(AdvanceProposalFormApiResponse advanceProposalFormApiResponse);
     void onLoadFail(String mess);
+    void onServerFail();
 }

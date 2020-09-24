@@ -8,6 +8,7 @@ import com.firstems.erp.api.model.response.signature.switchshift.SwitchShiftApiR
 import com.firstems.erp.api.model.response.timekeeping.TimekeepingTypeDC;
 import com.firstems.erp.api.model.response.timekeeping.TimekeepingTypeDCApiResponse;
 import com.firstems.erp.callback.LoadDataKeppingCallback;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.callback.data.ConvertJsonCallback;
 import com.firstems.erp.callback.data.DataApiCallback;
 import com.firstems.erp.callback.data.DataSourceProviderCallback;
@@ -23,6 +24,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SwitchShiftViewModel extends ViewModel {
+    private ServerCheckCallback serverCheckCallback;
+    
+    public void setServerCheckCallback(ServerCheckCallback serverCheckCallback) {
+        this.serverCheckCallback = serverCheckCallback;
+    }
+    
     private MutableLiveData<String> title;
     private MutableLiveData<List<SwitchShift>> mutableLiveDataSwitchShift;
     private MutableLiveData<SwitchShiftApiResponse> mutableLiveDataSwitchShiftResponse;
@@ -46,7 +53,7 @@ public class SwitchShiftViewModel extends ViewModel {
 
             @Override
             public void onApiLoadFail() {
-
+                serverCheckCallback.onServerLoadFail();
             }
         }, new DataSourceProviderCallback() {
             @Override
@@ -106,7 +113,7 @@ public class SwitchShiftViewModel extends ViewModel {
 
                     @Override
                     public void onApiLoadFail() {
-
+                        serverCheckCallback.onServerLoadFail();
                     }
                 }, new DataSourceProviderCallback() {
                     @Override

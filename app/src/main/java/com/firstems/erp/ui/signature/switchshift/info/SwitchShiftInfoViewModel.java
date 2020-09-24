@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel;
 import com.firstems.erp.api.model.response.employee.Employee;
 import com.firstems.erp.api.model.response.timekeeping.TimekeepingTypeDC;
 import com.firstems.erp.api.model.response.timekeeping.TimekeepingTypeDCApiResponse;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.callback.data.ConvertJsonCallback;
 import com.firstems.erp.callback.data.DataApiCallback;
 import com.firstems.erp.callback.data.DataSourceProviderCallback;
@@ -20,6 +21,12 @@ import com.firstems.erp.sharedpreferences.SharedPreferencesManager;
 import java.util.List;
 
 public class SwitchShiftInfoViewModel extends ViewModel {
+    private ServerCheckCallback serverCheckCallback;
+    
+    public void setServerCheckCallback(ServerCheckCallback serverCheckCallback) {
+        this.serverCheckCallback = serverCheckCallback;
+    }
+    
     private MutableLiveData<String> title;
     private MutableLiveData<Employee> employ_di_lam;
     private MutableLiveData<Employee> employ_cham_cong;
@@ -44,7 +51,7 @@ public class SwitchShiftInfoViewModel extends ViewModel {
 
             @Override
             public void onApiLoadFail() {
-
+                serverCheckCallback.onServerLoadFail();
             }
         }, new DataSourceProviderCallback() {
             @Override

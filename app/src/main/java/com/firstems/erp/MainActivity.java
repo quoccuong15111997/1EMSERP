@@ -108,11 +108,14 @@ public class MainActivity extends CommonActivity implements BackToHomeCallback, 
                         }
                         SharedPreferencesManager.getInstance().setFirstSetupRuncode(false);
                     }
+                else {
+                    showOutTOKEN();
+                }
             }
 
             @Override
             public void onFailure(Call<RunCodeUpDateApiResponse> call, Throwable t) {
-
+                showOutTOKEN();
             }
         });
     }

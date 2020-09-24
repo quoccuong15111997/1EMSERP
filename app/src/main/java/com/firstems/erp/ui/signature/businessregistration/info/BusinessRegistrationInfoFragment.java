@@ -23,6 +23,7 @@ import com.firstems.erp.api.model.response.national.National;
 import com.firstems.erp.api.model.response.province.Province;
 import com.firstems.erp.api.model.response.timekeeping.TimekeepingTypeCT;
 import com.firstems.erp.callback.PickDateCallback;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Constant;
 import com.firstems.erp.databinding.BusinessRegistrationInfoFragmentBinding;
@@ -279,6 +280,12 @@ public class BusinessRegistrationInfoFragment extends CommonFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(BusinessRegistrationInfoViewModel.class);
+        mViewModel.setServerCheckCallback(new ServerCheckCallback() {
+            @Override
+            public void onServerLoadFail() {
+                showOutTOKEN();
+            }
+        });
         mViewModel.getTitle().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {

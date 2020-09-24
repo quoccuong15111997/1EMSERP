@@ -1,39 +1,36 @@
 package com.firstems.erp.ui.shared.relatedfields;
 
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-
-import android.content.Intent;
-import android.os.Build;
-import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-
 import com.firstems.erp.R;
 import com.firstems.erp.adapter.RelatedFieldAdapter;
 import com.firstems.erp.api.model.response.lanh_vuc_lien_quan.LanhVucLienQuan;
+import com.firstems.erp.callback.ServerCheckCallback;
+import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Constant;
 import com.firstems.erp.databinding.RelatedFieldsFragmentBinding;
 import com.firstems.erp.enums.TypeSelect;
-import com.wdullaer.materialdatetimepicker.time.Timepoint;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class RelatedFieldsFragment extends Fragment {
+public class RelatedFieldsFragment extends CommonFragment {
 
     private RelatedFieldsViewModel mViewModel;
     private RelatedFieldsFragmentBinding binding;
@@ -128,6 +125,12 @@ public class RelatedFieldsFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(RelatedFieldsViewModel.class);
+        mViewModel.setServerCheckCallback(new ServerCheckCallback() {
+            @Override
+            public void onServerLoadFail() {
+                showOutTOKEN();
+            }
+        });
         mViewModel.getListMutableLiveData().observe(getViewLifecycleOwner(), new Observer<List<LanhVucLienQuan>>() {
             @Override
             public void onChanged(List<LanhVucLienQuan> lanhVucLienQuans) {

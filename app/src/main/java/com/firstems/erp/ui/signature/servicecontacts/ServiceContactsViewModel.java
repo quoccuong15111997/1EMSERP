@@ -14,6 +14,7 @@ import com.firstems.erp.api.model.response.servicecontacts.ServiceContactsApiRes
 import com.firstems.erp.api.model.response.servicecontacts.ServiceContactsItem;
 import com.firstems.erp.callback.LoadContentCallback;
 import com.firstems.erp.callback.LoadListEmployeeCallback;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.callback.data.ConvertJsonCallback;
 import com.firstems.erp.callback.data.DataApiCallback;
 import com.firstems.erp.callback.data.DataSourceProviderCallback;
@@ -28,6 +29,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ServiceContactsViewModel extends ViewModel {
+    private ServerCheckCallback serverCheckCallback;
+    
+    public void setServerCheckCallback(ServerCheckCallback serverCheckCallback) {
+        this.serverCheckCallback = serverCheckCallback;
+    }
+    
     private MutableLiveData<String> title;
     private MutableLiveData<List<Bitmap>> listFileInclude;
     private MutableLiveData<Bitmap> bitmapImage;
@@ -60,7 +67,7 @@ public class ServiceContactsViewModel extends ViewModel {
 
                     @Override
                     public void onApiLoadFail() {
-
+                        callback.onServerFail();
                     }
                 }, new DataSourceProviderCallback() {
                     @Override
@@ -96,7 +103,7 @@ public class ServiceContactsViewModel extends ViewModel {
 
                     @Override
                     public void onApiLoadFail() {
-
+                        serverCheckCallback.onServerLoadFail();
                     }
                 }, new DataSourceProviderCallback() {
                     @Override
@@ -136,7 +143,7 @@ public class ServiceContactsViewModel extends ViewModel {
 
                     @Override
                     public void onApiLoadFail() {
-
+                        serverCheckCallback.onServerLoadFail();
                     }
                 }, new DataSourceProviderCallback() {
                     @Override

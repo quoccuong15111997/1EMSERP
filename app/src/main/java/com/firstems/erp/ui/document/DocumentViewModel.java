@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel;
 import com.firstems.erp.api.model.response.location.LocationApiResponse;
 import com.firstems.erp.api.model.response.location.LocationItem;
 import com.firstems.erp.api.services.ApiServices;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.callback.data.ConvertJsonCallback;
 import com.firstems.erp.callback.data.DataApiCallback;
 import com.firstems.erp.callback.data.DataSourceProviderCallback;
@@ -24,6 +25,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class DocumentViewModel extends ViewModel {
+    private ServerCheckCallback serverCheckCallback;
+    
+    public void setServerCheckCallback(ServerCheckCallback serverCheckCallback) {
+        this.serverCheckCallback = serverCheckCallback;
+    }
+    
     private MutableLiveData<String> title;
     private MutableLiveData<List<LocationItem>> liveDataLocation;
     public DocumentViewModel(){
@@ -57,7 +64,7 @@ public class DocumentViewModel extends ViewModel {
     
             @Override
             public void onApiLoadFail() {
-        
+                serverCheckCallback.onServerLoadFail();
             }
         }, new DataSourceProviderCallback() {
             @Override

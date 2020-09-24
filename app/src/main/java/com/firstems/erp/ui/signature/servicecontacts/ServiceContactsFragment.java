@@ -36,6 +36,7 @@ import com.firstems.erp.callback.LoadContentCallback;
 import com.firstems.erp.callback.LoadListEmployeeCallback;
 import com.firstems.erp.callback.PickDateCallback;
 import com.firstems.erp.callback.SaveFileToLocalCallback;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Util;
 import com.firstems.erp.databinding.ServiceContactsFragmentBinding;
@@ -230,13 +231,13 @@ public class ServiceContactsFragment extends CommonFragment {
                                                         }
                                                         else {
                                                             progressdialog.dismiss();
-                                                            showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(64));
+                                                            showOutTOKEN();
                                                         }
                                                     }
                                                     @Override
                                                     public void onFailure(Call<ApiResponse> call, Throwable t) {
                                                         progressdialog.dismiss();
-                                                        showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(64));
+                                                        showOutTOKEN();
                                                     }
                                                 });
                                             }
@@ -313,13 +314,13 @@ public class ServiceContactsFragment extends CommonFragment {
                                 }
                                 else {
                                     progressdialog.dismiss();
-                                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(51));
+                                    showOutTOKEN();
                                 }
                             }
                             @Override
                             public void onFailure(Call<ApiResponse> call, Throwable t) {
                                 progressdialog.dismiss();
-                                showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(51));
+                                showOutTOKEN();
                             }
                         });
                     }
@@ -423,14 +424,14 @@ public class ServiceContactsFragment extends CommonFragment {
                 }
                 else {
                     progressdialog.dismiss();
-                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
+                    showOutTOKEN();
                 }
             }
         
             @Override
             public void onFailure(Call<AddNewServiceContactResponse> call, Throwable t) {
                 progressdialog.dismiss();
-                showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(64));
+                showOutTOKEN();
             }
         });
     }
@@ -484,14 +485,14 @@ public class ServiceContactsFragment extends CommonFragment {
                 }
                 else {
                     progressdialog.dismiss();
-                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
+                    showOutTOKEN();
                 }
             }
             
             @Override
             public void onFailure(Call<AddNewServiceContactResponse> call, Throwable t) {
                 progressdialog.dismiss();
-                showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(64));
+                showOutTOKEN();
             }
         });
     }
@@ -564,20 +565,19 @@ public class ServiceContactsFragment extends CommonFragment {
                     }
                     else {
                         progressdialog.dismiss();
-                        showErrorDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
+                        showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),addNewServiceContactResponse.getRETNMSSG());
                     }
-                    
                 }
                 else {
                     progressdialog.dismiss();
-                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
+                    showOutTOKEN();
                 }
             }
             
             @Override
             public void onFailure(Call<AddNewServiceContactResponse> call, Throwable t) {
                 progressdialog.dismiss();
-                showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(64));
+                showOutTOKEN();
             }
         });
     }
@@ -621,8 +621,8 @@ public class ServiceContactsFragment extends CommonFragment {
                             }
                             else {
                                 progressdialog.dismiss();
-                                showErrorDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
                                 System.out.println(response.message());
+                                showOutTOKEN();
                             }
                     
                         }
@@ -630,8 +630,8 @@ public class ServiceContactsFragment extends CommonFragment {
                         @Override
                         public void onFailure(Call<ApiResponse> call, Throwable t) {
                             progressdialog.dismiss();
-                            showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(64));
                             System.out.println(t.getMessage());
+                            showOutTOKEN();
                         }
                     });
         }
@@ -726,6 +726,12 @@ public class ServiceContactsFragment extends CommonFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(ServiceContactsViewModel.class);
+        mViewModel.setServerCheckCallback(new ServerCheckCallback() {
+            @Override
+            public void onServerLoadFail() {
+                showOutTOKEN();
+            }
+        });
         mViewModel.getTitle().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
@@ -818,6 +824,11 @@ public class ServiceContactsFragment extends CommonFragment {
                                     },700);
                                 }
                             });
+                        }
+    
+                        @Override
+                        public void onServerFail() {
+                            showOutTOKEN();
                         }
                     });
                 }

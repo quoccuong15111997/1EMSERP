@@ -24,7 +24,6 @@ public class ReviewProcessFragmentBindingImpl extends ReviewProcessFragmentBindi
         sViewsWithIds.put(R.id.imgDown, 8);
         sViewsWithIds.put(R.id.recycleProgress, 9);
         sViewsWithIds.put(R.id.txtNon, 10);
-        sViewsWithIds.put(R.id.lyt_progress, 11);
     }
     // views
     @NonNull
@@ -35,14 +34,13 @@ public class ReviewProcessFragmentBindingImpl extends ReviewProcessFragmentBindi
     // Inverse Binding Event Handlers
 
     public ReviewProcessFragmentBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 12, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 11, sIncludes, sViewsWithIds));
     }
     private ReviewProcessFragmentBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[5]
             , (android.widget.ImageView) bindings[8]
             , (android.widget.ImageView) bindings[7]
-            , (android.widget.LinearLayout) bindings[11]
             , (androidx.recyclerview.widget.RecyclerView) bindings[4]
             , (androidx.recyclerview.widget.RecyclerView) bindings[3]
             , (androidx.recyclerview.widget.RecyclerView) bindings[9]

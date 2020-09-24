@@ -16,6 +16,7 @@ import com.firstems.erp.api.model.response.project_list.ProjectListApiResponse;
 import com.firstems.erp.api.model.response.project_list.ProjectListItem;
 import com.firstems.erp.api.services.ApiServices;
 import com.firstems.erp.callback.AdvanceProposalFormCallback;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.callback.data.ConvertJsonCallback;
 import com.firstems.erp.callback.data.DataApiCallback;
 import com.firstems.erp.callback.data.DataSourceProviderCallback;
@@ -35,6 +36,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class AdvanceProposalFormViewModel extends ViewModel {
+    private ServerCheckCallback serverCheckCallback;
+    
+    public void setServerCheckCallback(ServerCheckCallback serverCheckCallback) {
+        this.serverCheckCallback = serverCheckCallback;
+    }
+    
     private MutableLiveData<String> title;
     private MutableLiveData<AdvanceProposalFormApiResponse> advanceProposalFormLiveData;
     private MutableLiveData<List<LoaiDoiTuongNhanItem>> liveDataLoaideNghitamUng;
@@ -84,7 +91,7 @@ public class AdvanceProposalFormViewModel extends ViewModel {
         
             @Override
             public void onApiLoadFail() {
-            
+                serverCheckCallback.onServerLoadFail();
             }
         }, new DataSourceProviderCallback() {
             @Override
@@ -136,7 +143,7 @@ public class AdvanceProposalFormViewModel extends ViewModel {
         
             @Override
             public void onApiLoadFail() {
-            
+                serverCheckCallback.onServerLoadFail();
             }
         }, new DataSourceProviderCallback() {
             @Override
@@ -185,7 +192,7 @@ public class AdvanceProposalFormViewModel extends ViewModel {
         
             @Override
             public void onApiLoadFail() {
-            
+                serverCheckCallback.onServerLoadFail();
             }
         }, new DataSourceProviderCallback() {
             @Override
@@ -232,7 +239,7 @@ public class AdvanceProposalFormViewModel extends ViewModel {
         
             @Override
             public void onApiLoadFail() {
-            
+                serverCheckCallback.onServerLoadFail();
             }
         }, new DataSourceProviderCallback() {
             @Override
@@ -295,13 +302,13 @@ public class AdvanceProposalFormViewModel extends ViewModel {
                     callback.onLoadSuccess(response.body());
                 }
                 else {
-                    callback.onLoadFail(response.message());
+                    callback.onServerFail();
                 }
             }
     
             @Override
             public void onFailure(Call<AdvanceProposalFormApiResponse> call, Throwable t) {
-                callback.onLoadFail(t.getMessage());
+               callback.onServerFail();
             }
         });
     }

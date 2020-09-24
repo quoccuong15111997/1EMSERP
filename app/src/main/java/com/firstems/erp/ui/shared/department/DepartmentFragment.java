@@ -14,7 +14,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -24,6 +23,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firstems.erp.R;
 import com.firstems.erp.adapter.DepartmentAdapter;
 import com.firstems.erp.api.model.response.department.DepartmentItemApiResponse;
+import com.firstems.erp.callback.ServerCheckCallback;
+import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Constant;
 import com.firstems.erp.databinding.DepartmentFragmentBinding;
 import com.firstems.erp.enums.TypeSelect;
@@ -33,7 +34,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DepartmentFragment extends Fragment {
+public class DepartmentFragment extends CommonFragment {
 
     private DepartmentViewModel mViewModel;
     private DepartmentFragmentBinding binding;
@@ -261,6 +262,12 @@ public class DepartmentFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(DepartmentViewModel.class);
+        mViewModel.setServerCheckCallback(new ServerCheckCallback() {
+            @Override
+            public void onServerLoadFail() {
+                showOutTOKEN();
+            }
+        });
         mViewModel.getMutableLiveData().observe(getViewLifecycleOwner(), new Observer<List<DepartmentItemApiResponse>>() {
             @Override
             public void onChanged(List<DepartmentItemApiResponse> departmentItemApiResponses) {

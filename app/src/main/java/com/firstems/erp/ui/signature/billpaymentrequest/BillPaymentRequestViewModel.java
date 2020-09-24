@@ -13,6 +13,7 @@ import com.firstems.erp.api.model.response.loai_de_nghi.LoaiDeNghiItem;
 import com.firstems.erp.api.model.response.loai_doi_tuong_lien_quan.LoaiDoiTuongLienQuanApiResponse;
 import com.firstems.erp.api.model.response.loai_doi_tuong_lien_quan.LoaiDoiTuongLienQuanItem;
 import com.firstems.erp.api.services.ApiServices;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.callback.data.ConvertJsonCallback;
 import com.firstems.erp.callback.data.DataApiCallback;
 import com.firstems.erp.callback.data.DataSourceProviderCallback;
@@ -32,6 +33,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class BillPaymentRequestViewModel extends ViewModel {
+    private ServerCheckCallback serverCheckCallback;
+    
+    public void setServerCheckCallback(ServerCheckCallback serverCheckCallback) {
+        this.serverCheckCallback = serverCheckCallback;
+    }
+    
     private MutableLiveData<String> title;
     private MutableLiveData<List<CurrencyItem>> liveDataCurrencyList;
     private MutableLiveData<List<LoaiDeNghiItem>> liveDataLoaiDeNghi;
@@ -63,6 +70,7 @@ public class BillPaymentRequestViewModel extends ViewModel {
                     }
                 }
                 else {
+                    serverCheckCallback.onServerLoadFail();
                     System.out.println(response.message());
                 }
             }
@@ -70,6 +78,7 @@ public class BillPaymentRequestViewModel extends ViewModel {
             @Override
             public void onFailure(Call<BillPaymentApiResponse> call, Throwable t) {
                 System.out.println(t.getMessage());
+                serverCheckCallback.onServerLoadFail();
             }
         });
     }
@@ -127,7 +136,7 @@ public class BillPaymentRequestViewModel extends ViewModel {
         
             @Override
             public void onApiLoadFail() {
-            
+                serverCheckCallback.onServerLoadFail();
             }
         }, new DataSourceProviderCallback() {
             @Override
@@ -174,7 +183,7 @@ public class BillPaymentRequestViewModel extends ViewModel {
             
             @Override
             public void onApiLoadFail() {
-            
+                serverCheckCallback.onServerLoadFail();
             }
         }, new DataSourceProviderCallback() {
             @Override
@@ -224,7 +233,7 @@ public class BillPaymentRequestViewModel extends ViewModel {
     
             @Override
             public void onApiLoadFail() {
-        
+                serverCheckCallback.onServerLoadFail();
             }
         }, new DataSourceProviderCallback() {
             @Override
@@ -271,7 +280,7 @@ public class BillPaymentRequestViewModel extends ViewModel {
             
             @Override
             public void onApiLoadFail() {
-            
+                serverCheckCallback.onServerLoadFail();
             }
         }, new DataSourceProviderCallback() {
             @Override

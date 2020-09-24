@@ -171,6 +171,11 @@ public class LoginFragment extends CommonFragment {
                 loadingDialog.dismiss();
                 showErrorDialog("Không thành công!",loginReponse.getRETNMSSG());
             }
+    
+            @Override
+            public void onServerFail() {
+                showOutTOKEN();
+            }
         });
     }
     private void checkLoginLocation(SystemLoginApiResponse loginApiResponse) {
@@ -206,18 +211,20 @@ public class LoginFragment extends CommonFragment {
 
                         @Override
                         public void onSaveFail() {
-
+                            progressdialog.dismiss();
                         }
                     });
                 }
                 else {
-
+                    progressdialog.dismiss();
+                    showOutTOKEN();
                 }
             }
 
             @Override
             public void onFailure(Call<LoginReponse> call, Throwable t) {
-
+                progressdialog.dismiss();
+                showOutTOKEN();
             }
         });
     }

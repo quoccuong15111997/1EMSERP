@@ -6,10 +6,10 @@ import com.firstems.erp.api.model.request.SystemLoginRequest;
 import com.firstems.erp.api.model.response.login.LoginReponse;
 import com.firstems.erp.api.services.ApiServices;
 import com.firstems.erp.callback.LoginCallback;
-import com.firstems.erp.common.QCTCallback;
 import com.firstems.erp.sharedpreferences.SharedPreferencesManager;
 
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginViewModel extends ViewModel {
@@ -22,7 +22,7 @@ public class LoginViewModel extends ViewModel {
         systemLoginRequest.setPassword(password);
         systemLoginRequest.setTokenDevice(SharedPreferencesManager.getFCMToken());
 
-        ApiServices.getInstance().doSystemLogin(systemLoginRequest.convertToJson(), new QCTCallback<LoginReponse>() {
+        ApiServices.getInstance().doSystemLogin(systemLoginRequest.convertToJson(), new Callback<LoginReponse>() {
             @Override
             public void onResponse(Call<LoginReponse> call, Response<LoginReponse> response) {
                 if (response.isSuccessful()){
@@ -35,13 +35,13 @@ public class LoginViewModel extends ViewModel {
                         loginCallback.onLoginFail(loginReponse);
                 }
                 else {
-
+                
                 }
             }
 
             @Override
             public void onFailure(Call<LoginReponse> call, Throwable t) {
-
+                loginCallback.onServerFail();
             }
         });
     }

@@ -8,6 +8,7 @@ import com.firstems.erp.adapter.signature.SignatureModel;
 import com.firstems.erp.api.model.response.signature.SignatureApiResponse;
 import com.firstems.erp.api.model.response.signature.SignatureItemApiResponse;
 import com.firstems.erp.callback.LoadSignatureDataDiffListCallback;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.callback.data.ConvertJsonCallback;
 import com.firstems.erp.callback.data.DataApiCallback;
 import com.firstems.erp.callback.data.DataSourceProviderCallback;
@@ -24,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SignatureGirdDiffViewModel extends ViewModel {
+    private ServerCheckCallback serverCheckCallback;
     private MutableLiveData<List<SignatureVM>> listSignatureModels;
     private MutableLiveData<String> title;
     private MutableLiveData<List<SignatureModel>> signatureModelMutableLiveData;
@@ -38,6 +40,10 @@ public class SignatureGirdDiffViewModel extends ViewModel {
         loadDataSignature(new FilterModel(SysConfig.createDateLoadSign().get(0), SysConfig.createDateLoadSign().get(1), true, true, true));
     }
     
+    public void setServerCheckCallback(ServerCheckCallback serverCheckCallback) {
+        this.serverCheckCallback = serverCheckCallback;
+    }
+    
     public void loadDataSignature(FilterModel filterModel) {
         int para = (filterModel.isWaitsignature() ? 1 : 0) + (filterModel.isWaitApproved() ? 2 : 0) + (filterModel.isDone() ? 4 : 0);
         DataSourceProvider.getInstance().getDataSource(Constant.RUN_CODE_SIGNATURE_LIST,
@@ -49,7 +55,7 @@ public class SignatureGirdDiffViewModel extends ViewModel {
                     
                     @Override
                     public void onApiLoadFail() {
-                    
+                        serverCheckCallback.onServerLoadFail();
                     }
                 }, new DataSourceProviderCallback() {
                     @Override
@@ -75,7 +81,7 @@ public class SignatureGirdDiffViewModel extends ViewModel {
                     
                     @Override
                     public void onApiLoadFail() {
-                    
+                        serverCheckCallback.onServerLoadFail();
                     }
                 }, new DataSourceProviderCallback() {
                     @Override

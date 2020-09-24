@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel;
 import com.firstems.erp.api.model.response.doi_tuong_nhan.DoiTuongNhanApiResponse;
 import com.firstems.erp.api.model.response.doi_tuong_nhan.DoiTuongNhanItem;
 import com.firstems.erp.api.services.ApiServices;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.callback.data.ConvertJsonCallback;
 import com.firstems.erp.callback.data.DataApiCallback;
 import com.firstems.erp.callback.data.DataSourceProviderCallback;
@@ -25,6 +26,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class DoiTuongNhanViewModel extends ViewModel {
+    private ServerCheckCallback serverCheckCallback;
+    
+    public void setServerCheckCallback(ServerCheckCallback serverCheckCallback) {
+        this.serverCheckCallback = serverCheckCallback;
+    }
+    
     private MutableLiveData<List<DoiTuongNhanItem>> mutableLiveDataDoiTuongNhanList;
     public DoiTuongNhanViewModel() {
         mutableLiveDataDoiTuongNhanList = new MutableLiveData<>();
@@ -58,7 +65,7 @@ public class DoiTuongNhanViewModel extends ViewModel {
             
             @Override
             public void onApiLoadFail() {
-            
+                serverCheckCallback.onServerLoadFail();
             }
         }, new DataSourceProviderCallback() {
             @Override

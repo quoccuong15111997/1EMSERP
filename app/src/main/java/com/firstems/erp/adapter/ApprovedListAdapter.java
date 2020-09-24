@@ -121,6 +121,7 @@ public class ApprovedListAdapter extends RecyclerView.Adapter<ApprovedListAdapte
                     ApprovedItemApiResponse itemApiResponse = list.get(position);
                     holder.txtName.setText(itemApiResponse.getdCMNNAME());
                     holder.approvedDetail_1_adapter.setData(itemApiResponse.getApprovedItemDetail_1List());
+                    holder.txtCount.setText(String.valueOf(itemApiResponse.getItemCount()));
                 }
             }
         }

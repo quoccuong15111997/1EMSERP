@@ -31,6 +31,7 @@ import com.firstems.erp.api.model.response.timekeeping.TimekeepingTypeDC;
 import com.firstems.erp.api.services.ApiServices;
 import com.firstems.erp.callback.ConfirmCallback;
 import com.firstems.erp.callback.LoadContentCallback;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Constant;
 import com.firstems.erp.common.Util;
@@ -159,14 +160,13 @@ public class AskPermissionFragment extends CommonFragment {
                                             }
                                             else {
                                                 progressdialog.dismiss();
-                                                showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(60));
+                                                showOutTOKEN();
                                             }
                                         }
                                         @Override
                                         public void onFailure(Call<ApiResponse> call, Throwable t) {
                                             progressdialog.dismiss();
-                                            System.out.println(t.getMessage());
-                                            showErrorDialog(SharedPreferencesManager.getSystemLabel(50),"Trình ký không thành công");
+                                            showOutTOKEN();
                                         }
                                     });
                                 }
@@ -293,20 +293,20 @@ public class AskPermissionFragment extends CommonFragment {
                             }
                             else {
                                 progressdialog.dismiss();
-                                showErrorDialog(SharedPreferencesManager.getSystemLabel(50), response.body().getRETNMSSG());
+                                showOutTOKEN();
                             }
                         }
                     
                         @Override
                         public void onFailure(Call<ApiResponse> call, Throwable t) {
                             progressdialog.dismiss();
-                            showErrorDialog(SharedPreferencesManager.getSystemLabel(50), SharedPreferencesManager.getSystemLabel(64));
+                            showOutTOKEN();
                         }
                     });
         }
         catch (Exception ex){
             progressdialog.dismiss();
-            showErrorDialog(SharedPreferencesManager.getSystemLabel(50), SharedPreferencesManager.getSystemLabel(64));
+            showOutTOKEN();
             ex.printStackTrace();
         }
     
@@ -360,21 +360,21 @@ public class AskPermissionFragment extends CommonFragment {
                             }
                             else {
                                 progressdialog.dismiss();
-                                showErrorDialog(SharedPreferencesManager.getSystemLabel(50), response.body().getRETNMSSG());
+                                showOutTOKEN();
                             }
                         }
 
                         @Override
                         public void onFailure(Call<ApiResponse> call, Throwable t) {
                             progressdialog.dismiss();
-                            showErrorDialog(SharedPreferencesManager.getSystemLabel(50), SharedPreferencesManager.getSystemLabel(64));
+                            showOutTOKEN();
                         }
                     });
         }
         catch (Exception ex){
             progressdialog.dismiss();
-            showErrorDialog(SharedPreferencesManager.getSystemLabel(50), SharedPreferencesManager.getSystemLabel(64));
             ex.printStackTrace();
+            showOutTOKEN();
         }
     }
 
@@ -426,14 +426,14 @@ public class AskPermissionFragment extends CommonFragment {
                             }
                             else {
                                 progressdialog.dismiss();
-                                showErrorDialog(SharedPreferencesManager.getSystemLabel(50), response.body().getRETNMSSG());
+                                showOutTOKEN();
                             }
                         }
 
                         @Override
                         public void onFailure(Call<ApiResponse> call, Throwable t) {
                             progressdialog.dismiss();
-                            showErrorDialog(SharedPreferencesManager.getSystemLabel(50), SharedPreferencesManager.getSystemLabel(64));
+                            showOutTOKEN();
                         }
                     });
         }
@@ -500,6 +500,12 @@ public class AskPermissionFragment extends CommonFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(AskPermissionViewModel.class);
+        mViewModel.setServerCheckCallback(new ServerCheckCallback() {
+            @Override
+            public void onServerLoadFail() {
+                showOutTOKEN();
+            }
+        });
         if (signatureItemApiResponse!=null){
             mViewModel.getDataSinature(signatureItemApiResponse.getDcmnCode(),signatureItemApiResponse.getKeyCode());
         }

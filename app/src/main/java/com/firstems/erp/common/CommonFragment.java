@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
@@ -44,6 +45,8 @@ import com.firstems.erp.helper.accessrole.AccessRole;
 import com.firstems.erp.helper.accessrole.AccessRoleProvider;
 import com.firstems.erp.helper.datetime.DateTimeHelper;
 import com.firstems.erp.helper.toast.ToastHelper;
+import com.firstems.erp.loading.LoadingActivity;
+import com.firstems.erp.sharedpreferences.SharedPreferencesManager;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -190,6 +193,41 @@ public abstract class CommonFragment extends Fragment {
         dialog.show();
         dialog.getWindow().setAttributes(lp);
     }
+    
+    protected void showOutTOKEN() {
+        final Dialog dialog = new Dialog(getContext());
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // before
+        dialog.setContentView(R.layout.dialog_warning);
+        dialog.setCancelable(false);
+        
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialog.getWindow().getAttributes());
+        lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        
+        TextView txtTitle = dialog.findViewById(R.id.title);
+        TextView txtContent = dialog.findViewById(R.id.content);
+        
+        txtTitle.setText(SharedPreferencesManager.getSystemLabel(50));
+        txtContent.setText(SharedPreferencesManager.getSystemLabel(201));
+        
+        AppCompatButton appCompatButton = dialog.findViewById(R.id.bt_close);
+        appCompatButton.setText(SharedPreferencesManager.getSystemLabel(4));
+    
+        appCompatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                Intent intent = new Intent(getContext(), LoadingActivity.class);
+                startActivity(intent);
+                getActivity().finish();
+            }
+        });
+        
+        dialog.show();
+        dialog.getWindow().setAttributes(lp);
+    }
+    
     protected void showConfirmMessage(String title, String message,String titleButtonAccept, String titleButtonCancel, ConfirmCallback confirmCallback) {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getContext());
         LayoutInflater inflater = LayoutInflater.from(getContext());

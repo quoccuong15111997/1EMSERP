@@ -1,36 +1,35 @@
 package com.firstems.erp.ui.shared.national;
 
-import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.firstems.erp.R;
 import com.firstems.erp.adapter.NationalAdapter;
 import com.firstems.erp.api.model.response.national.National;
 import com.firstems.erp.callback.ItemCheckCallback;
+import com.firstems.erp.callback.ServerCheckCallback;
+import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Constant;
 import com.firstems.erp.databinding.NationalFragmentBinding;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class NationalFragment extends Fragment implements ItemCheckCallback {
+public class NationalFragment extends CommonFragment implements ItemCheckCallback {
 
     private NationalViewModel mViewModel;
     private NationalFragmentBinding binding;
@@ -156,6 +155,12 @@ public class NationalFragment extends Fragment implements ItemCheckCallback {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(NationalViewModel.class);
+        mViewModel.setServerCheckCallback(new ServerCheckCallback() {
+            @Override
+            public void onServerLoadFail() {
+                showOutTOKEN();
+            }
+        });
         mViewModel.getLiveDataNational().observe(getViewLifecycleOwner(), new Observer<List<National>>() {
             @Override
             public void onChanged(List<National> nationals) {

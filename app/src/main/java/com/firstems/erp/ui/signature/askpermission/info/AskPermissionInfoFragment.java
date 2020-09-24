@@ -18,6 +18,7 @@ import com.firstems.erp.R;
 import com.firstems.erp.api.model.response.employee.Employee;
 import com.firstems.erp.api.model.response.timekeeping.TimekeepingTypeDC;
 import com.firstems.erp.callback.PickDateCallback;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.callback.SingelChoiseDialogCallback;
 import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Constant;
@@ -273,6 +274,12 @@ public class AskPermissionInfoFragment extends CommonFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(AskPermissionInfoViewModel.class);
+        mViewModel.setServerCheckCallback(new ServerCheckCallback() {
+            @Override
+            public void onServerLoadFail() {
+                showOutTOKEN();
+            }
+        });
         mViewModel.getTitle().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {

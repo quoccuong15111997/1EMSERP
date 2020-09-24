@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,9 +25,6 @@ public abstract class ReviewProcessFragmentBinding extends ViewDataBinding {
 
   @NonNull
   public final ImageView imgUp;
-
-  @NonNull
-  public final LinearLayout lytProgress;
 
   @NonNull
   public final RecyclerView recycleFile;
@@ -53,14 +49,12 @@ public abstract class ReviewProcessFragmentBinding extends ViewDataBinding {
 
   protected ReviewProcessFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount,
       ConstraintLayout constraintLayout4, ImageView imgDown, ImageView imgUp,
-      LinearLayout lytProgress, RecyclerView recycleFile, RecyclerView recycleImage,
-      RecyclerView recycleProgress, TextView textView11, TextView textView3, TextView txtNon,
-      TextView txtTitleImage) {
+      RecyclerView recycleFile, RecyclerView recycleImage, RecyclerView recycleProgress,
+      TextView textView11, TextView textView3, TextView txtNon, TextView txtTitleImage) {
     super(_bindingComponent, _root, _localFieldCount);
     this.constraintLayout4 = constraintLayout4;
     this.imgDown = imgDown;
     this.imgUp = imgUp;
-    this.lytProgress = lytProgress;
     this.recycleFile = recycleFile;
     this.recycleImage = recycleImage;
     this.recycleProgress = recycleProgress;

@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firstems.erp.R;
 import com.firstems.erp.adapter.DoiTuongNhanAdapter;
 import com.firstems.erp.api.model.response.doi_tuong_nhan.DoiTuongNhanItem;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Constant;
 import com.firstems.erp.databinding.LoaiDoiTuongNhanFragmentBinding;
@@ -221,6 +222,12 @@ public class DoiTuongNhanFragment extends CommonFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(DoiTuongNhanViewModel.class);
+        mViewModel.setServerCheckCallback(new ServerCheckCallback() {
+            @Override
+            public void onServerLoadFail() {
+                showOutTOKEN();
+            }
+        });
         mViewModel.loadListDoiTuongNhan(key);
         mViewModel.getMutableLiveDataDoiTuongNhanList().observe(getViewLifecycleOwner(), new Observer<List<DoiTuongNhanItem>>() {
             @Override

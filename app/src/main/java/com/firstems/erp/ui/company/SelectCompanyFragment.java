@@ -113,13 +113,13 @@ public class SelectCompanyFragment extends CommonFragment {
                     });
                 }
                 else {
-
+                    showOutTOKEN();
                 }
             }
 
             @Override
             public void onFailure(Call<LoginReponse> call, Throwable t) {
-
+                showOutTOKEN();
             }
         });
     }

@@ -3292,7 +3292,6 @@ id location
 id lyt_action
 id lyt_content
 id lyt_parent
-id lyt_progress
 id masked
 id mdtp_am_label
 id mdtp_ampm_layout

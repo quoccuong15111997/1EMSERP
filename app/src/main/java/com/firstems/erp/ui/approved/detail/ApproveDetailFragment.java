@@ -134,6 +134,7 @@ public class ApproveDetailFragment extends CommonFragment {
                                     employeeLis+=employee.getItemCode()+",";
                             }
                         }
+                        showLoadingNonMessDialog();
                         String progressCode = findProgressCode();
                         DataNetworkProvider
                                 .getInstance()
@@ -143,20 +144,27 @@ public class ApproveDetailFragment extends CommonFragment {
                                         DataConvertProvider.getInstance().convertJsonToObject(jsonAPI, new ApiResponse(), new ConvertJsonCallback() {
                                             @Override
                                             public void onConvertSuccess(Object obj) {
-                                                ApiResponse apiResponse = (ApiResponse) obj;
-                                                if (apiResponse.isRETNCODE()){
-                                                    showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),apiResponse.getRETNMSSG());
-                                                }
-                                                else {
-                                                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50),apiResponse.getRETNMSSG());
-                                                }
+                                                binding.lParentContent.postDelayed(new Runnable() {
+                                                    @Override
+                                                    public void run() {
+                                                        loadingNonMessDialog.dismiss();
+                                                        ApiResponse apiResponse = (ApiResponse) obj;
+                                                        if (apiResponse.isRETNCODE()){
+                                                            showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),apiResponse.getRETNMSSG());
+                                                        }
+                                                        else {
+                                                            showErrorDialog(SharedPreferencesManager.getSystemLabel(50),apiResponse.getRETNMSSG());
+                                                        }
+                                                    }
+                                                }, 700);
                                             }
                                         });
                                     }
                                     
                                     @Override
                                     public void onApiLoadFail(String mess) {
-                                    
+                                        System.out.println(mess);
+                                        showOutTOKEN();
                                     }
                                 });
                     }
@@ -337,6 +345,11 @@ public class ApproveDetailFragment extends CommonFragment {
                     }
                 },700);
                 showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(164) /*Chứng từ không tồn tại*/);
+            }
+    
+            @Override
+            public void onServerFail() {
+                showOutTOKEN();
             }
         });
     }

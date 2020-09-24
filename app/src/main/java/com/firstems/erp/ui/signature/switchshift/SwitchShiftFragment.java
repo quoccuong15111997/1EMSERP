@@ -34,6 +34,7 @@ import com.firstems.erp.api.model.response.signature.switchshift.SwitchShiftItem
 import com.firstems.erp.api.services.ApiServices;
 import com.firstems.erp.callback.ConfirmCallback;
 import com.firstems.erp.callback.LoadDataKeppingCallback;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.callback.SwitchShiftItemClickCallback;
 import com.firstems.erp.callback.data.ConvertJsonCallback;
 import com.firstems.erp.callback.data.DataApiCallback;
@@ -145,17 +146,21 @@ public class SwitchShiftFragment extends CommonFragment implements SwitchShiftIt
                                                     progressdialog.dismiss();
                                                     showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(52));
                                                 }
+                                                else {
+                                                    progressdialog.dismiss();
+                                                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(51));
+                                                }
                                             }
                                             else {
                                                 progressdialog.dismiss();
-                                                showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(51));
+                                                showOutTOKEN();
                                             }
                                         }
                                         
                                         @Override
                                         public void onFailure(Call<ApiResponse> call, Throwable t) {
                                             progressdialog.dismiss();
-                                            showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(51));
+                                            showOutTOKEN();
                                         }
                                     });
                         }
@@ -258,14 +263,14 @@ public class SwitchShiftFragment extends CommonFragment implements SwitchShiftIt
                                             }
                                             else {
                                                 progressdialog.dismiss();
-                                                showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(60));
+                                                showOutTOKEN();
                                             }
                                         }
                                         @Override
                                         public void onFailure(Call<ApiResponse> call, Throwable t) {
                                             System.out.println(t.getMessage());
                                             progressdialog.dismiss();
-                                            showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(60));
+                                            showOutTOKEN();
                                         }
                                     });
                                 }
@@ -357,13 +362,13 @@ public class SwitchShiftFragment extends CommonFragment implements SwitchShiftIt
                 }
                 else {
                     progressdialog.dismiss();
-                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
+                    showOutTOKEN();
                 }
             }
             @Override
             public void onFailure(Call<ApiResponse> call, Throwable t) {
                 progressdialog.dismiss();
-                showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(61));
+                showOutTOKEN();
             }
         });
     }
@@ -420,14 +425,14 @@ public class SwitchShiftFragment extends CommonFragment implements SwitchShiftIt
                 }
                 else {
                     progressdialog.dismiss();
-                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(60));
+                    showOutTOKEN();
                 }
             }
             
             @Override
             public void onFailure(Call<ApiResponse> call, Throwable t) {
                 progressdialog.dismiss();
-                showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(60));
+                showOutTOKEN();
             }
         });
     }
@@ -491,7 +496,7 @@ public class SwitchShiftFragment extends CommonFragment implements SwitchShiftIt
             @Override
             public void onApiLoadFail(String mess) {
                 progressdialog.dismiss();
-                showErrorDialog(SharedPreferencesManager.getSystemLabel(50),mess);
+                showOutTOKEN();
             }
         });
     }
@@ -537,6 +542,12 @@ public class SwitchShiftFragment extends CommonFragment implements SwitchShiftIt
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(SwitchShiftViewModel.class);
+        mViewModel.setServerCheckCallback(new ServerCheckCallback() {
+            @Override
+            public void onServerLoadFail() {
+                showOutTOKEN();
+            }
+        });
         mViewModel.getTitle().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {

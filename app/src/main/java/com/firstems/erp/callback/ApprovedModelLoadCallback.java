@@ -10,4 +10,5 @@ import com.firstems.erp.api.model.response.approved.info.ApproveInfoApiResponse;
 public interface ApprovedModelLoadCallback {
     void onDataLoaded(MutableLiveData<ApproveInfoApiResponse> mutableLiveData);
     void onDataLoadFail(String failMessage);
+    void onServerFail();
 }

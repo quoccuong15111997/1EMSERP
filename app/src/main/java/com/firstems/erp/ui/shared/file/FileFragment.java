@@ -12,7 +12,6 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.Handler;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Gravity;
@@ -20,7 +19,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.MimeTypeMap;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -46,7 +44,6 @@ import com.firstems.erp.callback.SaveFileToLocalCallback;
 import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Constant;
 import com.firstems.erp.databinding.FileFragmentBinding;
-import com.firstems.erp.helper.animation.ViewAnimation;
 import com.firstems.erp.helper.camera.CameraHelper;
 import com.firstems.erp.helper.file.GetFileHelper;
 import com.firstems.erp.helper.permision.PermissionProvider;
@@ -88,7 +85,6 @@ public class FileFragment extends CommonFragment implements EasyPermissions.Perm
     private RecyclerView recyclerImage;
     private ImageIncludeAdapter imageIncludeAdapter;
     private final static int LOADING_DURATION = 2000;
-    private LinearLayout lyt_progress;
     private Transition transition;
     private List<DocumentFile> documentFileList;
     private int CAMERA_PIC_REQUEST = 1;
@@ -263,11 +259,8 @@ public class FileFragment extends CommonFragment implements EasyPermissions.Perm
         imageModelList = new ArrayList<>();
         fileIncludeList = new ArrayList<>();
         recyclerViewFileInclude=binding.recycleFile;
-        recyclerImage = binding.recycleImage;
-        lyt_progress = binding.lytProgress;
-        lyt_progress.setVisibility(View.VISIBLE);
-        lyt_progress.setAlpha(1.0f);
         recyclerViewFileInclude.setVisibility(View.GONE);
+        recyclerImage = binding.recycleImage;
         recyclerImage.setVisibility(View.GONE);
         recyclerImage.setLayoutManager(new GridLayoutManager(getContext(), 3));
         recyclerImage.addItemDecoration(new SpacingItemDecoration(3, Tools.dpToPx(getContext(), 2), true));
@@ -328,20 +321,7 @@ public class FileFragment extends CommonFragment implements EasyPermissions.Perm
         imageIncludeAdapter.setEditable(isEditable);
         listFilePath = new ArrayList<>();
         getData();
-        
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                ViewAnimation.fadeOut(lyt_progress);
-            }
-        }, LOADING_DURATION);
-        
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                initComponent();
-            }
-        }, LOADING_DURATION + 400);
+        initComponent();
     }
     
     private void getData() {
@@ -386,7 +366,6 @@ public class FileFragment extends CommonFragment implements EasyPermissions.Perm
     }
     
     private void initComponent() {
-        lyt_progress.setVisibility(View.GONE);
         recyclerViewFileInclude.setVisibility(View.VISIBLE);
         LinearLayoutManager linearLayoutProgress = new LinearLayoutManager(getContext());
         linearLayoutProgress.setOrientation(RecyclerView.VERTICAL);

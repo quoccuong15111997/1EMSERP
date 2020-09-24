@@ -42,10 +42,10 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/text__white"
                     android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/txtNumber"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/txtNumber"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/txtNumber"
+                    app:layout_constraintTop_toTopOf="parent"
                     tools:text="Phiếu tạm ứng" />
 
                 <TextView
@@ -65,8 +65,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="3dp"
                     android:tint="@color/text__white"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtName"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txtName"
                     app:srcCompat="@drawable/ic_baseline_expand_more_24" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 

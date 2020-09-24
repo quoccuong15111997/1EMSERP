@@ -67,7 +67,7 @@ public class LoadingActivity extends CommonActivity {
     
                 @Override
                 public void onLoadFail() {
-        
+                    showOutTOKEN();
                 }
             });
         }
@@ -105,6 +105,11 @@ public class LoadingActivity extends CommonActivity {
                     @Override
                     public void onLoginFail(LoginReponse loginReponse) {
                     
+                    }
+    
+                    @Override
+                    public void onServerFail() {
+                        showOutTOKEN();
                     }
                 });
             }
@@ -151,13 +156,13 @@ public class LoadingActivity extends CommonActivity {
                         loginCallback.onLoginFail(loginReponse);
                 }
                 else {
-                
+                    showOutTOKEN();
                 }
             }
             
             @Override
             public void onFailure(Call<LoginReponse> call, Throwable t) {
-            
+                showOutTOKEN();
             }
         });
     }
@@ -207,13 +212,13 @@ public class LoadingActivity extends CommonActivity {
                     });
                 }
                 else {
-                
+                    showOutTOKEN();
                 }
             }
             
             @Override
             public void onFailure(Call<LoginReponse> call, Throwable t) {
-            
+                showOutTOKEN();
             }
         });
     }

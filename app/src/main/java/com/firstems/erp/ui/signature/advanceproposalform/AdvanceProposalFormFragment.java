@@ -38,6 +38,7 @@ import com.firstems.erp.callback.AdvanceProposalFormCallback;
 import com.firstems.erp.callback.ConfirmCallback;
 import com.firstems.erp.callback.PickDateCallback;
 import com.firstems.erp.callback.SaveFileToLocalCallback;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.callback.runcode.LoadDataAsynCallback;
 import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Constant;
@@ -162,14 +163,14 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                                     }
                                     else {
                                         progressdialog.dismiss();
-                                        showErrorDialog(SharedPreferencesManager.getSystemLabel(50), SharedPreferencesManager.getSystemLabel(60));
+                                        showOutTOKEN();
                                     }
                                 }
                                 
                                 @Override
                                 public void onFailure(Call<ApiResponse> call, Throwable t) {
                                     progressdialog.dismiss();
-                                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50), SharedPreferencesManager.getSystemLabel(60));
+                                    showOutTOKEN();
                                 }
                             });
                         }
@@ -255,13 +256,14 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                                 }
                                 else {
                                     progressdialog.dismiss();
-                                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(51));
+                                    showOutTOKEN();
                                 }
                             }
                             
                             @Override
                             public void onFailure(Call<ApiResponse> call, Throwable t) {
-                            
+                                progressdialog.dismiss();
+                                showOutTOKEN();
                             }
                         });
                     }
@@ -407,16 +409,16 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                 }
                 else {
                     progressdialog.dismiss();
-                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
                     System.out.println(response.message());
+                    showOutTOKEN();
                 }
             }
             
             @Override
             public void onFailure(Call<AdvanceProposalAddNewResponse> call, Throwable t) {
                 progressdialog.dismiss();
-                showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(64));
                 System.out.println(t.getMessage());
+                showOutTOKEN();
             }
         });
         
@@ -474,16 +476,16 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                 }
                 else {
                     progressdialog.dismiss();
-                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
                     System.out.println(response.message());
+                    showOutTOKEN();
                 }
             }
             
             @Override
             public void onFailure(Call<AdvanceProposalAddNewResponse> call, Throwable t) {
                 progressdialog.dismiss();
-                showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(64));
                 System.out.println(t.getMessage());
+                showOutTOKEN();
             }
         });
     }
@@ -540,19 +542,18 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                 }
                 else {
                     progressdialog.dismiss();
-                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
                     System.out.println(response.message());
+                    showOutTOKEN();
                 }
             }
             
             @Override
             public void onFailure(Call<AdvanceProposalAddNewResponse> call, Throwable t) {
                 progressdialog.dismiss();
-                showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(64));
                 System.out.println(t.getMessage());
+                showOutTOKEN();
             }
         });
-        
     }
     
     private List<String> getListImage() {
@@ -607,8 +608,8 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                             }
                             else {
                                 progressdialog.dismiss();
-                                showErrorDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
                                 System.out.println(response.message());
+                                showOutTOKEN();
                             }
                         
                         }
@@ -616,8 +617,8 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                         @Override
                         public void onFailure(Call<ApiResponse> call, Throwable t) {
                             progressdialog.dismiss();
-                            showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(64));
                             System.out.println(t.getMessage());
+                            showOutTOKEN();
                         }
                     });
         }
@@ -685,6 +686,12 @@ public class AdvanceProposalFormFragment extends CommonFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(AdvanceProposalFormViewModel.class);
+        mViewModel.setServerCheckCallback(new ServerCheckCallback() {
+            @Override
+            public void onServerLoadFail() {
+                showOutTOKEN();
+            }
+        });
         mViewModel.getTitle().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
@@ -734,77 +741,88 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                     mViewModel.loadAdvanceProposalForm(signatureItemApiResponse.getDcmnCode(), signatureItemApiResponse.getKeyCode(), new AdvanceProposalFormCallback() {
                         @Override
                         public void onLoadSuccess(AdvanceProposalFormApiResponse advanceProposalFormApiResponse) {
-                            if (advanceProposalFormApiResponse.getAdvanceProposalFormHeaders()!=null){
-                               if (advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().size() > 0){
-                                   if (advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getmAINCODE()!=null){
-                                       accessRole = checkAccessRole(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getsTTESIGN(),
-                                               advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getaCCERGHT(),
-                                               binding.constraintLayout8,binding.constraintLayout9,binding.llDelete,null);
-    
-                                       getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_progress_switch_shift,
-                                               new ReviewProcessFragment(signatureItemApiResponse.getDcmnCode(), signatureItemApiResponse.getKeyCode()))
-                                               .commit();
-                                       binding.setIsEditable(accessRole.isEdit());
-    
-                                       if (advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getsTTESIGN() == 0){
-                                           getActivity().getSupportFragmentManager()
-                                                   .beginTransaction()
-                                                   .replace(R.id.frame_file_include, new FileFragment(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getdCMNFILE()))
-                                                   .commit();
-                                       }
-    
-                                       binding.txtDateCreate.setText(Util.formatDate(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getmAINDATE()));
-                                       binding.edtInfo.setText(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getmEXLNNTE());
-                                       binding.edtTiGia.setText(String.valueOf((int) advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getcUOMRATE()));
-                                       binding.edtSoTienTamUng.setText(String.valueOf((int) advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getaDVNCRAM()));
-                                       binding.edtSoTienDuocDuyet.setText(String.valueOf((int) advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getaCPTCRAM()));
-                                       doiTuongNhanItemSelected = new DoiTuongNhanItem();
-                                       doiTuongNhanItemSelected.setCheck(true);
-                                       doiTuongNhanItemSelected.setiTEMCODE(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getoBJCCODE());
-                                       doiTuongNhanItemSelected.setiTEMNAME(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getObjcName());
-                                       binding.txtTenDoiTuongNhan.setText(doiTuongNhanItemSelected.getiTEMNAME());
-                                       LoaiDoiTuongNhanItem loaiDoiTuongNhanItem = new LoaiDoiTuongNhanItem();
-                                       loaiDoiTuongNhanItem.setiTEMCODE(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getoBJCTYPE()+"");
-                                       loaiDoiTuongNhanItem.setiTEMNAME(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getoBJCTYPENAME());
-                                       binding.txtNgayThanhToan.setText(Util.formatDate(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getpERDDATE()));
-    
-                                       for (int i = 0 ;i < loaiDeNghiItemList.size();i++){
-                                           LoaiDeNghiItem loaiDeNghi= loaiDeNghiItemList.get(i);
-                                           if (loaiDeNghi.getiTEMCODE().equals(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getdCMNSBCD())){
-                                               binding.spinerLoaiDeNghiTamUng.setSelection(i);
-                                               break;
-                                           }
-                                       }
-    
-                                       for (int i = 0;i < loaiDoiTuongNhanItemList.size();i++){
-                                           LoaiDoiTuongNhanItem item  = loaiDoiTuongNhanItemList.get(i);
-                                           if (item.getiTEMCODE().equals(loaiDoiTuongNhanItem.getiTEMCODE())){
-                                               binding.spinerLoaiDoiTuongNhan.setSelection(i);
-                                               break;
-                                           }
-                                       }
-                                       for (int i = 0;i< currencyItemList.size();i++){
-                                           CurrencyItem currencyItem = currencyItemList.get(i);
-                                           if (currencyItem.getiTEMCODE().equals(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getcUOMCODE())){
-                                               binding.spinerDonViTienTe.setSelection(i);
-                                               break;
-                                           }
-                                       }
-                                       for (int i =0;i< projectListItemList.size() ; i++){
-                                           ProjectListItem projectListItem = projectListItemList.get(i);
-                                           if (projectListItem.getiTEMCODE().equals(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getaCOBCODE())){
-                                               binding.spinerMaDuAn.setSelection(i);
-                                               break;
-                                           }
-                                       }
-                                   }
-                               }
+                            if (advanceProposalFormApiResponse.isRETNCODE()){
+                                if (advanceProposalFormApiResponse.getAdvanceProposalFormHeaders()!=null){
+                                    if (advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().size() > 0){
+                                        if (advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getmAINCODE()!=null){
+                                            accessRole = checkAccessRole(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getsTTESIGN(),
+                                                    advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getaCCERGHT(),
+                                                    binding.constraintLayout8,binding.constraintLayout9,binding.llDelete,null);
+                
+                                            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_progress_switch_shift,
+                                                    new ReviewProcessFragment(signatureItemApiResponse.getDcmnCode(), signatureItemApiResponse.getKeyCode()))
+                                                    .commit();
+                                            binding.setIsEditable(accessRole.isEdit());
+                
+                                            if (advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getsTTESIGN() == 0){
+                                                getActivity().getSupportFragmentManager()
+                                                        .beginTransaction()
+                                                        .replace(R.id.frame_file_include, new FileFragment(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getdCMNFILE()))
+                                                        .commit();
+                                            }
+                
+                                            binding.txtDateCreate.setText(Util.formatDate(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getmAINDATE()));
+                                            binding.edtInfo.setText(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getmEXLNNTE());
+                                            binding.edtTiGia.setText(String.valueOf((int) advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getcUOMRATE()));
+                                            binding.edtSoTienTamUng.setText(String.valueOf((int) advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getaDVNCRAM()));
+                                            binding.edtSoTienDuocDuyet.setText(String.valueOf((int) advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getaCPTCRAM()));
+                                            doiTuongNhanItemSelected = new DoiTuongNhanItem();
+                                            doiTuongNhanItemSelected.setCheck(true);
+                                            doiTuongNhanItemSelected.setiTEMCODE(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getoBJCCODE());
+                                            doiTuongNhanItemSelected.setiTEMNAME(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getObjcName());
+                                            binding.txtTenDoiTuongNhan.setText(doiTuongNhanItemSelected.getiTEMNAME());
+                                            LoaiDoiTuongNhanItem loaiDoiTuongNhanItem = new LoaiDoiTuongNhanItem();
+                                            loaiDoiTuongNhanItem.setiTEMCODE(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getoBJCTYPE()+"");
+                                            loaiDoiTuongNhanItem.setiTEMNAME(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getoBJCTYPENAME());
+                                            binding.txtNgayThanhToan.setText(Util.formatDate(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getpERDDATE()));
+                
+                                            for (int i = 0 ;i < loaiDeNghiItemList.size();i++){
+                                                LoaiDeNghiItem loaiDeNghi= loaiDeNghiItemList.get(i);
+                                                if (loaiDeNghi.getiTEMCODE().equals(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getdCMNSBCD())){
+                                                    binding.spinerLoaiDeNghiTamUng.setSelection(i);
+                                                    break;
+                                                }
+                                            }
+                
+                                            for (int i = 0;i < loaiDoiTuongNhanItemList.size();i++){
+                                                LoaiDoiTuongNhanItem item  = loaiDoiTuongNhanItemList.get(i);
+                                                if (item.getiTEMCODE().equals(loaiDoiTuongNhanItem.getiTEMCODE())){
+                                                    binding.spinerLoaiDoiTuongNhan.setSelection(i);
+                                                    break;
+                                                }
+                                            }
+                                            for (int i = 0;i< currencyItemList.size();i++){
+                                                CurrencyItem currencyItem = currencyItemList.get(i);
+                                                if (currencyItem.getiTEMCODE().equals(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getcUOMCODE())){
+                                                    binding.spinerDonViTienTe.setSelection(i);
+                                                    break;
+                                                }
+                                            }
+                                            for (int i =0;i< projectListItemList.size() ; i++){
+                                                ProjectListItem projectListItem = projectListItemList.get(i);
+                                                if (projectListItem.getiTEMCODE().equals(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getaCOBCODE())){
+                                                    binding.spinerMaDuAn.setSelection(i);
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            else {
+                                
+                                showErrorDialog(SharedPreferencesManager.getSystemLabel(50),advanceProposalFormApiResponse.getRETNMSSG());
                             }
                         }
                         
                         @Override
                         public void onLoadFail(String mess) {
-                        
+                            showOutTOKEN();
+                        }
+    
+                        @Override
+                        public void onServerFail() {
+                            showOutTOKEN();
                         }
                     });
                     progressdialog.dismiss();

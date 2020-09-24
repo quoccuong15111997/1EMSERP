@@ -8,6 +8,7 @@ import com.firstems.erp.api.model.request.document.DocumentRequest;
 import com.firstems.erp.api.model.response.document.DocumentApiResponse;
 import com.firstems.erp.api.model.response.document.DocumentItemApiResponse;
 import com.firstems.erp.api.services.ApiServices;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.callback.data.ConvertJsonCallback;
 import com.firstems.erp.callback.data.DataApiCallback;
 import com.firstems.erp.callback.data.DataSourceProviderCallback;
@@ -25,6 +26,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class DocumnetListViewModel extends ViewModel {
+    private ServerCheckCallback serverCheckCallback;
+    
+    public void setServerCheckCallback(ServerCheckCallback serverCheckCallback) {
+        this.serverCheckCallback = serverCheckCallback;
+    }
+    
     private MutableLiveData<List<DocumentItemApiResponse>> mutableLiveDataDocument;
     public DocumnetListViewModel() {
         mutableLiveDataDocument = new MutableLiveData<>();
@@ -55,10 +62,9 @@ public class DocumnetListViewModel extends ViewModel {
                     }
                 });
             }
-    
             @Override
             public void onApiLoadFail() {
-        
+                serverCheckCallback.onServerLoadFail();
             }
         }, new DataSourceProviderCallback() {
             @Override

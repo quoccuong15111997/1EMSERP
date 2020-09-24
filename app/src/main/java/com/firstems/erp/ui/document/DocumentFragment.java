@@ -20,6 +20,7 @@ import com.firstems.erp.api.model.response.location.LocationItem;
 import com.firstems.erp.callback.BackToHomeCallback;
 import com.firstems.erp.callback.PickDateCallback;
 import com.firstems.erp.callback.QueryStringCallback;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Constant;
 import com.firstems.erp.databinding.DocumentFragmentBinding;
@@ -185,6 +186,12 @@ public class DocumentFragment extends CommonFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(DocumentViewModel.class);
+        mViewModel.setServerCheckCallback(new ServerCheckCallback() {
+            @Override
+            public void onServerLoadFail() {
+                showOutTOKEN();
+            }
+        });
         mViewModel.getTitle().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {

@@ -28,6 +28,7 @@ import com.firstems.erp.R;
 import com.firstems.erp.adapter.DocumentAdapter;
 import com.firstems.erp.api.model.response.document.DocumentItemApiResponse;
 import com.firstems.erp.callback.BottomSheSortCallback;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Constant;
 import com.firstems.erp.databinding.DocumnetListFragmentBinding;
@@ -213,6 +214,12 @@ public class DocumnetListFragment extends CommonFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(DocumnetListViewModel.class);
+        mViewModel.setServerCheckCallback(new ServerCheckCallback() {
+            @Override
+            public void onServerLoadFail() {
+                showOutTOKEN();
+            }
+        });
         mViewModel.loaData(queryString);
         mViewModel.getMutableLiveDataDocument().observe(getViewLifecycleOwner(), new Observer<List<DocumentItemApiResponse>>() {
             @Override

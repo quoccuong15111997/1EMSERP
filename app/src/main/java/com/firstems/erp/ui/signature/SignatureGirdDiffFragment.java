@@ -23,6 +23,7 @@ import com.firstems.erp.api.model.response.signature.SignatureItemApiResponse;
 import com.firstems.erp.callback.BackToHomeCallback;
 import com.firstems.erp.callback.LoadSignatureDataDiffListCallback;
 import com.firstems.erp.callback.OnAddNewSignatureCallback;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.callback.SignatureItemClickCallback;
 import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Constant;
@@ -183,6 +184,12 @@ public class SignatureGirdDiffFragment extends CommonFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(SignatureGirdDiffViewModel.class);
+        mViewModel.setServerCheckCallback(new ServerCheckCallback() {
+            @Override
+            public void onServerLoadFail() {
+                showOutTOKEN();
+            }
+        });
         mViewModel.getSignatureModelMutableLiveData().observe(getViewLifecycleOwner(), new Observer<List<SignatureModel>>() {
             @Override
             public void onChanged(List<SignatureModel> signatureModels) {

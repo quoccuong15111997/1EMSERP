@@ -98,12 +98,14 @@ public class HomeFragment extends CommonFragment {
                                     }
                                     else {
                                         loadingDialog.dismiss();
+                                        showOutTOKEN();
                                     }
                                 }
     
                                 @Override
                                 public void onFailure(Call<LoginReponse> call, Throwable t) {
                                     loadingDialog.dismiss();
+                                    showOutTOKEN();
                                 }
                             });
                         }
@@ -300,12 +302,14 @@ public class HomeFragment extends CommonFragment {
                 }
                 else {
                     loadingDialog.dismiss();
+                    showOutTOKEN();
                 }
             }
             
             @Override
             public void onFailure(Call<LoginReponse> call, Throwable t) {
                 loadingDialog.dismiss();
+                showOutTOKEN();
             }
         });
     }

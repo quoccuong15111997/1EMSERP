@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -28,9 +27,6 @@ public abstract class FileFragmentBinding extends ViewDataBinding {
   public final ImageView imageView6;
 
   @NonNull
-  public final LinearLayout lytProgress;
-
-  @NonNull
   public final RecyclerView recycleFile;
 
   @NonNull
@@ -47,13 +43,12 @@ public abstract class FileFragmentBinding extends ViewDataBinding {
 
   protected FileFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount,
       ConstraintLayout constraintLayout, ImageView imageView2, ImageView imageView6,
-      LinearLayout lytProgress, RecyclerView recycleFile, RecyclerView recycleImage,
-      TextView textView11, TextView txtTitleImage, TextView txtTitleInclude) {
+      RecyclerView recycleFile, RecyclerView recycleImage, TextView textView11,
+      TextView txtTitleImage, TextView txtTitleInclude) {
     super(_bindingComponent, _root, _localFieldCount);
     this.constraintLayout = constraintLayout;
     this.imageView2 = imageView2;
     this.imageView6 = imageView6;
-    this.lytProgress = lytProgress;
     this.recycleFile = recycleFile;
     this.recycleImage = recycleImage;
     this.textView11 = textView11;

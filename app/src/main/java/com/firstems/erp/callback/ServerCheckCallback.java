@@ -1,0 +1,1 @@
+package com.firstems.erp.callback;public interface ServerCheckCallback {    void onServerLoadFail();}

@@ -8,6 +8,7 @@ import com.firstems.erp.api.model.request.ApprovedRequest;
 import com.firstems.erp.api.model.response.approved.ApprovedApiResponse;
 import com.firstems.erp.api.model.response.approved.ApprovedItemApiResponse;
 import com.firstems.erp.api.services.ApiServices;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.helper.date.DateTimeHelper;
 import com.firstems.erp.sharedpreferences.SharedPreferencesManager;
 
@@ -19,6 +20,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ApprovedViewModel extends ViewModel {
+    private ServerCheckCallback serverCheckCallback;
     private MutableLiveData<String> title;
     private MutableLiveData<List<ApprovedItemApiResponse>> dataListApprove;
     public ApprovedViewModel() {
@@ -28,7 +30,11 @@ public class ApprovedViewModel extends ViewModel {
         initTitle();
         loadDataApproved();
     }
-
+    
+    public void setServerCheckCallback(ServerCheckCallback serverCheckCallback) {
+        this.serverCheckCallback = serverCheckCallback;
+    }
+    
     private void loadDataApproved() {
         ApprovedRequest approvedRequest = createApprovedDate();
         ApiServices.getInstance().getApprovedList(SharedPreferencesManager.getInstance().getPrefToken(),
@@ -43,7 +49,7 @@ public class ApprovedViewModel extends ViewModel {
 
                     @Override
                     public void onFailure(Call<ApprovedApiResponse> call, Throwable t) {
-
+                        serverCheckCallback.onServerLoadFail();
                     }
                 });
     }

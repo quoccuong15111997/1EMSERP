@@ -21,6 +21,7 @@ import com.firstems.erp.api.model.response.approved.ApprovedItemApiResponse;
 import com.firstems.erp.api.model.response.approved.ApprovedItemDetail_1;
 import com.firstems.erp.api.model.response.approved.ApprovedItemDetail_2;
 import com.firstems.erp.callback.AprrovedDetail_1_ClickListener;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Constant;
 import com.firstems.erp.databinding.TabApprovedFragmentBinding;
@@ -67,18 +68,16 @@ public class TabApprovedFragment extends CommonFragment implements AprrovedDetai
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(TabApprovedViewModel.class);
+        mViewModel.setServerCheckCallback(new ServerCheckCallback() {
+            @Override
+            public void onServerLoadFail() {
+                showOutTOKEN();
+            }
+        });
         mViewModel.getDataListApprove().observe(getViewLifecycleOwner(), new Observer<List<ApprovedItemApiResponse>>() {
             @Override
             public void onChanged(List<ApprovedItemApiResponse> approveModels) {
-                showLoadingNonMessDialog();
                 approveAdapter.setDate(approveModels);
-                Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        loadingNonMessDialog.dismiss();
-                    }
-                },1000);
             }
         });
     }
@@ -97,6 +96,14 @@ public class TabApprovedFragment extends CommonFragment implements AprrovedDetai
         super.onResume();
         if (mViewModel!=null){
             mViewModel.loadDataApproved();
+            showLoadingNonMessDialog();
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    loadingNonMessDialog.dismiss();
+                }
+            },1000);
         }
     }
 }

@@ -36,6 +36,7 @@ import com.firstems.erp.api.services.ApiServices;
 import com.firstems.erp.callback.ConfirmCallback;
 import com.firstems.erp.callback.GetDataTimeKeepingTCCallback;
 import com.firstems.erp.callback.PickDateCallback;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.callback.data.ConvertJsonCallback;
 import com.firstems.erp.callback.data.DataApiCallback;
 import com.firstems.erp.common.CommonFragment;
@@ -195,17 +196,21 @@ public class BusinessRegistrationFragment extends CommonFragment implements Buss
                                                     progressdialog.dismiss();
                                                     showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(52));
                                                 }
+                                                else {
+                                                    progressdialog.dismiss();
+                                                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(51));
+                                                }
                                             }
                                             else {
                                                 progressdialog.dismiss();
-                                                showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(51));
+                                                showOutTOKEN();
                                             }
                                         }
 
                                         @Override
                                         public void onFailure(Call<ApiResponse> call, Throwable t) {
                                             progressdialog.dismiss();
-                                            showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(51));
+                                            showOutTOKEN();
                                         }
                                     });
                         }
@@ -337,17 +342,21 @@ public class BusinessRegistrationFragment extends CommonFragment implements Buss
                                                     progressdialog.dismiss();
                                                     showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
                                                 }
+                                                else {
+                                                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
+                                                    progressdialog.dismiss();
+                                                }
                                             }
                                             else {
-                                                showErrorDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
                                                 progressdialog.dismiss();
+                                                showOutTOKEN();
                                             }
                                         }
 
                                         @Override
                                         public void onFailure(Call<ApiResponse> call, Throwable t) {
-                                            showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(64));
                                             progressdialog.dismiss();
+                                            showOutTOKEN();
                                         }
                                     });
                         }
@@ -448,6 +457,7 @@ public class BusinessRegistrationFragment extends CommonFragment implements Buss
                     @Override
                     public void onApiLoadFail(String mess) {
 
+                        showOutTOKEN();
                     }
                 },regstItemList);
     }
@@ -617,6 +627,7 @@ public class BusinessRegistrationFragment extends CommonFragment implements Buss
                     @Override
                     public void onApiLoadFail(String mess) {
                         System.out.println(mess);
+                        showOutTOKEN();
                     }
                 },regstItemList);
     }
@@ -649,7 +660,7 @@ public class BusinessRegistrationFragment extends CommonFragment implements Buss
                     }
                     @Override
                     public void onApiLoadFail(String mess) {
-
+                        showOutTOKEN();
                     }
                 },regstItemList);
     }
@@ -755,6 +766,12 @@ public class BusinessRegistrationFragment extends CommonFragment implements Buss
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(BusinessRegistrationViewModel.class);
+        mViewModel.setServerCheckCallback(new ServerCheckCallback() {
+            @Override
+            public void onServerLoadFail() {
+                showOutTOKEN();
+            }
+        });
         mViewModel.getTitle().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {

@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel;
 
 import com.firstems.erp.api.model.response.province.Province;
 import com.firstems.erp.api.model.response.province.ProvinceApiResponse;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.callback.data.ConvertJsonCallback;
 import com.firstems.erp.callback.data.DataApiCallback;
 import com.firstems.erp.callback.data.DataSourceProviderCallback;
@@ -18,6 +19,12 @@ import com.firstems.erp.data.DataSourceProvider;
 import java.util.List;
 
 public class ProvinceViewModel extends ViewModel {
+    private ServerCheckCallback serverCheckCallback;
+    
+    public void setServerCheckCallback(ServerCheckCallback serverCheckCallback) {
+        this.serverCheckCallback = serverCheckCallback;
+    }
+    
     private MutableLiveData<List<Province>> liveDataListProvince;
     public ProvinceViewModel() {
         liveDataListProvince= new MutableLiveData<>();
@@ -38,7 +45,7 @@ public class ProvinceViewModel extends ViewModel {
 
                     @Override
                     public void onApiLoadFail() {
-
+                        serverCheckCallback.onServerLoadFail();
                     }
                 }, new DataSourceProviderCallback() {
                     @Override
