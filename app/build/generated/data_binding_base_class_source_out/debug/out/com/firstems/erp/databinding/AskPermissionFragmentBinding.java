@@ -65,6 +65,9 @@ public abstract class AskPermissionFragmentBinding extends ViewDataBinding {
   public final ConstraintLayout lParentContent;
 
   @NonNull
+  public final ConstraintLayout layoutNgayLap;
+
+  @NonNull
   public final LinearLayout layoutSum;
 
   @NonNull
@@ -117,11 +120,12 @@ public abstract class AskPermissionFragmentBinding extends ViewDataBinding {
       ConstraintLayout constraintLayout13, EMSTextviewHighLineNonBorder editTextTextPersonName,
       EMSEditText edtInfo, TextView edtSumDay, FrameLayout frameAskPermistion, ImageView imageView,
       ImageView imageView3, ImageView imageView37, ImageView imgAdd, View include2,
-      ConstraintLayout lParentContent, LinearLayout layoutSum, LinearLayout linearLayout6,
-      LinearLayout linearLayout8, LinearLayout llDelete, RecyclerView recycleview,
-      TextView textView5, TextView textView55, EMSTextviewWhite txtTitleDate,
-      TextView txtTitleDateCreate, TextView txtTitleDocumentCode, TextView txtTitleInfo,
-      EMSTextviewWhite txtTitleSpecies, EMSTextviewWhite txtTitleSum, TextView txtTrinhKi) {
+      ConstraintLayout lParentContent, ConstraintLayout layoutNgayLap, LinearLayout layoutSum,
+      LinearLayout linearLayout6, LinearLayout linearLayout8, LinearLayout llDelete,
+      RecyclerView recycleview, TextView textView5, TextView textView55,
+      EMSTextviewWhite txtTitleDate, TextView txtTitleDateCreate, TextView txtTitleDocumentCode,
+      TextView txtTitleInfo, EMSTextviewWhite txtTitleSpecies, EMSTextviewWhite txtTitleSum,
+      TextView txtTrinhKi) {
     super(_bindingComponent, _root, _localFieldCount);
     this.EMSLinearLayout2 = EMSLinearLayout2;
     this.constraintLayout12 = constraintLayout12;
@@ -136,6 +140,7 @@ public abstract class AskPermissionFragmentBinding extends ViewDataBinding {
     this.imgAdd = imgAdd;
     this.include2 = include2;
     this.lParentContent = lParentContent;
+    this.layoutNgayLap = layoutNgayLap;
     this.layoutSum = layoutSum;
     this.linearLayout6 = linearLayout6;
     this.linearLayout8 = linearLayout8;

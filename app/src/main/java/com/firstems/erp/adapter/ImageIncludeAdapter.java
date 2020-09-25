@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.load.model.LazyHeaders;
 import com.firstems.erp.R;
@@ -56,13 +57,14 @@ public class ImageIncludeAdapter extends RecyclerView.Adapter<ImageIncludeAdapte
             GlideUrl urlGlide = new GlideUrl(url, new LazyHeaders.Builder()
                     .addHeader("TOKEN", SharedPreferencesManager.getInstance().getPrefToken())
                     .build());
-            Glide.with(holder.itemView.getContext()).load(urlGlide).into(holder.img);
+            Glide.with(holder.itemView.getContext()).load(urlGlide).diskCacheStrategy(DiskCacheStrategy.NONE).into(holder.img);
         }
         if (imageModel.getType() == 2){
             File file = new File(imageModel.getImgPath());
             Uri imageUri = Uri.fromFile(file);
             Glide.with(holder.itemView.getContext())
                     .load(imageUri)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
                     .into(holder.img);
         }
         holder.imgRemove.setOnClickListener(new View.OnClickListener() {

@@ -11,8 +11,10 @@ import com.firstems.erp.api.model.response.advance_proposal_form.AdvanceProposal
 import com.firstems.erp.api.model.response.approved.ApprovedApiResponse;
 import com.firstems.erp.api.model.response.approved.info.ApproveInfoApiResponse;
 import com.firstems.erp.api.model.response.askpermistion.AskPermistionApiResponse;
+import com.firstems.erp.api.model.response.askpermistion.AskPermistionUpdateResponse;
 import com.firstems.erp.api.model.response.bill_payment.AddNewPaymentResponse;
 import com.firstems.erp.api.model.response.bill_payment.BillPaymentApiResponse;
+import com.firstems.erp.api.model.response.bussiness.BussinessRegistrationEditResponse;
 import com.firstems.erp.api.model.response.currency.CurrencyListApiResponse;
 import com.firstems.erp.api.model.response.department.DepartmentApiResponse;
 import com.firstems.erp.api.model.response.document.DocumentApiResponse;
@@ -36,6 +38,7 @@ import com.firstems.erp.api.model.response.servicecontacts.ServiceContactsApiRes
 import com.firstems.erp.api.model.response.signature.SignatureApiResponse;
 import com.firstems.erp.api.model.response.signature.bussiness.BussinessRegistrationApiResponse;
 import com.firstems.erp.api.model.response.signature.switchshift.SwitchShiftApiResponse;
+import com.firstems.erp.api.model.response.switchsift.SwitchsiftUpdateResponse;
 import com.firstems.erp.api.model.response.timekeeping.TimekeepingTypeCTApiResponse;
 import com.firstems.erp.api.model.response.timekeeping.TimekeepingTypeDCApiResponse;
 import com.firstems.erp.common.DateDeserializer;
@@ -226,9 +229,9 @@ public class ApiServices {
         }
     }
     //Edit Bussiness Regst
-    public void editBussinessRegst(String token, JsonObject body, Callback<ApiResponse> callback){
+    public void editBussinessRegst(String token, JsonObject body, Callback<BussinessRegistrationEditResponse> callback){
         if (retrofit!=null){
-            Call<ApiResponse> apiResponseCall = retrofit.create(RestApi.class).editBussinessRegstDocument(token,body);
+            Call<BussinessRegistrationEditResponse> apiResponseCall = retrofit.create(RestApi.class).editBussinessRegstDocument(token,body);
             apiResponseCall.enqueue(callback);
         }
     }
@@ -291,9 +294,9 @@ public class ApiServices {
     }
 
     // Chỉnh sửa đơn xin nghỉ phép
-    public void editAskPermistion(String token, JsonObject body, Callback<ApiResponse> callback){
+    public void editAskPermistion(String token, JsonObject body, Callback<AskPermistionUpdateResponse> callback){
         if (retrofit!=null){
-            Call<ApiResponse> apiResponseCall = retrofit.create(RestApi.class).editAskpermistion(token,body);
+            Call<AskPermistionUpdateResponse> apiResponseCall = retrofit.create(RestApi.class).editAskpermistion(token,body);
             apiResponseCall.enqueue(callback);
         }
     }
@@ -317,9 +320,9 @@ public class ApiServices {
         }
     }
     // cập nhật đổi ca
-    public void updateSwitchsift(String token, JsonObject boby, Callback<ApiResponse> callback){
+    public void updateSwitchsift(String token, JsonObject boby, Callback<SwitchsiftUpdateResponse> callback){
         if (retrofit!=null){
-            Call<ApiResponse> apiResponseCall = retrofit.create(RestApi.class).updateSwithShift(token,boby);
+            Call<SwitchsiftUpdateResponse> apiResponseCall = retrofit.create(RestApi.class).updateSwithShift(token,boby);
             apiResponseCall.enqueue(callback);
         }
     }

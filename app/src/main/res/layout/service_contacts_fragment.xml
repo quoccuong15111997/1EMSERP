@@ -25,7 +25,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/include4">
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/lParentContent"
                 android:layoutAnimation="@anim/layout_animation_float"
@@ -40,6 +39,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_weight="1"
+                    android:layout_marginTop="10dp"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -64,9 +64,9 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:inputType="textPersonName"
-                            android:textColor="@color/md_black_1000"
+                            android:textColor="@color/grey_80"
                             android:textSize="14sp"
-                            android:paddingLeft="10dp"
+                            android:paddingLeft="5dp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toStartOf="@+id/imageView"
                             app:layout_constraintStart_toStartOf="parent"
@@ -326,7 +326,7 @@
                             android:layout_height="wrap_content"
                             android:inputType="textPersonName"
                             android:text="14/07/2020"
-                            android:textColor="@color/md_black_1000"
+                            android:textColor="@color/grey_80"
                             android:textSize="14sp"
                             android:paddingLeft="5dp"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -365,7 +365,6 @@
                         android:text="Địa điểm"
                         android:textAppearance="@android:style/TextAppearance.Material.Small"
                         android:textSize="14sp" />
-
                     <com.firstems.erp.helper.widgets.EMSEditText
                         android:id="@+id/edtLocate"
                         android:layout_width="match_parent"
@@ -489,6 +488,7 @@
                     android:id="@+id/frame_reviews_progress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/linearLayoutLocate" />

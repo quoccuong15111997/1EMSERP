@@ -53,7 +53,7 @@ public class ApprovedItemAdapter extends RecyclerView.Adapter<ApprovedItemAdapte
         holder.txtendDate.setText(simpleDateFormatDisplay.format(item.getDateEnd()));
 
 
-        if (!item.isMorning() && item.getContentMornig()==null){
+        if (!item.isMorning()){
             holder.llSang.setVisibility(View.GONE);
         }
         else{
@@ -61,7 +61,7 @@ public class ApprovedItemAdapter extends RecyclerView.Adapter<ApprovedItemAdapte
             holder.txtContentSang.setText(item.getContentMornig().getItemName());
         }
 
-        if (!item.isAfternoon()&& item.getContentAfternoon()==null){
+        if (!item.isAfternoon()){
             holder.llChieu.setVisibility(View.GONE);
         }
         else{
@@ -69,7 +69,7 @@ public class ApprovedItemAdapter extends RecyclerView.Adapter<ApprovedItemAdapte
             holder.txtContentChieu.setText(item.getContentAfternoon().getItemName());
         }
 
-        if (!item.isEverning() && item.getContentEverning()==null){
+        if (!item.isEverning()){
             holder.llToi.setVisibility(View.GONE);
         }
         else{

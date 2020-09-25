@@ -1,0 +1,1 @@
+package com.firstems.erp.callback;public interface UploadFileCallback {    void onUpLoadSuccess();    void onUploadFail(String mess);}

@@ -25,6 +25,7 @@ import com.firstems.erp.api.model.request.askpermistion.AskPermistionRequest;
 import com.firstems.erp.api.model.response.ApiResponse;
 import com.firstems.erp.api.model.response.askpermistion.AskPermistionDetail;
 import com.firstems.erp.api.model.response.askpermistion.AskPermistionHeader;
+import com.firstems.erp.api.model.response.askpermistion.AskPermistionUpdateResponse;
 import com.firstems.erp.api.model.response.employee.Employee;
 import com.firstems.erp.api.model.response.signature.SignatureItemApiResponse;
 import com.firstems.erp.api.model.response.timekeeping.TimekeepingTypeDC;
@@ -140,35 +141,7 @@ public class AskPermissionFragment extends CommonFragment {
                             showConfirmMessage(SharedPreferencesManager.getSystemLabel(49), SharedPreferencesManager.getSystemLabel(58), SharedPreferencesManager.getSystemLabel(54), SharedPreferencesManager.getSystemLabel(55), new ConfirmCallback() {
                                 @Override
                                 public void onAccept() {
-                                    progressdialog.show();
-                                    CommitDocumentRequest commitDocumentRequest = new CommitDocumentRequest();
-                                    commitDocumentRequest.setDcmnCode(signatureItemApiResponse.getDcmnCode());
-                                    commitDocumentRequest.setKeyCode(signatureItemApiResponse.getKeyCode());
-                                    ApiServices.getInstance().commitDocument(SharedPreferencesManager.getInstance().getPrefToken(), commitDocumentRequest.convertToJson(), new Callback<ApiResponse>() {
-                                        @Override
-                                        public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
-                                            if (response.isSuccessful()){
-                                                ApiResponse apiResponse =response.body();
-                                                if (apiResponse.isRETNCODE()){
-                                                    progressdialog.dismiss();
-                                                    showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(59));
-                                                }
-                                                else {
-                                                    progressdialog.dismiss();
-                                                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(60));
-                                                }
-                                            }
-                                            else {
-                                                progressdialog.dismiss();
-                                                showOutTOKEN();
-                                            }
-                                        }
-                                        @Override
-                                        public void onFailure(Call<ApiResponse> call, Throwable t) {
-                                            progressdialog.dismiss();
-                                            showOutTOKEN();
-                                        }
-                                    });
+                                    doCommit();
                                 }
             
                                 @Override
@@ -243,6 +216,97 @@ public class AskPermissionFragment extends CommonFragment {
                 }
             }
         });
+    }
+    
+    private void doCommit() {
+        progressdialog.show();
+        AskPermistionHeader askPermistionHeader = new AskPermistionHeader();
+        askPermistionHeader.setcOMPCODE(SharedPreferencesManager.getInstance().getPrefCompcode());
+        askPermistionHeader.setlCTNCODE(SharedPreferencesManager.getInstance().getPrefLctcode());
+        askPermistionHeader.setmAINDATE(simpleDateFormatSystem.format(mainDate));
+        askPermistionHeader.setsUMLEAV(Double.parseDouble(binding.edtSumDay.getText().toString()));
+        askPermistionHeader.setmEXLNNTE(binding.edtInfo.getText().toString());
+        askPermistionHeader.setKeyCode(signatureItemApiResponse.getKeyCode());
+        List<AskPermistionDetail> askPermistionDetails = new ArrayList<>();
+        for (Approved approved : list){
+            AskPermistionDetail detail = new AskPermistionDetail();
+            detail.settIMEMORN((approved.isMorning() ? approved.getContentMornig().getItemCode() : null));
+            detail.settIMEAFTR((approved.isAfternoon() ? approved.getContentAfternoon().getItemCode() : null));
+            detail.settIMEEVEN((approved.isEverning() ? approved.getContentEverning().getItemCode() : null));
+            detail.setfRLVDATE(simpleDateFormatSystem.format(approved.getDateBegin()));
+            detail.settOLVDATE(simpleDateFormatSystem.format(approved.getDateEnd()));
+            detail.seteMPLRLTN(approved.getEmployeeDiLam().getItemCode());
+        
+            askPermistionDetails.add(detail);
+        }
+        askPermistionHeader.setAskPermistionDetails(askPermistionDetails);
+        List<AskPermistionHeader> askPermistionHeaders = new ArrayList<>();
+        askPermistionHeaders.add(askPermistionHeader);
+    
+        AskPermistionRequest askPermistionRequest = new AskPermistionRequest();
+        askPermistionRequest.setAskPermistionHeaders(askPermistionHeaders);
+    
+        try {
+            JsonObject jsonObject = new Gson().fromJson(new Gson().toJson(askPermistionRequest), JsonObject.class);
+            ApiServices
+                    .getInstance()
+                    .editAskPermistion(SharedPreferencesManager.getInstance().getPrefToken(), jsonObject, new Callback<AskPermistionUpdateResponse>() {
+                        @Override
+                        public void onResponse(Call<AskPermistionUpdateResponse> call, Response<AskPermistionUpdateResponse> response) {
+                            if (response.isSuccessful()){
+                                if (response.body().isRETNCODE()){
+                                    CommitDocumentRequest commitDocumentRequest = new CommitDocumentRequest();
+                                    commitDocumentRequest.setDcmnCode(signatureItemApiResponse.getDcmnCode());
+                                    commitDocumentRequest.setKeyCode(response.body().getAskPermistionUpdateItemLis().get(0).getKeyCode());
+                                    ApiServices.getInstance().commitDocument(SharedPreferencesManager.getInstance().getPrefToken(), commitDocumentRequest.convertToJson(), new Callback<ApiResponse>() {
+                                        @Override
+                                        public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
+                                            if (response.isSuccessful()){
+                                                ApiResponse apiResponse =response.body();
+                                                if (apiResponse.isRETNCODE()){
+                                                    progressdialog.dismiss();
+                                                    showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(59));
+                                                }
+                                                else {
+                                                    progressdialog.dismiss();
+                                                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(60));
+                                                }
+                                            }
+                                            else {
+                                                progressdialog.dismiss();
+                                                showOutTOKEN();
+                                            }
+                                        }
+                                        @Override
+                                        public void onFailure(Call<ApiResponse> call, Throwable t) {
+                                            progressdialog.dismiss();
+                                            showOutTOKEN();
+                                        }
+                                    });
+                                }
+                                else {
+                                    progressdialog.dismiss();
+                                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50), response.body().getRETNMSSG());
+                                }
+                            }
+                            else {
+                                progressdialog.dismiss();
+                                showOutTOKEN();
+                            }
+                        }
+                    
+                        @Override
+                        public void onFailure(Call<AskPermistionUpdateResponse> call, Throwable t) {
+                            progressdialog.dismiss();
+                            showOutTOKEN();
+                        }
+                    });
+        }
+        catch (Exception ex){
+            progressdialog.dismiss();
+            ex.printStackTrace();
+            showOutTOKEN();
+        }
     }
     
     private void doSaveAndCommit() {
@@ -345,9 +409,9 @@ public class AskPermissionFragment extends CommonFragment {
             JsonObject jsonObject = new Gson().fromJson(new Gson().toJson(askPermistionRequest), JsonObject.class);
             ApiServices
                     .getInstance()
-                    .editAskPermistion(SharedPreferencesManager.getInstance().getPrefToken(), jsonObject, new Callback<ApiResponse>() {
+                    .editAskPermistion(SharedPreferencesManager.getInstance().getPrefToken(), jsonObject, new Callback<AskPermistionUpdateResponse>() {
                         @Override
-                        public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
+                        public void onResponse(Call<AskPermistionUpdateResponse> call, Response<AskPermistionUpdateResponse> response) {
                             if (response.isSuccessful()){
                                 if (response.body().isRETNCODE()){
                                     progressdialog.dismiss();
@@ -365,7 +429,7 @@ public class AskPermissionFragment extends CommonFragment {
                         }
 
                         @Override
-                        public void onFailure(Call<ApiResponse> call, Throwable t) {
+                        public void onFailure(Call<AskPermistionUpdateResponse> call, Throwable t) {
                             progressdialog.dismiss();
                             showOutTOKEN();
                         }
@@ -450,15 +514,7 @@ public class AskPermissionFragment extends CommonFragment {
         
         Intent intent = getActivity().getIntent();
         signatureItemApiResponse = (SignatureItemApiResponse) intent.getSerializableExtra(Constant.NAME_PUT_SIGNATURE);
-        if (signatureItemApiResponse!=null){
-
-        }
-        else {
-            mainDate = DateTime.now().withTimeAtStartOfDay().toDate();
-            AskPermistionHeader askPermistionHeader = new AskPermistionHeader();
-            askPermistionHeader.setmAINDATE(simpleDateFormatDisplay.format(mainDate));
-            binding.setItem(askPermistionHeader);
-        }
+        
         txtTitle=binding.include2.findViewById(R.id.txtTitle);
 
         recyclerView =binding.recycleview;
@@ -493,7 +549,18 @@ public class AskPermissionFragment extends CommonFragment {
         recyclerView.setAdapter(approvedItemAdapter);
         recyclerView.setLayoutManager(linearLayoutManager);
         
-        binding.setIsEditable(true);
+        if (signatureItemApiResponse!=null){
+        
+        }
+        else {
+            mainDate = DateTime.now().withTimeAtStartOfDay().toDate();
+            AskPermistionHeader askPermistionHeader = new AskPermistionHeader();
+            askPermistionHeader.setmAINDATE(simpleDateFormatDisplay.format(mainDate));
+            binding.setItem(askPermistionHeader);
+            binding.setIsEditable(true);
+            approvedItemAdapter.setRole(1);
+        }
+        binding.layoutNgayLap.setEnabled(false);
     }
 
     @Override

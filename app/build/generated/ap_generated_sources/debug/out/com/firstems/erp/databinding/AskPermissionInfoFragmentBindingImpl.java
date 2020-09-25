@@ -44,32 +44,6 @@ public class AskPermissionInfoFragmentBindingImpl extends AskPermissionInfoFragm
     // values
     // listeners
     // Inverse Binding Event Handlers
-    private androidx.databinding.InverseBindingListener edtEmployeeandroidTextAttrChanged = new androidx.databinding.InverseBindingListener() {
-        @Override
-        public void onChange() {
-            // Inverse of employDiLam.itemName
-            //         is employDiLam.setItemName((java.lang.String) callbackArg_0)
-            java.lang.String callbackArg_0 = androidx.databinding.adapters.TextViewBindingAdapter.getTextString(edtEmployee);
-            // localize variables for thread safety
-            // employDiLam.itemName
-            java.lang.String employDiLamItemName = null;
-            // employDiLam
-            com.firstems.erp.api.model.response.employee.Employee employDiLam = mEmployDiLam;
-            // employDiLam != null
-            boolean employDiLamJavaLangObjectNull = false;
-
-
-
-            employDiLamJavaLangObjectNull = (employDiLam) != (null);
-            if (employDiLamJavaLangObjectNull) {
-
-
-
-
-                employDiLam.setItemName(((java.lang.String) (callbackArg_0)));
-            }
-        }
-    };
 
     public AskPermissionInfoFragmentBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
         this(bindingComponent, root, mapBindings(bindingComponent, root, 32, sIncludes, sViewsWithIds));
@@ -148,17 +122,17 @@ public class AskPermissionInfoFragmentBindingImpl extends AskPermissionInfoFragm
         if (BR.model == variableId) {
             setModel((com.firstems.erp.model.approved.Approved) variable);
         }
-        else if (BR.dateBegin == variableId) {
-            setDateBegin((java.lang.String) variable);
-        }
-        else if (BR.employDiLam == variableId) {
-            setEmployDiLam((com.firstems.erp.api.model.response.employee.Employee) variable);
-        }
         else if (BR.dateEnd == variableId) {
             setDateEnd((java.lang.String) variable);
         }
         else if (BR.employDuocChamCong == variableId) {
             setEmployDuocChamCong((com.firstems.erp.api.model.response.employee.Employee) variable);
+        }
+        else if (BR.dateBegin == variableId) {
+            setDateBegin((java.lang.String) variable);
+        }
+        else if (BR.employDiLam == variableId) {
+            setEmployDiLam((com.firstems.erp.api.model.response.employee.Employee) variable);
         }
         else {
             variableSet = false;
@@ -174,27 +148,10 @@ public class AskPermissionInfoFragmentBindingImpl extends AskPermissionInfoFragm
         notifyPropertyChanged(BR.model);
         super.requestRebind();
     }
-    public void setDateBegin(@Nullable java.lang.String DateBegin) {
-        this.mDateBegin = DateBegin;
-        synchronized(this) {
-            mDirtyFlags |= 0x8L;
-        }
-        notifyPropertyChanged(BR.dateBegin);
-        super.requestRebind();
-    }
-    public void setEmployDiLam(@Nullable com.firstems.erp.api.model.response.employee.Employee EmployDiLam) {
-        updateRegistration(0, EmployDiLam);
-        this.mEmployDiLam = EmployDiLam;
-        synchronized(this) {
-            mDirtyFlags |= 0x1L;
-        }
-        notifyPropertyChanged(BR.employDiLam);
-        super.requestRebind();
-    }
     public void setDateEnd(@Nullable java.lang.String DateEnd) {
         this.mDateEnd = DateEnd;
         synchronized(this) {
-            mDirtyFlags |= 0x10L;
+            mDirtyFlags |= 0x8L;
         }
         notifyPropertyChanged(BR.dateEnd);
         super.requestRebind();
@@ -202,36 +159,53 @@ public class AskPermissionInfoFragmentBindingImpl extends AskPermissionInfoFragm
     public void setEmployDuocChamCong(@Nullable com.firstems.erp.api.model.response.employee.Employee EmployDuocChamCong) {
         this.mEmployDuocChamCong = EmployDuocChamCong;
     }
+    public void setDateBegin(@Nullable java.lang.String DateBegin) {
+        this.mDateBegin = DateBegin;
+        synchronized(this) {
+            mDirtyFlags |= 0x10L;
+        }
+        notifyPropertyChanged(BR.dateBegin);
+        super.requestRebind();
+    }
+    public void setEmployDiLam(@Nullable com.firstems.erp.api.model.response.employee.Employee EmployDiLam) {
+        updateRegistration(1, EmployDiLam);
+        this.mEmployDiLam = EmployDiLam;
+        synchronized(this) {
+            mDirtyFlags |= 0x2L;
+        }
+        notifyPropertyChanged(BR.employDiLam);
+        super.requestRebind();
+    }
 
     @Override
     protected boolean onFieldChange(int localFieldId, Object object, int fieldId) {
         switch (localFieldId) {
             case 0 :
-                return onChangeEmployDiLam((com.firstems.erp.api.model.response.employee.Employee) object, fieldId);
-            case 1 :
                 return onChangeEmployDuocChamCong((com.firstems.erp.api.model.response.employee.Employee) object, fieldId);
-        }
-        return false;
-    }
-    private boolean onChangeEmployDiLam(com.firstems.erp.api.model.response.employee.Employee EmployDiLam, int fieldId) {
-        if (fieldId == BR._all) {
-            synchronized(this) {
-                    mDirtyFlags |= 0x1L;
-            }
-            return true;
-        }
-        else if (fieldId == BR.itemName) {
-            synchronized(this) {
-                    mDirtyFlags |= 0x20L;
-            }
-            return true;
+            case 1 :
+                return onChangeEmployDiLam((com.firstems.erp.api.model.response.employee.Employee) object, fieldId);
         }
         return false;
     }
     private boolean onChangeEmployDuocChamCong(com.firstems.erp.api.model.response.employee.Employee EmployDuocChamCong, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
+                    mDirtyFlags |= 0x1L;
+            }
+            return true;
+        }
+        return false;
+    }
+    private boolean onChangeEmployDiLam(com.firstems.erp.api.model.response.employee.Employee EmployDiLam, int fieldId) {
+        if (fieldId == BR._all) {
+            synchronized(this) {
                     mDirtyFlags |= 0x2L;
+            }
+            return true;
+        }
+        else if (fieldId == BR.itemName) {
+            synchronized(this) {
+                    mDirtyFlags |= 0x20L;
             }
             return true;
         }
@@ -246,19 +220,19 @@ public class AskPermissionInfoFragmentBindingImpl extends AskPermissionInfoFragm
             mDirtyFlags = 0;
         }
         com.firstems.erp.model.approved.Approved model = mModel;
+        java.lang.String dateEnd = mDateEnd;
         java.lang.String modelContentAfternoonItemName = null;
         boolean modelMorning = false;
+        com.firstems.erp.api.model.response.timekeeping.TimekeepingTypeDC modelContentEverning = null;
         java.lang.String dateBegin = mDateBegin;
         boolean modelEverning = false;
+        java.lang.String modelContentMornigItemName = null;
         boolean modelAfternoon = false;
         com.firstems.erp.api.model.response.timekeeping.TimekeepingTypeDC modelContentAfternoon = null;
-        com.firstems.erp.api.model.response.employee.Employee employDiLam = mEmployDiLam;
-        java.lang.String dateEnd = mDateEnd;
-        com.firstems.erp.api.model.response.timekeeping.TimekeepingTypeDC modelContentEverning = null;
-        java.lang.String modelContentMornigItemName = null;
         com.firstems.erp.api.model.response.timekeeping.TimekeepingTypeDC modelContentMornig = null;
         java.lang.String employDiLamItemName = null;
         java.lang.String modelContentEverningItemName = null;
+        com.firstems.erp.api.model.response.employee.Employee employDiLam = mEmployDiLam;
 
         if ((dirtyFlags & 0x44L) != 0) {
 
@@ -267,26 +241,26 @@ public class AskPermissionInfoFragmentBindingImpl extends AskPermissionInfoFragm
                 if (model != null) {
                     // read model.morning
                     modelMorning = model.isMorning();
+                    // read model.contentEverning
+                    modelContentEverning = model.getContentEverning();
                     // read model.everning
                     modelEverning = model.isEverning();
                     // read model.afternoon
                     modelAfternoon = model.isAfternoon();
                     // read model.contentAfternoon
                     modelContentAfternoon = model.getContentAfternoon();
-                    // read model.contentEverning
-                    modelContentEverning = model.getContentEverning();
                     // read model.contentMornig
                     modelContentMornig = model.getContentMornig();
                 }
 
 
-                if (modelContentAfternoon != null) {
-                    // read model.contentAfternoon.itemName
-                    modelContentAfternoonItemName = modelContentAfternoon.getItemName();
-                }
                 if (modelContentEverning != null) {
                     // read model.contentEverning.itemName
                     modelContentEverningItemName = modelContentEverning.getItemName();
+                }
+                if (modelContentAfternoon != null) {
+                    // read model.contentAfternoon.itemName
+                    modelContentAfternoonItemName = modelContentAfternoon.getItemName();
                 }
                 if (modelContentMornig != null) {
                     // read model.contentMornig.itemName
@@ -295,7 +269,9 @@ public class AskPermissionInfoFragmentBindingImpl extends AskPermissionInfoFragm
         }
         if ((dirtyFlags & 0x48L) != 0) {
         }
-        if ((dirtyFlags & 0x61L) != 0) {
+        if ((dirtyFlags & 0x50L) != 0) {
+        }
+        if ((dirtyFlags & 0x62L) != 0) {
 
 
 
@@ -303,8 +279,6 @@ public class AskPermissionInfoFragmentBindingImpl extends AskPermissionInfoFragm
                     // read employDiLam.itemName
                     employDiLamItemName = employDiLam.getItemName();
                 }
-        }
-        if ((dirtyFlags & 0x50L) != 0) {
         }
         // batch finished
         if ((dirtyFlags & 0x44L) != 0) {
@@ -317,22 +291,17 @@ public class AskPermissionInfoFragmentBindingImpl extends AskPermissionInfoFragm
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.edtLoaiChamCongSang, modelContentMornigItemName);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.edtLoaiChamCongToi, modelContentEverningItemName);
         }
-        if ((dirtyFlags & 0x61L) != 0) {
+        if ((dirtyFlags & 0x62L) != 0) {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.edtEmployee, employDiLamItemName);
         }
-        if ((dirtyFlags & 0x40L) != 0) {
-            // api target 1
-
-            androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.edtEmployee, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, edtEmployeeandroidTextAttrChanged);
-        }
-        if ((dirtyFlags & 0x48L) != 0) {
+        if ((dirtyFlags & 0x50L) != 0) {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.txtDateBegin, dateBegin);
         }
-        if ((dirtyFlags & 0x50L) != 0) {
+        if ((dirtyFlags & 0x48L) != 0) {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.txtDateEnd, dateEnd);
@@ -343,11 +312,11 @@ public class AskPermissionInfoFragmentBindingImpl extends AskPermissionInfoFragm
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): employDiLam
-        flag 1 (0x2L): employDuocChamCong
+        flag 0 (0x1L): employDuocChamCong
+        flag 1 (0x2L): employDiLam
         flag 2 (0x3L): model
-        flag 3 (0x4L): dateBegin
-        flag 4 (0x5L): dateEnd
+        flag 3 (0x4L): dateEnd
+        flag 4 (0x5L): dateBegin
         flag 5 (0x6L): employDiLam.itemName
         flag 6 (0x7L): null
     flag mapping end*/

@@ -39,6 +39,7 @@ import com.firstems.erp.callback.ConfirmCallback;
 import com.firstems.erp.callback.PickDateCallback;
 import com.firstems.erp.callback.SaveFileToLocalCallback;
 import com.firstems.erp.callback.ServerCheckCallback;
+import com.firstems.erp.callback.UploadFileCallback;
 import com.firstems.erp.callback.runcode.LoadDataAsynCallback;
 import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Constant;
@@ -143,36 +144,7 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                     showConfirmMessage(SharedPreferencesManager.getSystemLabel(49), SharedPreferencesManager.getSystemLabel(58), SharedPreferencesManager.getSystemLabel(54), SharedPreferencesManager.getSystemLabel(55), new ConfirmCallback() {
                         @Override
                         public void onAccept() {
-                            progressdialog.show();
-                            CommitDocumentRequest commitDocumentRequest = new CommitDocumentRequest();
-                            commitDocumentRequest.setDcmnCode(signatureItemApiResponse.getDcmnCode());
-                            commitDocumentRequest.setKeyCode(signatureItemApiResponse.getKeyCode());
-                            ApiServices.getInstance().commitDocument(SharedPreferencesManager.getInstance().getPrefToken(), commitDocumentRequest.convertToJson(), new Callback<ApiResponse>() {
-                                @Override
-                                public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
-                                    if (response.isSuccessful()){
-                                        if (response.body().isRETNCODE()){
-                                            progressdialog.dismiss();
-                                            showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(59));
-                                        }
-                                        else {
-                                            progressdialog.dismiss();
-                                            showErrorDialog(SharedPreferencesManager.getSystemLabel(50), SharedPreferencesManager.getSystemLabel(60));
-                                            System.out.println("Advance Proposal " + response.body().getRETNMSSG());
-                                        }
-                                    }
-                                    else {
-                                        progressdialog.dismiss();
-                                        showOutTOKEN();
-                                    }
-                                }
-                                
-                                @Override
-                                public void onFailure(Call<ApiResponse> call, Throwable t) {
-                                    progressdialog.dismiss();
-                                    showOutTOKEN();
-                                }
-                            });
+                            doCommit();
                         }
                         
                         @Override
@@ -357,6 +329,113 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                         binding.txtNgayThanhToan.setText(simpleDateFormatDisplay.format(date));
                     }
                 });
+            }
+        });
+    }
+    
+    private void doCommit() {
+        progressdialog.show();
+        AdvanceProposalFormHeader advanceProposalFormHeader = new AdvanceProposalFormHeader();
+        advanceProposalFormHeader.setmAINDATE(simpleDateFormatSystem.format(dateCreate));
+        advanceProposalFormHeader.setmEXLNNTE(binding.edtInfo.getText().toString());
+        advanceProposalFormHeader.setpERDDATE(simpleDateFormatSystem.format(dateDeNghiChi));
+        CurrencyItem currencyItem = (CurrencyItem) binding.spinerDonViTienTe.getSelectedItem();
+        advanceProposalFormHeader.setaCOBCODE(currencyItem.getiTEMCODE());
+        LoaiDoiTuongNhanItem loaiDoiTuongNhanItem = (LoaiDoiTuongNhanItem) binding.spinerLoaiDoiTuongNhan.getSelectedItem();
+        advanceProposalFormHeader.setoBJCTYPE(Integer.parseInt(loaiDoiTuongNhanItem.getiTEMCODE()));
+        advanceProposalFormHeader.setcUOMRATE(Double.parseDouble(binding.edtTiGia.getText().toString()));
+        advanceProposalFormHeader.setoBJCCODE(doiTuongNhanItemSelected.getiTEMCODE().split("\\*")[0]);
+        advanceProposalFormHeader.setaDVNCRAM(Double.parseDouble(binding.edtSoTienTamUng.getText().toString().replace(".","").trim()));
+        advanceProposalFormHeader.setaCPTCRAM(Double.parseDouble(binding.edtSoTienTamUng.getText().toString().replace(".","").trim()));
+        ProjectListItem projectListItem = (ProjectListItem) binding.spinerMaDuAn.getSelectedItem();
+        advanceProposalFormHeader.setaCOBCODE(projectListItem.getiTEMCODE());
+        LoaiDeNghiItem loaiDeNghiItem = (LoaiDeNghiItem) binding.spinerLoaiDeNghiTamUng.getSelectedItem();
+        advanceProposalFormHeader.setdCMNSBCD(loaiDeNghiItem.getiTEMCODE());
+        
+        advanceProposalFormHeader.setkKKK0000(signatureItemApiResponse.getKeyCode());
+        
+        List<AdvanceProposalFormHeader>advanceProposalFormHeaders = new ArrayList<>();
+        advanceProposalFormHeaders.add(advanceProposalFormHeader);
+        
+        AdvanceProposalFormRequest advanceProposalFormRequest = new AdvanceProposalFormRequest();
+        advanceProposalFormRequest.setAdvanceProposalFormHeaders(advanceProposalFormHeaders);
+        
+        JsonObject jsonObject = new Gson().fromJson(new Gson().toJson(advanceProposalFormRequest), JsonObject.class);
+        
+        ApiServices.getInstance().editAdvanceProposal(SharedPreferencesManager.getInstance().getPrefToken(), jsonObject, new Callback<AdvanceProposalAddNewResponse>() {
+            @Override
+            public void onResponse(Call<AdvanceProposalAddNewResponse> call, Response<AdvanceProposalAddNewResponse> response) {
+                if (response.isSuccessful()){
+                    if (response.body().isRETNCODE()){
+                        deleteFile(response.body().getAdvanceProposalAddNewResponseItem().get(0).getKeyCode());
+                        if (FileFragment.listFilePath.size()>0 || FileFragment.fileIncludeList.size()>0){
+                            upLoadFileBeforeCommit(response.body().getAdvanceProposalAddNewResponseItem().get(0).getKeyCode(), response.body().getRETNMSSG(), getListImage(), FileFragment.fileIncludeList,
+                                    new UploadFileCallback() {
+                                        @Override
+                                        public void onUpLoadSuccess() {
+                                            CommitDocumentRequest commitDocumentRequest = new CommitDocumentRequest();
+                                            commitDocumentRequest.setDcmnCode(signatureItemApiResponse.getDcmnCode());
+                                            commitDocumentRequest.setKeyCode(response.body().getAdvanceProposalAddNewResponseItem().get(0).getKeyCode());
+                                            ApiServices.getInstance().commitDocument(SharedPreferencesManager.getInstance().getPrefToken(), commitDocumentRequest.convertToJson(), new Callback<ApiResponse>() {
+                                                @Override
+                                                public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
+                                                    if (response.isSuccessful()){
+                                                        if (response.body().isRETNCODE()){
+                                                            progressdialog.dismiss();
+                                                            showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(59));
+                                                        }
+                                                        else {
+                                                            progressdialog.dismiss();
+                                                            showErrorDialog(SharedPreferencesManager.getSystemLabel(50), SharedPreferencesManager.getSystemLabel(60));
+                                                            System.out.println("Advance Proposal " + response.body().getRETNMSSG());
+                                                        }
+                                                    }
+                                                    else {
+                                                        progressdialog.dismiss();
+                                                        showOutTOKEN();
+                                                    }
+                                                }
+                                                
+                                                @Override
+                                                public void onFailure(Call<ApiResponse> call, Throwable t) {
+                                                    progressdialog.dismiss();
+                                                    showOutTOKEN();
+                                                }
+                                            });
+                                        }
+                                        
+                                        @Override
+                                        public void onUploadFail(String mess) {
+                                            progressdialog.dismiss();
+                                            showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),mess);
+                                            System.out.println(mess);
+                                        }
+                                    });
+                        }
+                        else {
+                            progressdialog.dismiss();
+                            showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
+                            System.out.println(response.body().getRETNMSSG());
+                        }
+                    }
+                    else {
+                        progressdialog.dismiss();
+                        showErrorDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
+                        System.out.println(response.body().getRETNMSSG());
+                    }
+                }
+                else {
+                    progressdialog.dismiss();
+                    System.out.println(response.message());
+                    showOutTOKEN();
+                }
+            }
+            
+            @Override
+            public void onFailure(Call<AdvanceProposalAddNewResponse> call, Throwable t) {
+                progressdialog.dismiss();
+                System.out.println(t.getMessage());
+                showOutTOKEN();
             }
         });
     }
@@ -611,9 +690,48 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                                 System.out.println(response.message());
                                 showOutTOKEN();
                             }
-                        
+                            
                         }
-                    
+                        
+                        @Override
+                        public void onFailure(Call<ApiResponse> call, Throwable t) {
+                            progressdialog.dismiss();
+                            System.out.println(t.getMessage());
+                            showOutTOKEN();
+                        }
+                    });
+        }
+        else {
+            progressdialog.dismiss();
+            showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),mess);
+            FileFragment.fileIncludeList.clear();
+        }
+    }
+    private void upLoadFileBeforeCommit(String keyCode, String mess, List<String> listImage, List<FileIncludeModel> listFile, UploadFileCallback uploadFileCallback) {
+        if (listImage.size()>0 || checkFileInclude(listFile)){
+            ApiServices.getInstance().uploadFile(SharedPreferencesManager.getInstance().getPrefToken(), "PHTAM", keyCode,
+                    listImage,listFile, new Callback<ApiResponse>() {
+                        @Override
+                        public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
+                            if (response.isSuccessful()){
+                                if (response.body().isRETNCODE()){
+                                    System.out.println(response.body().getRETNMSSG());
+                                    FileFragment.fileIncludeList.clear();
+                                    uploadFileCallback.onUpLoadSuccess();
+                                }
+                                else {
+                                    System.out.println(response.body().getRETNMSSG());
+                                    uploadFileCallback.onUploadFail(response.body().getRETNMSSG());
+                                }
+                            }
+                            else {
+                                progressdialog.dismiss();
+                                System.out.println(response.message());
+                                showOutTOKEN();
+                            }
+                            
+                        }
+                        
                         @Override
                         public void onFailure(Call<ApiResponse> call, Throwable t) {
                             progressdialog.dismiss();
@@ -637,15 +755,15 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                             public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
                                 System.out.println(response.body().getRETNMSSG());
                                 System.out.println(response.message());
-                                FileFragment.imageModelListRemove.clear();
                             }
-            
+                            
                             @Override
                             public void onFailure(Call<ApiResponse> call, Throwable t) {
                                 System.out.println(t.getMessage());
                             }
                         });
             }
+            FileFragment.imageModelListRemove.clear();
         }
     }
     private void addcControls() {
@@ -748,19 +866,19 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                                             accessRole = checkAccessRole(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getsTTESIGN(),
                                                     advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getaCCERGHT(),
                                                     binding.constraintLayout8,binding.constraintLayout9,binding.llDelete,null);
-                
+                                            
                                             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_progress_switch_shift,
                                                     new ReviewProcessFragment(signatureItemApiResponse.getDcmnCode(), signatureItemApiResponse.getKeyCode()))
                                                     .commit();
                                             binding.setIsEditable(accessRole.isEdit());
-                
+                                            
                                             if (advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getsTTESIGN() == 0){
                                                 getActivity().getSupportFragmentManager()
                                                         .beginTransaction()
                                                         .replace(R.id.frame_file_include, new FileFragment(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getdCMNFILE()))
                                                         .commit();
                                             }
-                
+                                            
                                             binding.txtDateCreate.setText(Util.formatDate(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getmAINDATE()));
                                             binding.edtInfo.setText(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getmEXLNNTE());
                                             binding.edtTiGia.setText(String.valueOf((int) advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getcUOMRATE()));
@@ -775,7 +893,7 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                                             loaiDoiTuongNhanItem.setiTEMCODE(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getoBJCTYPE()+"");
                                             loaiDoiTuongNhanItem.setiTEMNAME(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getoBJCTYPENAME());
                                             binding.txtNgayThanhToan.setText(Util.formatDate(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getpERDDATE()));
-                
+                                            
                                             for (int i = 0 ;i < loaiDeNghiItemList.size();i++){
                                                 LoaiDeNghiItem loaiDeNghi= loaiDeNghiItemList.get(i);
                                                 if (loaiDeNghi.getiTEMCODE().equals(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getdCMNSBCD())){
@@ -783,7 +901,7 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                                                     break;
                                                 }
                                             }
-                
+                                            
                                             for (int i = 0;i < loaiDoiTuongNhanItemList.size();i++){
                                                 LoaiDoiTuongNhanItem item  = loaiDoiTuongNhanItemList.get(i);
                                                 if (item.getiTEMCODE().equals(loaiDoiTuongNhanItem.getiTEMCODE())){
@@ -819,7 +937,7 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                         public void onLoadFail(String mess) {
                             showOutTOKEN();
                         }
-    
+                        
                         @Override
                         public void onServerFail() {
                             showOutTOKEN();

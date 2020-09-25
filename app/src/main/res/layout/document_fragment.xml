@@ -247,12 +247,12 @@
                                 android:textAppearance="@android:style/TextAppearance.Material.Small"
                                 android:textSize="14sp" />
 
-                            <com.firstems.erp.helper.widgets.EMSEditText
-                                android:id="@+id/edtLocate"
+                            <Spinner
+                                android:id="@+id/spinerLocate"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
-                                android:background="@drawable/custom_bg_textview"
+                                android:background="@drawable/bg_spinner"
                                 android:imeOptions="actionDone"
                                 android:paddingTop="10dp"
                                 android:paddingBottom="10dp"
@@ -284,12 +284,12 @@
                                 android:textAppearance="@android:style/TextAppearance.Material.Small"
                                 android:textSize="14sp" />
 
-                            <com.firstems.erp.helper.widgets.EMSEditText
-                                android:id="@+id/edtContent"
+                            <Spinner
+                                android:id="@+id/spinerContent"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
-                                android:background="@drawable/custom_bg_textview"
+                                android:background="@drawable/bg_spinner"
                                 android:imeOptions="actionDone"
                                 android:paddingTop="10dp"
                                 android:paddingBottom="10dp"
@@ -356,12 +356,12 @@
                                 android:textAppearance="@android:style/TextAppearance.Material.Small"
                                 android:textSize="14sp" />
 
-                            <com.firstems.erp.helper.widgets.EMSEditText
-                                android:id="@+id/edtCategory"
+                            <Spinner
+                                android:id="@+id/spinerCategory"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
-                                android:background="@drawable/custom_bg_textview"
+                                android:background="@drawable/bg_spinner"
                                 android:imeOptions="actionDone"
                                 android:paddingTop="10dp"
                                 android:paddingBottom="10dp"

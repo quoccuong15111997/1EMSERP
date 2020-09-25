@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.load.model.LazyHeaders;
 import com.firstems.erp.R;
@@ -57,10 +58,10 @@ public class ViewPagerAdapter extends PagerAdapter {
             GlideUrl urlGlide = new GlideUrl(url, new LazyHeaders.Builder()
                     .addHeader("TOKEN", SharedPreferencesManager.getInstance().getPrefToken())
                     .build());
-            Glide.with(container.getContext()).load(urlGlide).into(img);
+            Glide.with(container.getContext()).load(urlGlide).diskCacheStrategy(DiskCacheStrategy.NONE).into(img);
         }
         else if (slideModels.get(position).getType() == 2){
-            Glide.with(container.getContext()).load(slideModels.get(position).getImgPath()).into(img);
+            Glide.with(container.getContext()).load(slideModels.get(position).getImgPath()).diskCacheStrategy(DiskCacheStrategy.NONE).into(img);
         }
         container.addView(view);
         return view;

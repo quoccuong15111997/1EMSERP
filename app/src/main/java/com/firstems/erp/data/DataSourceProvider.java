@@ -46,6 +46,7 @@ public class DataSourceProvider implements Serializable {
                 @Override
                 public void onApiLoadFail(String mess) {
                     System.out.println(TAG+" DataSourceProvider CLASS - LOAD API FAIL"+mess);
+                    loadApiCallback.onApiLoadFail();
                 }
             });
         }
@@ -89,6 +90,7 @@ public class DataSourceProvider implements Serializable {
                                     @Override
                                     public void onApiLoadFail(String mess) {
                                         System.out.println(TAG+" DataSourceProvider CLASS - LOAD API FAIL"+mess);
+                                        loadApiCallback.onApiLoadFail();
                                     }
                                 });
                             }
@@ -138,6 +140,7 @@ public class DataSourceProvider implements Serializable {
                                 @Override
                                 public void onApiLoadFail(String mess) {
                                     System.out.println(TAG+" DataSourceProvider CLASS - LOAD API FAIL"+mess);
+                                    loadApiCallback.onApiLoadFail();
                                 }
                             });
                         }

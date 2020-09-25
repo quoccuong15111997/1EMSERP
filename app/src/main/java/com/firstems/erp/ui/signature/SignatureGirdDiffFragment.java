@@ -165,12 +165,14 @@ public class SignatureGirdDiffFragment extends CommonFragment {
         signatureFragmentBinding.recycleSignature.setAdapter(signatuneListAdapter);
         signatureFragmentBinding.recycleSignature.setLayoutManager(linearLayoutManager);
         
-        filterModel = new FilterModel(SysConfig.createDateLoadSign().get(0),SysConfig.createDateLoadSign().get(1),true,true,true);
+        filterModel = new FilterModel(SysConfig.createDateLoadSign().get(0),SysConfig.createDateLoadSign().get(1),
+                SharedPreferencesManager.getInstance().getWaitSignature(),
+                SharedPreferencesManager.getInstance().getWaitAppreoved(),
+                SharedPreferencesManager.getInstance().getCompleteSignature());
         
         String titleValue = SharedPreferencesManager.getSystemLabel(19) + " "+simpleDateFormatDisplay.format(filterModel.getBeginDate())+" "+ SharedPreferencesManager.getSystemLabel(20) + " " +simpleDateFormatDisplay.format(filterModel.getEndDate());
         
         txtTitle.setText(titleValue);
-        
     }
     
     private void openNewActivityWithModel(Class aClass, SignatureItemApiResponse signatureItemApiResponse) {
@@ -207,10 +209,16 @@ public class SignatureGirdDiffFragment extends CommonFragment {
     public void onResume() {
         super.onResume();
         //mViewModel.loadDataSignature(filterModel);
+        if (loadingNonMessDialog!=null && !loadingNonMessDialog.isShowing()){
+            showLoadingNonMessDialog();
+        }
         mViewModel.loadDataSignatureResume(filterModel, new LoadSignatureDataDiffListCallback() {
             @Override
             public void onLoaded(List<SignatureModel> signatureModels) {
                 signatuneListAdapter.setSignatureModelList(signatureModels);
+                if (loadingNonMessDialog.isShowing()){
+                    loadingNonMessDialog.dismiss();
+                }
             }
         });
     }

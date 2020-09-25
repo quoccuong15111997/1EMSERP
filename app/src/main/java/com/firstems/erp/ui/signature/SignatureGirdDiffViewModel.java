@@ -18,6 +18,7 @@ import com.firstems.erp.data.DataConvertProvider;
 import com.firstems.erp.data.DataNetworkProvider;
 import com.firstems.erp.data.DataSourceProvider;
 import com.firstems.erp.model.FilterModel;
+import com.firstems.erp.sharedpreferences.SharedPreferencesManager;
 import com.firstems.erp.system.SysConfig;
 import com.firstems.erp.viewmodel.SignatureVM;
 
@@ -37,7 +38,10 @@ public class SignatureGirdDiffViewModel extends ViewModel {
         
         initTilte();
         fakeData();
-        loadDataSignature(new FilterModel(SysConfig.createDateLoadSign().get(0), SysConfig.createDateLoadSign().get(1), true, true, true));
+        loadDataSignature(new FilterModel(SysConfig.createDateLoadSign().get(0), SysConfig.createDateLoadSign().get(1),
+                SharedPreferencesManager.getInstance().getWaitSignature(),
+                SharedPreferencesManager.getInstance().getWaitAppreoved(),
+                SharedPreferencesManager.getInstance().getCompleteSignature()));
     }
     
     public void setServerCheckCallback(ServerCheckCallback serverCheckCallback) {
@@ -46,6 +50,7 @@ public class SignatureGirdDiffViewModel extends ViewModel {
     
     public void loadDataSignature(FilterModel filterModel) {
         int para = (filterModel.isWaitsignature() ? 1 : 0) + (filterModel.isWaitApproved() ? 2 : 0) + (filterModel.isDone() ? 4 : 0);
+        System.out.println("para: "+para);
         DataSourceProvider.getInstance().getDataSource(Constant.RUN_CODE_SIGNATURE_LIST,
                 String.valueOf(filterModel.getBeginDate()) + String.valueOf(filterModel.getEndDate()) + para, new LoadApiCallback() {
                     @Override

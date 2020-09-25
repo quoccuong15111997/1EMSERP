@@ -1,0 +1,1 @@
+package com.firstems.erp.callback;public interface DeleteFileCallback {    void onDeleteSuccess();}

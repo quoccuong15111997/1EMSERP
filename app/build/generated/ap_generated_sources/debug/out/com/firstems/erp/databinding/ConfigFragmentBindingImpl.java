@@ -41,27 +41,23 @@ public class ConfigFragmentBindingImpl extends ConfigFragmentBinding  {
     @NonNull
     private final android.widget.TextView mboundView17;
     @NonNull
-    private final android.widget.EditText mboundView3;
-    @NonNull
     private final android.widget.Button mboundView4;
     @NonNull
     private final android.widget.TextView mboundView5;
     @NonNull
     private final android.widget.TextView mboundView7;
     @NonNull
-    private final android.widget.EditText mboundView8;
-    @NonNull
     private final android.widget.TextView mboundView9;
     // variables
     // values
     // listeners
     // Inverse Binding Event Handlers
-    private androidx.databinding.InverseBindingListener mboundView3androidTextAttrChanged = new androidx.databinding.InverseBindingListener() {
+    private androidx.databinding.InverseBindingListener edtDomainandroidTextAttrChanged = new androidx.databinding.InverseBindingListener() {
         @Override
         public void onChange() {
             // Inverse of ui.edtDomain
             //         is ui.setEdtDomain((java.lang.String) callbackArg_0)
-            java.lang.String callbackArg_0 = androidx.databinding.adapters.TextViewBindingAdapter.getTextString(mboundView3);
+            java.lang.String callbackArg_0 = androidx.databinding.adapters.TextViewBindingAdapter.getTextString(edtDomain);
             // localize variables for thread safety
             // ui != null
             boolean uiJavaLangObjectNull = false;
@@ -82,12 +78,12 @@ public class ConfigFragmentBindingImpl extends ConfigFragmentBinding  {
             }
         }
     };
-    private androidx.databinding.InverseBindingListener mboundView8androidTextAttrChanged = new androidx.databinding.InverseBindingListener() {
+    private androidx.databinding.InverseBindingListener edtNumberDayandroidTextAttrChanged = new androidx.databinding.InverseBindingListener() {
         @Override
         public void onChange() {
             // Inverse of ui.edtNumberDay
             //         is ui.setEdtNumberDay((java.lang.String) callbackArg_0)
-            java.lang.String callbackArg_0 = androidx.databinding.adapters.TextViewBindingAdapter.getTextString(mboundView8);
+            java.lang.String callbackArg_0 = androidx.databinding.adapters.TextViewBindingAdapter.getTextString(edtNumberDay);
             // localize variables for thread safety
             // ui != null
             boolean uiJavaLangObjectNull = false;
@@ -116,6 +112,8 @@ public class ConfigFragmentBindingImpl extends ConfigFragmentBinding  {
         super(bindingComponent, root, 1
             , (android.widget.Button) bindings[19]
             , (android.widget.Button) bindings[18]
+            , (android.widget.EditText) bindings[3]
+            , (android.widget.EditText) bindings[8]
             , (android.view.View) bindings[20]
             , (androidx.core.widget.NestedScrollView) bindings[21]
             , (android.widget.Spinner) bindings[22]
@@ -134,6 +132,8 @@ public class ConfigFragmentBindingImpl extends ConfigFragmentBinding  {
             );
         this.btnCancel.setTag(null);
         this.btnSave.setTag(null);
+        this.edtDomain.setTag(null);
+        this.edtNumberDay.setTag(null);
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
         this.mboundView10 = (android.widget.TextView) bindings[10];
@@ -148,16 +148,12 @@ public class ConfigFragmentBindingImpl extends ConfigFragmentBinding  {
         this.mboundView16.setTag(null);
         this.mboundView17 = (android.widget.TextView) bindings[17];
         this.mboundView17.setTag(null);
-        this.mboundView3 = (android.widget.EditText) bindings[3];
-        this.mboundView3.setTag(null);
         this.mboundView4 = (android.widget.Button) bindings[4];
         this.mboundView4.setTag(null);
         this.mboundView5 = (android.widget.TextView) bindings[5];
         this.mboundView5.setTag(null);
         this.mboundView7 = (android.widget.TextView) bindings[7];
         this.mboundView7.setTag(null);
-        this.mboundView8 = (android.widget.EditText) bindings[8];
-        this.mboundView8.setTag(null);
         this.mboundView9 = (android.widget.TextView) bindings[9];
         this.mboundView9.setTag(null);
         this.txtTitlSettingSignature.setTag(null);
@@ -518,6 +514,22 @@ public class ConfigFragmentBindingImpl extends ConfigFragmentBinding  {
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.btnSave, uiButtonSave);
         }
+        if ((dirtyFlags & 0x100009L) != 0) {
+            // api target 1
+
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.edtDomain, uiEdtDomain);
+        }
+        if ((dirtyFlags & 0x100000L) != 0) {
+            // api target 1
+
+            androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.edtDomain, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, edtDomainandroidTextAttrChanged);
+            androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.edtNumberDay, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, edtNumberDayandroidTextAttrChanged);
+        }
+        if ((dirtyFlags & 0x100101L) != 0) {
+            // api target 1
+
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.edtNumberDay, uiEdtNumberDay);
+        }
         if ((dirtyFlags & 0x100401L) != 0) {
             // api target 1
 
@@ -548,17 +560,6 @@ public class ConfigFragmentBindingImpl extends ConfigFragmentBinding  {
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView17, uiSwitchWork);
         }
-        if ((dirtyFlags & 0x100009L) != 0) {
-            // api target 1
-
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView3, uiEdtDomain);
-        }
-        if ((dirtyFlags & 0x100000L) != 0) {
-            // api target 1
-
-            androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.mboundView3, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, mboundView3androidTextAttrChanged);
-            androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.mboundView8, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, mboundView8androidTextAttrChanged);
-        }
         if ((dirtyFlags & 0x100011L) != 0) {
             // api target 1
 
@@ -573,11 +574,6 @@ public class ConfigFragmentBindingImpl extends ConfigFragmentBinding  {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView7, uiTitleNumberDay);
-        }
-        if ((dirtyFlags & 0x100101L) != 0) {
-            // api target 1
-
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView8, uiEdtNumberDay);
         }
         if ((dirtyFlags & 0x100201L) != 0) {
             // api target 1

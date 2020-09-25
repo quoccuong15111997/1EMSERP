@@ -37,6 +37,7 @@ import com.firstems.erp.callback.LoadListEmployeeCallback;
 import com.firstems.erp.callback.PickDateCallback;
 import com.firstems.erp.callback.SaveFileToLocalCallback;
 import com.firstems.erp.callback.ServerCheckCallback;
+import com.firstems.erp.callback.UploadFileCallback;
 import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Util;
 import com.firstems.erp.databinding.ServiceContactsFragmentBinding;
@@ -142,39 +143,33 @@ public class ServiceContactsFragment extends CommonFragment {
                     if (employeeListThamKhao.size()>0){
                         if (!binding.edtPurposeContact.getText().toString().equals("")){
                             if (!binding.edtContactContent.getText().toString().equals("")){
-                                if (!binding.edtLocate.getText().toString().equals("")){
-                                    if (signatureItemApiResponse!=null){
-                                        showConfirmMessage(SharedPreferencesManager.getSystemLabel(49), SharedPreferencesManager.getSystemLabel(56), SharedPreferencesManager.getSystemLabel(54), SharedPreferencesManager.getSystemLabel(55), new ConfirmCallback() {
-                                            @Override
-                                            public void onAccept() {
-                                                doUpdate();
-                                                return;
-                                            }
+                                if (signatureItemApiResponse!=null){
+                                    showConfirmMessage(SharedPreferencesManager.getSystemLabel(49), SharedPreferencesManager.getSystemLabel(56), SharedPreferencesManager.getSystemLabel(54), SharedPreferencesManager.getSystemLabel(55), new ConfirmCallback() {
+                                        @Override
+                                        public void onAccept() {
+                                            doUpdate();
+                                            return;
+                                        }
+                                        
+                                        @Override
+                                        public void onCancel() {
                                             
-                                            @Override
-                                            public void onCancel() {
-                                            
-                                            }
-                                        });
-                                    }
-                                    else {
-                                        showConfirmMessage(SharedPreferencesManager.getSystemLabel(49), SharedPreferencesManager.getSystemLabel(56), SharedPreferencesManager.getSystemLabel(54), SharedPreferencesManager.getSystemLabel(55), new ConfirmCallback() {
-                                            @Override
-                                            public void onAccept() {
-                                                doSave();
-                                                return;
-                                            }
-                                            
-                                            @Override
-                                            public void onCancel() {
-                                            
-                                            }
-                                        });
-                                    }
+                                        }
+                                    });
                                 }
                                 else {
-                                    showToastError(SharedPreferencesManager.getSystemLabel(77));
-                                    return;
+                                    showConfirmMessage(SharedPreferencesManager.getSystemLabel(49), SharedPreferencesManager.getSystemLabel(56), SharedPreferencesManager.getSystemLabel(54), SharedPreferencesManager.getSystemLabel(55), new ConfirmCallback() {
+                                        @Override
+                                        public void onAccept() {
+                                            doSave();
+                                            return;
+                                        }
+                                        
+                                        @Override
+                                        public void onCancel() {
+                                            
+                                        }
+                                    });
                                 }
                             }
                             else {
@@ -205,66 +200,31 @@ public class ServiceContactsFragment extends CommonFragment {
                     if (employeeListThamKhao.size()>0){
                         if (!binding.edtPurposeContact.getText().toString().equals("")){
                             if (!binding.edtContactContent.getText().toString().equals("")){
-                                if (!binding.edtLocate.getText().toString().equals("")){
-                                    if (signatureItemApiResponse!=null){
-                                        showConfirmMessage(SharedPreferencesManager.getSystemLabel(49), SharedPreferencesManager.getSystemLabel(58), SharedPreferencesManager.getSystemLabel(54), SharedPreferencesManager.getSystemLabel(55), new ConfirmCallback() {
-                                            @Override
-                                            public void onAccept() {
-                                                progressdialog.show();
-                                                CommitDocumentRequest commitDocumentRequest = new CommitDocumentRequest();
-                                                commitDocumentRequest.setDcmnCode(signatureItemApiResponse.getDcmnCode());
-                                                commitDocumentRequest.setKeyCode(signatureItemApiResponse.getKeyCode());
-                                                System.out.println(commitDocumentRequest.convertToJson());
-                
-                                                ApiServices.getInstance().commitDocument(SharedPreferencesManager.getInstance().getPrefToken(), commitDocumentRequest.convertToJson(), new Callback<ApiResponse>() {
-                                                    @Override
-                                                    public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
-                                                        if (response.isSuccessful()){
-                                                            if (response.body().isRETNCODE()){
-                                                                progressdialog.dismiss();
-                                                                showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(59));
-                                                            }
-                                                            else {
-                                                                progressdialog.dismiss();
-                                                                showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(64));
-                                                            }
-                                                        }
-                                                        else {
-                                                            progressdialog.dismiss();
-                                                            showOutTOKEN();
-                                                        }
-                                                    }
-                                                    @Override
-                                                    public void onFailure(Call<ApiResponse> call, Throwable t) {
-                                                        progressdialog.dismiss();
-                                                        showOutTOKEN();
-                                                    }
-                                                });
-                                            }
-            
-                                            @Override
-                                            public void onCancel() {
-                
-                                            }
-                                        });
-                                    }
-                                    else {
-                                        showConfirmMessage(SharedPreferencesManager.getSystemLabel(49), SharedPreferencesManager.getSystemLabel(58), SharedPreferencesManager.getSystemLabel(54), SharedPreferencesManager.getSystemLabel(55), new ConfirmCallback() {
-                                            @Override
-                                            public void onAccept() {
-                                                doAddAndCommit();
-                                            }
-            
-                                            @Override
-                                            public void onCancel() {
-                
-                                            }
-                                        });
-                                    }
+                                if (signatureItemApiResponse!=null){
+                                    showConfirmMessage(SharedPreferencesManager.getSystemLabel(49), SharedPreferencesManager.getSystemLabel(58), SharedPreferencesManager.getSystemLabel(54), SharedPreferencesManager.getSystemLabel(55), new ConfirmCallback() {
+                                        @Override
+                                        public void onAccept() {
+                                            doCommit();
+                                        }
+                                        
+                                        @Override
+                                        public void onCancel() {
+                                        
+                                        }
+                                    });
                                 }
                                 else {
-                                    showToastError(SharedPreferencesManager.getSystemLabel(77));
-                                    return;
+                                    showConfirmMessage(SharedPreferencesManager.getSystemLabel(49), SharedPreferencesManager.getSystemLabel(58), SharedPreferencesManager.getSystemLabel(54), SharedPreferencesManager.getSystemLabel(55), new ConfirmCallback() {
+                                        @Override
+                                        public void onAccept() {
+                                            doAddAndCommit();
+                                        }
+                                        
+                                        @Override
+                                        public void onCancel() {
+                                        
+                                        }
+                                    });
                                 }
                             }
                             else {
@@ -370,6 +330,121 @@ public class ServiceContactsFragment extends CommonFragment {
                 });
             }
         });
+        binding.txtDateComplete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatePickerDialog.getInstance().showDialogSelectDate(System.currentTimeMillis(), 0, getContext(), new PickDateCallback() {
+                    @Override
+                    public void onDatePicker(Date date) {
+                        dateComplete = date;
+                        binding.txtDateComplete.setText(simpleDateFormatDisplay.format(date));
+                    }
+                });
+            }
+        });
+    }
+    
+    private void doCommit() {
+        progressdialog.show();
+        
+        ServiceContactsItem itemRequest = new ServiceContactsItem();
+        itemRequest.setmAINDATE(simpleDateFormatSystem.format(dateCreate));
+        itemRequest.setlCTNCODE(SharedPreferencesManager.getInstance().getPrefLctcode());
+        itemRequest.setmCONTENT(binding.edtContactContent.getText().toString());
+        itemRequest.setmPURPNME(binding.edtPurposeContact.getText().toString());
+        itemRequest.setfISHDATE(simpleDateFormatSystem.format(dateComplete));
+        itemRequest.setfISHPLCE(binding.edtLocate.getText().toString());
+        itemRequest.seteMPLRECV(getEmplRecv());
+        itemRequest.seteMPLREFR(getEmplRefer());
+        itemRequest.setmAINCODE(signatureItemApiResponse.getMainCode());
+        itemRequest.setKeyCode(signatureItemApiResponse.getKeyCode());
+        
+        LanhVucLienQuan quan = (LanhVucLienQuan) binding.spinerRelatedField.getSelectedItem();
+        itemRequest.setdCMNSBCD(quan.getiTEMCODE());
+        
+        List<ServiceContactsItem> contactsItems = new ArrayList<>();
+        contactsItems.add(itemRequest);
+        
+        ServiceContactRequest serviceContactRequest = new ServiceContactRequest();
+        serviceContactRequest.setServiceContactsItems(contactsItems);
+        
+        JsonObject jsonObject = new Gson().fromJson(new Gson().toJson(serviceContactRequest),JsonObject.class);
+        
+        ApiServices.getInstance().editLienHeCongVu(SharedPreferencesManager.getInstance().getPrefToken(), jsonObject, new Callback<AddNewServiceContactResponse>() {
+            @Override
+            public void onResponse(Call<AddNewServiceContactResponse> call, Response<AddNewServiceContactResponse> response) {
+                if (response.isSuccessful()){
+                    if (response.body().isRETNCODE()){
+                        deleteFile(response.body().getRetuenValue().get(0).getKeyCode());
+                        if (FileFragment.listFilePath.size()>0 || FileFragment.fileIncludeList.size()>0){
+                            upLoadFileBeforeCommit(response.body().getRetuenValue().get(0).getKeyCode(), response.body().getRETNMSSG(), getListImage(), FileFragment.fileIncludeList,
+                                    new UploadFileCallback() {
+                                        @Override
+                                        public void onUpLoadSuccess() {
+                                            doStarCommit(response.body().getRetuenValue().get(0).getKeyCode());
+                                        }
+                                        
+                                        @Override
+                                        public void onUploadFail(String mess) {
+                                            progressdialog.dismiss();
+                                            showErrorDialog(SharedPreferencesManager.getSystemLabel(50),mess);
+                                        }
+                                    });
+                        }
+                        else {
+                            doStarCommit(response.body().getRetuenValue().get(0).getKeyCode());
+                        }
+                    }
+                    else {
+                        progressdialog.dismiss();
+                        showErrorDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
+                    }
+                    
+                }
+                else {
+                    progressdialog.dismiss();
+                    showOutTOKEN();
+                }
+            }
+            
+            @Override
+            public void onFailure(Call<AddNewServiceContactResponse> call, Throwable t) {
+                progressdialog.dismiss();
+                showOutTOKEN();
+            }
+        });
+    }
+    
+    private void doStarCommit(String keyCode) {
+        CommitDocumentRequest commitDocumentRequest = new CommitDocumentRequest();
+        commitDocumentRequest.setDcmnCode(signatureItemApiResponse.getDcmnCode());
+        commitDocumentRequest.setKeyCode(keyCode);
+        System.out.println(commitDocumentRequest.convertToJson());
+        
+        ApiServices.getInstance().commitDocument(SharedPreferencesManager.getInstance().getPrefToken(), commitDocumentRequest.convertToJson(), new Callback<ApiResponse>() {
+            @Override
+            public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
+                if (response.isSuccessful()){
+                    if (response.body().isRETNCODE()){
+                        progressdialog.dismiss();
+                        showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(59));
+                    }
+                    else {
+                        progressdialog.dismiss();
+                        showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(64));
+                    }
+                }
+                else {
+                    progressdialog.dismiss();
+                    showOutTOKEN();
+                }
+            }
+            @Override
+            public void onFailure(Call<ApiResponse> call, Throwable t) {
+                progressdialog.dismiss();
+                showOutTOKEN();
+            }
+        });
     }
     
     private void doAddAndCommit() {
@@ -383,24 +458,24 @@ public class ServiceContactsFragment extends CommonFragment {
         itemRequest.setfISHPLCE(binding.edtLocate.getText().toString());
         itemRequest.seteMPLRECV(getEmplRecv());
         itemRequest.seteMPLREFR(getEmplRefer());
-    
+        
         LanhVucLienQuan lanhVucLienQuan = (LanhVucLienQuan) binding.spinerRelatedField.getSelectedItem();
         itemRequest.setdCMNSBCD(lanhVucLienQuan.getiTEMCODE());
-    
+        
         LanhVucLienQuan quan = (LanhVucLienQuan) binding.spinerRelatedField.getSelectedItem();
         itemRequest.setdCMNSBCD(quan.getiTEMCODE());
-    
+        
         List<ServiceContactsItem> contactsItems = new ArrayList<>();
         contactsItems.add(itemRequest);
-    
+        
         ServiceContactRequest serviceContactRequest = new ServiceContactRequest();
         serviceContactRequest.setServiceContactsItems(contactsItems);
-    
+        
         JsonObject jsonObject = new Gson().fromJson(new Gson().toJson(serviceContactRequest),JsonObject.class);
-    
+        
         Log.d("JSON: ", jsonObject.toString());
         System.out.println(jsonObject);
-    
+        
         ApiServices.getInstance().addAddCommitLienHeCongVu(SharedPreferencesManager.getInstance().getPrefToken(), jsonObject, new Callback<AddNewServiceContactResponse>() {
             @Override
             public void onResponse(Call<AddNewServiceContactResponse> call, Response<AddNewServiceContactResponse> response) {
@@ -414,20 +489,20 @@ public class ServiceContactsFragment extends CommonFragment {
                             progressdialog.dismiss();
                             showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),addNewServiceContactResponse.getRETNMSSG());
                         }
-                    
+                        
                     }
                     else {
                         progressdialog.dismiss();
                         showErrorDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
                     }
-                
+                    
                 }
                 else {
                     progressdialog.dismiss();
                     showOutTOKEN();
                 }
             }
-        
+            
             @Override
             public void onFailure(Call<AddNewServiceContactResponse> call, Throwable t) {
                 progressdialog.dismiss();
@@ -506,15 +581,15 @@ public class ServiceContactsFragment extends CommonFragment {
                             public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
                                 System.out.println(response.body().getRETNMSSG());
                                 System.out.println(response.message());
-                                FileFragment.imageModelListRemove.clear();
                             }
-            
+                            
                             @Override
                             public void onFailure(Call<ApiResponse> call, Throwable t) {
                                 System.out.println(t.getMessage());
                             }
                         });
             }
+            FileFragment.imageModelListRemove.clear();
         }
     }
     
@@ -561,7 +636,7 @@ public class ServiceContactsFragment extends CommonFragment {
                             progressdialog.dismiss();
                             showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),addNewServiceContactResponse.getRETNMSSG());
                         }
-                       
+                        
                     }
                     else {
                         progressdialog.dismiss();
@@ -624,9 +699,46 @@ public class ServiceContactsFragment extends CommonFragment {
                                 System.out.println(response.message());
                                 showOutTOKEN();
                             }
-                    
+                            
                         }
-                
+                        
+                        @Override
+                        public void onFailure(Call<ApiResponse> call, Throwable t) {
+                            progressdialog.dismiss();
+                            System.out.println(t.getMessage());
+                            showOutTOKEN();
+                        }
+                    });
+        }
+        else {
+            progressdialog.dismiss();
+            showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),mess);
+            FileFragment.fileIncludeList.clear();
+        }
+    }
+    private void upLoadFileBeforeCommit(String keyCode, String mess, List<String> listImage, List<FileIncludeModel> listFile, UploadFileCallback uploadFileCallback) {
+        if (listImage.size()>0 || checkFileInclude(listFile)){
+            ApiServices.getInstance().uploadFile(SharedPreferencesManager.getInstance().getPrefToken(), "LHCV", keyCode,
+                    listImage,listFile, new Callback<ApiResponse>() {
+                        @Override
+                        public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
+                            if (response.isSuccessful()){
+                                if (response.body().isRETNCODE()){
+                                    FileFragment.fileIncludeList.clear();
+                                    uploadFileCallback.onUpLoadSuccess();
+                                    System.out.println(response.body().getRETNMSSG());
+                                }
+                                else {
+                                    System.out.println(response.body().getRETNMSSG());
+                                    uploadFileCallback.onUploadFail(response.body().getRETNMSSG());
+                                }
+                            }
+                            else {
+                                showOutTOKEN();
+                            }
+                            
+                        }
+                        
                         @Override
                         public void onFailure(Call<ApiResponse> call, Throwable t) {
                             progressdialog.dismiss();
@@ -695,7 +807,7 @@ public class ServiceContactsFragment extends CommonFragment {
     
     private void addControls() {
         initProgressDialog(SharedPreferencesManager.getSystemLabel(62),SharedPreferencesManager.getSystemLabel(63));
-       
+        
         showLoadingNonMessDialog();
         
         Intent intent = getActivity().getIntent();
@@ -825,7 +937,7 @@ public class ServiceContactsFragment extends CommonFragment {
                                 }
                             });
                         }
-    
+                        
                         @Override
                         public void onServerFail() {
                             showOutTOKEN();

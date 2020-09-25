@@ -29,12 +29,6 @@ public abstract class DocumentFragmentBinding extends ViewDataBinding {
   public final CheckBox chkSearchByTime;
 
   @NonNull
-  public final EMSEditText edtCategory;
-
-  @NonNull
-  public final EMSEditText edtContent;
-
-  @NonNull
   public final EMSEditText edtDocumentCode;
 
   @NonNull
@@ -42,9 +36,6 @@ public abstract class DocumentFragmentBinding extends ViewDataBinding {
 
   @NonNull
   public final EMSEditText edtInfo;
-
-  @NonNull
-  public final EMSEditText edtLocate;
 
   @NonNull
   public final EMSEditText edtReleaseYear;
@@ -101,6 +92,15 @@ public abstract class DocumentFragmentBinding extends ViewDataBinding {
   public final LinearLayout linearLayoutTime;
 
   @NonNull
+  public final Spinner spinerCategory;
+
+  @NonNull
+  public final Spinner spinerContent;
+
+  @NonNull
+  public final Spinner spinerLocate;
+
+  @NonNull
   public final Spinner spinnerCompanyBranch;
 
   @NonNull
@@ -149,16 +149,16 @@ public abstract class DocumentFragmentBinding extends ViewDataBinding {
   public final TextView txtTu;
 
   protected DocumentFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button button, CheckBox chkSearchByTime, EMSEditText edtCategory, EMSEditText edtContent,
-      EMSEditText edtDocumentCode, EMSEditText edtDocumentName, EMSEditText edtInfo,
-      EMSEditText edtLocate, EMSEditText edtReleaseYear, EMSEditText edtStack,
-      ImageView imageView24, ImageView imageView241, View include,
+      Button button, CheckBox chkSearchByTime, EMSEditText edtDocumentCode,
+      EMSEditText edtDocumentName, EMSEditText edtInfo, EMSEditText edtReleaseYear,
+      EMSEditText edtStack, ImageView imageView24, ImageView imageView241, View include,
       EMSConstrainLayoutBorder layoutDateForm, EMSConstrainLayoutBorder layoutDateTo,
       LinearLayout layoutGraphsearch, LinearLayout linearLayout6, LinearLayout linearLayout7,
       LinearLayout linearLayout8, LinearLayout linearLayout9, LinearLayout linearLayoutCategory,
       LinearLayout linearLayoutCompanyBranch, LinearLayout linearLayoutContent,
       LinearLayout linearLayoutLocate, LinearLayout linearLayoutStack,
-      LinearLayout linearLayoutTime, Spinner spinnerCompanyBranch, TextView txtCloseGraphSearch,
+      LinearLayout linearLayoutTime, Spinner spinerCategory, Spinner spinerContent,
+      Spinner spinerLocate, Spinner spinnerCompanyBranch, TextView txtCloseGraphSearch,
       EMSTextviewHighLineNonBorder txtDateFrom, EMSTextviewHighLineNonBorder txtDateTo,
       TextView txtDen, TextView txtOpenGraphSearch, TextView txtTitleCategory,
       TextView txtTitleCompanyBranch, TextView txtTitleContent, TextView txtTitleDocumentCode,
@@ -167,12 +167,9 @@ public abstract class DocumentFragmentBinding extends ViewDataBinding {
     super(_bindingComponent, _root, _localFieldCount);
     this.button = button;
     this.chkSearchByTime = chkSearchByTime;
-    this.edtCategory = edtCategory;
-    this.edtContent = edtContent;
     this.edtDocumentCode = edtDocumentCode;
     this.edtDocumentName = edtDocumentName;
     this.edtInfo = edtInfo;
-    this.edtLocate = edtLocate;
     this.edtReleaseYear = edtReleaseYear;
     this.edtStack = edtStack;
     this.imageView24 = imageView24;
@@ -191,6 +188,9 @@ public abstract class DocumentFragmentBinding extends ViewDataBinding {
     this.linearLayoutLocate = linearLayoutLocate;
     this.linearLayoutStack = linearLayoutStack;
     this.linearLayoutTime = linearLayoutTime;
+    this.spinerCategory = spinerCategory;
+    this.spinerContent = spinerContent;
+    this.spinerLocate = spinerLocate;
     this.spinnerCompanyBranch = spinnerCompanyBranch;
     this.txtCloseGraphSearch = txtCloseGraphSearch;
     this.txtDateFrom = txtDateFrom;

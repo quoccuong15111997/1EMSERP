@@ -91,14 +91,15 @@
                                     tools:text="Domain"></TextView>
 
                                 <EditText
+                                    android:id="@+id/edtDomain"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:background="@drawable/cutom_edittext_main"
                                     android:padding="10dp"
                                     android:singleLine="true"
+                                    android:text="@={ui.edtDomain}"
                                     android:textColor="@color/grey_90"
                                     android:textSize="14sp"
-                                    android:text="@={ui.edtDomain}"
                                     tools:text="http://api-ems.firstems.com/" />
                             </LinearLayout>
 
@@ -217,13 +218,14 @@
                                     tools:text="Số ngày"></TextView>
 
                                 <EditText
+                                    android:id="@+id/edtNumberDay"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:background="@drawable/cutom_edittext_main"
                                     android:inputType="number"
-                                    android:padding="10dp"
                                     android:maxLength="5"
+                                    android:padding="10dp"
                                     android:singleLine="true"
                                     android:text="@={ui.edtNumberDay}"
                                     android:textColor="@color/grey_90"

@@ -31,6 +31,7 @@ import com.firstems.erp.api.model.response.signature.SignatureItemApiResponse;
 import com.firstems.erp.api.model.response.signature.switchshift.SwitchShiftApiResponse;
 import com.firstems.erp.api.model.response.signature.switchshift.SwitchShiftDetail;
 import com.firstems.erp.api.model.response.signature.switchshift.SwitchShiftItem;
+import com.firstems.erp.api.model.response.switchsift.SwitchsiftUpdateResponse;
 import com.firstems.erp.api.services.ApiServices;
 import com.firstems.erp.callback.ConfirmCallback;
 import com.firstems.erp.callback.LoadDataKeppingCallback;
@@ -242,42 +243,12 @@ public class SwitchShiftFragment extends CommonFragment implements SwitchShiftIt
                             showConfirmMessage(SharedPreferencesManager.getSystemLabel(49), SharedPreferencesManager.getSystemLabel(58), SharedPreferencesManager.getSystemLabel(54), SharedPreferencesManager.getSystemLabel(55), new ConfirmCallback() {
                                 @Override
                                 public void onAccept() {
-                                    progressdialog.show();
-                                    CommitDocumentRequest commitDocumentRequest = new CommitDocumentRequest();
-                                    commitDocumentRequest.setDcmnCode(signatureItemApiResponse.getDcmnCode());
-                                    commitDocumentRequest.setKeyCode(signatureItemApiResponse.getKeyCode());
-                
-                                    ApiServices.getInstance().commitDocument(SharedPreferencesManager.getInstance().getPrefToken(), commitDocumentRequest.convertToJson(), new Callback<ApiResponse>() {
-                                        @Override
-                                        public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
-                                            if (response.isSuccessful()){
-                                                ApiResponse apiResponse =response.body();
-                                                if (apiResponse.isRETNCODE()){
-                                                    progressdialog.dismiss();
-                                                    showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(59));
-                                                }
-                                                else {
-                                                    progressdialog.dismiss();
-                                                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(60));
-                                                }
-                                            }
-                                            else {
-                                                progressdialog.dismiss();
-                                                showOutTOKEN();
-                                            }
-                                        }
-                                        @Override
-                                        public void onFailure(Call<ApiResponse> call, Throwable t) {
-                                            System.out.println(t.getMessage());
-                                            progressdialog.dismiss();
-                                            showOutTOKEN();
-                                        }
-                                    });
+                                    doCommit();
                                 }
-            
+                                
                                 @Override
                                 public void onCancel() {
-                
+                                
                                 }
                             });
                         }
@@ -287,10 +258,10 @@ public class SwitchShiftFragment extends CommonFragment implements SwitchShiftIt
                                 public void onAccept() {
                                     doSaveAndCommit();
                                 }
-            
+                                
                                 @Override
                                 public void onCancel() {
-                
+                                
                                 }
                             });
                         }
@@ -306,6 +277,100 @@ public class SwitchShiftFragment extends CommonFragment implements SwitchShiftIt
                 }
             }
         });
+    }
+    
+    private void doCommit() {
+        progressdialog.show();
+        List<SwithshiftDetailRequest>swithshiftDetailRequests = new ArrayList<>();
+        for (SwitchShift switchShift : list){
+            SwithshiftDetailRequest detailRequest = new SwithshiftDetailRequest();
+            detailRequest.setfRLVDATE(simpleDateFormatSystem.format(switchShift.getDateBegin()));
+            detailRequest.settOLVDATE(simpleDateFormatSystem.format(switchShift.getDateEnd()));
+            detailRequest.seteMPLCDDT(switchShift.getEmployeeDiLam().getItemCode());
+            detailRequest.seteMPLCDNM(switchShift.getEmployeeDiLam().getItemName());
+            detailRequest.seteMPLRLTN(switchShift.getEmployeeChamCong().getItemCode());
+            detailRequest.seteMPLRLNM(switchShift.getEmployeeChamCong().getItemName());
+            detailRequest.setmAINCODE(signatureItemApiResponse.getMainCode());
+            if (switchShift.isMorning()){
+                detailRequest.settIMEMORN(switchShift.getContentMornig().getItemCode());
+            }
+            if (switchShift.isAfternoon()){
+                detailRequest.settIMEAFTR(switchShift.getContentAfternoon().getItemCode());
+            }
+            if (switchShift.isEverning()){
+                detailRequest.settIMEEVEN(switchShift.getContentEverning().getItemCode());
+            }
+        
+            swithshiftDetailRequests.add(detailRequest);
+        }
+        List<SwithshiftHeaderRequest> swithshiftHeaderRequests = new ArrayList<>();
+        SwithshiftHeaderRequest headerRequest = new SwithshiftHeaderRequest();
+        headerRequest.setDetailRequests(swithshiftDetailRequests);
+        headerRequest.setmAINDATE(simpleDateFormatSystem.format(createDate));
+        headerRequest.setlCTNCODE(SharedPreferencesManager.getInstance().getPrefLctcode());
+        headerRequest.setnOTETEXT(switchShiftFragmentBinding.edtInfo.getText().toString());
+        headerRequest.setcHGESLRY(switchShiftFragmentBinding.chkReShift.isChecked() ? 1 : 0);
+        headerRequest.setmAINCODE(signatureItemApiResponse.getMainCode());
+        headerRequest.setKeyCode(signatureItemApiResponse.getKeyCode());
+    
+        swithshiftHeaderRequests.add(headerRequest);
+        SwitchShifhRequest switchShifhRequest= new SwitchShifhRequest();
+        switchShifhRequest.setSwithshiftHeaderRequests(swithshiftHeaderRequests);
+    
+        JsonObject jsonObject = new Gson().fromJson(new Gson().toJson(switchShifhRequest),JsonObject.class);
+        ApiServices.getInstance().updateSwitchsift(SharedPreferencesManager.getInstance().getPrefToken(), jsonObject, new Callback<SwitchsiftUpdateResponse>() {
+            @Override
+            public void onResponse(Call<SwitchsiftUpdateResponse> call, Response<SwitchsiftUpdateResponse> response) {
+                if (response.isSuccessful()){
+                    if (response.body().isRETNCODE()){
+                        CommitDocumentRequest commitDocumentRequest = new CommitDocumentRequest();
+                        commitDocumentRequest.setDcmnCode(signatureItemApiResponse.getDcmnCode());
+                        commitDocumentRequest.setKeyCode(response.body().getSwitchsiftUpdateItems().get(0).getKeyCode());
+    
+                        ApiServices.getInstance().commitDocument(SharedPreferencesManager.getInstance().getPrefToken(), commitDocumentRequest.convertToJson(), new Callback<ApiResponse>() {
+                            @Override
+                            public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
+                                if (response.isSuccessful()){
+                                    ApiResponse apiResponse =response.body();
+                                    if (apiResponse.isRETNCODE()){
+                                        progressdialog.dismiss();
+                                        showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(59));
+                                    }
+                                    else {
+                                        progressdialog.dismiss();
+                                        showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(60));
+                                    }
+                                }
+                                else {
+                                    progressdialog.dismiss();
+                                    showOutTOKEN();
+                                }
+                            }
+                            @Override
+                            public void onFailure(Call<ApiResponse> call, Throwable t) {
+                                System.out.println(t.getMessage());
+                                progressdialog.dismiss();
+                                showOutTOKEN();
+                            }
+                        });
+                    }
+                    else {
+                        progressdialog.dismiss();
+                        showErrorDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
+                    }
+                }
+                else {
+                    progressdialog.dismiss();
+                    showOutTOKEN();
+                }
+            }
+            @Override
+            public void onFailure(Call<SwitchsiftUpdateResponse> call, Throwable t) {
+                progressdialog.dismiss();
+                showOutTOKEN();
+            }
+        });
+        
     }
     
     private void doUpdateSwitchShift() {
@@ -347,9 +412,9 @@ public class SwitchShiftFragment extends CommonFragment implements SwitchShiftIt
         switchShifhRequest.setSwithshiftHeaderRequests(swithshiftHeaderRequests);
         
         JsonObject jsonObject = new Gson().fromJson(new Gson().toJson(switchShifhRequest),JsonObject.class);
-        ApiServices.getInstance().updateSwitchsift(SharedPreferencesManager.getInstance().getPrefToken(), jsonObject, new Callback<ApiResponse>() {
+        ApiServices.getInstance().updateSwitchsift(SharedPreferencesManager.getInstance().getPrefToken(), jsonObject, new Callback<SwitchsiftUpdateResponse>() {
             @Override
-            public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
+            public void onResponse(Call<SwitchsiftUpdateResponse> call, Response<SwitchsiftUpdateResponse> response) {
                 if (response.isSuccessful()){
                     if (response.body().isRETNCODE()){
                         progressdialog.dismiss();
@@ -366,7 +431,7 @@ public class SwitchShiftFragment extends CommonFragment implements SwitchShiftIt
                 }
             }
             @Override
-            public void onFailure(Call<ApiResponse> call, Throwable t) {
+            public void onFailure(Call<SwitchsiftUpdateResponse> call, Throwable t) {
                 progressdialog.dismiss();
                 showOutTOKEN();
             }
@@ -579,6 +644,7 @@ public class SwitchShiftFragment extends CommonFragment implements SwitchShiftIt
                                             ,switchShiftFragmentBinding.imgAdd);
                                     switchShiftFragmentBinding.setItem(switchShiftApiResponse.getSwitchShiftItems().get(0));
                                     switchShiftAdapter.setRole(accessRole.isEdit() ? 1 : 0);
+                                    switchShiftFragmentBinding.setIsEditable(accessRole.isEdit());
                                     list.clear();
                                     if (switchShiftApiResponse.getSwitchShiftItems().get(0).getSwitchShiftDetails()!=null){
                                         for (SwitchShiftDetail switchShiftDetail : switchShiftApiResponse.getSwitchShiftItems().get(0).getSwitchShiftDetails()){

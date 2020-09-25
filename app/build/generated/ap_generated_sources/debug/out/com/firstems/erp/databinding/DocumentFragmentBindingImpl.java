@@ -32,16 +32,16 @@ public class DocumentFragmentBindingImpl extends DocumentFragmentBinding  {
         sViewsWithIds.put(R.id.edtReleaseYear, 16);
         sViewsWithIds.put(R.id.linearLayoutLocate, 17);
         sViewsWithIds.put(R.id.txtTitleLocate, 18);
-        sViewsWithIds.put(R.id.edtLocate, 19);
+        sViewsWithIds.put(R.id.spinerLocate, 19);
         sViewsWithIds.put(R.id.linearLayoutContent, 20);
         sViewsWithIds.put(R.id.txtTitleContent, 21);
-        sViewsWithIds.put(R.id.edtContent, 22);
+        sViewsWithIds.put(R.id.spinerContent, 22);
         sViewsWithIds.put(R.id.linearLayoutStack, 23);
         sViewsWithIds.put(R.id.txtTitleStack, 24);
         sViewsWithIds.put(R.id.edtStack, 25);
         sViewsWithIds.put(R.id.linearLayoutCategory, 26);
         sViewsWithIds.put(R.id.txtTitleCategory, 27);
-        sViewsWithIds.put(R.id.edtCategory, 28);
+        sViewsWithIds.put(R.id.spinerCategory, 28);
         sViewsWithIds.put(R.id.linearLayoutCompanyBranch, 29);
         sViewsWithIds.put(R.id.txtTitleCompanyBranch, 30);
         sViewsWithIds.put(R.id.spinnerCompanyBranch, 31);
@@ -72,12 +72,9 @@ public class DocumentFragmentBindingImpl extends DocumentFragmentBinding  {
         super(bindingComponent, root, 0
             , (android.widget.Button) bindings[42]
             , (android.widget.CheckBox) bindings[32]
-            , (com.firstems.erp.helper.widgets.EMSEditText) bindings[28]
-            , (com.firstems.erp.helper.widgets.EMSEditText) bindings[22]
             , (com.firstems.erp.helper.widgets.EMSEditText) bindings[4]
             , (com.firstems.erp.helper.widgets.EMSEditText) bindings[7]
             , (com.firstems.erp.helper.widgets.EMSEditText) bindings[10]
-            , (com.firstems.erp.helper.widgets.EMSEditText) bindings[19]
             , (com.firstems.erp.helper.widgets.EMSEditText) bindings[16]
             , (com.firstems.erp.helper.widgets.EMSEditText) bindings[25]
             , (android.widget.ImageView) bindings[37]
@@ -96,6 +93,9 @@ public class DocumentFragmentBindingImpl extends DocumentFragmentBinding  {
             , (android.widget.LinearLayout) bindings[17]
             , (android.widget.LinearLayout) bindings[23]
             , (android.widget.LinearLayout) bindings[33]
+            , (android.widget.Spinner) bindings[28]
+            , (android.widget.Spinner) bindings[22]
+            , (android.widget.Spinner) bindings[19]
             , (android.widget.Spinner) bindings[31]
             , (android.widget.TextView) bindings[12]
             , (com.firstems.erp.helper.widgets.EMSTextviewHighLineNonBorder) bindings[36]

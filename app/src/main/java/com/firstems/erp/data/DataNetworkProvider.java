@@ -9,6 +9,7 @@ import com.firstems.erp.api.model.request.bussiness.BussinessRgisAddNewRequest;
 import com.firstems.erp.api.model.response.ApiResponse;
 import com.firstems.erp.api.model.response.approved.ApprovedApiResponse;
 import com.firstems.erp.api.model.response.askpermistion.AskPermistionApiResponse;
+import com.firstems.erp.api.model.response.bussiness.BussinessRegistrationEditResponse;
 import com.firstems.erp.api.model.response.department.DepartmentApiResponse;
 import com.firstems.erp.api.model.response.employee.EmployeeApiResponse;
 import com.firstems.erp.api.model.response.lanh_vuc_lien_quan.LanhVucLienQuanApiResponse;
@@ -79,6 +80,7 @@ public class DataNetworkProvider {
     public void getListSignatureApi(FilterModel filterModel ,DataApiCallback dataApiCallback) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         int para = (filterModel.isWaitsignature() ? 1 : 0 ) +(filterModel.isWaitApproved() ? 2 : 0) +(filterModel.isDone() ? 4 : 0);
+        System.out.println("para: "+para);
         SignatureRequest signatureRequest = new SignatureRequest();
         signatureRequest.setSstSign(para);
         signatureRequest.setEndDate(simpleDateFormat.format(filterModel.getEndDate()));
@@ -334,9 +336,9 @@ public class DataNetworkProvider {
         JsonObject jsonObject = new Gson().fromJson(new Gson().toJson(bussinessRgisAddNewRequest), JsonObject.class);
         ApiServices
                 .getInstance()
-                .editBussinessRegst(SharedPreferencesManager.getInstance().getPrefToken(), jsonObject, new Callback<ApiResponse>() {
+                .editBussinessRegst(SharedPreferencesManager.getInstance().getPrefToken(), jsonObject, new Callback<BussinessRegistrationEditResponse>() {
                     @Override
-                    public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
+                    public void onResponse(Call<BussinessRegistrationEditResponse> call, Response<BussinessRegistrationEditResponse> response) {
                         if (response.isSuccessful()){
                             ApiResponse apiResponse = response.body();
                             String json = new Gson().toJson(apiResponse);
@@ -348,7 +350,7 @@ public class DataNetworkProvider {
                     }
 
                     @Override
-                    public void onFailure(Call<ApiResponse> call, Throwable t) {
+                    public void onFailure(Call<BussinessRegistrationEditResponse> call, Throwable t) {
                         dataApiCallback.onApiLoadFail(t.getMessage());
                     }
                 });

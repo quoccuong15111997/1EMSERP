@@ -19,6 +19,7 @@ import com.firstems.erp.api.model.response.approved.ApprovedItemApiResponse;
 import com.firstems.erp.api.model.response.approved.ApprovedItemDetail_1;
 import com.firstems.erp.callback.AprrovedDetail_1_ClickListener;
 import com.firstems.erp.common.Constant;
+import com.firstems.erp.sharedpreferences.SharedPreferencesManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +46,7 @@ public class ApprovedListAdapter extends RecyclerView.Adapter<ApprovedListAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ApprovedItemApiResponse itemApiResponse = list.get(position);
-        holder.recyclerView.setVisibility(View.GONE);
+        holder.recyclerView.setVisibility(SharedPreferencesManager.getInstance().getInfoApproved() ? View.VISIBLE : View.GONE);
         holder.txtName.setText(itemApiResponse.getdCMNNAME());
         holder.approvedItemDetail_1List.clear();
         holder.approvedItemDetail_1List.addAll(itemApiResponse.getApprovedItemDetail_1List());

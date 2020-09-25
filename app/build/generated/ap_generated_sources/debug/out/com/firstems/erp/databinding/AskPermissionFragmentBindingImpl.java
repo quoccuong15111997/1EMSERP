@@ -18,26 +18,27 @@ public class AskPermissionFragmentBindingImpl extends AskPermissionFragmentBindi
         sViewsWithIds.put(R.id.lParentContent, 5);
         sViewsWithIds.put(R.id.linearLayout6, 6);
         sViewsWithIds.put(R.id.txtTitleDateCreate, 7);
-        sViewsWithIds.put(R.id.imageView, 8);
-        sViewsWithIds.put(R.id.linearLayout8, 9);
-        sViewsWithIds.put(R.id.txtTitleInfo, 10);
-        sViewsWithIds.put(R.id.layoutSum, 11);
-        sViewsWithIds.put(R.id.txtTitleDocumentCode, 12);
-        sViewsWithIds.put(R.id.EMSLinearLayout2, 13);
-        sViewsWithIds.put(R.id.txtTitleDate, 14);
-        sViewsWithIds.put(R.id.txtTitleSpecies, 15);
-        sViewsWithIds.put(R.id.txtTitleSum, 16);
-        sViewsWithIds.put(R.id.imgAdd, 17);
-        sViewsWithIds.put(R.id.recycleview, 18);
-        sViewsWithIds.put(R.id.frame_ask_permistion, 19);
-        sViewsWithIds.put(R.id.constraintLayout12, 20);
-        sViewsWithIds.put(R.id.imageView3, 21);
-        sViewsWithIds.put(R.id.textView5, 22);
-        sViewsWithIds.put(R.id.constraintLayout13, 23);
-        sViewsWithIds.put(R.id.txtTrinhKi, 24);
-        sViewsWithIds.put(R.id.llDelete, 25);
-        sViewsWithIds.put(R.id.imageView37, 26);
-        sViewsWithIds.put(R.id.textView55, 27);
+        sViewsWithIds.put(R.id.layoutNgayLap, 8);
+        sViewsWithIds.put(R.id.imageView, 9);
+        sViewsWithIds.put(R.id.linearLayout8, 10);
+        sViewsWithIds.put(R.id.txtTitleInfo, 11);
+        sViewsWithIds.put(R.id.layoutSum, 12);
+        sViewsWithIds.put(R.id.txtTitleDocumentCode, 13);
+        sViewsWithIds.put(R.id.EMSLinearLayout2, 14);
+        sViewsWithIds.put(R.id.txtTitleDate, 15);
+        sViewsWithIds.put(R.id.txtTitleSpecies, 16);
+        sViewsWithIds.put(R.id.txtTitleSum, 17);
+        sViewsWithIds.put(R.id.imgAdd, 18);
+        sViewsWithIds.put(R.id.recycleview, 19);
+        sViewsWithIds.put(R.id.frame_ask_permistion, 20);
+        sViewsWithIds.put(R.id.constraintLayout12, 21);
+        sViewsWithIds.put(R.id.imageView3, 22);
+        sViewsWithIds.put(R.id.textView5, 23);
+        sViewsWithIds.put(R.id.constraintLayout13, 24);
+        sViewsWithIds.put(R.id.txtTrinhKi, 25);
+        sViewsWithIds.put(R.id.llDelete, 26);
+        sViewsWithIds.put(R.id.imageView37, 27);
+        sViewsWithIds.put(R.id.textView55, 28);
     }
     // views
     @NonNull
@@ -48,37 +49,38 @@ public class AskPermissionFragmentBindingImpl extends AskPermissionFragmentBindi
     // Inverse Binding Event Handlers
 
     public AskPermissionFragmentBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 28, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 29, sIncludes, sViewsWithIds));
     }
     private AskPermissionFragmentBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (com.firstems.erp.helper.widgets.EMSLinearLayout) bindings[13]
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[20]
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[23]
+            , (com.firstems.erp.helper.widgets.EMSLinearLayout) bindings[14]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[21]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[24]
             , (com.firstems.erp.helper.widgets.EMSTextviewHighLineNonBorder) bindings[1]
             , (com.firstems.erp.helper.widgets.EMSEditText) bindings[2]
             , (android.widget.TextView) bindings[3]
-            , (android.widget.FrameLayout) bindings[19]
-            , (android.widget.ImageView) bindings[8]
-            , (android.widget.ImageView) bindings[21]
-            , (android.widget.ImageView) bindings[26]
-            , (android.widget.ImageView) bindings[17]
+            , (android.widget.FrameLayout) bindings[20]
+            , (android.widget.ImageView) bindings[9]
+            , (android.widget.ImageView) bindings[22]
+            , (android.widget.ImageView) bindings[27]
+            , (android.widget.ImageView) bindings[18]
             , (android.view.View) bindings[4]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[5]
-            , (android.widget.LinearLayout) bindings[11]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[8]
+            , (android.widget.LinearLayout) bindings[12]
             , (android.widget.LinearLayout) bindings[6]
-            , (android.widget.LinearLayout) bindings[9]
-            , (android.widget.LinearLayout) bindings[25]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[18]
-            , (android.widget.TextView) bindings[22]
-            , (android.widget.TextView) bindings[27]
-            , (com.firstems.erp.helper.widgets.EMSTextviewWhite) bindings[14]
-            , (android.widget.TextView) bindings[7]
-            , (android.widget.TextView) bindings[12]
-            , (android.widget.TextView) bindings[10]
+            , (android.widget.LinearLayout) bindings[10]
+            , (android.widget.LinearLayout) bindings[26]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[19]
+            , (android.widget.TextView) bindings[23]
+            , (android.widget.TextView) bindings[28]
             , (com.firstems.erp.helper.widgets.EMSTextviewWhite) bindings[15]
+            , (android.widget.TextView) bindings[7]
+            , (android.widget.TextView) bindings[13]
+            , (android.widget.TextView) bindings[11]
             , (com.firstems.erp.helper.widgets.EMSTextviewWhite) bindings[16]
-            , (android.widget.TextView) bindings[24]
+            , (com.firstems.erp.helper.widgets.EMSTextviewWhite) bindings[17]
+            , (android.widget.TextView) bindings[25]
             );
         this.editTextTextPersonName.setTag(null);
         this.edtInfo.setTag(null);

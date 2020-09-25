@@ -239,9 +239,15 @@ public class SwitchShiftInfoFragment extends CommonFragment {
         switchShift.setMorning(switchShiftInfoFragmentBinding.chkMorning.isChecked());
         switchShift.setAfternoon(switchShiftInfoFragmentBinding.chkAfternoon.isChecked());
         switchShift.setEverning(switchShiftInfoFragmentBinding.chkEverning.isChecked());
-        switchShift.setContentMornig(timekeepingSang);
-        switchShift.setContentAfternoon(timekeepingChieu);
-        switchShift.setContentEverning(timekeepingToi);
+        if (switchShift.isMorning()){
+            switchShift.setContentMornig(timekeepingSang);
+        }
+        if (switchShift.isAfternoon()){
+            switchShift.setContentAfternoon(timekeepingChieu);
+        }
+        if (switchShift.isEverning()){
+            switchShift.setContentEverning(timekeepingToi);
+        }
         switchShift.setDateEnd(dateEnd);
         switchShift.setDateBegin(dateBegin);
 

@@ -6,8 +6,10 @@ import com.firstems.erp.api.model.response.advance_proposal_form.AdvanceProposal
 import com.firstems.erp.api.model.response.approved.ApprovedApiResponse;
 import com.firstems.erp.api.model.response.approved.info.ApproveInfoApiResponse;
 import com.firstems.erp.api.model.response.askpermistion.AskPermistionApiResponse;
+import com.firstems.erp.api.model.response.askpermistion.AskPermistionUpdateResponse;
 import com.firstems.erp.api.model.response.bill_payment.AddNewPaymentResponse;
 import com.firstems.erp.api.model.response.bill_payment.BillPaymentApiResponse;
+import com.firstems.erp.api.model.response.bussiness.BussinessRegistrationEditResponse;
 import com.firstems.erp.api.model.response.currency.CurrencyListApiResponse;
 import com.firstems.erp.api.model.response.department.DepartmentApiResponse;
 import com.firstems.erp.api.model.response.document.DocumentApiResponse;
@@ -31,6 +33,7 @@ import com.firstems.erp.api.model.response.servicecontacts.ServiceContactsApiRes
 import com.firstems.erp.api.model.response.signature.SignatureApiResponse;
 import com.firstems.erp.api.model.response.signature.bussiness.BussinessRegistrationApiResponse;
 import com.firstems.erp.api.model.response.signature.switchshift.SwitchShiftApiResponse;
+import com.firstems.erp.api.model.response.switchsift.SwitchsiftUpdateResponse;
 import com.firstems.erp.api.model.response.timekeeping.TimekeepingTypeCTApiResponse;
 import com.firstems.erp.api.model.response.timekeeping.TimekeepingTypeDCApiResponse;
 import com.google.gson.JsonObject;
@@ -115,7 +118,7 @@ public interface RestApi {
     
     //Edit Bussiness Regits
     @POST("/Api/data/runApi_data?run_Code=HMR001.01.0022")
-    Call<ApiResponse> editBussinessRegstDocument(@Header("TOKEN") String token , @Body JsonObject body);
+    Call<BussinessRegistrationEditResponse> editBussinessRegstDocument(@Header("TOKEN") String token , @Body JsonObject body);
     
     // Trình ký chứng từ
     @POST("/Api/data/runApi_data?run_Code=SYS001.06.005")
@@ -143,7 +146,7 @@ public interface RestApi {
     
     // Cập nhật đổi ca
     @POST("/Api/data/runApi_data?run_Code=HMR001.01.0032")
-    Call<ApiResponse> updateSwithShift(@Header("TOKEN") String token , @Body JsonObject body);
+    Call<SwitchsiftUpdateResponse> updateSwithShift(@Header("TOKEN") String token , @Body JsonObject body);
     
     // Chi tiết Đơn xin phép
     @POST("/Api/data/runApi_Data?run_Code=SYS001.06.003")
@@ -159,7 +162,7 @@ public interface RestApi {
     
     // Chỉnh sửa đơn xin nghỉ phép
     @POST("/Api/data/runApi_Data?run_Code=HMR001.01.0012")
-    Call<ApiResponse> editAskpermistion(@Header("TOKEN") String token , @Body JsonObject body);
+    Call<AskPermistionUpdateResponse> editAskpermistion(@Header("TOKEN") String token , @Body JsonObject body);
     
     // Danh sách phòng ban
     @POST("/Api/data/runApi_Data?run_Code=CTL001.06.001")

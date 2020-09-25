@@ -100,6 +100,17 @@ public class ConfigFragment extends CommonFragment {
         else {
             binding.btnCancel.setEnabled(true);
             binding.include11.findViewById(R.id.imgBack).setVisibility(View.VISIBLE);
+            binding.edtDomain.setText(SharedPreferencesManager.getInstance().getDomain());
+            binding.edtNumberDay.setText(SharedPreferencesManager.getInstance().getNumberDaySignature()+"");
+            binding.switchInfoSignature.setChecked(SharedPreferencesManager.getInstance().getInfoSignature());
+            binding.switchWaitSignature.setChecked(SharedPreferencesManager.getInstance().getWaitSignature());
+            binding.switchWaitApproved.setChecked(SharedPreferencesManager.getInstance().getWaitAppreoved());
+            binding.switchCompleteSignature.setChecked(SharedPreferencesManager.getInstance().getCompleteSignature());
+            binding.switchInfoApproved.setChecked(SharedPreferencesManager.getInstance().getInfoApproved());
+            binding.switchResquestFormPart.setChecked(SharedPreferencesManager.getInstance().getDefaulRequestFormPart());
+            binding.switchResquestFormCongKhoan.setChecked(SharedPreferencesManager.getInstance().getDefaulRequestFormCongKhoan());
+            
+            
         }
     }
 

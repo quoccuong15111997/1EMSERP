@@ -61,16 +61,17 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:background="@drawable/cutom_edittext_main_disable">
+                        android:id="@+id/layoutNgayLap"
+                        android:background="@drawable/custom_bg_textview">
 
                         <com.firstems.erp.helper.widgets.EMSTextviewHighLineNonBorder
                             android:id="@+id/editTextTextPersonName"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:inputType="textPersonName"
-                            android:paddingLeft="10dp"
+                            android:paddingLeft="5dp"
                             android:text="@{item.mainDate}"
-                            android:textColor="@color/md_black_1000"
+                            android:textColor="@color/grey_80"
                             android:textSize="14sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toStartOf="@+id/imageView"
@@ -118,6 +119,7 @@
                         android:gravity="top"
                         android:imeOptions="actionDone"
                         android:lines="5"
+                        android:textColor="@color/grey_80"
                         android:paddingLeft="10dp"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
@@ -156,6 +158,7 @@
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
                         android:singleLine="true"
+                        android:textColor="@color/grey_80"
                         android:text="@{String.valueOf((int)item.sUMLEAV)}"
                         android:textSize="14sp" />
                 </LinearLayout>
@@ -178,6 +181,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:text="Ngày"
+                        android:textAlignment="center"
                         android:textColor="@color/text__white" />
 
                     <com.firstems.erp.helper.widgets.EMSTextviewWhite

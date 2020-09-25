@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -25,6 +26,12 @@ public abstract class ConfigFragmentBinding extends ViewDataBinding {
 
   @NonNull
   public final Button btnSave;
+
+  @NonNull
+  public final EditText edtDomain;
+
+  @NonNull
+  public final EditText edtNumberDay;
 
   @NonNull
   public final View include11;
@@ -75,15 +82,18 @@ public abstract class ConfigFragmentBinding extends ViewDataBinding {
   protected ConfigUIBindingModel mUi;
 
   protected ConfigFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button btnCancel, Button btnSave, View include11, NestedScrollView nestedScrollView,
-      Spinner spinerLang, SwitchCompat switchCompleteSignature, SwitchCompat switchInfoApproved,
-      SwitchCompat switchInfoSignature, SwitchCompat switchResquestFormCongKhoan,
-      SwitchCompat switchResquestFormPart, SwitchCompat switchWaitApproved,
-      SwitchCompat switchWaitSignature, TextView txtTitlSettingSignature, TextView txtTitleApprove,
-      TextView txtTitleAskPermistion, TextView txtTitleDomain, TextView txtTitleSystemSetting) {
+      Button btnCancel, Button btnSave, EditText edtDomain, EditText edtNumberDay, View include11,
+      NestedScrollView nestedScrollView, Spinner spinerLang, SwitchCompat switchCompleteSignature,
+      SwitchCompat switchInfoApproved, SwitchCompat switchInfoSignature,
+      SwitchCompat switchResquestFormCongKhoan, SwitchCompat switchResquestFormPart,
+      SwitchCompat switchWaitApproved, SwitchCompat switchWaitSignature,
+      TextView txtTitlSettingSignature, TextView txtTitleApprove, TextView txtTitleAskPermistion,
+      TextView txtTitleDomain, TextView txtTitleSystemSetting) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnCancel = btnCancel;
     this.btnSave = btnSave;
+    this.edtDomain = edtDomain;
+    this.edtNumberDay = edtNumberDay;
     this.include11 = include11;
     this.nestedScrollView = nestedScrollView;
     this.spinerLang = spinerLang;

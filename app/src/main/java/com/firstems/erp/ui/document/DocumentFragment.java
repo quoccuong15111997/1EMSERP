@@ -45,6 +45,7 @@ public class DocumentFragment extends CommonFragment {
     private ArrayAdapter adapterLocation;
     private List<LocationItem>  locationResponseList;
     private Date dateBegin, dateEnd;
+    private ArrayAdapter adapterExportPlace, adapterContent, adapterCategory;
     public DocumentFragment(BackToHomeCallback backToHomeCallback) {
         this.backToHomeCallback = backToHomeCallback;
     }
@@ -144,16 +145,16 @@ public class DocumentFragment extends CommonFragment {
             queryModelList.add(createQueryModel(binding.edtDocumentCode,"MAINNUMB"));
         }
         
-        if (createQueryModel(binding.edtDocumentName,"DCTPNAME")!=null){
-            queryModelList.add(createQueryModel(binding.edtDocumentName,"DCTPNAME"));
+        if (createQueryModel(binding.edtDocumentName,"CNTNBRIF")!=null){
+            queryModelList.add(createQueryModel(binding.edtDocumentName,"CNTNBRIF"));
         }
         
         if (createQueryModel(binding.edtInfo,"CNTNDCMN")!=null){
-            queryModelList.add(createQueryModel(binding.edtInfo,"DCTPCODE"));
+            queryModelList.add(createQueryModel(binding.edtInfo,"CNTNDCMN"));
         }
         
-        if (createQueryModel(binding.edtReleaseYear,"Beg_Date")!=null){
-            queryModelList.add(createQueryModel(binding.edtReleaseYear,"Beg_Date"));
+        if (createQueryModel(binding.edtReleaseYear,"BEG_DATE")!=null){
+            queryModelList.add(createQueryModel(binding.edtReleaseYear,"BEG_DATE"));
         }
         new QueryStringHelper(queryModelList).builder(new QueryStringCallback() {
             @Override
@@ -179,7 +180,6 @@ public class DocumentFragment extends CommonFragment {
         adapterLocation = new ArrayAdapter(getContext(), R.layout.spiner_item, locationResponseList);
         adapterLocation.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         binding.spinnerCompanyBranch.setAdapter(adapterLocation);
-        
     }
 
     @Override

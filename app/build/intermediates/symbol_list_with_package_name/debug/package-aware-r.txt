@@ -2953,12 +2953,11 @@ id easeOut
 id editTextTextPersonName
 id editTextTextPersonName2
 id edit_query
-id edtCategory
 id edtContactContent
-id edtContent
 id edtDate
 id edtDocumentCode
 id edtDocumentName
+id edtDomain
 id edtEmployee
 id edtInfo
 id edtLoaiChamCongChieu
@@ -2967,6 +2966,7 @@ id edtLoaiChamCongToi
 id edtLocate
 id edtNgayTamUng
 id edtNhanVienDuocChamCong
+id edtNumberDay
 id edtPurposeContact
 id edtReleaseYear
 id edtSoHoaDon
@@ -3194,6 +3194,7 @@ id layoutHelp
 id layoutInfo
 id layoutLogout
 id layoutMain
+id layoutNgayLap
 id layoutNotification
 id layoutNumberDay
 id layoutOption
@@ -3501,6 +3502,8 @@ id snapMargins
 id space_around
 id space_between
 id spacer
+id spinerCategory
+id spinerContent
 id spinerDonViTienTe
 id spinerLang
 id spinerLoaiChamCongChieu
@@ -3510,6 +3513,7 @@ id spinerLoaiChiTieu
 id spinerLoaiDeNghi
 id spinerLoaiDeNghiTamUng
 id spinerLoaiDoiTuongNhan
+id spinerLocate
 id spinerLocateType
 id spinerMaDuAn
 id spinerRelatedField

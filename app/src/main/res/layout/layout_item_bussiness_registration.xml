@@ -40,7 +40,7 @@
                 android:layout_gravity="center_horizontal"
 
                 android:text="đến"
-                android:textColor="@color/blue_200"
+                android:textColor="@color/blue_A200"
                 app:layout_constraintEnd_toEndOf="@+id/txtBeginDate"
                 app:layout_constraintStart_toStartOf="@+id/txtBeginDate"
                 app:layout_constraintTop_toBottomOf="@+id/txtBeginDate" />
@@ -135,7 +135,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:tint="@color/grey_20"
+                android:tint="@color/grey_40"
                 app:srcCompat="@drawable/ic_outline_delete_24" />
 
             <ImageView
@@ -143,7 +143,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:tint="@color/grey_20"
+                android:tint="@color/grey_40"
                 app:srcCompat="@drawable/ic_outline_edit_24" />
         </LinearLayout>
 

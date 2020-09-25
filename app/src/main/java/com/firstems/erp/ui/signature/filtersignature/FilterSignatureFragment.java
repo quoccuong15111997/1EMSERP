@@ -150,6 +150,11 @@ public class FilterSignatureFragment extends CommonFragment {
         }
         binding.txtDateBegin.setText(dateBegin!=null ? simpleDateFormatDisplay.format(dateBegin) : "");
         binding.txtDateEnd.setText(dateEnd!=null ? simpleDateFormatDisplay.format(dateEnd) : "");
+        
+        binding.chkChuaTrinhKy.setChecked(SharedPreferencesManager.getInstance().getWaitSignature());
+        binding.chkChoDuyet.setChecked(SharedPreferencesManager.getInstance().getWaitAppreoved());
+        binding.chkHoanTat.setChecked(SharedPreferencesManager.getInstance().getCompleteSignature());
+        
     }
 
     @Override

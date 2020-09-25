@@ -37,7 +37,7 @@ import java.util.Date;
 import java.util.List;
 
 public class AskPermissionInfoFragment extends CommonFragment {
-
+    
     private AskPermissionInfoViewModel mViewModel;
     private View view;
     private AskPermissionInfoFragmentBinding binding;
@@ -47,19 +47,19 @@ public class AskPermissionInfoFragment extends CommonFragment {
     private Date dateBegin, dateEnd;
     private TimekeepingTypeDC typeDCSang, typeDCChieu, typeDCToi;
     private List<TimekeepingTypeDC> timekeepingTypeDCList;
-
+    
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         binding= DataBindingUtil.inflate(inflater,R.layout.ask_permission_info_fragment,container,false);
         view=binding.getRoot();
-
+        
         addControls();
         addEvents();
         setText();
         return view;
     }
-
+    
     private void setText() {
         binding.txtTitleDateBegin.setText(SharedPreferencesManager.getSystemLabel(32));
         binding.txtTitleDateEnd.setText(SharedPreferencesManager.getSystemLabel(33));
@@ -72,7 +72,7 @@ public class AskPermissionInfoFragment extends CommonFragment {
         binding.txtTitleLoaiChamCongToi.setText(SharedPreferencesManager.getSystemLabel(39));
         binding.btnDone.setText(SharedPreferencesManager.getSystemLabel(40));
     }
-
+    
     private void addEvents() {
         binding.include3.findViewById(R.id.imgClose).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,19 +105,28 @@ public class AskPermissionInfoFragment extends CommonFragment {
         binding.edtLoaiChamCongSang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (typeDCSang == null){
+                    typeDCSang = new TimekeepingTypeDC();
+                }
                 selectType(binding.edtLoaiChamCongSang, typeDCSang);
-            }
-        });
-        binding.edtLoaiChamCongToi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectType(binding.edtLoaiChamCongToi,typeDCChieu);
             }
         });
         binding.edtLoaiChamCongChieu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                selectType(binding.edtLoaiChamCongChieu,typeDCToi);
+                if (typeDCChieu == null){
+                    typeDCChieu = new TimekeepingTypeDC();
+                }
+                selectType(binding.edtLoaiChamCongChieu,typeDCChieu);
+            }
+        });
+        binding.edtLoaiChamCongToi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (typeDCToi == null){
+                    typeDCToi = new TimekeepingTypeDC();
+                }
+                selectType(binding.edtLoaiChamCongToi,typeDCToi);
             }
         });
         binding.layoutDateForm.setOnClickListener(new View.OnClickListener() {
@@ -144,7 +153,7 @@ public class AskPermissionInfoFragment extends CommonFragment {
             public void onClick(View v) {
                 long minDate, maxDate;
                 maxDate = 0;
-
+                
                 if (dateBegin==null){
                     minDate = System.currentTimeMillis();
                 }
@@ -160,48 +169,34 @@ public class AskPermissionInfoFragment extends CommonFragment {
             }
         });
     }
-
+    
     private void doSave() {
         if (!ValidationData.isBlank(binding.txtDateBegin)){
             if (!ValidationData.isBlank(binding.txtDateEnd)){
-                if (!ValidationData.isBlank(binding.edtEmployee)){
-                    if (!ValidationData.isBlank(binding.edtEmployee)){
-                        if (binding.chkMorning.isChecked() || binding.chkAfternoon.isChecked()
-                                || binding.chkEverning.isChecked()){
-                            if (binding.chkMorning.isChecked()){
-                                if (ValidationData.isBlank(binding.edtLoaiChamCongSang)){
-                                    SnackbarHelper.getInstance().snackBarIconError(getView(),"Vui lòng chọn loại chấm công sáng");
-                                    return;
-                                }
-                            }
-                            if (binding.chkAfternoon.isChecked()){
-                                if (ValidationData.isBlank(binding.edtLoaiChamCongChieu)){
-                                    SnackbarHelper.getInstance().snackBarIconError(getView(),"Vui lòng chọn loại chấm công chiều");
-                                    return;
-                                }
-                            }
-                            if (binding.chkEverning.isChecked()){
-                                if (ValidationData.isBlank(binding.edtLoaiChamCongToi)){
-                                    SnackbarHelper.getInstance().snackBarIconError(getView(),"Vui lòng chọn loại chấm công tối");
-                                    return;
-                                }
-                            }
-
-                        }
-                        else {
-                            SnackbarHelper.getInstance().snackBarIconError(getView(),"Vui lòng chọn loại chấm công");
+                if (binding.chkMorning.isChecked() || binding.chkAfternoon.isChecked()
+                        || binding.chkEverning.isChecked()){
+                    if (binding.chkMorning.isChecked()){
+                        if (ValidationData.isBlank(binding.edtLoaiChamCongSang)){
+                            SnackbarHelper.getInstance().snackBarIconError(getView(),"Vui lòng chọn loại chấm công sáng");
                             return;
                         }
                     }
-                    else {
-                        // Nhan vien duoc cham cong is emty
-                        SnackbarHelper.getInstance().snackBarIconError(getView(),"Vui lòng chọn nhân viên được chấm công");
-                        return;
+                    if (binding.chkAfternoon.isChecked()){
+                        if (ValidationData.isBlank(binding.edtLoaiChamCongChieu)){
+                            SnackbarHelper.getInstance().snackBarIconError(getView(),"Vui lòng chọn loại chấm công chiều");
+                            return;
+                        }
                     }
+                    if (binding.chkEverning.isChecked()){
+                        if (ValidationData.isBlank(binding.edtLoaiChamCongToi)){
+                            SnackbarHelper.getInstance().snackBarIconError(getView(),"Vui lòng chọn loại chấm công tối");
+                            return;
+                        }
+                    }
+                    
                 }
                 else {
-                    // Nhan vien di lam is emty
-                    SnackbarHelper.getInstance().snackBarIconError(getView(),"Vui lòng chọn nhân viên đi làm");
+                    SnackbarHelper.getInstance().snackBarIconError(getView(), "Vui lòng chọn loại chấm công");
                     return;
                 }
             }
@@ -217,22 +212,32 @@ public class AskPermissionInfoFragment extends CommonFragment {
             return;
         }
         Approved approved= new Approved();
-        approved.setEmployeeDiLam(binding.getEmployDiLam());
-        approved.setEmployeeChamCong(binding.getEmployDuocChamCong());
+        if (binding.getEmployDiLam()!=null){
+            approved.setEmployeeDiLam(binding.getEmployDiLam());
+        }
+        if (binding.getEmployDuocChamCong()!=null){
+            approved.setEmployeeChamCong(binding.getEmployDuocChamCong());
+        }
         approved.setMorning(binding.chkMorning.isChecked());
         approved.setAfternoon(binding.chkAfternoon.isChecked());
         approved.setEverning(binding.chkEverning.isChecked());
-        approved.setContentMornig(typeDCSang);
-        approved.setContentAfternoon(typeDCChieu);
-        approved.setContentEverning(typeDCToi);
-        approved.setDateEnd(dateEnd);
-        approved.setDateBegin(dateBegin);
-
+        if (approved.isMorning()){
+            approved.setContentMornig(typeDCSang);
+        }
+        if (approved.isAfternoon()){
+            approved.setContentAfternoon(typeDCChieu);
+        }
+        if (approved.isEverning()){
+            approved.setContentEverning(typeDCToi);
+        }
+        approved.setDateEnd(dateEnd!=null ? dateEnd : new Date(System.currentTimeMillis()));
+        approved.setDateBegin(dateBegin!=null ? dateBegin : new Date(System.currentTimeMillis()));
+        
         Intent intent= new Intent();
         intent.putExtra(Constant.NAME_PUT_APPROVED,approved);
         getActivity().setResult(Activity.RESULT_OK,intent);
         getActivity().finish();
-
+        
     }
     private void selectType(TextView textView, TimekeepingTypeDC timekeepingTypeDC){
         showSingelChoiseDialod(timekeepingTypeDCList, new SingelChoiseDialogCallback() {
@@ -245,7 +250,7 @@ public class AskPermissionInfoFragment extends CommonFragment {
             }
         });
     }
-
+    
     private void addControls() {
         txtTitle=binding.include3.findViewById(R.id.txtTitle);
         Intent intent = getActivity().getIntent();
@@ -258,18 +263,20 @@ public class AskPermissionInfoFragment extends CommonFragment {
             dateBegin = approvedEdit.getDateBegin();
             binding.setDateBegin(displayDate(dateBegin));
             binding.setDateEnd(displayDate(dateEnd));
+            typeDCSang= approvedEdit.getContentMornig();
+            typeDCChieu= approvedEdit.getContentAfternoon();
+            typeDCToi= approvedEdit.getContentEverning();
         }
         else {
             binding.setDateBegin("");
             binding.setDateEnd("");
+            typeDCSang= new TimekeepingTypeDC();
+            typeDCChieu= new TimekeepingTypeDC();
+            typeDCToi= new TimekeepingTypeDC();
         }
         timekeepingTypeDCList= new ArrayList<>();
-        typeDCSang= new TimekeepingTypeDC();
-        typeDCChieu= new TimekeepingTypeDC();
-        typeDCToi= new TimekeepingTypeDC();
-
     }
-
+    
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -306,7 +313,7 @@ public class AskPermissionInfoFragment extends CommonFragment {
             }
         });
     }
-
+    
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

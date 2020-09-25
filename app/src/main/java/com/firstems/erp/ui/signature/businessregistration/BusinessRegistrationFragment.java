@@ -24,6 +24,7 @@ import com.firstems.erp.adapter.BussinessRegistrationAdapter;
 import com.firstems.erp.api.model.request.CommitDocumentRequest;
 import com.firstems.erp.api.model.request.DeleteDocumentRequest;
 import com.firstems.erp.api.model.response.ApiResponse;
+import com.firstems.erp.api.model.response.bussiness.BussinessRegistrationEditResponse;
 import com.firstems.erp.api.model.response.locationtype.LocationType;
 import com.firstems.erp.api.model.response.national.National;
 import com.firstems.erp.api.model.response.province.Province;
@@ -327,38 +328,7 @@ public class BusinessRegistrationFragment extends CommonFragment implements Buss
                     showConfirmMessage(SharedPreferencesManager.getSystemLabel(49), SharedPreferencesManager.getSystemLabel(58), SharedPreferencesManager.getSystemLabel(8), SharedPreferencesManager.getSystemLabel(55), new ConfirmCallback() {
                         @Override
                         public void onAccept() {
-                            progressdialog.show();
-                            CommitDocumentRequest commitDocumentRequest = new CommitDocumentRequest();
-                            commitDocumentRequest.setDcmnCode(signatureItemApiResponse.getDcmnCode());
-                            commitDocumentRequest.setKeyCode(signatureItemApiResponse.getKeyCode());
-                            ApiServices
-                                    .getInstance()
-                                    .commitDocument(SharedPreferencesManager.getInstance().getPrefToken(), commitDocumentRequest.convertToJson(), new Callback<ApiResponse>() {
-                                        @Override
-                                        public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
-                                            if (response.isSuccessful()){
-                                                ApiResponse  apiResponse =response.body();
-                                                if (apiResponse.isRETNCODE()){
-                                                    progressdialog.dismiss();
-                                                    showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
-                                                }
-                                                else {
-                                                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
-                                                    progressdialog.dismiss();
-                                                }
-                                            }
-                                            else {
-                                                progressdialog.dismiss();
-                                                showOutTOKEN();
-                                            }
-                                        }
-
-                                        @Override
-                                        public void onFailure(Call<ApiResponse> call, Throwable t) {
-                                            progressdialog.dismiss();
-                                            showOutTOKEN();
-                                        }
-                                    });
+                            doCommit();
                         }
 
                         @Override
@@ -409,7 +379,72 @@ public class BusinessRegistrationFragment extends CommonFragment implements Buss
             }
         });
     }
-
+    
+    private void doCommit() {
+        progressdialog.show();
+        List<BussinessRegstItem> regstItemList = new ArrayList<>();
+        regstItemList.addAll(getModifiDataEdit());
+        regstItemList.get(0).setMainCode(signatureItemApiResponse.getMainCode());
+        DataNetworkProvider
+                .getInstance()
+                .editBussinessRegst(new DataApiCallback() {
+                    @Override
+                    public void onDataApi(String jsonAPI) {
+                        DataConvertProvider
+                                .getInstance()
+                                .convertJsonToObject(jsonAPI, new BussinessRegistrationEditResponse(), new ConvertJsonCallback() {
+                                    @Override
+                                    public void onConvertSuccess(Object obj) {
+                                        BussinessRegistrationEditResponse apiResponse = (BussinessRegistrationEditResponse) obj;
+                                        if (apiResponse.isRETNCODE()){
+                                            CommitDocumentRequest commitDocumentRequest = new CommitDocumentRequest();
+                                            commitDocumentRequest.setDcmnCode(signatureItemApiResponse.getDcmnCode());
+                                            commitDocumentRequest.setKeyCode(apiResponse.getBussinessRegistrationEditItems().get(0).getKeyCode());
+                                            ApiServices
+                                                    .getInstance()
+                                                    .commitDocument(SharedPreferencesManager.getInstance().getPrefToken(), commitDocumentRequest.convertToJson(), new Callback<ApiResponse>() {
+                                                        @Override
+                                                        public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
+                                                            if (response.isSuccessful()){
+                                                                ApiResponse  apiResponse =response.body();
+                                                                if (apiResponse.isRETNCODE()){
+                                                                    progressdialog.dismiss();
+                                                                    showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
+                                                                }
+                                                                else {
+                                                                    showErrorDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
+                                                                    progressdialog.dismiss();
+                                                                }
+                                                            }
+                                                            else {
+                                                                progressdialog.dismiss();
+                                                                showOutTOKEN();
+                                                            }
+                                                        }
+                
+                                                        @Override
+                                                        public void onFailure(Call<ApiResponse> call, Throwable t) {
+                                                            progressdialog.dismiss();
+                                                            showOutTOKEN();
+                                                        }
+                                                    });
+                                        }
+                                        else {
+                                            progressdialog.dismiss();
+                                            showErrorDialog(SharedPreferencesManager.getSystemLabel(50),apiResponse.getRETNMSSG());
+                                        }
+                                    }
+                                });
+                    }
+                
+                    @Override
+                    public void onApiLoadFail(String mess) {
+                    
+                        showOutTOKEN();
+                    }
+                },regstItemList);
+    }
+    
     private boolean validDetail() {
         int sumDay = 0;
         for (Business business : businessList){
@@ -438,10 +473,10 @@ public class BusinessRegistrationFragment extends CommonFragment implements Buss
                     public void onDataApi(String jsonAPI) {
                         DataConvertProvider
                                 .getInstance()
-                                .convertJsonToObject(jsonAPI, new ApiResponse(), new ConvertJsonCallback() {
+                                .convertJsonToObject(jsonAPI, new BussinessRegistrationEditResponse(), new ConvertJsonCallback() {
                                     @Override
                                     public void onConvertSuccess(Object obj) {
-                                        ApiResponse apiResponse = (ApiResponse) obj;
+                                        BussinessRegistrationEditResponse apiResponse = (BussinessRegistrationEditResponse) obj;
                                         if (apiResponse.isRETNCODE()){
                                             progressdialog.dismiss();
                                             showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),apiResponse.getRETNMSSG());

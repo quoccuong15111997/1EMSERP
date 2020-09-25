@@ -56,7 +56,6 @@ public class SignatureItemAdapter extends RecyclerView.Adapter<SignatureItemAdap
                     holder.txtMainCode.setText(item.getMainCode()+" - "+ Util.formatDate(item.getMainDate()));
                     holder.txtNote.setText(item.getNote());
                     holder.txtStatus.setText(item.getStatusName());
-    
                     holder.txtTiltleNote.setText(SharedPreferencesManager.getSystemLabel(21));
                     holder.txtTileStatus.setText(SharedPreferencesManager.getSystemLabel(22));
     

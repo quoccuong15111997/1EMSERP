@@ -167,7 +167,11 @@ public class SignatureItemApiResponse implements Serializable,Comparable,Cloneab
     @Override
     public int compareTo(Object o) {
         SignatureItemApiResponse compare = (SignatureItemApiResponse) o;
-        if (compare.keyCode.equals(this.keyCode) && compare.statusName.equals(this.statusName) && compare.sTTESIGN == this.sTTESIGN && compare.valueFld == this.valueFld){
+        if (compare.keyCode.equals(this.keyCode)
+                && compare.statusName.equals(this.statusName)
+                && compare.sTTESIGN == this.sTTESIGN
+                && compare.valueFld == this.valueFld
+                && compare.getNote().equals(this.note) && compare.getMainDate().equals(this.mainDate)){
             return 0;
         }
         return 1;
