@@ -1,31 +1,31 @@
 -- Merging decision tree log ---
 provider#androidx.core.content.FileProvider
-INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:85:9-93:20
+INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:117:9-125:20
 	android:grantUriPermissions
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:89:13-47
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:121:13-47
 	android:authorities
 		INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:87:13-51
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:119:13-51
 	android:exported
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:88:13-37
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:120:13-37
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:86:13-62
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:118:13-62
 provider#com.firstems.erp.common.GenericFileProvider
-INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:94:9-102:20
+INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:126:9-134:20
 	android:grantUriPermissions
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:98:13-47
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:130:13-47
 	android:authorities
 		INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:96:13-60
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:128:13-60
 	android:exported
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:97:13-37
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:129:13-37
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:95:13-55
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:127:13-55
 manifest
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:2:1-109:12
-INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:2:1-109:12
-INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:2:1-109:12
-INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:2:1-109:12
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:2:1-141:12
+INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:2:1-141:12
+INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:2:1-141:12
+INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:2:1-141:12
 MERGED from [com.github.bumptech.glide:glide:4.11.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\ae1be6d96d300b045ae2520a77aabf40\jetified-glide-4.11.0\AndroidManifest.xml:2:1-12:12
 MERGED from [androidx.databinding:databinding-adapters:4.0.1] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\76a2c71e687aff394747f1d240a6a185\databinding-adapters-4.0.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.databinding:databinding-runtime:4.0.1] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\75dd47242a70292a50ef122065c6a5e8\databinding-runtime-4.0.1\AndroidManifest.xml:17:1-24:12
@@ -121,20 +121,20 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\PC\.gradle\caches\transforms-2
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\6435850e23f2d01013861f1c8dbdb3a0\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\ae891c337b2dc8d7a559b90a3711f662\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.datatransport:transport-api:2.2.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\467b040972e5d42442f90b49207efc7f\jetified-transport-api-2.2.0\AndroidManifest.xml:15:1-22:12
-INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:2:1-109:12
-INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:2:1-109:12
-INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:2:1-109:12
+INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:2:1-141:12
+INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:2:1-141:12
+INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:2:1-141:12
 	package
 		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:3:5-31
 		INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:2:1-109:12
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:2:1-141:12
 		INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:2:1-109:12
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:2:1-141:12
 		INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:2:11-69
@@ -205,7 +205,7 @@ MERGED from [com.camerakit:camerakit:1.0.0-beta3.11] C:\Users\PC\.gradle\caches\
 	android:name
 		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:15:19-57
 application
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:17:5-107:19
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:17:5-139:19
 MERGED from [com.github.bumptech.glide:glide:4.11.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\ae1be6d96d300b045ae2520a77aabf40\jetified-glide-4.11.0\AndroidManifest.xml:10:5-20
 MERGED from [com.github.bumptech.glide:glide:4.11.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\ae1be6d96d300b045ae2520a77aabf40\jetified-glide-4.11.0\AndroidManifest.xml:10:5-20
 MERGED from [com.wdullaer:materialdatetimepicker:3.2.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\d63ef329458d68430c53b3c6d9f2b6cf\jetified-materialdatetimepicker-3.2.0\AndroidManifest.xml:28:5-20
@@ -296,220 +296,224 @@ MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\
 		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:29:9-40
 	android:name
 		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:18:9-43
+activity#com.firstems.erp.ui.signature.billpaymentrequest.sophieutamung.SoPhieuTamUngActivity
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:30:9-114
+	android:name
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:30:19-102
 activity#com.firstems.erp.ui.more.password.ChangePasswordActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:30:9-31:81
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:31:9-33:71
 	android:windowSoftInputMode
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:31:13-68
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:33:13-68
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:30:19-74
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:32:13-68
 activity#com.firstems.erp.ui.home.HomeActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:32:9-58
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:34:9-58
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:32:19-55
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:34:19-55
 activity#com.firstems.erp.ui.document.detail.DocumnetDetailActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:33:9-79
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:35:9-79
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:33:19-76
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:35:19-76
 activity#com.firstems.erp.ui.document.list.DocumentListActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:34:9-75
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:36:9-75
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:34:19-72
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:36:19-72
 activity#com.firstems.erp.ui.signature.defaultsignature.DefaultSignatureActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:35:9-92
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:37:9-92
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:35:19-89
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:37:19-89
 activity#com.firstems.erp.ui.shared.camera.CameraUIKitActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:36:9-38:50
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:38:9-40:50
 	android:hardwareAccelerated
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:38:13-47
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:40:13-47
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:37:13-65
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:39:13-65
 activity#com.firstems.erp.ui.shared.loaidoituongnhan.DoiTuongNhanActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:39:9-85
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:41:9-85
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:39:19-82
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:41:19-82
 activity#com.firstems.erp.ui.shared.image.ImageViewActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:40:9-71
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:42:9-71
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:40:19-68
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:42:19-68
 activity#com.firstems.erp.ui.shared.viewer.PDFViewerActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:41:9-72
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:43:9-72
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:41:19-69
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:43:19-69
 activity#com.firstems.erp.ui.shared.province.ProvinceActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:42:9-73
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:44:9-73
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:42:19-70
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:44:19-70
 activity#com.firstems.erp.ui.shared.national.NationalActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:43:9-73
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:45:9-73
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:43:19-70
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:45:19-70
 activity#com.firstems.erp.WebViewActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:44:9-53
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:46:9-53
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:44:19-50
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:46:19-50
 activity#com.firstems.erp.ui.shared.relatedfields.RelatedFieldsActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:45:9-83
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:47:9-83
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:45:19-80
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:47:19-80
 activity#com.firstems.erp.TestActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:46:9-50
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:48:9-59
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:46:19-47
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:48:19-47
 activity#com.firstems.erp.ui.shared.department.DepartmentActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:47:9-77
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:49:9-77
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:47:19-74
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:49:19-74
 activity#com.firstems.erp.ui.shared.employee.EmployeeActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:48:9-73
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:50:9-73
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:48:19-70
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:50:19-70
 activity#com.firstems.erp.ui.company.SelectCompanyActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:49:9-70
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:51:9-70
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:49:19-67
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:51:19-67
 activity#com.firstems.erp.ui.more.help.HelpActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:50:9-63
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:52:9-63
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:50:19-60
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:52:19-60
 activity#com.firstems.erp.ui.table.TableActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:51:9-60
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:53:9-60
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:51:19-57
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:53:19-57
 activity#com.firstems.erp.ui.date.SelectDateActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:52:9-64
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:54:9-64
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:52:19-61
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:54:19-61
 activity#com.firstems.erp.ui.chart.ChartViewActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:53:9-55:53
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:55:9-57:53
 	android:screenOrientation
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:55:13-50
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:57:13-50
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:54:13-55
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:56:13-55
 activity#com.firstems.erp.ui.more.report.ReporttingActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:56:9-71
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:58:9-71
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:56:19-68
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:58:19-68
 activity#com.firstems.erp.ui.dashboard.DashboardActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:57:9-68
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:59:9-68
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:57:19-65
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:59:19-65
 activity#com.firstems.erp.ui.login.LoginActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:58:9-62:71
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:60:9-64:71
 	android:screenOrientation
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:60:13-49
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:62:13-49
 	android:windowSoftInputMode
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:62:13-68
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:64:13-68
 	android:theme
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:61:13-45
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:63:13-45
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:59:13-51
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:61:13-51
 activity#com.firstems.erp.ui.config.ConfigActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:63:9-98
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:65:9-67:52
 	android:screenOrientation
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:63:60-96
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:67:13-49
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:63:19-59
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:66:13-53
 activity#com.firstems.erp.ui.signature.businessregistration.info.BusinessRegistrationInfoActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:64:9-145
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:68:9-70:52
 	android:screenOrientation
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:64:107-143
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:70:13-49
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:64:19-106
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:69:13-100
 activity#com.firstems.erp.ui.approved.detail.ApproveDetailActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:65:9-115
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:71:9-73:52
 	android:screenOrientation
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:65:76-112
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:73:13-49
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:65:19-75
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:72:13-69
 activity#com.firstems.erp.ui.signature.filtersignature.FilterSignatureActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:66:9-126
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:74:9-76:52
 	android:screenOrientation
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:66:88-124
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:76:13-49
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:66:19-87
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:75:13-81
 activity#com.firstems.erp.ui.signature.advanceproposalform.AdvanceProposalFormActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:67:9-135
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:77:9-79:52
 	android:screenOrientation
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:67:96-132
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:79:13-49
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:67:19-95
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:78:13-89
 activity#com.firstems.erp.ui.signature.billpaymentrequest.ticket.TicketBillPaymentRequestActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:68:9-145
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:80:9-82:52
 	android:screenOrientation
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:68:107-143
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:82:13-49
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:68:19-106
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:81:13-100
 activity#com.firstems.erp.ui.signature.billpaymentrequest.BillPaymentRequestActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:69:9-133
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:83:9-85:52
 	android:screenOrientation
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:69:94-130
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:85:13-49
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:69:19-93
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:84:13-87
 activity#com.firstems.erp.ui.signature.businessregistration.BusinessRegistrationActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:70:9-136
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:86:9-88:52
 	android:screenOrientation
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:70:98-134
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:88:13-49
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:70:19-97
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:87:13-91
 activity#com.firstems.erp.ui.signature.servicecontacts.ServiceContactsActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:71:9-126
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:89:9-91:52
 	android:screenOrientation
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:71:88-124
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:91:13-49
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:71:19-87
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:90:13-81
 activity#com.firstems.erp.ui.signature.askpermission.AskPermissionActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:72:9-122
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:92:9-94:52
 	android:screenOrientation
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:72:84-120
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:94:13-49
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:72:19-83
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:93:13-77
 activity#com.firstems.erp.ui.signature.switchshift.info.SwitchShiftInfoActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:73:9-127
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:95:9-97:52
 	android:screenOrientation
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:73:89-125
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:97:13-49
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:73:19-88
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:96:13-82
 activity#com.firstems.erp.ui.signature.switchshift.SwitchShiftActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:74:9-118
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:98:9-100:52
 	android:screenOrientation
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:74:80-116
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:100:13-49
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:74:19-79
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:99:13-73
 activity#com.firstems.erp.ui.signature.askpermission.info.AskPermissionInfoActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:75:9-131
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:101:9-103:52
 	android:screenOrientation
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:75:93-129
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:103:13-49
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:75:19-92
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:102:13-86
 activity#com.firstems.erp.MainActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:76:9-86
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:104:9-106:52
 	android:screenOrientation
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:76:48-84
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:106:13-49
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:76:19-47
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:105:13-41
 activity#com.firstems.erp.loading.LoadingActivity
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:77:9-83:20
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:107:9-115:20
 	android:screenOrientation
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:77:59-95
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:109:13-49
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:77:19-58
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:108:13-52
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:78:13-82:29
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:110:13-114:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:79:17-69
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:111:17-69
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:79:25-66
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:111:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:81:17-77
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:113:17-77
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:81:27-74
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:113:27-74
 uses-library#org.apache.http.legacy
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:104:9-106:40
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:136:9-138:40
 	android:required
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:106:13-37
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:138:13-37
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:105:13-50
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:137:13-50
 uses-sdk
 INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml
@@ -715,11 +719,11 @@ INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidMan
 		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:90:13-92:54
+ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:122:13-124:54
 	android:resource
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:92:17-51
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:124:17-51
 	android:name
-		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:91:17-67
+		ADDED from C:\Users\PC\AndroidStudioProjects\1EMS.ERP\app\src\main\AndroidManifest.xml:123:17-67
 activity#pub.devrel.easypermissions.AppSettingsDialogHolderActivity
 ADDED from [pub.devrel:easypermissions:3.0.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f92f1b292c21c42e3fc752d649f862a8\jetified-easypermissions-3.0.0\AndroidManifest.xml:12:9-16:66
 	android:label

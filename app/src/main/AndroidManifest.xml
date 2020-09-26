@@ -27,8 +27,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.more.password.ChangePasswordActivity"
-            android:windowSoftInputMode="stateVisible|adjustResize" ></activity>
+        <activity android:name=".ui.signature.billpaymentrequest.sophieutamung.SoPhieuTamUngActivity"></activity>
+        <activity
+            android:name=".ui.more.password.ChangePasswordActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity android:name=".ui.home.HomeActivity" />
         <activity android:name=".ui.document.detail.DocumnetDetailActivity" />
         <activity android:name=".ui.document.list.DocumentListActivity" />
@@ -43,7 +45,7 @@
         <activity android:name=".ui.shared.national.NationalActivity" />
         <activity android:name=".WebViewActivity" />
         <activity android:name=".ui.shared.relatedfields.RelatedFieldsActivity" />
-        <activity android:name=".TestActivity" />
+        <activity android:name=".TestActivity"></activity>
         <activity android:name=".ui.shared.department.DepartmentActivity" />
         <activity android:name=".ui.shared.employee.EmployeeActivity" />
         <activity android:name=".ui.company.SelectCompanyActivity" />
@@ -60,21 +62,51 @@
             android:screenOrientation="portrait"
             android:theme="@style/BaseTheme"
             android:windowSoftInputMode="stateVisible|adjustResize" />
-        <activity android:name=".ui.config.ConfigActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".ui.signature.businessregistration.info.BusinessRegistrationInfoActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".ui.approved.detail.ApproveDetailActivity" android:screenOrientation="portrait" />
-        <activity android:name=".ui.signature.filtersignature.FilterSignatureActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".ui.signature.advanceproposalform.AdvanceProposalFormActivity" android:screenOrientation="portrait" />
-        <activity android:name=".ui.signature.billpaymentrequest.ticket.TicketBillPaymentRequestActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".ui.signature.billpaymentrequest.BillPaymentRequestActivity" android:screenOrientation="portrait" />
-        <activity android:name=".ui.signature.businessregistration.BusinessRegistrationActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".ui.signature.servicecontacts.ServiceContactsActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".ui.signature.askpermission.AskPermissionActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".ui.signature.switchshift.info.SwitchShiftInfoActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".ui.signature.switchshift.SwitchShiftActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".ui.signature.askpermission.info.AskPermissionInfoActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".MainActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".loading.LoadingActivity" android:screenOrientation="portrait">
+        <activity
+            android:name=".ui.config.ConfigActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.signature.businessregistration.info.BusinessRegistrationInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.approved.detail.ApproveDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.signature.filtersignature.FilterSignatureActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.signature.advanceproposalform.AdvanceProposalFormActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.signature.billpaymentrequest.ticket.TicketBillPaymentRequestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.signature.billpaymentrequest.BillPaymentRequestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.signature.businessregistration.BusinessRegistrationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.signature.servicecontacts.ServiceContactsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.signature.askpermission.AskPermissionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.signature.switchshift.info.SwitchShiftInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.signature.switchshift.SwitchShiftActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.signature.askpermission.info.AskPermissionInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".loading.LoadingActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

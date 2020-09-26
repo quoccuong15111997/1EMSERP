@@ -1,6 +1,7 @@
 package com.firstems.erp.ui.signature.advanceproposalform;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -59,6 +60,7 @@ import com.firstems.erp.ui.shared.reviewprocess.ReviewProcessFragment;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -311,6 +313,7 @@ public class AdvanceProposalFormFragment extends CommonFragment {
             @Override
             public void onClick(View view) {
                 LoaiDoiTuongNhanItem loaiDeNghiTamUngItem = (LoaiDoiTuongNhanItem) binding.spinerLoaiDoiTuongNhan.getSelectedItem();
+                System.out.println("Tên loại: "+loaiDeNghiTamUngItem.getiTEMNAME()+"  Mã: "+loaiDeNghiTamUngItem.getiTEMCODE());
                 Intent intent = new Intent(getContext(), DoiTuongNhanActivity.class);
                 intent.putExtra(Constant.NAME_PUT_KEY_DOI_TUONG_NHAN,loaiDeNghiTamUngItem.getiTEMCODE());
                 intent.putExtra(Constant.NAME_PUT_DOI_TUONG_NHAN,doiTuongNhanItemSelected);
@@ -674,10 +677,23 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                         public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
                             if (response.isSuccessful()){
                                 if (response.body().isRETNCODE()){
+                                    FileFragment.fileIncludeList.clear();
+                                    try {
+                                        File dir = getContext().getDir("profile", Context.MODE_PRIVATE);
+                                        if (dir.exists()) {
+                                            for (File f : dir.listFiles()){
+                                                System.out.println(f.getAbsolutePath());
+                                                f.delete();
+                                            }
+                                        }
+                                    }
+                                    catch (Exception ex){
+                                        ex.printStackTrace();
+                                    }
+                                    
                                     progressdialog.dismiss();
                                     showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),mess);
                                     System.out.println(response.body().getRETNMSSG());
-                                    FileFragment.fileIncludeList.clear();
                                 }
                                 else {
                                     progressdialog.dismiss();
@@ -704,7 +720,6 @@ public class AdvanceProposalFormFragment extends CommonFragment {
         else {
             progressdialog.dismiss();
             showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),mess);
-            FileFragment.fileIncludeList.clear();
         }
     }
     private void upLoadFileBeforeCommit(String keyCode, String mess, List<String> listImage, List<FileIncludeModel> listFile, UploadFileCallback uploadFileCallback) {
@@ -717,6 +732,18 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                                 if (response.body().isRETNCODE()){
                                     System.out.println(response.body().getRETNMSSG());
                                     FileFragment.fileIncludeList.clear();
+                                    try {
+                                        File dir = getContext().getDir("profile", Context.MODE_PRIVATE);
+                                        if (dir.exists()) {
+                                            for (File f : dir.listFiles()){
+                                                System.out.println(f.getAbsolutePath());
+                                                f.delete();
+                                            }
+                                        }
+                                    }
+                                    catch (Exception ex){
+                                        ex.printStackTrace();
+                                    }
                                     uploadFileCallback.onUpLoadSuccess();
                                 }
                                 else {

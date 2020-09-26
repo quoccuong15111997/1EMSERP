@@ -309,8 +309,8 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
+                                        android:text="Chờ duyệt"
                                         android:textColor="@color/md_black_1000"
-                                        android:tag="binding_11"           
                                         tools:text="Chờ duyệt" />
 
                                     <androidx.appcompat.widget.SwitchCompat
@@ -332,7 +332,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:textColor="@color/md_black_1000"
-                                        android:tag="binding_12"       
+                                        android:tag="binding_11"       
                                         tools:text="Hoàn tất" />
 
                                     <androidx.appcompat.widget.SwitchCompat
@@ -358,7 +358,7 @@
                     android:layout_marginLeft="@dimen/spacing_large"
                     android:layout_marginTop="@dimen/spacing_large"
                     android:layout_marginBottom="@dimen/spacing_middle"
-                    android:tag="binding_13"                
+                    android:tag="binding_12"                
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="@color/grey_40"
                     tools:text="Mặc định xem phê duyệt" />
@@ -403,7 +403,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:textColor="@color/md_black_1000"
-                                        android:tag="binding_14"              
+                                        android:tag="binding_13"              
                                         tools:text="Chi tiết" />
 
                                     <androidx.appcompat.widget.SwitchCompat
@@ -450,7 +450,7 @@
                     android:layout_marginBottom="@dimen/spacing_middle"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="@color/grey_40"
-                    android:tag="binding_15"               
+                    android:tag="binding_14"               
                     tools:text="Mặc định đơn xin phép" />
 
                 <androidx.cardview.widget.CardView
@@ -494,7 +494,7 @@
                                         android:layout_weight="1"
                                         android:textColor="@color/md_black_1000"
                                         tools:text="Theo buổi"
-                                        android:tag="binding_16"            />
+                                        android:tag="binding_15"            />
 
                                     <androidx.appcompat.widget.SwitchCompat
                                         android:layout_width="wrap_content"
@@ -516,7 +516,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:textColor="@color/md_black_1000"
-                                        android:tag="binding_17"       
+                                        android:tag="binding_16"       
                                         tools:text="Công khoán" />
 
                                     <androidx.appcompat.widget.SwitchCompat
@@ -552,7 +552,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textAllCaps="false"
-                        android:tag="binding_18"       
+                        android:tag="binding_17"       
                         android:theme="@style/Button.Accent"
                         tools:text="Lưu" />
 
@@ -563,7 +563,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textAllCaps="false"
-                        android:tag="binding_19"         
+                        android:tag="binding_18"         
                         android:theme="@style/Button.Accent"
                         tools:text="Cancel" />
 

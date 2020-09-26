@@ -36,7 +36,6 @@ import com.firstems.erp.R;
 import com.firstems.erp.adapter.FileInludeAdapter;
 import com.firstems.erp.adapter.ImageIncludeAdapter;
 import com.firstems.erp.api.model.response.reviewprocess.documentfile.DocumentFile;
-import com.firstems.erp.callback.ConfirmCallback;
 import com.firstems.erp.callback.ImageClickCallback;
 import com.firstems.erp.callback.ItemFileClick;
 import com.firstems.erp.callback.PermissionCallback;
@@ -44,14 +43,12 @@ import com.firstems.erp.callback.SaveFileToLocalCallback;
 import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Constant;
 import com.firstems.erp.databinding.FileFragmentBinding;
-import com.firstems.erp.helper.camera.CameraHelper;
 import com.firstems.erp.helper.file.GetFileHelper;
 import com.firstems.erp.helper.permision.PermissionProvider;
 import com.firstems.erp.helper.widgets.SpacingItemDecoration;
 import com.firstems.erp.model.FileIncludeModel;
 import com.firstems.erp.model.ImageModel;
 import com.firstems.erp.sharedpreferences.SharedPreferencesManager;
-import com.firstems.erp.ui.shared.camera.CameraUIKitActivity;
 import com.firstems.erp.ui.shared.image.ImageViewActivity;
 import com.firstems.erp.ui.shared.viewer.PDFViewerActivity;
 import com.firstems.erp.utils.Tools;
@@ -159,18 +156,7 @@ public class FileFragment extends CommonFragment implements EasyPermissions.Perm
         }
     }
     private void openFileSelect(){
-        showConfirmMessage("Chọn File", "Bạn cần chọn File", "Ảnh", "File", new ConfirmCallback() {
-            @Override
-            public void onAccept() {
-                pickPhotoClicked();
-            }
-            
-            @Override
-            public void onCancel() {
-                pickDocClicked();
-            }
-        });
-        
+        pickDocClicked();
     }
     @AfterPermissionGranted(RC_PHOTO_PICKER_PERM)
     public void pickPhotoClicked() {
@@ -195,13 +181,14 @@ public class FileFragment extends CommonFragment implements EasyPermissions.Perm
                     .setActivityTheme(R.style.FilePickerTheme)
                     .setActivityTitle(SharedPreferencesManager.getSystemLabel(194) /*Chọn hình ảnh đính kèm*/)
                     .enableVideoPicker(false)
-                    .enableCameraSupport(false)
+                    .enableCameraSupport(true)
                     .showGifs(false)
                     .showFolderView(true)
                     .enableSelectAll(false)
                     .enableImagePicker(true)
                     .setCameraPlaceholder(R.drawable.ic_camera)
                     .withOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
+                    .enableCameraSupport(true)
                     .pickPhoto(this, CUSTOM_REQUEST_CODE);
         }
     }
@@ -245,13 +232,7 @@ public class FileFragment extends CommonFragment implements EasyPermissions.Perm
         }
     }
     private void openCamera() {
-        boolean checkCamera = CameraHelper.getInstance().checkCameraHardware(getContext());
-        if (checkCamera){
-            /*Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            startActivityForResult(intent, CAMERA_PIC_REQUEST);*/
-            Intent intent = new Intent(getContext(), CameraUIKitActivity.class);
-            startActivityForResult(intent,CODE_OPEN_CAMERA_SHOTTING);
-        }
+        pickPhotoClicked();
     }
     private void addControls() {
         EasyPermissions.requestPermissions(getActivity(), SharedPreferencesManager.getSystemLabel(193) /*Truy cập bộ nhớ thiết bị*/,

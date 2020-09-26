@@ -1,5 +1,6 @@
 package com.firstems.erp.ui.signature.servicecontacts;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -55,6 +56,7 @@ import com.firstems.erp.ui.shared.reviewprocess.ReviewProcessFragment;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
+import java.io.File;
 import java.io.Serializable;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -687,6 +689,18 @@ public class ServiceContactsFragment extends CommonFragment {
                                     showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),mess);
                                     System.out.println(response.body().getRETNMSSG());
                                     FileFragment.fileIncludeList.clear();
+                                    try {
+                                        File dir = getContext().getDir("profile", Context.MODE_PRIVATE);
+                                        if (dir.exists()) {
+                                            for (File f : dir.listFiles()){
+                                                System.out.println(f.getAbsolutePath());
+                                                f.delete();
+                                            }
+                                        }
+                                    }
+                                    catch (Exception ex){
+                                        ex.printStackTrace();
+                                    }
                                 }
                                 else {
                                     progressdialog.dismiss();
@@ -725,6 +739,18 @@ public class ServiceContactsFragment extends CommonFragment {
                             if (response.isSuccessful()){
                                 if (response.body().isRETNCODE()){
                                     FileFragment.fileIncludeList.clear();
+                                    try {
+                                        File dir = getContext().getDir("profile", Context.MODE_PRIVATE);
+                                        if (dir.exists()) {
+                                            for (File f : dir.listFiles()){
+                                                System.out.println(f.getAbsolutePath());
+                                                f.delete();
+                                            }
+                                        }
+                                    }
+                                    catch (Exception ex){
+                                        ex.printStackTrace();
+                                    }
                                     uploadFileCallback.onUpLoadSuccess();
                                     System.out.println(response.body().getRETNMSSG());
                                 }

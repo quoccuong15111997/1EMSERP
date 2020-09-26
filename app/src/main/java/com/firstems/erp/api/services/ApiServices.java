@@ -15,11 +15,14 @@ import com.firstems.erp.api.model.response.askpermistion.AskPermistionUpdateResp
 import com.firstems.erp.api.model.response.bill_payment.AddNewPaymentResponse;
 import com.firstems.erp.api.model.response.bill_payment.BillPaymentApiResponse;
 import com.firstems.erp.api.model.response.bussiness.BussinessRegistrationEditResponse;
+import com.firstems.erp.api.model.response.content.ContentApiResponse;
 import com.firstems.erp.api.model.response.currency.CurrencyListApiResponse;
 import com.firstems.erp.api.model.response.department.DepartmentApiResponse;
 import com.firstems.erp.api.model.response.document.DocumentApiResponse;
+import com.firstems.erp.api.model.response.document_category.DocumentCategoryApiResponse;
 import com.firstems.erp.api.model.response.doi_tuong_nhan.DoiTuongNhanApiResponse;
 import com.firstems.erp.api.model.response.employee.EmployeeApiResponse;
+import com.firstems.erp.api.model.response.export_place.ExportPlaceApiResponse;
 import com.firstems.erp.api.model.response.label.SystemLabelApiResponse;
 import com.firstems.erp.api.model.response.lanh_vuc_lien_quan.LanhVucLienQuanApiResponse;
 import com.firstems.erp.api.model.response.loai_de_nghi.LoaiDeNghiApiResponse;
@@ -550,6 +553,27 @@ public class ApiServices {
         if (retrofit!=null){
             Call<SystemLabelApiResponse> systemLabelApiResponseCall = retrofit.create(RestApi.class).getAllSystemLabel(token, body);
             systemLabelApiResponseCall.enqueue(callback);
+        }
+    }
+    // Danh sách nơi phát hành
+    public void getListExportPlace(String token, JsonObject body, Callback<ExportPlaceApiResponse> callback){
+        if (retrofit!=null){
+            Call<ExportPlaceApiResponse> gExportPlaceApiResponseCall = retrofit.create(RestApi.class).getListExportPlace(token,body);
+            gExportPlaceApiResponseCall.enqueue(callback);
+        }
+    }
+    // Danh sách nội dung chính
+    public void getListContent(String token, JsonObject body, Callback<ContentApiResponse> callback){
+        if (retrofit!=null){
+            Call<ContentApiResponse> contentApiResponseCall =  retrofit.create(RestApi.class).getListContent(token, body);
+            contentApiResponseCall.enqueue(callback);
+        }
+    }
+    // Danh sách lại tài liệu
+    public void getListDocumentCategory(String token, JsonObject body, Callback<DocumentCategoryApiResponse> callback){
+        if (retrofit!=null){
+            Call<DocumentCategoryApiResponse> documentCategoryApiResponseCall = retrofit.create(RestApi.class).getListdocumentCategory(token,body);
+            documentCategoryApiResponseCall.enqueue(callback);
         }
     }
 }

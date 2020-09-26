@@ -33,6 +33,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:orientation="vertical"
+                android:id="@+id/lParentContent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -40,15 +41,15 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="@dimen/radius_card"
-                    app:cardElevation="1dp"
+                    app:cardCornerRadius="5dp"
+                    android:elevation="5dp"
                     android:layout_marginTop="10dp">
                     <LinearLayout
                         android:id="@+id/linearLayout6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:padding="5dp"
+                        android:padding="10dp"
                         android:orientation="vertical"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
@@ -69,6 +70,7 @@
                             android:imeOptions="actionDone"
                             android:paddingTop="10dp"
                             android:paddingBottom="10dp"
+                            android:hint="Nhập số công văn"
                             android:background="@drawable/custom_bg_textview"
                             android:singleLine="true"
                             android:textSize="14sp" />
@@ -77,6 +79,8 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    app:cardCornerRadius="5dp"
+                    android:elevation="5dp"
                     android:layout_marginTop="5dp">
                     <LinearLayout
                         android:id="@+id/linearLayout7"
@@ -84,7 +88,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical"
-                        android:padding="5dp"
+                        android:padding="10dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
 
@@ -113,6 +117,8 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    app:cardCornerRadius="5dp"
+                    android:elevation="5dp"
                     android:layout_marginTop="5dp">
                     <LinearLayout
                         android:id="@+id/linearLayout8"
@@ -121,7 +127,7 @@
                         android:layout_weight="1"
                         android:orientation="vertical"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:padding="5dp"
+                        android:padding="10dp"
                         app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
 
                         <TextView
@@ -183,6 +189,7 @@
                     android:layout_height="wrap_content"
                     android:visibility="gone"
                     android:orientation="vertical"
+                    android:layoutAnimation="@anim/layout_animation_float"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtOpenGraphSearch"
@@ -190,13 +197,15 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        app:cardCornerRadius="5dp"
+                        android:elevation="5dp"
                         android:layout_marginTop="5dp">
                     <LinearLayout
                         android:id="@+id/linearLayout9"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:padding="5dp"
+                        android:padding="10dp"
                         android:orientation="vertical"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -227,6 +236,8 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        app:cardCornerRadius="5dp"
+                        android:elevation="5dp"
                         android:layout_marginTop="5dp">
                         <LinearLayout
                             android:id="@+id/linearLayoutLocate"
@@ -234,7 +245,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:orientation="vertical"
-                            android:padding="5dp"
+                            android:padding="10dp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/linearLayout9">
@@ -264,13 +275,15 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        app:cardCornerRadius="5dp"
+                        android:elevation="5dp"
                         android:layout_marginTop="5dp">
                         <LinearLayout
                             android:id="@+id/linearLayoutContent"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:padding="5dp"
+                            android:padding="10dp"
                             android:orientation="vertical"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -300,6 +313,8 @@
                     <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                        app:cardCornerRadius="5dp"
+                        android:elevation="5dp"
                         android:layout_marginTop="5dp">
                         <LinearLayout
                             android:id="@+id/linearLayoutStack"
@@ -307,7 +322,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:orientation="vertical"
-                            android:padding="5dp"
+                            android:padding="10dp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/linearLayoutContent">
@@ -336,13 +351,15 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        app:cardCornerRadius="5dp"
+                        android:elevation="5dp"
                         android:layout_marginTop="5dp">
                         <LinearLayout
                             android:id="@+id/linearLayoutCategory"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:padding="5dp"
+                            android:padding="10dp"
                             android:orientation="vertical"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -373,13 +390,15 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        app:cardCornerRadius="5dp"
+                        android:elevation="5dp"
                         android:layout_marginTop="5dp">
                         <LinearLayout
                             android:id="@+id/linearLayoutCompanyBranch"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:padding="5dp"
+                            android:padding="10dp"
                             android:orientation="vertical"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -409,12 +428,14 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        app:cardCornerRadius="5dp"
+                        android:elevation="5dp"
                         android:layout_marginTop="5dp">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:padding="5dp">
+                            android:padding="10dp">
                             <CheckBox
                                 android:id="@+id/chkSearchByTime"
                                 android:layout_width="wrap_content"

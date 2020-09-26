@@ -28,7 +28,6 @@
             <!--android:layoutAnimation="@anim/layout_animation_float"-->
             <LinearLayout
                 android:id="@+id/lParentContent"
-                android:layoutAnimation="@anim/layout_animation_float"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">

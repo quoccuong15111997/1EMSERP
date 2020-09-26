@@ -36,10 +36,10 @@
                     android:id="@+id/imgExpan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:tint="@color/text__white"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_baseline_expand_more_24" />
+                    app:srcCompat="@drawable/ic_baseline_expand_more_24"
+                    app:tint="@color/text__white" />
 
                 <TextView
                     android:id="@+id/txtContent"
@@ -57,11 +57,11 @@
                     android:id="@+id/imgAdd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:tint="@color/text__white"
                     app:layout_constraintBottom_toBottomOf="@+id/txtContent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/txtContent"
-                    app:srcCompat="@drawable/ic_baseline_add_circle_24" />
+                    app:srcCompat="@drawable/ic_baseline_add_circle_24"
+                    app:tint="@color/text__white" />
 
                 <TextView
                     android:id="@+id/txtNumber"

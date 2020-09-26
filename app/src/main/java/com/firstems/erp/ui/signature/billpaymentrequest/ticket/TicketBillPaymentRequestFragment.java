@@ -48,7 +48,7 @@ public class TicketBillPaymentRequestFragment extends CommonFragment {
     private void initText() {
         binding.txtTitleInfo.setText(SharedPreferencesManager.getSystemLabel(126));
         binding.txtTitleSoTien.setText(SharedPreferencesManager.getSystemLabel(131));
-        binding.txtTitleSoHoaDon.setText(SharedPreferencesManager.getSystemLabel(131));
+        binding.txtTitleSoHoaDon.setText(SharedPreferencesManager.getSystemLabel(132));
         binding.txtTitleDate.setText(SharedPreferencesManager.getSystemLabel(133));
         binding.btnDone.setText(SharedPreferencesManager.getSystemLabel(40));
     }

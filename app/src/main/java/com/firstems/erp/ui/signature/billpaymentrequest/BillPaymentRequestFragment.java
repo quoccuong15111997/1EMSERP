@@ -1,6 +1,7 @@
 package com.firstems.erp.ui.signature.billpaymentrequest;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -57,10 +58,12 @@ import com.firstems.erp.ui.shared.file.FileFragment;
 import com.firstems.erp.ui.shared.loaidoituongnhan.DoiTuongNhanActivity;
 import com.firstems.erp.ui.shared.reviewprocess.ReviewProcessFragment;
 import com.firstems.erp.ui.signature.billpaymentrequest.model.TicketBillPaymentDetail;
+import com.firstems.erp.ui.signature.billpaymentrequest.sophieutamung.SoPhieuTamUngActivity;
 import com.firstems.erp.ui.signature.billpaymentrequest.ticket.TicketBillPaymentRequestActivity;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
+import java.io.File;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -95,6 +98,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
     private SignatureItemApiResponse signatureItemApiResponse;
     private AccessRole accessRole;
     private Date mainDate;
+    private int CODE_SELECT_SO_PHIEU_TAM_UNG = 145;
     
     private List<TicketBillPaymentDetail> listDetail;
     private DetailTicketDetailAdapter detailTicketDetailAdapter;
@@ -152,6 +156,17 @@ public class BillPaymentRequestFragment extends CommonFragment {
         }
     }
     private void addEvents() {
+        billPaymentRequestFragmentBinding.txtSoPhieuTamUng.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoaiDeNghiItem loaiDeNghiItem = (LoaiDeNghiItem) billPaymentRequestFragmentBinding.spinerLoaiDeNghi.getSelectedItem();
+                if (loaiDeNghiItem.getiTEMCODE().equals("003")){
+                    Intent intent = new Intent(getContext(), SoPhieuTamUngActivity.class);
+                    intent.putExtra(Constant.NAME_PUT_DOI_TUONG_NHAN, doiTuongNhanItemSelected);
+                    startActivityForResult(intent,CODE_SELECT_SO_PHIEU_TAM_UNG);
+                }
+            }
+        });
         billPaymentRequestFragmentBinding.constraintLayout9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -163,9 +178,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
                                 showConfirmMessage(SharedPreferencesManager.getSystemLabel(49), SharedPreferencesManager.getSystemLabel(58), SharedPreferencesManager.getSystemLabel(54), SharedPreferencesManager.getSystemLabel(55), new ConfirmCallback() {
                                     @Override
                                     public void onAccept() {
-                                        
                                         doCommit();
-                                        
                                     }
             
                                     @Override
@@ -864,6 +877,18 @@ public class BillPaymentRequestFragment extends CommonFragment {
                                 if (response.body().isRETNCODE()){
                                     System.out.println(response.body().getRETNMSSG());
                                     FileFragment.fileIncludeList.clear();
+                                    try {
+                                        File dir = getContext().getDir("profile", Context.MODE_PRIVATE);
+                                        if (dir.exists()) {
+                                            for (File f : dir.listFiles()){
+                                                System.out.println(f.getAbsolutePath());
+                                                f.delete();
+                                            }
+                                        }
+                                    }
+                                    catch (Exception ex){
+                                        ex.printStackTrace();
+                                    }
                                     uploadFileCallback.onUpLoadSuccess();
                                 }
                                 else {

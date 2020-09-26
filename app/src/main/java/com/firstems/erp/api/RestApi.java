@@ -10,11 +10,14 @@ import com.firstems.erp.api.model.response.askpermistion.AskPermistionUpdateResp
 import com.firstems.erp.api.model.response.bill_payment.AddNewPaymentResponse;
 import com.firstems.erp.api.model.response.bill_payment.BillPaymentApiResponse;
 import com.firstems.erp.api.model.response.bussiness.BussinessRegistrationEditResponse;
+import com.firstems.erp.api.model.response.content.ContentApiResponse;
 import com.firstems.erp.api.model.response.currency.CurrencyListApiResponse;
 import com.firstems.erp.api.model.response.department.DepartmentApiResponse;
 import com.firstems.erp.api.model.response.document.DocumentApiResponse;
+import com.firstems.erp.api.model.response.document_category.DocumentCategoryApiResponse;
 import com.firstems.erp.api.model.response.doi_tuong_nhan.DoiTuongNhanApiResponse;
 import com.firstems.erp.api.model.response.employee.EmployeeApiResponse;
+import com.firstems.erp.api.model.response.export_place.ExportPlaceApiResponse;
 import com.firstems.erp.api.model.response.label.SystemLabelApiResponse;
 import com.firstems.erp.api.model.response.lanh_vuc_lien_quan.LanhVucLienQuanApiResponse;
 import com.firstems.erp.api.model.response.loai_de_nghi.LoaiDeNghiApiResponse;
@@ -303,4 +306,15 @@ public interface RestApi {
     
     @POST("/Api/data/runApi_Data?run_Code=CTL001.01.005")
     Call<LocationApiResponse> getAllLocation(@Header("TOKEN") String token);
+    
+    // Danh sách nơi phát hành
+    @POST("/Api/data/runApi_data?run_Code=SYS001.06.009")
+    Call<ExportPlaceApiResponse> getListExportPlace(@Header("TOKEN") String token, @Body JsonObject body);
+    
+    // Danh sách nội dung chính
+    @POST("/Api/data/runApi_data?run_Code=SYS001.06.009")
+    Call<ContentApiResponse> getListContent(@Header("TOKEN") String token, @Body JsonObject body);
+    
+    @POST("/Api/data/runApi_data?run_Code=SYS001.06.009")
+    Call<DocumentCategoryApiResponse> getListdocumentCategory(@Header("TOKEN") String token, @Body JsonObject body);
 }

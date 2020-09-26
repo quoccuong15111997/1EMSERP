@@ -45,6 +45,7 @@ public class DoiTuongNhanViewModel extends ViewModel {
             public void onApiLoadSuccess(DataApiCallback dataApiCallback) {
                 JsonObject jsonObject = new JsonObject();
                 jsonObject.addProperty("CONDFLTR",key);
+                System.out.println(jsonObject);
                 ApiServices.getInstance().getAllDoiTuongNhan(SharedPreferencesManager.getInstance().getPrefToken(), jsonObject, new Callback<DoiTuongNhanApiResponse>() {
                     @Override
                     public void onResponse(Call<DoiTuongNhanApiResponse> call, Response<DoiTuongNhanApiResponse> response) {

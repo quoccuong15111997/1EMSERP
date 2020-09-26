@@ -555,7 +555,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="4"
                             android:src="@drawable/ic_baseline_add_circle_24"
-                            android:tint="@color/text__white" />
+                            app:tint="@color/text__white" />
 
                     </com.firstems.erp.helper.widgets.EMSLinearLayout>
 
