@@ -112,7 +112,7 @@ public class AdvanceProposalFormFragment extends CommonFragment {
         binding.txtTitleSoTienTamUng.setText(SharedPreferencesManager.getSystemLabel(114));
         binding.txtTitleSoTienDuocDuyet.setText(SharedPreferencesManager.getSystemLabel(115));
         binding.txtTitleMaDuAn.setText(SharedPreferencesManager.getSystemLabel(116));
-        binding.txtTitleNgayThanhToan.setText(SharedPreferencesManager.getSystemLabel(117));
+        binding.txtTitleNgayThanhToan.setText(SharedPreferencesManager.getSystemLabel(202) /*Thời gian thanh toán*/);
         
         binding.textView5.setText(SharedPreferencesManager.getSystemLabel(29));
         binding.txtTrinhKi.setText(SharedPreferencesManager.getSystemLabel(8));
@@ -258,32 +258,37 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                     if (!binding.edtInfo.getText().toString().equals("")){
                         if (!binding.edtTiGia.getText().toString().equals("")){
                             if (!binding.edtSoTienTamUng.getText().toString().equals("")){
-                                if (signatureItemApiResponse==null){
-                                    showConfirmMessage(SharedPreferencesManager.getSystemLabel(49), SharedPreferencesManager.getSystemLabel(56), SharedPreferencesManager.getSystemLabel(54), SharedPreferencesManager.getSystemLabel(55), new ConfirmCallback() {
-                                        @Override
-                                        public void onAccept() {
-                                            doSave();
-                                        }
-                                        
-                                        @Override
-                                        public void onCancel() {
-                                        
-                                        }
-                                    });
-                                }
-                                else {
-                                    showConfirmMessage(SharedPreferencesManager.getSystemLabel(49), SharedPreferencesManager.getSystemLabel(57), SharedPreferencesManager.getSystemLabel(54), SharedPreferencesManager.getSystemLabel(55), new ConfirmCallback() {
-                                        @Override
-                                        public void onAccept() {
-                                            doUpdate();
-                                        }
-                                        
-                                        @Override
-                                        public void onCancel() {
-                                        
-                                        }
-                                    });
-                                }
+                               if (checkSoTien()){
+                                   if (signatureItemApiResponse==null){
+                                       showConfirmMessage(SharedPreferencesManager.getSystemLabel(49), SharedPreferencesManager.getSystemLabel(56), SharedPreferencesManager.getSystemLabel(54), SharedPreferencesManager.getSystemLabel(55), new ConfirmCallback() {
+                                           @Override
+                                           public void onAccept() {
+                                               doSave();
+                                           }
+            
+                                           @Override
+                                           public void onCancel() {
+                
+                                           }
+                                       });
+                                   }
+                                   else {
+                                       showConfirmMessage(SharedPreferencesManager.getSystemLabel(49), SharedPreferencesManager.getSystemLabel(57), SharedPreferencesManager.getSystemLabel(54), SharedPreferencesManager.getSystemLabel(55), new ConfirmCallback() {
+                                           @Override
+                                           public void onAccept() {
+                                               doUpdate();
+                                           }
+            
+                                           @Override
+                                           public void onCancel() {
+                
+                                           }
+                                       });
+                                   }
+                               }
+                               else {
+                                   showToastError(SharedPreferencesManager.getSystemLabel(203) /*Số tiền không hợp lệ*/);
+                               }
                             }
                             else {
                                 showToastError(SharedPreferencesManager.getSystemLabel(119));
@@ -334,6 +339,20 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                 });
             }
         });
+    }
+    
+    private boolean checkSoTien() {
+        boolean res = false;
+        try {
+            double soTien = Double.parseDouble(binding.edtSoTienTamUng.getText().toString().replace(".","").trim());
+            if (soTien > 0)
+                res = true;
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            res = false;
+        }
+        return res;
     }
     
     private void doCommit() {

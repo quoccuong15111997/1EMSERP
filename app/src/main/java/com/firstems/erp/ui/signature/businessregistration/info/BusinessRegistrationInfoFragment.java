@@ -319,6 +319,41 @@ public class BusinessRegistrationInfoFragment extends CommonFragment {
                 timekeepingTypeCTList.clear();
                 timekeepingTypeCTList.addAll(timekeepingTypeCTS);
                 timekeepingTypeCTArrayAdapter.notifyDataSetChanged();
+    
+                if (businessEdit!=null){
+                    if (businessEdit.getTimekeepingTypeCTMorn()!=null){
+                        binding.chkMorning.setChecked(true);
+                        for (int i=0;i<timekeepingTypeCTList.size();i++){
+                            TimekeepingTypeCT typeCT = timekeepingTypeCTList.get(i);
+                            if (typeCT.getItemCode().equals(businessEdit.getTimekeepingTypeCTMorn().getItemCode())){
+                                spinnerLoaiCTSang.setSelection(i);
+                            }
+                        }
+            
+                    }
+                    if (businessEdit.getTimekeepingTypeCTAfft()!=null){
+                        binding.chkAfternoon.setChecked(true);
+                        for (int i=0;i<timekeepingTypeCTList.size();i++){
+                            TimekeepingTypeCT typeCT = timekeepingTypeCTList.get(i);
+                            if (typeCT.getItemCode().equals(businessEdit.getTimekeepingTypeCTAfft().getItemCode())){
+                                spinnerLoaiCTChieu.setSelection(i);
+                            }
+                        }
+                    }
+                    if (businessEdit.getTimekeepingTypeCTEvrn()!=null){
+                        binding.chkEverning.setChecked(true);
+                        for (int i=0;i<timekeepingTypeCTList.size();i++){
+                            TimekeepingTypeCT typeCT = timekeepingTypeCTList.get(i);
+                            if (typeCT.getItemCode().equals(businessEdit.getTimekeepingTypeCTEvrn().getItemCode())){
+                                spinnerLoaiCTToi.setSelection(i);
+                            }
+                        }
+                    }
+                    dateBegin = businessEdit.getDateBegin();
+                    dateEnd = businessEdit.getDateEnd();
+                    binding.txtDateBegin.setText(simpleDateFormatDisplay.format(dateBegin));
+                    binding.txtDateEnd.setText(simpleDateFormatDisplay.format(dateEnd));
+                }
                 loadFlag+=1;
                 hideLoadding();
             }

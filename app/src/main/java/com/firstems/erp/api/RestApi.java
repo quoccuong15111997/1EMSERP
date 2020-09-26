@@ -27,6 +27,7 @@ import com.firstems.erp.api.model.response.location.LocationApiResponse;
 import com.firstems.erp.api.model.response.locationtype.LocationTypeApiResponse;
 import com.firstems.erp.api.model.response.login.LoginReponse;
 import com.firstems.erp.api.model.response.national.NationalApiResponse;
+import com.firstems.erp.api.model.response.phieu_tam_ung.PhieuTamUngApiResponse;
 import com.firstems.erp.api.model.response.project_list.ProjectListApiResponse;
 import com.firstems.erp.api.model.response.province.ProvinceApiResponse;
 import com.firstems.erp.api.model.response.reviewprocess.ReviewProcessApiResponse;
@@ -317,4 +318,7 @@ public interface RestApi {
     
     @POST("/Api/data/runApi_data?run_Code=SYS001.06.009")
     Call<DocumentCategoryApiResponse> getListdocumentCategory(@Header("TOKEN") String token, @Body JsonObject body);
+    
+    @POST("/Api/data/runApi_data?run_Code=ACC001.01.003")
+    Call<PhieuTamUngApiResponse> getListPhieuTamUngNeuCo(@Header("TOKEN") String token, @Body JsonObject body);
 }

@@ -37,7 +37,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class EmployeeFragment extends CommonFragment implements ItemCheckCallback {
-
     private EmployeeViewModel mViewModel;
     private EmployeeFragmentBinding binding;
     private RecyclerView recyclerViewEmployee;

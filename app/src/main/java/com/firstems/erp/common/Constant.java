@@ -59,6 +59,7 @@ public class Constant {
     public static String RUN_CODE_LOCATION_LIST = "CTL001.01.005";
     public static String RUN_CODE_LABEL = "SYS001.01.001";
     public static String RUN_CODE_EXPORT_PLACE = "SYS001.06.009";
+    public static String RUN_CODE_PHIEU_TAM_UNG_NEU_CO = "ACC001.01.003";
 
     public static String NANE_PUT_TYPE_SELECT = "name_put_type_slect";
     public static String NANE_PUT_DEPARTMENT_LIST = "department_list";

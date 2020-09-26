@@ -32,6 +32,7 @@ import com.firstems.erp.api.model.response.location.LocationApiResponse;
 import com.firstems.erp.api.model.response.locationtype.LocationTypeApiResponse;
 import com.firstems.erp.api.model.response.login.LoginReponse;
 import com.firstems.erp.api.model.response.national.NationalApiResponse;
+import com.firstems.erp.api.model.response.phieu_tam_ung.PhieuTamUngApiResponse;
 import com.firstems.erp.api.model.response.project_list.ProjectListApiResponse;
 import com.firstems.erp.api.model.response.province.ProvinceApiResponse;
 import com.firstems.erp.api.model.response.reviewprocess.ReviewProcessApiResponse;
@@ -47,6 +48,7 @@ import com.firstems.erp.api.model.response.timekeeping.TimekeepingTypeDCApiRespo
 import com.firstems.erp.common.DateDeserializer;
 import com.firstems.erp.common.Util;
 import com.firstems.erp.model.FileIncludeModel;
+import com.google.android.gms.common.api.internal.LifecycleFragment;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
@@ -574,6 +576,13 @@ public class ApiServices {
         if (retrofit!=null){
             Call<DocumentCategoryApiResponse> documentCategoryApiResponseCall = retrofit.create(RestApi.class).getListdocumentCategory(token,body);
             documentCategoryApiResponseCall.enqueue(callback);
+        }
+    }
+    // Danh sách phiếu tạm ứng nếu có
+    public void getListPhieuTamUngNeuCo(String token, JsonObject body, Callback<PhieuTamUngApiResponse> callback){
+        if (retrofit!=null){
+            Call<PhieuTamUngApiResponse> phieuTamUngApiResponseCall = retrofit.create(RestApi.class).getListPhieuTamUngNeuCo(token,body);
+            phieuTamUngApiResponseCall.enqueue(callback);
         }
     }
 }
