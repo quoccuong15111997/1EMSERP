@@ -841,9 +841,13 @@ public class AdvanceProposalFormFragment extends CommonFragment {
         binding.spinerLoaiDeNghiTamUng.setAdapter(adapterLoaiDeNghi);
         
         dateCreate= new Date(System.currentTimeMillis());
+        binding.txtDateCreate.setText(simpleDateFormatDisplay.format(dateCreate));
         dateDeNghiChi = new Date(System.currentTimeMillis());
+        binding.txtNgayThanhToan.setText(simpleDateFormatDisplay.format(dateDeNghiChi));
         
         binding.setIsEditable(true);
+        
+        
     }
     
     @Override

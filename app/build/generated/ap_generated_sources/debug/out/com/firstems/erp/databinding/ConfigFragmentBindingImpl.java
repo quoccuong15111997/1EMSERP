@@ -16,14 +16,15 @@ public class ConfigFragmentBindingImpl extends ConfigFragmentBinding  {
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.include11, 19);
         sViewsWithIds.put(R.id.nested_scroll_view, 20);
-        sViewsWithIds.put(R.id.spinerLang, 21);
-        sViewsWithIds.put(R.id.switchInfoSignature, 22);
-        sViewsWithIds.put(R.id.switchWaitSignature, 23);
-        sViewsWithIds.put(R.id.switchWaitApproved, 24);
-        sViewsWithIds.put(R.id.switchCompleteSignature, 25);
-        sViewsWithIds.put(R.id.switchInfoApproved, 26);
-        sViewsWithIds.put(R.id.switchResquestFormPart, 27);
-        sViewsWithIds.put(R.id.switchResquestFormCongKhoan, 28);
+        sViewsWithIds.put(R.id.lParentContent, 21);
+        sViewsWithIds.put(R.id.spinerLang, 22);
+        sViewsWithIds.put(R.id.switchInfoSignature, 23);
+        sViewsWithIds.put(R.id.switchWaitSignature, 24);
+        sViewsWithIds.put(R.id.switchWaitApproved, 25);
+        sViewsWithIds.put(R.id.switchCompleteSignature, 26);
+        sViewsWithIds.put(R.id.switchInfoApproved, 27);
+        sViewsWithIds.put(R.id.switchResquestFormPart, 28);
+        sViewsWithIds.put(R.id.switchResquestFormCongKhoan, 29);
     }
     // views
     @NonNull
@@ -38,8 +39,6 @@ public class ConfigFragmentBindingImpl extends ConfigFragmentBinding  {
     private final android.widget.TextView mboundView15;
     @NonNull
     private final android.widget.TextView mboundView16;
-    @NonNull
-    private final android.widget.Button mboundView4;
     @NonNull
     private final android.widget.TextView mboundView5;
     @NonNull
@@ -104,24 +103,26 @@ public class ConfigFragmentBindingImpl extends ConfigFragmentBinding  {
     };
 
     public ConfigFragmentBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 29, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 30, sIncludes, sViewsWithIds));
     }
     private ConfigFragmentBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 1
             , (android.widget.Button) bindings[18]
+            , (android.widget.Button) bindings[4]
             , (android.widget.Button) bindings[17]
             , (android.widget.EditText) bindings[3]
             , (android.widget.EditText) bindings[8]
             , (android.view.View) bindings[19]
+            , (android.widget.LinearLayout) bindings[21]
             , (androidx.core.widget.NestedScrollView) bindings[20]
-            , (android.widget.Spinner) bindings[21]
-            , (androidx.appcompat.widget.SwitchCompat) bindings[25]
+            , (android.widget.Spinner) bindings[22]
             , (androidx.appcompat.widget.SwitchCompat) bindings[26]
-            , (androidx.appcompat.widget.SwitchCompat) bindings[22]
-            , (androidx.appcompat.widget.SwitchCompat) bindings[28]
             , (androidx.appcompat.widget.SwitchCompat) bindings[27]
-            , (androidx.appcompat.widget.SwitchCompat) bindings[24]
             , (androidx.appcompat.widget.SwitchCompat) bindings[23]
+            , (androidx.appcompat.widget.SwitchCompat) bindings[29]
+            , (androidx.appcompat.widget.SwitchCompat) bindings[28]
+            , (androidx.appcompat.widget.SwitchCompat) bindings[25]
+            , (androidx.appcompat.widget.SwitchCompat) bindings[24]
             , (android.widget.TextView) bindings[6]
             , (android.widget.TextView) bindings[12]
             , (android.widget.TextView) bindings[14]
@@ -129,6 +130,7 @@ public class ConfigFragmentBindingImpl extends ConfigFragmentBinding  {
             , (android.widget.TextView) bindings[1]
             );
         this.btnCancel.setTag(null);
+        this.btnDefault.setTag(null);
         this.btnSave.setTag(null);
         this.edtDomain.setTag(null);
         this.edtNumberDay.setTag(null);
@@ -144,8 +146,6 @@ public class ConfigFragmentBindingImpl extends ConfigFragmentBinding  {
         this.mboundView15.setTag(null);
         this.mboundView16 = (android.widget.TextView) bindings[16];
         this.mboundView16.setTag(null);
-        this.mboundView4 = (android.widget.Button) bindings[4];
-        this.mboundView4.setTag(null);
         this.mboundView5 = (android.widget.TextView) bindings[5];
         this.mboundView5.setTag(null);
         this.mboundView7 = (android.widget.TextView) bindings[7];
@@ -491,6 +491,11 @@ public class ConfigFragmentBindingImpl extends ConfigFragmentBinding  {
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.btnCancel, uiButtonCancel);
         }
+        if ((dirtyFlags & 0x80011L) != 0) {
+            // api target 1
+
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.btnDefault, uiButtonDefault);
+        }
         if ((dirtyFlags & 0xa0001L) != 0) {
             // api target 1
 
@@ -536,11 +541,6 @@ public class ConfigFragmentBindingImpl extends ConfigFragmentBinding  {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView16, uiSwitchWork);
-        }
-        if ((dirtyFlags & 0x80011L) != 0) {
-            // api target 1
-
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView4, uiButtonDefault);
         }
         if ((dirtyFlags & 0x80021L) != 0) {
             // api target 1

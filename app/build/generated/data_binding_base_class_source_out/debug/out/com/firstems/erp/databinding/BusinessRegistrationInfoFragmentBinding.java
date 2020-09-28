@@ -11,6 +11,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.firstems.erp.R;
@@ -23,6 +24,9 @@ import java.lang.Object;
 public abstract class BusinessRegistrationInfoFragmentBinding extends ViewDataBinding {
   @NonNull
   public final EMSButtonSecond btnDone;
+
+  @NonNull
+  public final CardView cardView;
 
   @NonNull
   public final CheckBox chkAfternoon;
@@ -127,11 +131,12 @@ public abstract class BusinessRegistrationInfoFragmentBinding extends ViewDataBi
   public final TextView txtTitleLoaiChamCongToi;
 
   protected BusinessRegistrationInfoFragmentBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, EMSButtonSecond btnDone, CheckBox chkAfternoon, CheckBox chkEverning,
-      CheckBox chkMorning, ImageView imageView24, ImageView imageView242, View include10,
-      EMSConstrainLayoutBorder layoutDateEnd, EMSConstrainLayoutBorder layoutDateForm,
-      LinearLayout linearLayout, LinearLayout linearLayout2, LinearLayout linearLayout222,
-      LinearLayout linearLayout22222, LinearLayout linearLayout6, LinearLayout linearLayout7,
+      int _localFieldCount, EMSButtonSecond btnDone, CardView cardView, CheckBox chkAfternoon,
+      CheckBox chkEverning, CheckBox chkMorning, ImageView imageView24, ImageView imageView242,
+      View include10, EMSConstrainLayoutBorder layoutDateEnd,
+      EMSConstrainLayoutBorder layoutDateForm, LinearLayout linearLayout,
+      LinearLayout linearLayout2, LinearLayout linearLayout222, LinearLayout linearLayout22222,
+      LinearLayout linearLayout6, LinearLayout linearLayout7,
       LinearLayout linearLayoutLoaiChamCongChieu, LinearLayout linearLayoutLoaiChamCongSang,
       LinearLayout linearLayoutLoaiChamCongToi, LinearLayout linearLayoutLocate,
       LinearLayout linearLayoutLocateDetail, LinearLayout linearLayoutLocateType,
@@ -143,6 +148,7 @@ public abstract class BusinessRegistrationInfoFragmentBinding extends ViewDataBi
       TextView txtTitleLoaiChamCongSang, TextView txtTitleLoaiChamCongToi) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnDone = btnDone;
+    this.cardView = cardView;
     this.chkAfternoon = chkAfternoon;
     this.chkEverning = chkEverning;
     this.chkMorning = chkMorning;

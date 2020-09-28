@@ -62,6 +62,9 @@ public abstract class HelpFragmentBinding extends ViewDataBinding {
   public final TextView textView53;
 
   @NonNull
+  public final TextView txtCoppyright;
+
+  @NonNull
   public final TextView txtTitleHelp;
 
   @NonNull
@@ -81,8 +84,8 @@ public abstract class HelpFragmentBinding extends ViewDataBinding {
       ImageView imageView31, ImageView imageView33, ImageView imageView34, ImageView imageView35,
       View include18, TextView textView47, TextView textView471, TextView textView48,
       TextView textView49, TextView textView51, TextView textView52, TextView textView53,
-      TextView txtTitleHelp, TextView txtTitleSystemSetting, View view10, View view11,
-      View view12) {
+      TextView txtCoppyright, TextView txtTitleHelp, TextView txtTitleSystemSetting, View view10,
+      View view11, View view12) {
     super(_bindingComponent, _root, _localFieldCount);
     this.cardSystemSetting = cardSystemSetting;
     this.imageView30 = imageView30;
@@ -99,6 +102,7 @@ public abstract class HelpFragmentBinding extends ViewDataBinding {
     this.textView51 = textView51;
     this.textView52 = textView52;
     this.textView53 = textView53;
+    this.txtCoppyright = txtCoppyright;
     this.txtTitleHelp = txtTitleHelp;
     this.txtTitleSystemSetting = txtTitleSystemSetting;
     this.view10 = view10;

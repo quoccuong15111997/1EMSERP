@@ -53,96 +53,105 @@
                         tools:ignore="MissingPrefix" />
                 </LinearLayout>
 
-                <LinearLayout
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="@dimen/margin15"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:cardCornerRadius="5dp"
+                    android:elevation="5dp"
                     app:layout_constraintStart_toStartOf="parent"
+                    android:layout_margin="15dp"
                     app:layout_constraintTop_toBottomOf="@+id/linearLayout15">
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/spacing_xxlarge"
-                        android:layout_marginTop="@dimen/spacing_large"
-                        android:textColorHint="@color/colorAccent"
-                        app:boxStrokeColor="@color/colorAccent">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/textInputEditText"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:hint="Tên đăng nhập"
-                            android:padding="0dp" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/spacing_xxlarge"
-                        android:layout_marginTop="@dimen/spacing_large"
-                        android:textColorHint="@color/colorAccent"
-                        app:boxStrokeColor="@color/colorAccent"
-                        app:passwordToggleEnabled="true"
-                        app:passwordToggleTint="@color/colorAccent">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/textInputEditText2"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:hint="Mật khẩu"
-                            android:inputType="textPassword"
-                            android:padding="0dp" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <CheckBox
-                        android:id="@+id/chkRemember"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="5dp"
-                        android:text="Nhớ mật khẩu" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/button2"
-                        style="@style/ButtonLogin"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="25dp"
-                        android:layout_marginBottom="@dimen/margin10"
-                        android:background="@drawable/bg_rounded_btn_login"
-                        android:gravity="center"
+                        android:layout_height="match_parent"
                         android:orientation="vertical"
-                        android:paddingLeft="@dimen/margin95"
-                        android:paddingRight="@dimen/margin95"
-                        android:text="Đăng nhập"
-                        android:textColor="@color/text__white"
-                        android:textSize="@dimen/text_default"
-                        tools:ignore="MissingPrefix">
+                        android:padding="@dimen/margin15"
+                        android:background="@color/text__white">
 
-                    </com.google.android.material.button.MaterialButton>
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/spacing_xxlarge"
+                            android:layout_marginTop="@dimen/spacing_large"
+                            android:textColorHint="@color/colorAccent"
+                            app:boxStrokeColor="@color/colorAccent">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/textInputEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:hint="Tên đăng nhập"
+                                android:padding="0dp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/spacing_xxlarge"
+                            android:layout_marginTop="@dimen/spacing_large"
+                            android:background="@color/text__white"
+                            android:textColorHint="@color/colorAccent"
+                            app:boxStrokeColor="@color/colorAccent"
+                            app:passwordToggleEnabled="true"
+                            app:passwordToggleTint="@color/colorAccent">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/textInputEditText2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:hint="Mật khẩu"
+                                android:inputType="textPassword"
+                                android:padding="0dp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <CheckBox
+                            android:id="@+id/chkRemember"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:text="Nhớ mật khẩu" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/button2"
+                            style="@style/ButtonLogin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="@dimen/margin10"
+                            android:background="@drawable/bg_rounded_btn_login"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:paddingLeft="@dimen/margin95"
+                            android:paddingRight="@dimen/margin95"
+                            android:text="Đăng nhập"
+                            android:visibility="invisible"
+                            android:textColor="@color/text__white"
+                            android:textSize="@dimen/text_default"
+                            tools:ignore="MissingPrefix">
+                        </com.google.android.material.button.MaterialButton>
 
 
-                    <TextView
-                        fontPath="fonts/open_sans_bold.ttf"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/margin35"
-                        android:layout_marginTop="@dimen/margin40"
-                        android:layout_marginRight="@dimen/margin35"
-                        android:layout_marginBottom="@dimen/margin15"
-                        android:gravity="center"
-                        android:text="Chưa có tài khoản? Đăng ký ngay"
-                        android:textColor="@color/color_tv_blue_btn_login"
-                        android:textSize="@dimen/text_default"
-                        android:visibility="invisible"
-                        tools:ignore="MissingPrefix" />
-                </LinearLayout>
+                        <TextView
+                            fontPath="fonts/open_sans_bold.ttf"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin35"
+                            android:layout_marginTop="@dimen/margin40"
+                            android:layout_marginRight="@dimen/margin35"
+                            android:layout_marginBottom="@dimen/margin15"
+                            android:gravity="center"
+                            android:text="Chưa có tài khoản? Đăng ký ngay"
+                            android:textColor="@color/color_tv_blue_btn_login"
+                            android:textSize="@dimen/text_default"
+                            android:visibility="gone"
+                            tools:ignore="MissingPrefix" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
 

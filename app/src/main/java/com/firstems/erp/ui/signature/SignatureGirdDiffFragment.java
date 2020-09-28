@@ -3,13 +3,18 @@ package com.firstems.erp.ui.signature;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -21,13 +26,16 @@ import com.firstems.erp.adapter.signature.SignatureDiffAdapter;
 import com.firstems.erp.adapter.signature.SignatureModel;
 import com.firstems.erp.api.model.response.signature.SignatureItemApiResponse;
 import com.firstems.erp.callback.BackToHomeCallback;
+import com.firstems.erp.callback.DialogSignatureCallback;
 import com.firstems.erp.callback.LoadSignatureDataDiffListCallback;
 import com.firstems.erp.callback.OnAddNewSignatureCallback;
+import com.firstems.erp.callback.PickDateCallback;
 import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.callback.SignatureItemClickCallback;
 import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Constant;
 import com.firstems.erp.databinding.SignatureFragmentBinding;
+import com.firstems.erp.helper.dialog.DatePickerDialog;
 import com.firstems.erp.model.FilterModel;
 import com.firstems.erp.sharedpreferences.SharedPreferencesManager;
 import com.firstems.erp.system.SysConfig;
@@ -39,8 +47,12 @@ import com.firstems.erp.ui.signature.defaultsignature.DefaultSignatureActivity;
 import com.firstems.erp.ui.signature.filtersignature.FilterSignatureActivity;
 import com.firstems.erp.ui.signature.servicecontacts.ServiceContactsActivity;
 import com.firstems.erp.ui.signature.switchshift.SwitchShiftActivity;
+import com.orhanobut.dialogplus.DialogPlus;
+import com.orhanobut.dialogplus.OnItemClickListener;
+import com.orhanobut.dialogplus.ViewHolder;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -80,9 +92,15 @@ public class SignatureGirdDiffFragment extends CommonFragment {
         signatureFragmentBinding.fabFilter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(getActivity(), FilterSignatureActivity.class);
+                /*Intent intent= new Intent(getActivity(), FilterSignatureActivity.class);
                 intent.putExtra(Constant.NAME_PUT_FILTER_MODEL, filterModel);
-                startActivityForResult(intent, CODE_OPEN_FILTER);
+                startActivityForResult(intent, CODE_OPEN_FILTER);*/
+                showSortDialog(new DialogSignatureCallback() {
+                    @Override
+                    public void onDoneClick(FilterModel filterModel) {
+                        doFilter(filterModel);
+                    }
+                });
             }
         });
         signatureFragmentBinding.include.findViewById(R.id.imgBack).setOnClickListener(new View.OnClickListener() {
@@ -156,6 +174,116 @@ public class SignatureGirdDiffFragment extends CommonFragment {
         });
     }
     
+    private void showSortDialog(DialogSignatureCallback dialogSignatureCallback){
+        DialogPlus dialog = DialogPlus.newDialog(getContext())
+                .setContentHolder(new ViewHolder(R.layout.dialog_filter))
+                .setGravity(Gravity.CENTER)
+                .setContentWidth(ViewGroup.LayoutParams.MATCH_PARENT)
+                .setContentHeight(ViewGroup.LayoutParams.WRAP_CONTENT)
+                .setInAnimation(R.anim.item_animation_float)
+                .setMargin(20, 20, 20, 20)
+                .setPadding(10,10,10,10)
+                .setContentBackgroundResource(0)
+                .create();
+        View view = dialog.getHolderView();
+        final Date[] dateBegin = {SysConfig.createDateLoadSign().get(0)};
+        final Date[] dateEnd = {SysConfig.createDateLoadSign().get(1)};
+        
+        TextView txtDateBegin, txtDateEnd;
+        txtDateBegin = view.findViewById(R.id.txtDateBegin);
+        txtDateEnd = view.findViewById(R.id.txtDateEnd);
+        txtDateBegin.setText(dateBegin[0] !=null ? simpleDateFormatDisplay.format(dateBegin[0]) : "");
+        txtDateEnd.setText(dateEnd[0] !=null ? simpleDateFormatDisplay.format(dateEnd[0]) : "");
+    
+        CheckBox chkChuaTrinhKy,chkChoDuyet,chkHoanTat;
+        chkChoDuyet = view.findViewById(R.id.chkChoDuyet);
+        chkChuaTrinhKy = view.findViewById(R.id.chkChuaTrinhKy);
+        chkHoanTat = view.findViewById(R.id.chkHoanTat);
+        
+        chkChuaTrinhKy.setChecked(SharedPreferencesManager.getInstance().getWaitSignature());
+        chkChoDuyet.setChecked(SharedPreferencesManager.getInstance().getWaitAppreoved());
+        chkHoanTat.setChecked(SharedPreferencesManager.getInstance().getCompleteSignature());
+    
+       Button btnDone = view.findViewById(R.id.btnSort);
+       btnDone.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               FilterModel filterModel = new FilterModel();
+               filterModel.setBeginDate(dateBegin[0]);
+               filterModel.setEndDate(dateEnd[0]);
+               filterModel.setDone(chkHoanTat.isChecked());
+               filterModel.setWaitApproved(chkChoDuyet.isChecked());
+               filterModel.setWaitsignature(chkChuaTrinhKy.isChecked());
+    
+               dialogSignatureCallback.onDoneClick(filterModel);
+               if (dialog!=null){
+                   dialog.dismiss();
+               }
+           }
+       });
+        ConstraintLayout layoutFrom, layoutTo;
+        layoutFrom = view.findViewById(R.id.layoutDateForm);
+        layoutTo = view.findViewById(R.id.layoutDateEnd);
+        layoutFrom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                long minDate = 0;
+                long maxDate = dateEnd[0].getTime();
+                DatePickerDialog.getInstance().showDialogSelectDate(minDate, maxDate, getContext(), new PickDateCallback() {
+                    @Override
+                    public void onDatePicker(Date date) {
+                        dateBegin[0] = date;
+                        txtDateBegin.setText(simpleDateFormatDisplay.format(dateBegin[0]));
+                    }
+                });
+            }
+        });
+        txtDateBegin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                long minDate = 0;
+                long maxDate = dateEnd[0].getTime();
+                DatePickerDialog.getInstance().showDialogSelectDate(minDate, maxDate, getContext(), new PickDateCallback() {
+                    @Override
+                    public void onDatePicker(Date date) {
+                        dateBegin[0] = date;
+                        txtDateBegin.setText(simpleDateFormatDisplay.format(dateBegin[0]));
+                    }
+                });
+            }
+        });
+        layoutTo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                long maxDate = 0;
+                long minDate = dateBegin[0].getTime();
+                DatePickerDialog.getInstance().showDialogSelectDate(minDate, maxDate, getContext(), new PickDateCallback() {
+                    @Override
+                    public void onDatePicker(Date date) {
+                        dateEnd[0] = date;
+                        txtDateEnd.setText(simpleDateFormatDisplay.format(dateEnd[0]));
+                    }
+                });
+            }
+        });
+        txtDateEnd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                long maxDate = 0;
+                long minDate = dateBegin[0].getTime();
+                DatePickerDialog.getInstance().showDialogSelectDate(minDate, maxDate, getContext(), new PickDateCallback() {
+                    @Override
+                    public void onDatePicker(Date date) {
+                        dateEnd[0] = date;
+                        txtDateEnd.setText(simpleDateFormatDisplay.format(dateEnd[0]));
+                    }
+                });
+            }
+        });
+        
+        dialog.show();
+    }
+    
     private void addControls() {
         txtTitle = signatureFragmentBinding.include.findViewById(R.id.txtTitle);
         modelList = new ArrayList<>();
@@ -208,6 +336,10 @@ public class SignatureGirdDiffFragment extends CommonFragment {
     @Override
     public void onResume() {
         super.onResume();
+        filterModel = new FilterModel(SysConfig.createDateLoadSign().get(0),SysConfig.createDateLoadSign().get(1),
+                SharedPreferencesManager.getInstance().getWaitSignature(),
+                SharedPreferencesManager.getInstance().getWaitAppreoved(),
+                SharedPreferencesManager.getInstance().getCompleteSignature());
         //mViewModel.loadDataSignature(filterModel);
         if (loadingNonMessDialog!=null && !loadingNonMessDialog.isShowing()){
             showLoadingNonMessDialog();
@@ -239,6 +371,9 @@ public class SignatureGirdDiffFragment extends CommonFragment {
     
     private void doFilter(FilterModel filterModel) {
         showLoadingNonMessDialog();
+        SharedPreferencesManager.getInstance().setWaitAppreoved(filterModel.isWaitApproved());
+        SharedPreferencesManager.getInstance().setWaitSignature(filterModel.isWaitsignature());
+        SharedPreferencesManager.getInstance().setCompleteSignature(filterModel.isDone());
         mViewModel.loadDataSignature(filterModel);
     }
 }

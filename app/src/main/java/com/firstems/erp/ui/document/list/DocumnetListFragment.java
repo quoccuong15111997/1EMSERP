@@ -208,6 +208,9 @@ public class DocumnetListFragment extends CommonFragment {
         documentSortBit = new DocumentSortBit();
         
         binding.etSearch.clearFocus();
+        
+        binding.recycleview.setVisibility(View.GONE);
+        binding.llNoItem.setVisibility(View.GONE);
     }
     
     @Override
@@ -232,6 +235,14 @@ public class DocumnetListFragment extends CommonFragment {
                     @Override
                     public void run() {
                         documentAdapter.notifyDataSetChanged();
+                        if (listCurrent.size() > 0){
+                            binding.recycleview.setVisibility(View.VISIBLE);
+                            binding.llNoItem.setVisibility(View.GONE);
+                        }
+                        else{
+                            binding.llNoItem.setVisibility(View.VISIBLE);
+                            binding.recycleview.setVisibility(View.GONE);
+                        }
                         loadingNonMessDialog.dismiss();
                     }
                 });

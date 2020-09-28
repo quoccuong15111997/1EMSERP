@@ -20,7 +20,8 @@ public class DocumnetListFragmentBindingImpl extends DocumnetListFragmentBinding
         sViewsWithIds.put(R.id.et_search, 4);
         sViewsWithIds.put(R.id.imgSort, 5);
         sViewsWithIds.put(R.id.recycleview, 6);
-        sViewsWithIds.put(R.id.bottom_sheet, 7);
+        sViewsWithIds.put(R.id.llNoItem, 7);
+        sViewsWithIds.put(R.id.bottom_sheet, 8);
     }
     // views
     @NonNull
@@ -31,15 +32,16 @@ public class DocumnetListFragmentBindingImpl extends DocumnetListFragmentBinding
     // Inverse Binding Event Handlers
 
     public DocumnetListFragmentBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 9, sIncludes, sViewsWithIds));
     }
     private DocumnetListFragmentBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.FrameLayout) bindings[7]
+            , (android.widget.FrameLayout) bindings[8]
             , (android.widget.EditText) bindings[4]
             , (android.widget.ImageButton) bindings[3]
             , (android.widget.ImageButton) bindings[5]
             , (android.widget.LinearLayout) bindings[2]
+            , (android.widget.LinearLayout) bindings[7]
             , (androidx.recyclerview.widget.RecyclerView) bindings[6]
             , (android.view.View) bindings[1]
             );

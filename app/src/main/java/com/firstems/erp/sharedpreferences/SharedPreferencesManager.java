@@ -493,5 +493,6 @@ public class SharedPreferencesManager {
         setPrefJobCode("");
         setPrefJobName("");
         setPrefLogoComp("");
+        setPrefRemember(false);
     }
 }

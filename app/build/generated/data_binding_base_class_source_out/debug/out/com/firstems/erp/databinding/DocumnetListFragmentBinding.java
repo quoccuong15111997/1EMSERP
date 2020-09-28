@@ -34,6 +34,9 @@ public abstract class DocumnetListFragmentBinding extends ViewDataBinding {
   public final LinearLayout linearLayout13;
 
   @NonNull
+  public final LinearLayout llNoItem;
+
+  @NonNull
   public final RecyclerView recycleview;
 
   @NonNull
@@ -41,13 +44,14 @@ public abstract class DocumnetListFragmentBinding extends ViewDataBinding {
 
   protected DocumnetListFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount,
       FrameLayout bottomSheet, EditText etSearch, ImageButton imgBack, ImageButton imgSort,
-      LinearLayout linearLayout13, RecyclerView recycleview, View view2) {
+      LinearLayout linearLayout13, LinearLayout llNoItem, RecyclerView recycleview, View view2) {
     super(_bindingComponent, _root, _localFieldCount);
     this.bottomSheet = bottomSheet;
     this.etSearch = etSearch;
     this.imgBack = imgBack;
     this.imgSort = imgSort;
     this.linearLayout13 = linearLayout13;
+    this.llNoItem = llNoItem;
     this.recycleview = recycleview;
     this.view2 = view2;
   }

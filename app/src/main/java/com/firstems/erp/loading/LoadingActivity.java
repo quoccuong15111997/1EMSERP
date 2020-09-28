@@ -57,26 +57,6 @@ public class LoadingActivity extends CommonActivity {
     }
     
     private void initControl() {
-        if (SharedPreferencesManager.getInstance().isSyslabelBaseLoad()){
-            System.out.println("Label is emty - Begin download label");
-            SystemLabelProvider.getInstance().getDataSystemLabel(new LoadSystemLabelCallback() {
-                @Override
-                public void onLoaded() {
-                    startLogin();
-                }
-    
-                @Override
-                public void onLoadFail() {
-                    showOutTOKEN();
-                }
-            });
-        }
-        else {
-            startLogin();
-        }
-    }
-    
-    private void startLogin() {
         if (SharedPreferencesManager.getInstance().isFirstSetup()){
             progressBar.setVisibility(View.INVISIBLE);
             Intent intent= new Intent(LoadingActivity.this, ConfigActivity.class);
@@ -85,40 +65,60 @@ public class LoadingActivity extends CommonActivity {
             finish();
         }
         else {
-            if (SharedPreferencesManager.getInstance().getPrefrRemember()){
-                runLogin(SharedPreferencesManager.getInstance().getPrefUsername(), SharedPreferencesManager.getInstance().getPrefPassword(), new LoginCallback() {
+            if (SharedPreferencesManager.getInstance().isSyslabelBaseLoad()){
+                System.out.println("Label is emty - Begin download label");
+                SystemLabelProvider.getInstance().getDataSystemLabel(new LoadSystemLabelCallback() {
                     @Override
-                    public void onLoginSuccess(SystemLoginApiResponse loginApiResponse) {
-                        SharedPreferencesManager.getInstance().setPrefToken(loginApiResponse.getToken());
-                        if (!SharedPreferencesManager.getInstance().getPrefCompcode().equals("") && !SharedPreferencesManager.getInstance().getPrefLctcode().equals("")){
-                            doLoginByLocation(SharedPreferencesManager.getInstance().getPrefCompcode(),SharedPreferencesManager.getInstance().getPrefLctcode());
-                        }
-                        else {
-                            Intent intent= new Intent(LoadingActivity.this, SelectCompanyActivity.class);
-                            intent.putExtra(Constant.NAME_PUT_LIST_COMPANY, (Serializable) loginApiResponse.getCompanyList());
-                            startActivity(intent);
-                            setOveridePendingTransisi(LoadingActivity.this);
-                            finish();
-                        }
+                    public void onLoaded() {
+                        startLogin();
                     }
-                
+            
                     @Override
-                    public void onLoginFail(LoginReponse loginReponse) {
-                    
-                    }
-    
-                    @Override
-                    public void onServerFail() {
+                    public void onLoadFail() {
                         showOutTOKEN();
                     }
                 });
             }
             else {
-                Intent intent= new Intent(LoadingActivity.this, LoginActivity.class);
-                startActivity(intent);
-                setOveridePendingTransisi(LoadingActivity.this);
-                finish();
+                startLogin();
             }
+        }
+    }
+    
+    private void startLogin() {
+        if (SharedPreferencesManager.getInstance().getPrefrRemember()){
+            runLogin(SharedPreferencesManager.getInstance().getPrefUsername(), SharedPreferencesManager.getInstance().getPrefPassword(), new LoginCallback() {
+                @Override
+                public void onLoginSuccess(SystemLoginApiResponse loginApiResponse) {
+                    SharedPreferencesManager.getInstance().setPrefToken(loginApiResponse.getToken());
+                    if (!SharedPreferencesManager.getInstance().getPrefCompcode().equals("") && !SharedPreferencesManager.getInstance().getPrefLctcode().equals("")){
+                        doLoginByLocation(SharedPreferencesManager.getInstance().getPrefCompcode(),SharedPreferencesManager.getInstance().getPrefLctcode());
+                    }
+                    else {
+                        Intent intent= new Intent(LoadingActivity.this, SelectCompanyActivity.class);
+                        intent.putExtra(Constant.NAME_PUT_LIST_COMPANY, (Serializable) loginApiResponse.getCompanyList());
+                        startActivity(intent);
+                        setOveridePendingTransisi(LoadingActivity.this);
+                        finish();
+                    }
+                }
+            
+                @Override
+                public void onLoginFail(LoginReponse loginReponse) {
+                
+                }
+            
+                @Override
+                public void onServerFail() {
+                    showOutTOKEN();
+                }
+            });
+        }
+        else {
+            Intent intent= new Intent(LoadingActivity.this, LoginActivity.class);
+            startActivity(intent);
+            setOveridePendingTransisi(LoadingActivity.this);
+            finish();
         }
     }
     

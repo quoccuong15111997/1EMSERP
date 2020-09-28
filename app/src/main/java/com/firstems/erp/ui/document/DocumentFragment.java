@@ -103,6 +103,8 @@ public class DocumentFragment extends CommonFragment {
         binding.txtDen.setText(SharedPreferencesManager.getSystemLabel(20) /*đến*/);
         binding.button.setText(SharedPreferencesManager.getSystemLabel(182) /*Tìm công văn*/);
         binding.chkSearchByTime.setText(SharedPreferencesManager.getSystemLabel(178) /*Lọc theo thời gian*/);
+        binding.edtDocumentName.setHint(SharedPreferencesManager.getSystemLabel(204) /*Nhập tên công văn*/);
+        binding.edtInfo.setHint(SharedPreferencesManager.getSystemLabel(205) /*Nhập nội dung chi tiết*/);
     }
     
     private void addEvents() {

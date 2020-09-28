@@ -1,0 +1,1 @@
+package com.firstems.erp.callback;import com.firstems.erp.model.FilterModel;public interface DialogSignatureCallback {    void onDoneClick(FilterModel filterModel);}

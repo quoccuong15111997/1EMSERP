@@ -30,6 +30,7 @@
                 android:id="@+id/lParentContent"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layoutAnimation="@anim/layout_animation_float"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -660,7 +661,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
                         android:src="@drawable/ic_baseline_add_circle_24"
-                        android:tint="@color/text__white" />
+                        app:tint="@color/text__white" />
                 </com.firstems.erp.helper.widgets.EMSLinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -695,11 +696,11 @@
                             android:id="@+id/imgDelete"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:tint="@color/red_800"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/ic_baseline_delete_forever_24" />
+                            app:srcCompat="@drawable/ic_baseline_delete_forever_24"
+                            app:tint="@color/red_800" />
 
                         <TextView
                             android:id="@+id/txtDelete"
@@ -731,9 +732,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@drawable/ic_baseline_save_24"
-                            android:tint="@color/text__white"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/text__white" />
 
                         <TextView
                             android:id="@+id/textView5"

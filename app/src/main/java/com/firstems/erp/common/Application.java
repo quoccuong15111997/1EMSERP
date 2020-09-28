@@ -14,8 +14,8 @@ public class Application extends android.app.Application {
     public void onCreate() {
         super.onCreate();
         Stetho.initializeWithDefaults(this);
-        ApiServices.init("http://api-dev.firstems.com/");
         SharedPreferencesManager.init(this);
+        ApiServices.init(SharedPreferencesManager.getInstance().getDomain());
         DatabaseHelper.init(this);
         Loading.getInstance().init(this);
     }

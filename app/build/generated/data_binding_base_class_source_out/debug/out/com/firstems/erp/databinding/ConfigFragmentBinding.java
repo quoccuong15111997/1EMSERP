@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -25,6 +26,9 @@ public abstract class ConfigFragmentBinding extends ViewDataBinding {
   public final Button btnCancel;
 
   @NonNull
+  public final Button btnDefault;
+
+  @NonNull
   public final Button btnSave;
 
   @NonNull
@@ -35,6 +39,9 @@ public abstract class ConfigFragmentBinding extends ViewDataBinding {
 
   @NonNull
   public final View include11;
+
+  @NonNull
+  public final LinearLayout lParentContent;
 
   @NonNull
   public final NestedScrollView nestedScrollView;
@@ -82,7 +89,8 @@ public abstract class ConfigFragmentBinding extends ViewDataBinding {
   protected ConfigUIBindingModel mUi;
 
   protected ConfigFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button btnCancel, Button btnSave, EditText edtDomain, EditText edtNumberDay, View include11,
+      Button btnCancel, Button btnDefault, Button btnSave, EditText edtDomain,
+      EditText edtNumberDay, View include11, LinearLayout lParentContent,
       NestedScrollView nestedScrollView, Spinner spinerLang, SwitchCompat switchCompleteSignature,
       SwitchCompat switchInfoApproved, SwitchCompat switchInfoSignature,
       SwitchCompat switchResquestFormCongKhoan, SwitchCompat switchResquestFormPart,
@@ -91,10 +99,12 @@ public abstract class ConfigFragmentBinding extends ViewDataBinding {
       TextView txtTitleDomain, TextView txtTitleSystemSetting) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnCancel = btnCancel;
+    this.btnDefault = btnDefault;
     this.btnSave = btnSave;
     this.edtDomain = edtDomain;
     this.edtNumberDay = edtNumberDay;
     this.include11 = include11;
+    this.lParentContent = lParentContent;
     this.nestedScrollView = nestedScrollView;
     this.spinerLang = spinerLang;
     this.switchCompleteSignature = switchCompleteSignature;

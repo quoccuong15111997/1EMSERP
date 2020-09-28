@@ -71,7 +71,7 @@ public class LoginFragment extends CommonFragment {
                 public void run() {
                     try {
                         TransitionManager.beginDelayedTransition(binding.lParentContent);
-                        binding.tvSubHeader.setVisibility(View.VISIBLE);
+                        binding.button2.setVisibility(View.VISIBLE);
                     }
                     catch (Exception ex){
                         ex.printStackTrace();
@@ -80,7 +80,7 @@ public class LoginFragment extends CommonFragment {
             }, 750);
         }
         catch (Exception ex){
-            binding.tvSubHeader.setVisibility(View.VISIBLE);
+            binding.button2.setVisibility(View.VISIBLE);
             ex.printStackTrace();
         }
     }
@@ -120,12 +120,12 @@ public class LoginFragment extends CommonFragment {
             }
             else {
                 //Password is blank
-                showToastError("Chưa điền mật khẩu");
+                showToastError("Chưa nhập mật khẩu");
             }
         }
         else {
             //Username is blank
-            showToastError("Chưa điền tên đăng nhập");
+            showToastError("Chưa nhập tên đăng nhập");
         }
     }
 

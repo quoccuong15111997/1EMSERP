@@ -12,6 +12,7 @@ import com.firstems.erp.callback.data.LoadApiCallback;
 import com.firstems.erp.common.Constant;
 import com.firstems.erp.data.DataConvertProvider;
 import com.firstems.erp.data.DataSourceProvider;
+import com.firstems.erp.database.helper.DatabaseHelper;
 import com.firstems.erp.sharedpreferences.SharedPreferencesManager;
 import com.google.gson.Gson;
 
@@ -43,6 +44,7 @@ public class SystemLabelProvider {
                    @Override
                    public void onResponse(Call<SystemLabelApiResponse> call, Response<SystemLabelApiResponse> response) {
                        if (response.isSuccessful()){
+                           System.out.println(new Gson().toJson(response.body()));
                            dataApiCallback.onDataApi(new Gson().toJson(response.body()));
                        }
                        else {

@@ -61,6 +61,7 @@ MERGED from [com.facebook.stetho:stetho-js-rhino:1.5.1] C:\Users\PC\.gradle\cach
 MERGED from [com.facebook.stetho:stetho-okhttp3:1.5.1] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\6a6c510448e55c5b7060c17a28debb9f\jetified-stetho-okhttp3-1.5.1\AndroidManifest.xml:2:1-13:12
 MERGED from [com.facebook.stetho:stetho:1.5.1] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\513d74edb8831e38fa34dcee31f4022a\jetified-stetho-1.5.1\AndroidManifest.xml:2:1-13:12
 MERGED from [de.hdodenhof:circleimageview:3.0.1] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f213e7dde814798563468b90bc1f06f3\jetified-circleimageview-3.0.1\AndroidManifest.xml:2:1-11:12
+MERGED from [com.orhanobut:dialogplus:1.11] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\6806fb6a8ed2a1747867d6018ce3a13c\jetified-dialogplus-1.11\AndroidManifest.xml:2:1-10:12
 MERGED from [com.github.bumptech.glide:gifdecoder:4.11.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\4ed62775c58d00d3809b67bee6e0a138\jetified-gifdecoder-4.11.0\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\305c2898fe2457e82c9da2257c2bc0a1\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-iid:20.2.3] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:17:1-47:12
@@ -588,6 +589,8 @@ MERGED from [com.facebook.stetho:stetho:1.5.1] C:\Users\PC\.gradle\caches\transf
 MERGED from [com.facebook.stetho:stetho:1.5.1] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\513d74edb8831e38fa34dcee31f4022a\jetified-stetho-1.5.1\AndroidManifest.xml:7:5-9:41
 MERGED from [de.hdodenhof:circleimageview:3.0.1] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f213e7dde814798563468b90bc1f06f3\jetified-circleimageview-3.0.1\AndroidManifest.xml:5:5-7:41
 MERGED from [de.hdodenhof:circleimageview:3.0.1] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f213e7dde814798563468b90bc1f06f3\jetified-circleimageview-3.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.orhanobut:dialogplus:1.11] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\6806fb6a8ed2a1747867d6018ce3a13c\jetified-dialogplus-1.11\AndroidManifest.xml:6:5-8:41
+MERGED from [com.orhanobut:dialogplus:1.11] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\6806fb6a8ed2a1747867d6018ce3a13c\jetified-dialogplus-1.11\AndroidManifest.xml:6:5-8:41
 MERGED from [com.github.bumptech.glide:gifdecoder:4.11.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\4ed62775c58d00d3809b67bee6e0a138\jetified-gifdecoder-4.11.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.bumptech.glide:gifdecoder:4.11.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\4ed62775c58d00d3809b67bee6e0a138\jetified-gifdecoder-4.11.0\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\305c2898fe2457e82c9da2257c2bc0a1\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41

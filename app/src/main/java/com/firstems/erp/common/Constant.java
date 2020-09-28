@@ -84,6 +84,7 @@ public class Constant {
     
     public static String NAME_PUT_DIFF_LIST = "name_put_diff_list";
     public static String NAME_PUT_DIFF_FLAG = "name_put_diff_flag";
+    public static String NAME_PUT_PHIEU_TAM_UNG_NEU_CO = "name_put_phieu_tam_ung_neu_co";
     
     
 }

@@ -27,6 +27,8 @@ anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
+anim fade_in_center
+anim fade_out_center
 anim fragment_close_enter
 anim fragment_close_exit
 anim fragment_fade_enter
@@ -1262,6 +1264,8 @@ color design_fab_stroke_top_inner_color
 color design_fab_stroke_top_outer_color
 color design_icon_tint
 color design_snackbar_background_color
+color dialogplus_black_overlay
+color dialogplus_card_shadow
 color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
@@ -1299,6 +1303,7 @@ color grey_90
 color grey_95
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ic_launcher_background
 color layout__primary_background
 color light_green_100
 color light_green_200
@@ -1933,6 +1938,7 @@ dimen design_tab_text_size_2line
 dimen design_textinput_caption_translate_y
 dimen dialog_min_width_full
 dimen dialog_min_width_major
+dimen dialogplus_default_center_margin
 dimen dimen_160
 dimen dimen_162
 dimen disabled_alpha_material_dark
@@ -2605,6 +2611,7 @@ drawable ic_launcher
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_log_out
+drawable ic_logo_ems
 drawable ic_menu_camera
 drawable ic_menu_gallery
 drawable ic_menu_slideshow
@@ -2656,6 +2663,7 @@ drawable image_2
 drawable image_placeholder
 drawable layout_bg
 drawable lien_he
+drawable logo_ems
 drawable male
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -2691,6 +2699,9 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable preference_list_divider_material
+drawable shape_circle
+drawable shape_circle_outline
+drawable shape_circle_outline_2dp
 drawable shape_round_corner
 drawable side_nav_bar
 drawable slide1
@@ -2819,8 +2830,11 @@ id bottom_to_top
 id bounce
 id bt_close
 id bt_getcode
+id bt_portfolio
+id bt_rate
 id btnAZ
 id btnCancel
+id btnDefault
 id btnDone
 id btnNew
 id btnOK
@@ -2841,6 +2855,7 @@ id camera
 id cancel_action
 id cancel_button
 id cardSystemSetting
+id cardView
 id cell_container
 id cell_data
 id cell_image_button
@@ -2935,6 +2950,12 @@ id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
 id dialog_button
+id dialogplus_content_container
+id dialogplus_footer_container
+id dialogplus_header_container
+id dialogplus_list
+id dialogplus_outmost_container
+id dialogplus_view_container
 id dimensions
 id direct
 id disableHome
@@ -3283,6 +3304,7 @@ id llDelete
 id llEnddate
 id llLastMonth
 id llLastWeek
+id llNoItem
 id llSang
 id llSevenDayAgo
 id llSevenMonthAgo
@@ -3689,6 +3711,7 @@ id txtContent
 id txtContentChieu
 id txtContentSang
 id txtContentToi
+id txtCoppyright
 id txtCurrentRevenue
 id txtCycle
 id txtDate
@@ -3737,6 +3760,9 @@ id txtNumberSelect
 id txtOpenGraphSearch
 id txtOrderValue
 id txtPart
+id txtPassConfirm
+id txtPassNew
+id txtPassOld
 id txtPhongBan
 id txtPositioName
 id txtReceiver
@@ -3883,6 +3909,7 @@ integer config_tooltipAnimTime
 integer default_item_cache_size
 integer design_snackbar_text_max_lines
 integer design_tab_indicator_anim_duration_ms
+integer dialogplus_animation_default_duration
 integer google_play_services_version
 integer hide_password_duration
 integer mtrl_badge_max_character_count
@@ -3987,6 +4014,7 @@ layout approved_fragment
 layout approved_item_list
 layout ask_permission_fragment
 layout ask_permission_info_fragment
+layout base_container
 layout bill_payment_fragment
 layout bill_payment_request_fragment
 layout business_registration_fragment
@@ -4020,11 +4048,16 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialog_about
+layout dialog_about_company
 layout dialog_confirm
+layout dialog_filter
+layout dialog_grid
 layout dialog_image
 layout dialog_info
+layout dialog_list
 layout dialog_singel_choise
 layout dialog_top_home
+layout dialog_view
 layout dialog_warning
 layout document_detail_fragment
 layout document_fragment
@@ -4080,6 +4113,7 @@ layout layout_dashboard_card_top
 layout layout_dashboard_waitting
 layout layout_item_bussiness_registration
 layout layout_item_review_progress
+layout layout_no_item
 layout layout_option_approved
 layout layout_select_date
 layout layout_signature_gird
@@ -4238,6 +4272,7 @@ mipmap ic_fail
 mipmap ic_file_text
 mipmap ic_header_back
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 mipmap ic_list_issue
 mipmap ic_logout
@@ -4698,6 +4733,7 @@ style BaseTheme
 style BottomNavigationView
 style BottomNavigationView_Active
 style Button_Accent
+style Button_Primary
 style ButtonLogin
 style CardView
 style CardView_Dark

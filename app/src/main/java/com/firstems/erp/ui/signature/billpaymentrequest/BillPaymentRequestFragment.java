@@ -37,6 +37,7 @@ import com.firstems.erp.api.model.response.currency.CurrencyItem;
 import com.firstems.erp.api.model.response.doi_tuong_nhan.DoiTuongNhanItem;
 import com.firstems.erp.api.model.response.loai_de_nghi.LoaiDeNghiItem;
 import com.firstems.erp.api.model.response.loai_doi_tuong_lien_quan.LoaiDoiTuongLienQuanItem;
+import com.firstems.erp.api.model.response.phieu_tam_ung.PhieuTamUngItem;
 import com.firstems.erp.api.model.response.signature.SignatureItemApiResponse;
 import com.firstems.erp.api.services.ApiServices;
 import com.firstems.erp.callback.ConfirmCallback;
@@ -161,9 +162,14 @@ public class BillPaymentRequestFragment extends CommonFragment {
             public void onClick(View view) {
                 LoaiDeNghiItem loaiDeNghiItem = (LoaiDeNghiItem) billPaymentRequestFragmentBinding.spinerLoaiDeNghi.getSelectedItem();
                 if (loaiDeNghiItem.getiTEMCODE().equals("003")){
-                    Intent intent = new Intent(getContext(), SoPhieuTamUngActivity.class);
-                    intent.putExtra(Constant.NAME_PUT_DOI_TUONG_NHAN, doiTuongNhanItemSelected);
-                    startActivityForResult(intent,CODE_SELECT_SO_PHIEU_TAM_UNG);
+                   if (doiTuongNhanItemSelected != null){
+                       Intent intent = new Intent(getContext(), SoPhieuTamUngActivity.class);
+                       intent.putExtra(Constant.NAME_PUT_DOI_TUONG_NHAN, doiTuongNhanItemSelected);
+                       startActivityForResult(intent,CODE_SELECT_SO_PHIEU_TAM_UNG);
+                   }
+                   else {
+                       showToastError(SharedPreferencesManager.getSystemLabel(122) /*Vui lòng chọn đối tượng nhận*/);
+                   }
                 }
             }
         });
@@ -1004,6 +1010,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
         billPaymentRequestFragmentBinding.setIsEditable(true);
     
         mainDate = new Date(System.currentTimeMillis());
+        billPaymentRequestFragmentBinding.txtDateCreate.setText(simpleDateFormatDisplay.format(mainDate));
     }
     
     @Override
@@ -1185,6 +1192,12 @@ public class BillPaymentRequestFragment extends CommonFragment {
                 listDetail.add(ticketBillPaymentDetail);
                 detailTicketDetailAdapter.notifyDataSetChanged();
                 updateHeader();
+            }
+        }
+        if (requestCode ==CODE_SELECT_SO_PHIEU_TAM_UNG && resultCode == Activity.RESULT_OK){
+            PhieuTamUngItem phieuTamUngItem = (PhieuTamUngItem) data.getSerializableExtra(Constant.NAME_PUT_PHIEU_TAM_UNG_NEU_CO);
+            if (phieuTamUngItem!=null){
+                billPaymentRequestFragmentBinding.txtSoPhieuTamUng.setText(phieuTamUngItem.getiTEMNAME());
             }
         }
     }

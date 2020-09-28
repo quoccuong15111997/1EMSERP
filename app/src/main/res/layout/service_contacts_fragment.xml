@@ -249,7 +249,6 @@
                         android:id="@+id/txtTitleContactContent"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:text="Nội dung liên hệ"
                         android:textAppearance="@android:style/TextAppearance.Material.Small"
                         android:textSize="14sp" />
@@ -275,9 +274,9 @@
                     android:id="@+id/constraintLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/linearLayoutContactContent">
@@ -404,11 +403,11 @@
                             android:id="@+id/imgDelete"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:tint="@color/red_800"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/ic_baseline_delete_forever_24" />
+                            app:srcCompat="@drawable/ic_baseline_delete_forever_24"
+                            app:tint="@color/red_800" />
 
                         <TextView
                             android:id="@+id/txtDelete"
@@ -440,9 +439,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@drawable/ic_baseline_save_24"
-                            android:tint="@color/text__white"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/text__white" />
 
                         <TextView
                             android:id="@+id/textView5"

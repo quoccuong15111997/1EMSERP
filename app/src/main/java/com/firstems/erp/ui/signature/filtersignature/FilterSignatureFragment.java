@@ -145,8 +145,8 @@ public class FilterSignatureFragment extends CommonFragment {
             binding.setFilter(filterModelCurent);
         }
         else {
-            dateBegin = SysConfig.createDateLoadSign().get(0);
-            dateEnd = SysConfig.createDateLoadSign().get(1);
+                dateBegin = SysConfig.createDateLoadSign().get(0);
+                dateEnd = SysConfig.createDateLoadSign().get(1);
         }
         binding.txtDateBegin.setText(dateBegin!=null ? simpleDateFormatDisplay.format(dateBegin) : "");
         binding.txtDateEnd.setText(dateEnd!=null ? simpleDateFormatDisplay.format(dateEnd) : "");

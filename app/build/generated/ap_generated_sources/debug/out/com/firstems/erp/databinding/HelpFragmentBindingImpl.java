@@ -34,6 +34,7 @@ public class HelpFragmentBindingImpl extends HelpFragmentBinding  {
         sViewsWithIds.put(R.id.view12, 18);
         sViewsWithIds.put(R.id.imageView35, 19);
         sViewsWithIds.put(R.id.textView53, 20);
+        sViewsWithIds.put(R.id.txtCoppyright, 21);
     }
     // views
     @NonNull
@@ -44,7 +45,7 @@ public class HelpFragmentBindingImpl extends HelpFragmentBinding  {
     // Inverse Binding Event Handlers
 
     public HelpFragmentBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 21, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 22, sIncludes, sViewsWithIds));
     }
     private HelpFragmentBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
@@ -63,6 +64,7 @@ public class HelpFragmentBindingImpl extends HelpFragmentBinding  {
             , (android.widget.TextView) bindings[14]
             , (android.widget.TextView) bindings[17]
             , (android.widget.TextView) bindings[20]
+            , (android.widget.TextView) bindings[21]
             , (android.widget.TextView) bindings[9]
             , (android.widget.TextView) bindings[2]
             , (android.view.View) bindings[12]
