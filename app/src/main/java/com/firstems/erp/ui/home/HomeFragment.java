@@ -2,6 +2,7 @@ package com.firstems.erp.ui.home;
 
 import android.app.Dialog;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Gravity;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -148,6 +150,8 @@ public class HomeFragment extends CommonFragment {
                 RecyclerView recyclerView = dialog.findViewById(R.id.recycle);
                 recyclerView.setLayoutManager(linearLayoutManager);
                 recyclerView.setAdapter(dialogTopHomeAdapter);
+                TextView txtComName = dialog.findViewById(R.id.txtComapnyName);
+                txtComName.setText(SharedPreferencesManager.getInstance().getPrefCompname());
                 
                 dialogTopHomeAdapter.setDialogTopHomeOnClickListener(new DialogTopHomeAdapter.DialogTopHomeOnClickListener() {
                     @Override
@@ -156,7 +160,7 @@ public class HomeFragment extends CommonFragment {
                         dialog.dismiss();
                     }
                 });
-    
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
                 dialog.setCancelable(true);
                 dialog.getWindow().setAttributes(lp);
                 dialog.show();

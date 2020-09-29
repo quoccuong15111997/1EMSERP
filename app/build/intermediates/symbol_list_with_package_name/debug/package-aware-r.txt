@@ -2918,6 +2918,7 @@ id cancel_button
 id cardSystemSetting
 id cardView
 id cardView2
+id cardViewParent
 id cell_container
 id cell_data
 id cell_image_button
@@ -3472,6 +3473,7 @@ id mtrl_picker_text_input_range_end
 id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id multiply
+id myCardView
 id my_TableView
 id name
 id nav_controller_view_tag
@@ -3555,7 +3557,6 @@ id recycleEmployee
 id recycleFile
 id recycleImage
 id recycleItem
-id recycleLocation
 id recycleProgress
 id recycleSignature
 id recycledepartment
@@ -3805,6 +3806,7 @@ id txtBillValue
 id txtBillValue2
 id txtChartTitle
 id txtCloseGraphSearch
+id txtComapnyName
 id txtCompName
 id txtContent
 id txtContentChieu

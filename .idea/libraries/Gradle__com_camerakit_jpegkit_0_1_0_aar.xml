@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.camerakit:jpegkit:0.1.0@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5943057cb9e5533be9b6941e36bf5412/jetified-jpegkit-0.1.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5943057cb9e5533be9b6941e36bf5412/jetified-jpegkit-0.1.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5943057cb9e5533be9b6941e36bf5412/jetified-jpegkit-0.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/44a13dd045e7cc830f8e55f2e7e0bc8a/jetified-jpegkit-0.1.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/44a13dd045e7cc830f8e55f2e7e0bc8a/jetified-jpegkit-0.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/44a13dd045e7cc830f8e55f2e7e0bc8a/jetified-jpegkit-0.1.0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

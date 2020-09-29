@@ -116,6 +116,7 @@ public class LoginFragment extends CommonFragment {
     private void doLogin() {
         if (!Util.isBlank(binding.textInputEditText.getText().toString())){
             if (!Util.isBlank(binding.textInputEditText2.getText().toString())){
+                SharedPreferencesManager.getInstance().clearLoginData();
                 runLogin(binding.textInputEditText.getText().toString(), binding.textInputEditText2.getText().toString());
             }
             else {
