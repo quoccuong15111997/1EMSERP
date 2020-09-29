@@ -4,6 +4,7 @@ package com.firstems.erp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -12,8 +13,8 @@ import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import com.balysv.materialripple.MaterialRippleLayout;
 import com.firstems.erp.R;
-import com.firstems.erp.helper.widgets.EMSButtonSecond;
 import com.firstems.erp.helper.widgets.EMSEditText;
 import com.firstems.erp.helper.widgets.EMSTextviewHighLineNonBorder;
 import java.lang.Deprecated;
@@ -21,7 +22,7 @@ import java.lang.Object;
 
 public abstract class TicketBillPaymentRequestFragmentBinding extends ViewDataBinding {
   @NonNull
-  public final EMSButtonSecond btnDone;
+  public final Button btnDone;
 
   @NonNull
   public final EMSTextviewHighLineNonBorder edtDate;
@@ -57,6 +58,9 @@ public abstract class TicketBillPaymentRequestFragmentBinding extends ViewDataBi
   public final LinearLayout linearLayoutSoTien;
 
   @NonNull
+  public final MaterialRippleLayout materialRippleLayout;
+
+  @NonNull
   public final TextView txtTitleDate;
 
   @NonNull
@@ -69,12 +73,13 @@ public abstract class TicketBillPaymentRequestFragmentBinding extends ViewDataBi
   public final TextView txtTitleSoTien;
 
   protected TicketBillPaymentRequestFragmentBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, EMSButtonSecond btnDone, EMSTextviewHighLineNonBorder edtDate,
+      int _localFieldCount, Button btnDone, EMSTextviewHighLineNonBorder edtDate,
       EMSEditText edtInfo, EMSEditText edtSoHoaDon, EMSEditText edtSoTien, View header,
       ImageView imageView, ConstraintLayout layoutDateDeNghiChi, LinearLayout linearLayoutDate,
       LinearLayout linearLayoutNoidungDeNghi, LinearLayout linearLayoutSoHoaDon,
-      LinearLayout linearLayoutSoTien, TextView txtTitleDate, TextView txtTitleInfo,
-      TextView txtTitleSoHoaDon, TextView txtTitleSoTien) {
+      LinearLayout linearLayoutSoTien, MaterialRippleLayout materialRippleLayout,
+      TextView txtTitleDate, TextView txtTitleInfo, TextView txtTitleSoHoaDon,
+      TextView txtTitleSoTien) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnDone = btnDone;
     this.edtDate = edtDate;
@@ -88,6 +93,7 @@ public abstract class TicketBillPaymentRequestFragmentBinding extends ViewDataBi
     this.linearLayoutNoidungDeNghi = linearLayoutNoidungDeNghi;
     this.linearLayoutSoHoaDon = linearLayoutSoHoaDon;
     this.linearLayoutSoTien = linearLayoutSoTien;
+    this.materialRippleLayout = materialRippleLayout;
     this.txtTitleDate = txtTitleDate;
     this.txtTitleInfo = txtTitleInfo;
     this.txtTitleSoHoaDon = txtTitleSoHoaDon;

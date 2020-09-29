@@ -29,7 +29,8 @@ public class TicketBillPaymentRequestFragmentBindingImpl extends TicketBillPayme
         sViewsWithIds.put(R.id.layoutDateDeNghiChi, 13);
         sViewsWithIds.put(R.id.edtDate, 14);
         sViewsWithIds.put(R.id.imageView, 15);
-        sViewsWithIds.put(R.id.btnDone, 16);
+        sViewsWithIds.put(R.id.materialRippleLayout, 16);
+        sViewsWithIds.put(R.id.btnDone, 17);
     }
     // views
     @NonNull
@@ -40,11 +41,11 @@ public class TicketBillPaymentRequestFragmentBindingImpl extends TicketBillPayme
     // Inverse Binding Event Handlers
 
     public TicketBillPaymentRequestFragmentBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 17, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 18, sIncludes, sViewsWithIds));
     }
     private TicketBillPaymentRequestFragmentBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (com.firstems.erp.helper.widgets.EMSButtonSecond) bindings[16]
+            , (android.widget.Button) bindings[17]
             , (com.firstems.erp.helper.widgets.EMSTextviewHighLineNonBorder) bindings[14]
             , (com.firstems.erp.helper.widgets.EMSEditText) bindings[4]
             , (com.firstems.erp.helper.widgets.EMSEditText) bindings[10]
@@ -56,6 +57,7 @@ public class TicketBillPaymentRequestFragmentBindingImpl extends TicketBillPayme
             , (android.widget.LinearLayout) bindings[2]
             , (android.widget.LinearLayout) bindings[8]
             , (android.widget.LinearLayout) bindings[5]
+            , (com.balysv.materialripple.MaterialRippleLayout) bindings[16]
             , (android.widget.TextView) bindings[12]
             , (android.widget.TextView) bindings[3]
             , (android.widget.TextView) bindings[9]

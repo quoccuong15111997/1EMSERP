@@ -2453,6 +2453,7 @@ drawable bg_button
 drawable bg_gradient_login
 drawable bg_home
 drawable bg_list_home
+drawable bg_rounded_btn_accent
 drawable bg_rounded_btn_login
 drawable bg_rounded_btn_scan_product
 drawable bg_rounded_dialog
@@ -3317,6 +3318,7 @@ id lyt_action
 id lyt_content
 id lyt_parent
 id masked
+id materialRippleLayout
 id mdtp_am_label
 id mdtp_ampm_layout
 id mdtp_animator

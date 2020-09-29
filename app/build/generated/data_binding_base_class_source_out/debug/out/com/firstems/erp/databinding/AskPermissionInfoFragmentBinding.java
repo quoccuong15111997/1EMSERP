@@ -4,6 +4,7 @@ package com.firstems.erp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -13,9 +14,9 @@ import androidx.annotation.Nullable;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import com.balysv.materialripple.MaterialRippleLayout;
 import com.firstems.erp.R;
 import com.firstems.erp.api.model.response.employee.Employee;
-import com.firstems.erp.helper.widgets.EMSButtonSecond;
 import com.firstems.erp.helper.widgets.EMSConstrainLayoutBorder;
 import com.firstems.erp.helper.widgets.EMSTextviewHighLineNonBorder;
 import com.firstems.erp.model.approved.Approved;
@@ -24,7 +25,7 @@ import java.lang.Object;
 
 public abstract class AskPermissionInfoFragmentBinding extends ViewDataBinding {
   @NonNull
-  public final EMSButtonSecond btnDone;
+  public final Button btnDone;
 
   @NonNull
   public final CheckBox chkAfternoon;
@@ -66,15 +67,6 @@ public abstract class AskPermissionInfoFragmentBinding extends ViewDataBinding {
   public final LinearLayout linearLayout;
 
   @NonNull
-  public final LinearLayout linearLayout2;
-
-  @NonNull
-  public final LinearLayout linearLayout222;
-
-  @NonNull
-  public final LinearLayout linearLayout22222;
-
-  @NonNull
   public final LinearLayout linearLayout6;
 
   @NonNull
@@ -91,6 +83,9 @@ public abstract class AskPermissionInfoFragmentBinding extends ViewDataBinding {
 
   @NonNull
   public final LinearLayout linearLayoutLoaiChamCongToi;
+
+  @NonNull
+  public final MaterialRippleLayout materialRippleLayout;
 
   @NonNull
   public final EMSTextviewHighLineNonBorder txtDateBegin;
@@ -132,18 +127,18 @@ public abstract class AskPermissionInfoFragmentBinding extends ViewDataBinding {
   protected Employee mEmployDuocChamCong;
 
   protected AskPermissionInfoFragmentBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, EMSButtonSecond btnDone, CheckBox chkAfternoon, CheckBox chkEverning,
+      int _localFieldCount, Button btnDone, CheckBox chkAfternoon, CheckBox chkEverning,
       CheckBox chkMorning, TextView edtEmployee, TextView edtLoaiChamCongChieu,
       TextView edtLoaiChamCongSang, TextView edtLoaiChamCongToi, ImageView imageView24,
       ImageView imageView242, View include3, EMSConstrainLayoutBorder layoutDateEnd,
       EMSConstrainLayoutBorder layoutDateForm, LinearLayout linearLayout,
-      LinearLayout linearLayout2, LinearLayout linearLayout222, LinearLayout linearLayout22222,
       LinearLayout linearLayout6, LinearLayout linearLayout7, LinearLayout linearLayoutEmployee,
       LinearLayout linearLayoutLoaiChamCongChieu, LinearLayout linearLayoutLoaiChamCongSang,
-      LinearLayout linearLayoutLoaiChamCongToi, EMSTextviewHighLineNonBorder txtDateBegin,
-      EMSTextviewHighLineNonBorder txtDateEnd, TextView txtTitleDateBegin, TextView txtTitleDateEnd,
-      TextView txtTitleEmployee, TextView txtTitleLoaiChamCongChieu,
-      TextView txtTitleLoaiChamCongSang, TextView txtTitleLoaiChamCongToi) {
+      LinearLayout linearLayoutLoaiChamCongToi, MaterialRippleLayout materialRippleLayout,
+      EMSTextviewHighLineNonBorder txtDateBegin, EMSTextviewHighLineNonBorder txtDateEnd,
+      TextView txtTitleDateBegin, TextView txtTitleDateEnd, TextView txtTitleEmployee,
+      TextView txtTitleLoaiChamCongChieu, TextView txtTitleLoaiChamCongSang,
+      TextView txtTitleLoaiChamCongToi) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnDone = btnDone;
     this.chkAfternoon = chkAfternoon;
@@ -159,15 +154,13 @@ public abstract class AskPermissionInfoFragmentBinding extends ViewDataBinding {
     this.layoutDateEnd = layoutDateEnd;
     this.layoutDateForm = layoutDateForm;
     this.linearLayout = linearLayout;
-    this.linearLayout2 = linearLayout2;
-    this.linearLayout222 = linearLayout222;
-    this.linearLayout22222 = linearLayout22222;
     this.linearLayout6 = linearLayout6;
     this.linearLayout7 = linearLayout7;
     this.linearLayoutEmployee = linearLayoutEmployee;
     this.linearLayoutLoaiChamCongChieu = linearLayoutLoaiChamCongChieu;
     this.linearLayoutLoaiChamCongSang = linearLayoutLoaiChamCongSang;
     this.linearLayoutLoaiChamCongToi = linearLayoutLoaiChamCongToi;
+    this.materialRippleLayout = materialRippleLayout;
     this.txtDateBegin = txtDateBegin;
     this.txtDateEnd = txtDateEnd;
     this.txtTitleDateBegin = txtTitleDateBegin;

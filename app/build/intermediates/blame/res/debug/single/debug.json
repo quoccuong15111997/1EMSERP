@@ -64,12 +64,16 @@
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\reporting_fragment.xml"
     },
     {
-        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bg_rounded_dialog.xml.flat",
-        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable\\bg_rounded_dialog.xml"
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_bg_rounded_btn_accent.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable-v24\\bg_rounded_btn_accent.xml"
     },
     {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\layout_layout_option_approved.xml.flat",
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\layout_option_approved.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bg_rounded_dialog.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable\\bg_rounded_dialog.xml"
     },
     {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_doi_ca.png.flat",
@@ -104,12 +108,12 @@
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable-mdpi\\ic_sort.png"
     },
     {
-        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_loading_dialog_non__message.xml.flat",
-        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\item_loading_dialog_non__message.xml"
-    },
-    {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_phone_in_talk_24.xml.flat",
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable\\ic_baseline_phone_in_talk_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_loading_dialog_non__message.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\item_loading_dialog_non__message.xml"
     },
     {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_doc_24.png.flat",
@@ -132,12 +136,12 @@
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\switch_shift_fragment.xml"
     },
     {
-        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_about_company.xml.flat",
-        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\dialog_about_company.xml"
-    },
-    {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_bill_payment_request.xml.flat",
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\activity_bill_payment_request.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_about_company.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\dialog_about_company.xml"
     },
     {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_top_home.xml.flat",
@@ -152,12 +156,12 @@
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\custom_toolbar.xml"
     },
     {
-        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_help_24.xml.flat",
-        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable\\ic_baseline_help_24.xml"
-    },
-    {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\layout_tableview_corner_layout.xml.flat",
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\tableview_corner_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_help_24.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable\\ic_baseline_help_24.xml"
     },
     {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_flash_off_24.xml.flat",
@@ -196,12 +200,12 @@
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_chevron_right_24.xml.flat",
-        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable\\ic_baseline_chevron_right_24.xml"
-    },
-    {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\layout_no_internet_waring.xml.flat",
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\no_internet_waring.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_chevron_right_24.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable\\ic_baseline_chevron_right_24.xml"
     },
     {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_account_24.png.flat",
@@ -216,36 +220,36 @@
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\mipmap-hdpi\\logo_ems.png"
     },
     {
-        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_sort.png.flat",
-        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable-xxhdpi\\ic_sort.png"
-    },
-    {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_account_24.png.flat",
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable-hdpi\\ic_account_24.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_sort.png.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable-xxhdpi\\ic_sort.png"
     },
     {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_save_24.xml.flat",
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable\\ic_baseline_save_24.xml"
     },
     {
-        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\layout_tableview_column_header_layout.xml.flat",
-        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\tableview_column_header_layout.xml"
-    },
-    {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\layout_home_fragment.xml.flat",
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\home_fragment.xml"
     },
     {
-        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_language.png.flat",
-        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable-xxhdpi\\ic_language.png"
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\layout_tableview_column_header_layout.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\tableview_column_header_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_dashboard.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\activity_dashboard.xml"
     },
     {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_close_white.png.flat",
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable-mdpi\\ic_close_white.png"
     },
     {
-        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_dashboard.xml.flat",
-        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\activity_dashboard.xml"
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_language.png.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable-xxhdpi\\ic_language.png"
     },
     {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_event_note_24.xml.flat",
@@ -288,12 +292,12 @@
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_close_white.xml.flat",
-        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable-anydpi\\ic_close_white.xml"
-    },
-    {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_up.xml.flat",
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable-anydpi\\ic_up.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_close_white.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable-anydpi\\ic_close_white.xml"
     },
     {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\layout_ticket_bill_payment_request_fragment.xml.flat",
@@ -332,12 +336,12 @@
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable-anydpi\\ic_show_chart.xml"
     },
     {
-        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_avata.png.flat",
-        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable\\avata.png"
-    },
-    {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\layout_advance_proposal_form_fragment.xml.flat",
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\advance_proposal_form_fragment.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_avata.png.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable\\avata.png"
     },
     {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_receipt_24.xml.flat",
@@ -392,12 +396,12 @@
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable\\ic_baseline_arrow_back_24.xml"
     },
     {
-        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_doc_24.png.flat",
-        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable-mdpi\\ic_doc_24.png"
-    },
-    {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\layout_layout_calenda.xml.flat",
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\layout_calenda.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_doc_24.png.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable-mdpi\\ic_doc_24.png"
     },
     {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cutom_edittext_main.xml.flat",
@@ -408,12 +412,12 @@
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\data_table_fragment.xml"
     },
     {
-        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_subject.xml.flat",
-        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable-anydpi\\ic_subject.xml"
-    },
-    {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_bg_rounded_login_edit_text.xml.flat",
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable-xxxhdpi\\bg_rounded_login_edit_text.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_subject.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable-anydpi\\ic_subject.xml"
     },
     {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_product_assets.png.flat",

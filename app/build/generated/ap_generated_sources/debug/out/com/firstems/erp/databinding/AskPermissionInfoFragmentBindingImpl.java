@@ -26,16 +26,14 @@ public class AskPermissionInfoFragmentBindingImpl extends AskPermissionInfoFragm
         sViewsWithIds.put(R.id.imageView242, 19);
         sViewsWithIds.put(R.id.linearLayoutEmployee, 20);
         sViewsWithIds.put(R.id.txtTitleEmployee, 21);
-        sViewsWithIds.put(R.id.linearLayout2, 22);
-        sViewsWithIds.put(R.id.linearLayoutLoaiChamCongSang, 23);
-        sViewsWithIds.put(R.id.txtTitleLoaiChamCongSang, 24);
-        sViewsWithIds.put(R.id.linearLayout222, 25);
-        sViewsWithIds.put(R.id.linearLayoutLoaiChamCongChieu, 26);
-        sViewsWithIds.put(R.id.txtTitleLoaiChamCongChieu, 27);
-        sViewsWithIds.put(R.id.linearLayout22222, 28);
-        sViewsWithIds.put(R.id.linearLayoutLoaiChamCongToi, 29);
-        sViewsWithIds.put(R.id.txtTitleLoaiChamCongToi, 30);
-        sViewsWithIds.put(R.id.btnDone, 31);
+        sViewsWithIds.put(R.id.linearLayoutLoaiChamCongSang, 22);
+        sViewsWithIds.put(R.id.txtTitleLoaiChamCongSang, 23);
+        sViewsWithIds.put(R.id.linearLayoutLoaiChamCongChieu, 24);
+        sViewsWithIds.put(R.id.txtTitleLoaiChamCongChieu, 25);
+        sViewsWithIds.put(R.id.linearLayoutLoaiChamCongToi, 26);
+        sViewsWithIds.put(R.id.txtTitleLoaiChamCongToi, 27);
+        sViewsWithIds.put(R.id.materialRippleLayout, 28);
+        sViewsWithIds.put(R.id.btnDone, 29);
     }
     // views
     @NonNull
@@ -46,11 +44,11 @@ public class AskPermissionInfoFragmentBindingImpl extends AskPermissionInfoFragm
     // Inverse Binding Event Handlers
 
     public AskPermissionInfoFragmentBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 32, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 30, sIncludes, sViewsWithIds));
     }
     private AskPermissionInfoFragmentBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 2
-            , (com.firstems.erp.helper.widgets.EMSButtonSecond) bindings[31]
+            , (android.widget.Button) bindings[29]
             , (android.widget.CheckBox) bindings[6]
             , (android.widget.CheckBox) bindings[8]
             , (android.widget.CheckBox) bindings[4]
@@ -64,23 +62,21 @@ public class AskPermissionInfoFragmentBindingImpl extends AskPermissionInfoFragm
             , (com.firstems.erp.helper.widgets.EMSConstrainLayoutBorder) bindings[18]
             , (com.firstems.erp.helper.widgets.EMSConstrainLayoutBorder) bindings[14]
             , (android.widget.LinearLayout) bindings[11]
-            , (android.widget.LinearLayout) bindings[22]
-            , (android.widget.LinearLayout) bindings[25]
-            , (android.widget.LinearLayout) bindings[28]
             , (android.widget.LinearLayout) bindings[12]
             , (android.widget.LinearLayout) bindings[16]
             , (android.widget.LinearLayout) bindings[20]
+            , (android.widget.LinearLayout) bindings[24]
+            , (android.widget.LinearLayout) bindings[22]
             , (android.widget.LinearLayout) bindings[26]
-            , (android.widget.LinearLayout) bindings[23]
-            , (android.widget.LinearLayout) bindings[29]
+            , (com.balysv.materialripple.MaterialRippleLayout) bindings[28]
             , (com.firstems.erp.helper.widgets.EMSTextviewHighLineNonBorder) bindings[1]
             , (com.firstems.erp.helper.widgets.EMSTextviewHighLineNonBorder) bindings[2]
             , (android.widget.TextView) bindings[13]
             , (android.widget.TextView) bindings[17]
             , (android.widget.TextView) bindings[21]
+            , (android.widget.TextView) bindings[25]
+            , (android.widget.TextView) bindings[23]
             , (android.widget.TextView) bindings[27]
-            , (android.widget.TextView) bindings[24]
-            , (android.widget.TextView) bindings[30]
             );
         this.chkAfternoon.setTag(null);
         this.chkEverning.setTag(null);

@@ -1,6 +1,7 @@
 package com.firstems.erp.ui.home;
 
 import android.app.Dialog;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Gravity;
@@ -193,11 +194,12 @@ public class HomeFragment extends CommonFragment {
         initHomeList();
     
        // LoadImagePicassoMkLoader("http://api-dev.firstems.com/Api/data/runApi_File?run_Code=COM001.01.003&Key_Code=EMS001",binding.ivPhotoProfile,binding.pbLoadingProfile);
-        binding.ivPhotoProfile.setImageResource(R.drawable.avata);
+        binding.ivPhotoProfile.setImageResource(R.drawable.logo_ems);
+        binding.ivPhotoProfile.setBorderColor(Color.WHITE);
         binding.pbLoadingProfile.setVisibility(View.GONE);
         
         binding.tvName.setText(SharedPreferencesManager.getInstance().getPrefAccountName());
-        binding.tvEmail.setText(SharedPreferencesManager.getInstance().getPrefJobName());
+        binding.tvEmail.setText(SharedPreferencesManager.getInstance().getPrefCompname());
         binding.tvTitleToolbar.setText(SharedPreferencesManager.getInstance().getPrefLctname());
     }
     

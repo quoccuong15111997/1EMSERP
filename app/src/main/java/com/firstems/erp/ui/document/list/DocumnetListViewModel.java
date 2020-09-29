@@ -49,6 +49,7 @@ public class DocumnetListViewModel extends ViewModel {
                     @Override
                     public void onResponse(Call<DocumentApiResponse> call, Response<DocumentApiResponse> response) {
                         if (response.isSuccessful()){
+                            System.out.println(new Gson().toJson(response.body()));
                             dataApiCallback.onDataApi(new Gson().toJson(response.body()));
                         }
                         else {

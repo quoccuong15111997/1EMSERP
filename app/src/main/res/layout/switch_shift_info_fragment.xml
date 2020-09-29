@@ -22,7 +22,8 @@
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/grey_5">
 
         <include
             android:id="@+id/include3"
@@ -34,30 +35,33 @@
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@+id/btnDone"
+            app:layout_constraintBottom_toTopOf="@+id/materialRippleLayout"
             app:layout_constraintTop_toBottomOf="@+id/include3">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:orientation="vertical"
                 app:layout_constraintBottom_toTopOf="@+id/btnDone"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:orientation="vertical"
-                android:padding="5dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/include3">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:elevation="5dp"
+                    app:cardCornerRadius="5dp">
+
                     <LinearLayout
                         android:id="@+id/linearLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:paddingBottom="5dp"
+                        android:padding="10dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
@@ -66,7 +70,6 @@
                             android:id="@+id/linearLayout6"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
                             android:layout_marginRight="3dp"
                             android:layout_weight="1"
                             android:orientation="vertical"
@@ -122,7 +125,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="3dp"
-                            android:layout_marginTop="5dp"
                             android:layout_weight="1"
                             android:orientation="vertical"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -172,266 +174,295 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <LinearLayout
-                    android:id="@+id/linearLayoutEmployee"
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+                    android:elevation="5dp"
+                    app:cardCornerRadius="5dp">
 
-                    <TextView
-                        android:id="@+id/txtTitleEmployee"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Nhân viên đi làm"
-                        android:textAppearance="@android:style/TextAppearance.Material.Small"
-                        android:textSize="14sp" />
+                        android:orientation="vertical"
+                        android:padding="10dp">
 
-                    <TextView
-                        android:id="@+id/edtEmployee"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/bg_spinner"
-                        android:imeOptions="actionDone"
-                        android:paddingLeft="10dp"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:singleLine="true"
-                        android:text="@={employDiLam.itemName}"
-                        android:textColor="@color/grey_80"
-                        android:textSize="14sp" />
-                </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/linearLayoutEmployee"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-                <LinearLayout
-                    android:id="@+id/linearLayoutNhanVienDuocChamCong"
+                            <TextView
+                                android:id="@+id/txtTitleEmployee"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Nhân viên đi làm"
+                                android:textAppearance="@android:style/TextAppearance.Material.Small"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/edtEmployee"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/bg_spinner"
+                                android:imeOptions="actionDone"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:singleLine="true"
+                                android:text="@={employDiLam.itemName}"
+                                android:textColor="@color/grey_80"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutNhanVienDuocChamCong"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/linearLayoutEmployee">
+
+                            <TextView
+                                android:id="@+id/txtTitleNhanVienDuocChamCong"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Nhân viên được chấm công"
+                                android:textAppearance="@android:style/TextAppearance.Material.Small"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/edtNhanVienDuocChamCong"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/bg_spinner"
+                                android:imeOptions="actionDone"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:singleLine="true"
+                                android:text="@={employDuocChamCong.itemName}"
+                                android:textColor="@color/grey_80"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayoutEmployee">
+                    android:elevation="5dp"
+                    app:cardCornerRadius="5dp">
 
-                    <TextView
-                        android:id="@+id/txtTitleNhanVienDuocChamCong"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Nhân viên được chấm công"
-                        android:textAppearance="@android:style/TextAppearance.Material.Small"
-                        android:textSize="14sp" />
+                        android:orientation="vertical"
+                        android:padding="10dp">
 
-                    <TextView
-                        android:id="@+id/edtNhanVienDuocChamCong"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/bg_spinner"
-                        android:imeOptions="actionDone"
-                        android:paddingLeft="10dp"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:singleLine="true"
-                        android:text="@={employDuocChamCong.itemName}"
-                        android:textColor="@color/grey_80"
-                        android:textSize="14sp" />
-                </LinearLayout>
+                        <CheckBox
+                            android:id="@+id/chkMorning"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/colorPrimary"
+                            android:checked="@{model.morning}"
+                            android:text="Sáng" />
 
-                <LinearLayout
-                    android:id="@+id/linearLayout2"
+                        <LinearLayout
+                            android:id="@+id/linearLayoutLoaiChamCongSang"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+                            <TextView
+                                android:id="@+id/txtTitleLoaiChamCongSang"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Loại chấm công"
+                                android:textAppearance="@android:style/TextAppearance.Material.Small"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/edtLoaiChamCongSang"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/bg_spinner"
+                                android:imeOptions="actionDone"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:singleLine="true"
+                                android:text="@{model.contentMornig.itemName}"
+                                android:textColor="@color/grey_80"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="1dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="1dp"
-                    android:background="@drawable/custom_background_item"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayoutNhanVienDuocChamCong">
-
-                    <CheckBox
-                        android:id="@+id/chkMorning"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:buttonTint="@color/colorPrimary"
-                        android:checked="@{model.morning}"
-                        android:text="Sáng" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linearLayoutLoaiChamCongSang"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+                    android:layout_marginRight="10dp"
+                    android:elevation="5dp"
+                    app:cardCornerRadius="5dp">
 
-                    <TextView
-                        android:id="@+id/txtTitleLoaiChamCongSang"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Loại chấm công"
-                        android:textAppearance="@android:style/TextAppearance.Material.Small"
-                        android:textSize="14sp" />
+                        android:orientation="vertical"
+                        android:padding="10dp">
 
-                    <TextView
-                        android:id="@+id/edtLoaiChamCongSang"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/bg_spinner"
-                        android:imeOptions="actionDone"
-                        android:paddingLeft="10dp"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:singleLine="true"
-                        android:text="@{model.contentMornig.itemName}"
-                        android:textColor="@color/grey_80"
-                        android:textSize="14sp" />
-                </LinearLayout>
+                        <CheckBox
+                            android:id="@+id/chkAfternoon"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/colorPrimary"
+                            android:checked="@{model.afternoon}"
+                            android:text="Chiều" />
 
-                <LinearLayout
-                    android:id="@+id/linearLayout222"
+                        <LinearLayout
+                            android:id="@+id/linearLayoutLoaiChamCongChieu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/linearLayout222">
+
+                            <TextView
+                                android:id="@+id/txtTitleLoaiChamCongChieu"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Loại chấm công"
+                                android:textAppearance="@android:style/TextAppearance.Material.Small"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/edtLoaiChamCongChieu"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/bg_spinner"
+                                android:imeOptions="actionDone"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:singleLine="true"
+                                android:text="@{model.contentAfternoon.itemName}"
+                                android:textColor="@color/grey_80"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="1dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="1dp"
-                    android:background="@drawable/custom_background_item"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayoutLoaiChamCongSang">
-
-                    <CheckBox
-                        android:id="@+id/chkAfternoon"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:buttonTint="@color/colorPrimary"
-                        android:checked="@{model.afternoon}"
-                        android:text="Chiều" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linearLayoutLoaiChamCongChieu"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout222">
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:elevation="5dp"
+                    app:cardCornerRadius="5dp">
 
-                    <TextView
-                        android:id="@+id/txtTitleLoaiChamCongChieu"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Loại chấm công"
-                        android:textAppearance="@android:style/TextAppearance.Material.Small"
-                        android:textSize="14sp" />
+                        android:orientation="vertical"
+                        android:padding="10dp">
 
-                    <TextView
-                        android:id="@+id/edtLoaiChamCongChieu"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/bg_spinner"
-                        android:imeOptions="actionDone"
-                        android:paddingLeft="10dp"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:singleLine="true"
-                        android:text="@{model.contentAfternoon.itemName}"
-                        android:textColor="@color/grey_80"
-                        android:textSize="14sp" />
-                </LinearLayout>
+                        <CheckBox
+                            android:id="@+id/chkEverning"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/colorPrimary"
+                            android:checked="@{model.everning}"
+                            android:text="Tối" />
 
-                <LinearLayout
-                    android:id="@+id/linearLayout22222"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="1dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="1dp"
-                    android:background="@drawable/custom_background_item"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayoutLoaiChamCongChieu">
+                        <LinearLayout
+                            android:id="@+id/linearLayoutLoaiChamCongToi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/linearLayout22222">
 
-                    <CheckBox
-                        android:id="@+id/chkEverning"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:buttonTint="@color/colorPrimary"
-                        android:checked="@{model.everning}"
-                        android:text="Tối" />
-                </LinearLayout>
+                            <TextView
+                                android:id="@+id/txtTitleLoaiChamCongToi"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Loại chấm công"
+                                android:textAppearance="@android:style/TextAppearance.Material.Small"
+                                android:textSize="14sp" />
 
-                <LinearLayout
-                    android:id="@+id/linearLayoutLoaiChamCongToi"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout22222">
-
-                    <TextView
-                        android:id="@+id/txtTitleLoaiChamCongToi"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Loại chấm công"
-                        android:textAppearance="@android:style/TextAppearance.Material.Small"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/edtLoaiChamCongToi"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/bg_spinner"
-                        android:imeOptions="actionDone"
-                        android:paddingLeft="10dp"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:singleLine="true"
-                        android:text="@{model.contentEverning.itemName}"
-                        android:textColor="@color/grey_80"
-                        android:textSize="14sp" />
-                </LinearLayout>
+                            <TextView
+                                android:id="@+id/edtLoaiChamCongToi"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/bg_spinner"
+                                android:imeOptions="actionDone"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:singleLine="true"
+                                android:text="@{model.contentEverning.itemName}"
+                                android:textColor="@color/grey_80"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
 
-        <com.firstems.erp.helper.widgets.EMSButtonSecond
-            android:id="@+id/btnDone"
-            android:layout_width="0dp"
-            android:textColor="@color/text__white"
-            android:text="Hoàn thành"
-            android:textAllCaps="false"
+        <com.balysv.materialripple.MaterialRippleLayout
+            android:id="@+id/materialRippleLayout"
+            style="@style/RippleStyleWhite"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/btnDone"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_rounded_btn_accent"
+                android:paddingLeft="@dimen/margin65"
+                android:paddingRight="@dimen/margin65"
+                android:text="Hoàn thành"
+                android:textAllCaps="false"
+                android:textColor="@color/text__white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutGraphsearch" />
+        </com.balysv.materialripple.MaterialRippleLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

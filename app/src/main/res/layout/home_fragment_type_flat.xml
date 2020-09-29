@@ -56,96 +56,100 @@
 
                         </LinearLayout>
 
-
-                        <LinearLayout
-                            android:id="@+id/lProfile"
+                        <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/lToolbar"
+                            android:layout_marginBottom="@dimen/margin10"
                             android:layout_marginLeft="@dimen/margin15"
                             android:layout_marginRight="@dimen/margin15"
-                            android:layout_marginTop="@dimen/margin15"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <RelativeLayout
-                                android:id="@+id/rPhoto"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content">
-
-
-                                <de.hdodenhof.circleimageview.CircleImageView
-                                    android:id="@+id/ivPhotoProfile"
-                                    android:layout_width="@dimen/margin50"
-                                    android:src="@drawable/avata"
-                                    android:layout_height="@dimen/margin50"/>
-
-                                <com.tuyenmonkey.mkloader.MKLoader
-                                    android:id="@+id/pbLoadingProfile"
-                                    android:layout_width="@dimen/margin20"
-                                    android:layout_height="@dimen/margin20"
-                                    android:layout_centerInParent="true"
-                                    android:layout_gravity="center"
-                                    android:layout_marginTop="@dimen/margin15"
-                                    app:mk_color="@color/white"
-                                    app:mk_type="ThreePulse"
-                                    />
-
-                            </RelativeLayout>
-
-
+                            android:layout_marginTop="@dimen/margin10"
+                            app:cardCornerRadius="@dimen/margin5"
+                            app:cardElevation="@dimen/margin3"
+                            android:gravity="center_vertical">
                             <LinearLayout
-                                android:layout_width="0dp"
+                                android:id="@+id/lProfile"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/margin15"
-                                android:layout_marginRight="@dimen/margin15"
-                                android:layout_weight="1"
-                                android:orientation="vertical">
+                                android:orientation="horizontal"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:paddingLeft="10dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/rPhoto"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+                                    <de.hdodenhof.circleimageview.CircleImageView
+                                        android:id="@+id/ivPhotoProfile"
+                                        android:layout_width="@dimen/margin50"
+                                        android:src="@drawable/logo_ems"
+                                        android:layout_height="@dimen/margin50"
+                                        app:civ_border_color="@color/text__white"/>
+
+                                    <com.tuyenmonkey.mkloader.MKLoader
+                                        android:id="@+id/pbLoadingProfile"
+                                        android:layout_width="@dimen/margin20"
+                                        android:layout_height="@dimen/margin20"
+                                        android:layout_centerInParent="true"
+                                        android:layout_gravity="center"
+                                        android:layout_marginTop="@dimen/margin15"
+                                        app:mk_color="@color/white"
+                                        app:mk_type="ThreePulse"
+                                        />
+
+                                </RelativeLayout>
 
 
-                                <TextView
-                                    android:id="@+id/tvName"
-                                    android:layout_width="match_parent"
+                                <LinearLayout
+                                    android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:textColor="@color/white"
-                                    android:textSize="@dimen/text_semi_medium"
-                                    tools:ignore="MissingPrefix"/>
+                                    android:layout_marginLeft="@dimen/margin15"
+                                    android:layout_marginRight="@dimen/margin15"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
 
 
-                                <TextView
-                                    android:id="@+id/tvEmail"
-                                    fontPath="fonts/open_sans_semibold.ttf"
-                                    android:layout_width="match_parent"
+                                    <TextView
+                                        android:id="@+id/tvName"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/md_black_1000"
+                                        android:textSize="@dimen/text_semi_medium"
+                                        tools:ignore="MissingPrefix"/>
+
+
+                                    <TextView
+                                        android:id="@+id/tvEmail"
+                                        fontPath="fonts/open_sans_semibold.ttf"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/margin5"
+                                        android:textColor="@color/grey_80"
+                                        android:textSize="@dimen/text_small_default"
+                                        android:visibility="visible"
+                                        tools:ignore="MissingPrefix"/>
+
+
+                                </LinearLayout>
+                                <ImageView
+                                    android:id="@+id/ivImageArrow"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="@dimen/margin5"
-                                    android:textColor="@color/white"
-                                    android:textSize="@dimen/text_small_default"
-                                    android:visibility="visible"
-                                    tools:ignore="MissingPrefix"/>
-
-
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/margin15"
+                                    android:src="@drawable/ic_baseline_chevron_right_24"
+                                    app:tint="@color/grey_80" />
                             </LinearLayout>
-
-                            <ImageView
-                                android:id="@+id/ivImageArrow"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="@dimen/margin15"
-                                android:src="@drawable/ic_baseline_chevron_right_24"/>
-
-                        </LinearLayout>
-
-
+                        </androidx.cardview.widget.CardView>
                     </RelativeLayout>
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rvList"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="-120dp">
+                        android:layout_marginTop="-110dp">
                     </androidx.recyclerview.widget.RecyclerView>
-
-
                 </LinearLayout>
 
 

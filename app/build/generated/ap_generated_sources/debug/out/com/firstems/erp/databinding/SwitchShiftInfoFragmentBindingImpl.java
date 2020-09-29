@@ -28,16 +28,14 @@ public class SwitchShiftInfoFragmentBindingImpl extends SwitchShiftInfoFragmentB
         sViewsWithIds.put(R.id.txtTitleEmployee, 22);
         sViewsWithIds.put(R.id.linearLayoutNhanVienDuocChamCong, 23);
         sViewsWithIds.put(R.id.txtTitleNhanVienDuocChamCong, 24);
-        sViewsWithIds.put(R.id.linearLayout2, 25);
-        sViewsWithIds.put(R.id.linearLayoutLoaiChamCongSang, 26);
-        sViewsWithIds.put(R.id.txtTitleLoaiChamCongSang, 27);
-        sViewsWithIds.put(R.id.linearLayout222, 28);
-        sViewsWithIds.put(R.id.linearLayoutLoaiChamCongChieu, 29);
-        sViewsWithIds.put(R.id.txtTitleLoaiChamCongChieu, 30);
-        sViewsWithIds.put(R.id.linearLayout22222, 31);
-        sViewsWithIds.put(R.id.linearLayoutLoaiChamCongToi, 32);
-        sViewsWithIds.put(R.id.txtTitleLoaiChamCongToi, 33);
-        sViewsWithIds.put(R.id.btnDone, 34);
+        sViewsWithIds.put(R.id.linearLayoutLoaiChamCongSang, 25);
+        sViewsWithIds.put(R.id.txtTitleLoaiChamCongSang, 26);
+        sViewsWithIds.put(R.id.linearLayoutLoaiChamCongChieu, 27);
+        sViewsWithIds.put(R.id.txtTitleLoaiChamCongChieu, 28);
+        sViewsWithIds.put(R.id.linearLayoutLoaiChamCongToi, 29);
+        sViewsWithIds.put(R.id.txtTitleLoaiChamCongToi, 30);
+        sViewsWithIds.put(R.id.materialRippleLayout, 31);
+        sViewsWithIds.put(R.id.btnDone, 32);
     }
     // views
     @NonNull
@@ -100,11 +98,11 @@ public class SwitchShiftInfoFragmentBindingImpl extends SwitchShiftInfoFragmentB
     };
 
     public SwitchShiftInfoFragmentBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 35, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 33, sIncludes, sViewsWithIds));
     }
     private SwitchShiftInfoFragmentBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 2
-            , (com.firstems.erp.helper.widgets.EMSButtonSecond) bindings[34]
+            , (android.widget.Button) bindings[32]
             , (android.widget.CheckBox) bindings[7]
             , (android.widget.CheckBox) bindings[9]
             , (android.widget.CheckBox) bindings[5]
@@ -119,24 +117,22 @@ public class SwitchShiftInfoFragmentBindingImpl extends SwitchShiftInfoFragmentB
             , (com.firstems.erp.helper.widgets.EMSConstrainLayoutBorder) bindings[19]
             , (com.firstems.erp.helper.widgets.EMSConstrainLayoutBorder) bindings[15]
             , (android.widget.LinearLayout) bindings[12]
-            , (android.widget.LinearLayout) bindings[25]
-            , (android.widget.LinearLayout) bindings[28]
-            , (android.widget.LinearLayout) bindings[31]
             , (android.widget.LinearLayout) bindings[13]
             , (android.widget.LinearLayout) bindings[17]
             , (android.widget.LinearLayout) bindings[21]
+            , (android.widget.LinearLayout) bindings[27]
+            , (android.widget.LinearLayout) bindings[25]
             , (android.widget.LinearLayout) bindings[29]
-            , (android.widget.LinearLayout) bindings[26]
-            , (android.widget.LinearLayout) bindings[32]
             , (android.widget.LinearLayout) bindings[23]
+            , (com.balysv.materialripple.MaterialRippleLayout) bindings[31]
             , (com.firstems.erp.helper.widgets.EMSTextviewHighLineNonBorder) bindings[1]
             , (com.firstems.erp.helper.widgets.EMSTextviewHighLineNonBorder) bindings[2]
             , (android.widget.TextView) bindings[14]
             , (android.widget.TextView) bindings[18]
             , (android.widget.TextView) bindings[22]
+            , (android.widget.TextView) bindings[28]
+            , (android.widget.TextView) bindings[26]
             , (android.widget.TextView) bindings[30]
-            , (android.widget.TextView) bindings[27]
-            , (android.widget.TextView) bindings[33]
             , (android.widget.TextView) bindings[24]
             );
         this.chkAfternoon.setTag(null);
