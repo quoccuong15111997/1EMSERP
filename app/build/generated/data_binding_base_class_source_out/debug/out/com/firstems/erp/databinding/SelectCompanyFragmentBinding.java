@@ -4,27 +4,27 @@ package com.firstems.erp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ExpandableListView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import androidx.recyclerview.widget.RecyclerView;
 import com.firstems.erp.R;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class SelectCompanyFragmentBinding extends ViewDataBinding {
   @NonNull
-  public final ExpandableListView expandelComapny;
-
-  @NonNull
   public final View include21;
 
+  @NonNull
+  public final RecyclerView recycleCompany;
+
   protected SelectCompanyFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ExpandableListView expandelComapny, View include21) {
+      View include21, RecyclerView recycleCompany) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.expandelComapny = expandelComapny;
     this.include21 = include21;
+    this.recycleCompany = recycleCompany;
   }
 
   @NonNull

@@ -60,12 +60,12 @@
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable\\cell_border_non_left.xml"
     },
     {
-        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\layout_reporting_fragment.xml.flat",
-        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\reporting_fragment.xml"
-    },
-    {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_bg_rounded_btn_accent.xml.flat",
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable-v24\\bg_rounded_btn_accent.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\layout_reporting_fragment.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\reporting_fragment.xml"
     },
     {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\layout_layout_option_approved.xml.flat",
@@ -356,6 +356,10 @@
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable-mdpi\\ic_up.png"
     },
     {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_company_select.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\item_company_select.xml"
+    },
+    {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_de_nghi.png.flat",
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable\\de_nghi.png"
     },
@@ -602,6 +606,10 @@
     {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_up.png.flat",
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable-hdpi\\ic_up.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_location_select.xml.flat",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\item_location_select.xml"
     },
     {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_employee.xml.flat",

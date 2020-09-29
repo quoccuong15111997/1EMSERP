@@ -13,9 +13,12 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.firstems.erp.MainActivity;
 import com.firstems.erp.R;
+import com.firstems.erp.adapter.company.CompanySelectAdapter;
 import com.firstems.erp.adapter.expan.CompanyExpanAdapter;
 import com.firstems.erp.api.model.request.LoginLocationRequest;
 import com.firstems.erp.api.model.response.company.CompanyResponse;
@@ -45,9 +48,10 @@ public class SelectCompanyFragment extends CommonFragment {
     private SelectCompanyViewModel mViewModel;
     private SelectCompanyFragmentBinding binding;
     private List<CompanyResponse> companyList;
-    private ExpandableListView expandableCompany;
-    private CompanyExpanAdapter companyExpanAdapter;
+   /* private ExpandableListView expandableCompany;
+    private CompanyExpanAdapter companyExpanAdapter;*/
     private TextView txtTitle;
+    private CompanySelectAdapter companySelectAdapter;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -64,11 +68,17 @@ public class SelectCompanyFragment extends CommonFragment {
         companyList.size();
         Intent intent= getActivity().getIntent();
         companyList.addAll((Collection<? extends CompanyResponse>) intent.getSerializableExtra(Constant.NAME_PUT_LIST_COMPANY));
-        companyExpanAdapter.notifyDataSetChanged();
+        companySelectAdapter.notifyDataSetChanged();
     }
 
     private void addEvents() {
-        expandableCompany.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+        companySelectAdapter.setSelectCompanyListener(new CompanySelectAdapter.SelectCompanyListener() {
+            @Override
+            public void onComapnyItemCick(CompanyResponse companyResponse, LocationResponse locationResponse) {
+                doLoginByLocation(companyResponse.getCompanyCode(),locationResponse.getLocationCode(), companyResponse.getLocationList());
+            }
+        });
+       /* expandableCompany.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                 CompanyResponse company = companyList.get(groupPosition);
@@ -76,7 +86,7 @@ public class SelectCompanyFragment extends CommonFragment {
                 doLoginByLocation(company.getCompanyCode(),location.getLocationCode(), company.getLocationList());
                 return true;
             }
-        });
+        });*/
     }
 
     private void doLoginByLocation(String compCode, String locationCode,List<LocationResponse> locationList) {
@@ -160,10 +170,15 @@ public class SelectCompanyFragment extends CommonFragment {
         txtTitle=binding.include21.findViewById(R.id.txtTitle);
 
         companyList = new ArrayList<>();
-        expandableCompany = binding.expandelComapny;
+        companySelectAdapter = new CompanySelectAdapter(companyList);
+        binding.recycleCompany.setAdapter(companySelectAdapter);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
+        binding.recycleCompany.setLayoutManager(linearLayoutManager);
+       /* expandableCompany = binding.expandelComapny;
         companyExpanAdapter= new CompanyExpanAdapter(getContext(),companyList);
         expandableCompany.setAdapter(companyExpanAdapter);
-        expandableCompany.setDivider(null);
+        expandableCompany.setDivider(null);*/
 
     }
 

@@ -15,7 +15,7 @@ public class SelectCompanyFragmentBindingImpl extends SelectCompanyFragmentBindi
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.include21, 1);
-        sViewsWithIds.put(R.id.expandelComapny, 2);
+        sViewsWithIds.put(R.id.recycleCompany, 2);
     }
     // views
     @NonNull
@@ -30,8 +30,8 @@ public class SelectCompanyFragmentBindingImpl extends SelectCompanyFragmentBindi
     }
     private SelectCompanyFragmentBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.ExpandableListView) bindings[2]
             , (android.view.View) bindings[1]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[2]
             );
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);

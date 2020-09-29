@@ -114,4 +114,7 @@ dependencies {
 
     //Dialog
     implementation 'com.orhanobut:dialogplus:1.11@aar'
+
+    //Animation
+    implementation "com.github.skydoves:transformationlayout:1.0.6"
 }

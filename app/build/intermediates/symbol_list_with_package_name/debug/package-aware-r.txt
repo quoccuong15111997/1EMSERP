@@ -58,6 +58,10 @@ anim slide_out_top
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
+animator linear_indeterminate_line1_head_interpolator
+animator linear_indeterminate_line1_tail_interpolator
+animator linear_indeterminate_line2_head_interpolator
+animator linear_indeterminate_line2_tail_interpolator
 animator mtrl_btn_state_list_anim
 animator mtrl_btn_unelevated_state_list_anim
 animator mtrl_card_state_list_anim
@@ -251,6 +255,8 @@ attr chipStyle
 attr chipSurfaceColor
 attr circleCrop
 attr circleRadius
+attr circularInset
+attr circularRadius
 attr civ_background_color
 attr civ_border
 attr civ_border_color
@@ -510,6 +516,7 @@ attr gestureInsetBottomIgnored
 attr goIcon
 attr graph
 attr gravity
+attr growMode
 attr haloColor
 attr haloRadius
 attr headerLayout
@@ -544,9 +551,15 @@ attr imageAspectRatioAdjust
 attr imageButtonStyle
 attr includeDecimalSeparator
 attr indeterminateProgressStyle
+attr indicatorColor
+attr indicatorColors
+attr indicatorCornerRadius
+attr indicatorType
+attr indicatorWidth
 attr initialActivityCount
 attr initialExpandedChildrenCount
 attr insetForeground
+attr inverse
 attr isLightTheme
 attr isMaterialTheme
 attr isPreferenceVisible
@@ -670,6 +683,7 @@ attr liftOnScrollTargetViewId
 attr limitBoundsTo
 attr lineHeight
 attr lineSpacing
+attr linearSeamless
 attr listChoiceBackgroundIndicator
 attr listChoiceIndicatorMultipleAnimated
 attr listChoiceIndicatorSingleAnimated
@@ -706,7 +720,9 @@ attr materialCalendarHeaderToggleButton
 attr materialCalendarStyle
 attr materialCalendarTheme
 attr materialCardViewStyle
+attr materialCircleRadius
 attr materialThemeOverlay
+attr materialTimePickerTheme
 attr maxAcceleration
 attr maxActionInlineWidth
 attr maxButtonHeight
@@ -722,6 +738,8 @@ attr menu
 attr mimeType
 attr min
 attr minHeight
+attr minHideDelay
+attr minSeparation
 attr minTouchTargetSize
 attr minWidth
 attr mk_color
@@ -828,6 +846,7 @@ attr preserveIconSpacing
 attr pressedTranslationZ
 attr progressBarPadding
 attr progressBarStyle
+attr progressIndicatorStyle
 attr queryBackground
 attr queryHint
 attr radioButtonStyle
@@ -867,6 +886,7 @@ attr selectableItemBackground
 attr selectableItemBackgroundBorderless
 attr selected_color
 attr selectionRequired
+attr selectorSize
 attr separator_color
 attr shadow_color
 attr shapeAppearance
@@ -1075,6 +1095,20 @@ attr trackColorInactive
 attr trackHeight
 attr trackTint
 attr trackTintMode
+attr transformation_allContainerColor
+attr transformation_containerColor
+attr transformation_direction
+attr transformation_duration
+attr transformation_elevationShadowEnabled
+attr transformation_endElevation
+attr transformation_fadeMode
+attr transformation_fitMode
+attr transformation_holdAtEndEnabled
+attr transformation_pathMode
+attr transformation_scrimColor
+attr transformation_startElevation
+attr transformation_targetView
+attr transformation_zOrder
 attr transitionDisable
 attr transitionEasing
 attr transitionFlags
@@ -1091,6 +1125,7 @@ attr useCompatPadding
 attr useDefaultMargins
 attr useMaterialThemeColors
 attr useSimpleSummaryProvider
+attr valueTextColor
 attr values
 attr verticalOffset
 attr viewInflaterClass
@@ -1348,6 +1383,10 @@ color material_slider_halo_color
 color material_slider_inactive_tick_marks_color
 color material_slider_inactive_track_color
 color material_slider_thumb_color
+color material_timepicker_button_background
+color material_timepicker_button_stroke
+color material_timepicker_clockface
+color material_timepicker_modebutton_tint
 color md_amber_100
 color md_amber_200
 color md_amber_300
@@ -1877,6 +1916,7 @@ dimen card_elevation
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
+dimen clock_face_margin_start
 dimen compat_button_inset_horizontal_material
 dimen compat_button_inset_vertical_material
 dimen compat_button_padding_horizontal_material
@@ -2032,11 +2072,22 @@ dimen margin9
 dimen margin90
 dimen margin92
 dimen margin95
+dimen material_clock_display_padding
+dimen material_clock_face_margin_top
+dimen material_clock_hand_center_dot_radius
+dimen material_clock_hand_padding
+dimen material_clock_hand_stroke_width
+dimen material_clock_number_text_size
+dimen material_clock_period_toggle_height
+dimen material_clock_period_toggle_margin_left
+dimen material_clock_period_toggle_width
+dimen material_clock_size
 dimen material_emphasis_disabled
 dimen material_emphasis_high_type
 dimen material_emphasis_medium
 dimen material_text_view_test_line_height
 dimen material_text_view_test_line_height_override
+dimen material_timepicker_dialog_buttons_margin_top
 dimen mdtp_ampm_label_size
 dimen mdtp_ampm_left_padding
 dimen mdtp_date_picker_component_width
@@ -2123,6 +2174,7 @@ dimen mtrl_btn_text_btn_padding_left
 dimen mtrl_btn_text_btn_padding_right
 dimen mtrl_btn_text_size
 dimen mtrl_btn_z
+dimen mtrl_calendar_action_confirm_button_min_width
 dimen mtrl_calendar_action_height
 dimen mtrl_calendar_action_padding
 dimen mtrl_calendar_bottom_padding
@@ -2213,6 +2265,10 @@ dimen mtrl_navigation_item_icon_padding
 dimen mtrl_navigation_item_icon_size
 dimen mtrl_navigation_item_shape_horizontal_margin
 dimen mtrl_navigation_item_shape_vertical_margin
+dimen mtrl_progress_circular_inset
+dimen mtrl_progress_circular_radius
+dimen mtrl_progress_indicator_full_rounded_corner_radius
+dimen mtrl_progress_indicator_width
 dimen mtrl_shape_corner_size_large_component
 dimen mtrl_shape_corner_size_medium_component
 dimen mtrl_shape_corner_size_small_component
@@ -2592,6 +2648,7 @@ drawable ic_calenda
 drawable ic_camera
 drawable ic_chart_24
 drawable ic_check_white
+drawable ic_clock_black_24dp
 drawable ic_close_white
 drawable ic_dashboard_black_24dp
 drawable ic_de_nghi
@@ -2607,6 +2664,7 @@ drawable ic_error_image
 drawable ic_excel
 drawable ic_file
 drawable ic_home_black_24dp
+drawable ic_keyboard_black_24dp
 drawable ic_language
 drawable ic_launcher
 drawable ic_launcher_background
@@ -2811,6 +2869,7 @@ id animateToEnd
 id animateToStart
 id app_bar_layout
 id appbar_layout
+id arc
 id asConfigured
 id async
 id audio
@@ -2823,6 +2882,7 @@ id barrier
 id baseline
 id beginOnFirstDraw
 id beginning
+id bidirectional
 id blocking
 id bottom
 id bottomOverlay
@@ -2857,6 +2917,7 @@ id cancel_action
 id cancel_button
 id cardSystemSetting
 id cardView
+id cardView2
 id cell_container
 id cell_data
 id cell_image_button
@@ -2895,6 +2956,8 @@ id chkVeTauThuy
 id chkVisa
 id chkXeCongTacTronChuyen
 id chronometer
+id circle_center
+id circular
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -2933,6 +2996,7 @@ id contrainsSearch
 id contraintDate
 id coordinator
 id cos
+id cross
 id custom
 id customPanel
 id cut
@@ -3005,6 +3069,7 @@ id end
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id entering
 id etPasswordNew
 id etPasswordNow
 id etPasswordRetype
@@ -3013,7 +3078,6 @@ id exitUntilCollapsed
 id expand_activities_button
 id expandabler
 id expanded_menu
-id expandelComapny
 id fabFilter
 id facingBackButton
 id facingFrontButton
@@ -3076,7 +3140,10 @@ id graph
 id graph_wrap
 id group_divider
 id groups
+id guideline
 id header
+id header_title
+id height
 id hideable
 id home
 id homeAsUp
@@ -3161,6 +3228,7 @@ id imgSort
 id imgUp
 id img_custom_view_alert_dialog_icon
 id img_view_pager_product
+id in
 id include
 id include10
 id include11
@@ -3187,6 +3255,7 @@ id include6
 id include7
 id include8
 id include9
+id incoming
 id info
 id invisible
 id italic
@@ -3319,6 +3388,25 @@ id lyt_content
 id lyt_parent
 id masked
 id materialRippleLayout
+id material_clock_display
+id material_clock_face
+id material_clock_hand
+id material_clock_period_am_button
+id material_clock_period_pm_button
+id material_clock_period_toggle
+id material_hour_text_input
+id material_hour_tv
+id material_label
+id material_minute_text_input
+id material_minute_tv
+id material_textinput_timepicker
+id material_timepicker_cancel_button
+id material_timepicker_container
+id material_timepicker_edit_text
+id material_timepicker_mode_button
+id material_timepicker_ok_button
+id material_timepicker_view
+id material_value_index
 id mdtp_am_label
 id mdtp_ampm_layout
 id mdtp_animator
@@ -3410,6 +3498,8 @@ id off
 id on
 id onAttachStateChangeListener
 id onDateChanged
+id out
+id outgoing
 id outline
 id packed
 id parallax
@@ -3460,10 +3550,12 @@ id ratio
 id rectangles
 id recycle
 id recycleApproved
+id recycleCompany
 id recycleEmployee
 id recycleFile
 id recycleImage
 id recycleItem
+id recycleLocation
 id recycleProgress
 id recycleSignature
 id recycledepartment
@@ -3471,6 +3563,7 @@ id recycler_view
 id recyclerview
 id recycleview
 id restart
+id returning
 id reverse
 id reverseSawtooth
 id right
@@ -3510,6 +3603,7 @@ id seekbar
 id seekbar_value
 id select_dialog_listview
 id selected
+id selection_type
 id settings
 id shortcut
 id showCustom
@@ -3603,6 +3697,7 @@ id textInputEditText2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textTop
 id textView
 id textView10
 id textView11
@@ -3670,6 +3765,7 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id texture
+id through
 id time
 id title
 id titleDividerNoCustom
@@ -3682,6 +3778,7 @@ id topPanel
 id top_to_bottom
 id torch
 id touch_outside
+id transformationLayout
 id transitionToEnd
 id transitionToStart
 id transition_current_scene
@@ -3734,6 +3831,7 @@ id txtListRefer
 id txtLoacteName
 id txtLocate
 id txtLocateName
+id txtLocatioName
 id txtMainCode
 id txtMoney
 id txtMonth_1
@@ -3895,6 +3993,7 @@ id visible
 id visible_removing_fragment_view_tag
 id webview
 id wide
+id width
 id withText
 id withinBounds
 id wrap
@@ -4082,6 +4181,7 @@ layout item_approved_detail_2
 layout item_check
 layout item_child
 layout item_company
+layout item_company_select
 layout item_dialog_singel_choise
 layout item_doc_layout
 layout item_documnet
@@ -4093,6 +4193,7 @@ layout item_image_include
 layout item_loading_dialog
 layout item_loading_dialog_non__message
 layout item_location
+layout item_location_select
 layout item_photo_layout
 layout item_progress_approve
 layout item_signature
@@ -4126,6 +4227,20 @@ layout list_item_piechart
 layout loai_doi_tuong_nhan_fragment
 layout login_fragment
 layout login_layout_type_flat
+layout material_chip_input_combo
+layout material_clock_display
+layout material_clock_display_divider
+layout material_clock_period_toggle
+layout material_clock_period_toggle_land
+layout material_clockface_textview
+layout material_clockface_view
+layout material_radial_view_group
+layout material_textinput_timepicker
+layout material_time_chip
+layout material_time_input
+layout material_timepicker
+layout material_timepicker_dialog
+layout material_timepicker_textinput_display
 layout mdtp_date_picker_dialog
 layout mdtp_date_picker_dialog_v2
 layout mdtp_date_picker_header_view
@@ -4385,8 +4500,19 @@ string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string images
 string item_view_role_description
+string material_clock_display_divider
+string material_clock_toggle_content_description
+string material_hour_selection
+string material_hour_suffix
+string material_minute_selection
+string material_minute_suffix
 string material_slider_range_end
 string material_slider_range_start
+string material_timepicker_am
+string material_timepicker_hour
+string material_timepicker_minute
+string material_timepicker_pm
+string material_timepicker_select_time
 string mdtp_am
 string mdtp_ampm_circle_radius_multiplier
 string mdtp_cancel
@@ -4727,6 +4853,10 @@ style Base_Widget_MaterialComponents_PopupMenu
 style Base_Widget_MaterialComponents_PopupMenu_ContextMenu
 style Base_Widget_MaterialComponents_PopupMenu_ListPopupWindow
 style Base_Widget_MaterialComponents_PopupMenu_Overflow
+style Base_Widget_MaterialComponents_ProgressIndicator
+style Base_Widget_MaterialComponents_ProgressIndicator_Circular
+style Base_Widget_MaterialComponents_ProgressIndicator_Custom
+style Base_Widget_MaterialComponents_ProgressIndicator_Linear
 style Base_Widget_MaterialComponents_Slider
 style Base_Widget_MaterialComponents_TextInputEditText
 style Base_Widget_MaterialComponents_TextInputLayout
@@ -5243,6 +5373,10 @@ style Widget_MaterialComponents_PopupMenu
 style Widget_MaterialComponents_PopupMenu_ContextMenu
 style Widget_MaterialComponents_PopupMenu_ListPopupWindow
 style Widget_MaterialComponents_PopupMenu_Overflow
+style Widget_MaterialComponents_ProgressIndicator_Circular_Determinate
+style Widget_MaterialComponents_ProgressIndicator_Circular_Indeterminate
+style Widget_MaterialComponents_ProgressIndicator_Linear_Determinate
+style Widget_MaterialComponents_ProgressIndicator_Linear_Indeterminate
 style Widget_MaterialComponents_ShapeableImageView
 style Widget_MaterialComponents_Slider
 style Widget_MaterialComponents_Snackbar
@@ -5264,6 +5398,10 @@ style Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense
 style Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense_ExposedDropdownMenu
 style Widget_MaterialComponents_TextInputLayout_OutlinedBox_ExposedDropdownMenu
 style Widget_MaterialComponents_TextView
+style Widget_MaterialComponents_TimePicker
+style Widget_MaterialComponents_TimePicker_Button
+style Widget_MaterialComponents_TimePicker_Display
+style Widget_MaterialComponents_TimePicker_Display_TextInputEditText
 style Widget_MaterialComponents_Toolbar
 style Widget_MaterialComponents_Toolbar_Primary
 style Widget_MaterialComponents_Toolbar_PrimarySurface
@@ -5306,10 +5444,12 @@ styleable ButtonBarLayout allowStacking
 styleable CameraKitView android_adjustViewBounds camera_aspectRatio camera_facing camera_flash camera_focus camera_imageJpegQuality camera_imageMegaPixels camera_permissions camera_zoomFactor
 styleable CardView android_minWidth android_minHeight cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
 styleable CheckBoxPreference android_summaryOn android_summaryOff android_disableDependentsState disableDependentsState summaryOff summaryOn
-styleable Chip android_textAppearance android_textColor android_ellipsize android_maxWidth android_text android_checkable checkedIcon checkedIconEnabled checkedIconTint checkedIconVisible chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipIconTint chipIconVisible chipMinHeight chipMinTouchTargetSize chipStartPadding chipStrokeColor chipStrokeWidth chipSurfaceColor closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint closeIconVisible ensureMinTouchTargetSize hideMotionSpec iconEndPadding iconStartPadding rippleColor shapeAppearance shapeAppearanceOverlay showMotionSpec textEndPadding textStartPadding
+styleable Chip android_textAppearance android_textSize android_textColor android_ellipsize android_maxWidth android_text android_checkable checkedIcon checkedIconEnabled checkedIconTint checkedIconVisible chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipIconTint chipIconVisible chipMinHeight chipMinTouchTargetSize chipStartPadding chipStrokeColor chipStrokeWidth chipSurfaceColor closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint closeIconVisible ensureMinTouchTargetSize hideMotionSpec iconEndPadding iconStartPadding rippleColor shapeAppearance shapeAppearanceOverlay showMotionSpec textEndPadding textStartPadding
 styleable ChipGroup checkedChip chipSpacing chipSpacingHorizontal chipSpacingVertical selectionRequired singleLine singleSelection
 styleable CircleImageView civ_border_color civ_border_overlay civ_border_width civ_circle_background_color
 styleable CircularImageView civ_background_color civ_border civ_border_color civ_border_width civ_shadow civ_shadow_color civ_shadow_gravity civ_shadow_radius
+styleable ClockFaceView valueTextColor
+styleable ClockHandView materialCircleRadius selectorSize
 styleable CollapsingToolbarLayout collapsedTitleGravity collapsedTitleTextAppearance contentScrim expandedTitleGravity expandedTitleMargin expandedTitleMarginBottom expandedTitleMarginEnd expandedTitleMarginStart expandedTitleMarginTop expandedTitleTextAppearance maxLines scrimAnimationDuration scrimVisibleHeightTrigger statusBarScrim title titleEnabled toolbarId
 styleable CollapsingToolbarLayout_Layout layout_collapseMode layout_collapseParallaxMultiplier
 styleable ColorStateListItem android_color android_alpha alpha
@@ -5404,8 +5544,10 @@ styleable PreferenceFragmentCompat android_layout android_divider android_divide
 styleable PreferenceGroup android_orderingFromXml initialExpandedChildrenCount orderingFromXml
 styleable PreferenceImageView android_maxWidth android_maxHeight maxHeight maxWidth
 styleable PreferenceTheme checkBoxPreferenceStyle dialogPreferenceStyle dropdownPreferenceStyle editTextPreferenceStyle preferenceCategoryStyle preferenceCategoryTitleTextAppearance preferenceFragmentCompatStyle preferenceFragmentListStyle preferenceFragmentStyle preferenceInformationStyle preferenceScreenStyle preferenceStyle preferenceTheme seekBarPreferenceStyle switchPreferenceCompatStyle switchPreferenceStyle
+styleable ProgressIndicator android_indeterminate circularInset circularRadius growMode indicatorColor indicatorColors indicatorCornerRadius indicatorType indicatorWidth inverse linearSeamless minHideDelay trackColor
 styleable PropertySet android_visibility android_alpha layout_constraintTag motionProgress visibilityMode
-styleable RangeSlider values
+styleable RadialViewGroup materialCircleRadius
+styleable RangeSlider minSeparation values
 styleable RecycleListView paddingBottomNoButtons paddingTopNoTitle
 styleable RecyclerView android_orientation android_clipToPadding android_descendantFocusability fastScrollEnabled fastScrollHorizontalThumbDrawable fastScrollHorizontalTrackDrawable fastScrollVerticalThumbDrawable fastScrollVerticalTrackDrawable layoutManager reverseLayout spanCount stackFromEnd
 styleable ScrimInsetsFrameLayout insetForeground
@@ -5417,7 +5559,7 @@ styleable ShapeAppearance cornerFamily cornerFamilyBottomLeft cornerFamilyBottom
 styleable ShapeableImageView shapeAppearance shapeAppearanceOverlay strokeColor strokeWidth
 styleable ShimmerFrameLayout shimmer_auto_start shimmer_base_alpha shimmer_base_color shimmer_clip_to_children shimmer_colored shimmer_direction shimmer_dropoff shimmer_duration shimmer_fixed_height shimmer_fixed_width shimmer_height_ratio shimmer_highlight_alpha shimmer_highlight_color shimmer_intensity shimmer_repeat_count shimmer_repeat_delay shimmer_repeat_mode shimmer_shape shimmer_tilt shimmer_width_ratio
 styleable SignInButton buttonSize colorScheme scopeUris
-styleable Slider android_enabled android_value android_stepSize android_valueFrom android_valueTo haloColor haloRadius labelBehavior labelStyle thumbColor thumbElevation thumbRadius tickColor tickColorActive tickColorInactive trackColor trackColorActive trackColorInactive trackHeight
+styleable Slider android_value android_stepSize android_valueFrom android_valueTo haloColor haloRadius labelBehavior labelStyle thumbColor thumbElevation thumbRadius tickColor tickColorActive tickColorInactive trackColor trackColorActive trackColorInactive trackHeight
 styleable SmoothCheckBox color_checked color_tick color_unchecked color_unchecked_stroke duration stroke_width
 styleable Snackbar snackbarButtonStyle snackbarStyle snackbarTextViewStyle
 styleable SnackbarLayout android_maxWidth actionTextColorAlpha animationMode backgroundOverlayColorAlpha backgroundTint backgroundTintMode elevation maxActionInlineWidth
@@ -5440,6 +5582,7 @@ styleable ThemeEnforcement android_textAppearance enforceMaterialTheme enforceTe
 styleable Toolbar android_gravity android_minHeight buttonGravity collapseContentDescription collapseIcon contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation logo logoDescription maxButtonHeight menu navigationContentDescription navigationIcon popupTheme subtitle subtitleTextAppearance subtitleTextColor title titleMargin titleMarginBottom titleMarginEnd titleMarginStart titleMarginTop titleMargins titleTextAppearance titleTextColor
 styleable Tooltip android_textAppearance android_padding android_layout_margin android_minWidth android_minHeight android_text backgroundTint
 styleable Transform android_transformPivotX android_transformPivotY android_translationX android_translationY android_scaleX android_scaleY android_rotation android_rotationX android_rotationY android_translationZ android_elevation
+styleable TransformationLayout transformation_allContainerColor transformation_containerColor transformation_direction transformation_duration transformation_elevationShadowEnabled transformation_endElevation transformation_fadeMode transformation_fitMode transformation_holdAtEndEnabled transformation_pathMode transformation_scrimColor transformation_startElevation transformation_targetView transformation_zOrder
 styleable Transition android_id autoTransition constraintSetEnd constraintSetStart duration layoutDuringTransition motionInterpolator pathMotionArc staggered transitionDisable transitionFlags
 styleable Variant constraints region_heightLessThan region_heightMoreThan region_widthLessThan region_widthMoreThan
 styleable View android_theme android_focusable paddingEnd paddingStart theme
