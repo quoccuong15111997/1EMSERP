@@ -125,7 +125,7 @@ public class Util {
             String dateCurrent = arr[0];
             String arrDateCurrent[] = dateCurrent.split("-");
             if (arrDateCurrent.length>2){
-                String dateFormated = arrDateCurrent[2]+"-"+arrDateCurrent[1]+"-"+arrDateCurrent[0];
+                String dateFormated = arrDateCurrent[2]+"/"+arrDateCurrent[1]+"/"+arrDateCurrent[0];
                 return dateFormated;
             }
             return date;

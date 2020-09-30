@@ -295,7 +295,7 @@ public class HomeFragment extends CommonFragment {
                         public void onSaveComplete() {
                             loadingDialog.dismiss();
                             binding.tvName.setText(SharedPreferencesManager.getInstance().getPrefAccountName());
-                            binding.tvEmail.setText(SharedPreferencesManager.getInstance().getPrefJobName());
+                            binding.tvEmail.setText(SharedPreferencesManager.getInstance().getPrefCompname());
                             binding.tvTitleToolbar.setText(SharedPreferencesManager.getInstance().getPrefLctname());
                             showToastSuccess("Đã thay đổi chi nhánh");
                         }

@@ -168,43 +168,43 @@ public class DocumentFragment extends CommonFragment {
     
     private void doSearch() {
         List<QueryModel> queryModelList = new ArrayList<>();
-        if (createQueryModel(binding.edtDocumentCode,"MAINNUMB")!=null){
-            queryModelList.add(createQueryModel(binding.edtDocumentCode,"MAINNUMB"));
+        if (createQueryModel(binding.edtDocumentCode,SharedPreferencesManager.getSystemLabel(213).replace("E_","") /*MAINNUMB*/)!=null){
+            queryModelList.add(createQueryModel(binding.edtDocumentCode,SharedPreferencesManager.getSystemLabel(213).replace("E_","") /*MAINNUMB*/));
         }
         
-        if (createQueryModel(binding.edtDocumentName,"CNTNBRIF")!=null){
-            queryModelList.add(createQueryModel(binding.edtDocumentName,"CNTNBRIF"));
+        if (createQueryModel(binding.edtDocumentName,SharedPreferencesManager.getSystemLabel(214).replace("E_","") /*CNTNBRIF*/)!=null){
+            queryModelList.add(createQueryModel(binding.edtDocumentName,SharedPreferencesManager.getSystemLabel(214).replace("E_","") /*CNTNBRIF*/));
         }
         
-        if (createQueryModel(binding.edtInfo,"CNTNDCMN")!=null){
-            queryModelList.add(createQueryModel(binding.edtInfo,"CNTNDCMN"));
+        if (createQueryModel(binding.edtInfo,SharedPreferencesManager.getSystemLabel(215).replace("E_","") /*CNTNDCMN*/)!=null){
+            queryModelList.add(createQueryModel(binding.edtInfo,SharedPreferencesManager.getSystemLabel(215).replace("E_","") /*CNTNDCMN*/));
         }
         
-        if (createQueryModel(binding.edtReleaseYear,"BEG_DATE")!=null){
-            queryModelList.add(createQueryModel(binding.edtReleaseYear,"BEG_DATE"));
+        if (createQueryModel(binding.edtReleaseYear,SharedPreferencesManager.getSystemLabel(216).replace("E_","") /*BEG_DATE*/)!=null){
+            queryModelList.add(createQueryModel(binding.edtReleaseYear,SharedPreferencesManager.getSystemLabel(216).replace("E_","") /*BEG_DATE*/));
         }
         if (spinnerExportPlace.getSelectedItemPosition()!=0){
             ExportPlace exportPlace = (ExportPlace) spinnerExportPlace.getSelectedItem();
             if (exportPlace!=null){
-                queryModelList.add(new QueryModel("INPDCMNPBLS.PBLSCODE",exportPlace.getiTEMCODE()));
+                queryModelList.add(new QueryModel(SharedPreferencesManager.getSystemLabel(217).replace("E_","") /*PBLSCODE*/,exportPlace.getiTEMCODE()));
             }
         }
         if (spinnerCategory.getSelectedItemPosition()!=0){
             DocumentCategory documentCategory = (DocumentCategory) spinnerCategory.getSelectedItem();
             if (documentCategory!=null){
-                queryModelList.add(new QueryModel("INPDCMNTYPE.DCTPCODE",documentCategory.getiTEMCODE()));
+                queryModelList.add(new QueryModel(SharedPreferencesManager.getSystemLabel(218).replace("E_","") /*DCTPCODE*/,documentCategory.getiTEMCODE()));
             }
         }
         if (spinnerContent.getSelectedItemPosition()!=0){
             ContentItem contentItem = (ContentItem) spinnerContent.getSelectedItem();
             if (contentItem!=null){
-                queryModelList.add(new QueryModel("CNTNCODE",contentItem.getiTEMCODE()));
+                queryModelList.add(new QueryModel(SharedPreferencesManager.getSystemLabel(219).replace("E_","") /*CNTNCODE*/,contentItem.getiTEMCODE()));
             }
         }
         if (binding.spinnerCompanyBranch.getSelectedItemPosition()!=0){
             LocationItem locationItem = (LocationItem) binding.spinnerCompanyBranch.getSelectedItem();
             if (locationItem!=null){
-                queryModelList.add(new QueryModel("LCTNCODE",locationItem.getItemCode()));
+                queryModelList.add(new QueryModel(SharedPreferencesManager.getSystemLabel(220).replace("E_","") /*LCTNCODE*/,locationItem.getItemCode()));
             }
         }
         new QueryStringHelper(queryModelList).builder(new QueryStringCallback() {

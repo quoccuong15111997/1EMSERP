@@ -256,7 +256,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:text="Hotline 0977929100"
+                        android:text="Hotline"
                         android:textColor="@color/grey_80"
                         app:layout_constraintBottom_toBottomOf="@+id/imageView35"
                         app:layout_constraintStart_toEndOf="@+id/imageView35"

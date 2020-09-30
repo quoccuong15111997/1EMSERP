@@ -17,11 +17,11 @@
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
-
-    <uses-feature android:name="android.hardware.camera" />
-
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
     <uses-feature
         android:name="android.hardware.camera.front"
         android:required="false" />
@@ -51,6 +51,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.firstems.erp.loading.FlashActivity" />
         <activity android:name="com.firstems.erp.ui.signature.billpaymentrequest.sophieutamung.SoPhieuTamUngActivity" />
         <activity
             android:name="com.firstems.erp.ui.more.password.ChangePasswordActivity"
@@ -59,9 +60,6 @@
         <activity android:name="com.firstems.erp.ui.document.detail.DocumnetDetailActivity" />
         <activity android:name="com.firstems.erp.ui.document.list.DocumentListActivity" />
         <activity android:name="com.firstems.erp.ui.signature.defaultsignature.DefaultSignatureActivity" />
-        <activity
-            android:name="com.firstems.erp.ui.shared.camera.CameraUIKitActivity"
-            android:hardwareAccelerated="true" />
         <activity android:name="com.firstems.erp.ui.shared.loaidoituongnhan.DoiTuongNhanActivity" />
         <activity android:name="com.firstems.erp.ui.shared.image.ImageViewActivity" />
         <activity android:name="com.firstems.erp.ui.shared.viewer.PDFViewerActivity" />
@@ -130,7 +128,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.firstems.erp.loading.LoadingActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -160,6 +159,13 @@
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_launcher" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
 
         <activity
             android:name="pub.devrel.easypermissions.AppSettingsDialogHolderActivity"

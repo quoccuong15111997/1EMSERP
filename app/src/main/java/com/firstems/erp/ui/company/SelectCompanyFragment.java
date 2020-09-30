@@ -42,7 +42,9 @@ import com.firstems.erp.common.Constant;
 import com.firstems.erp.database.helper.DatabaseHelper;
 import com.firstems.erp.database.model.LocationDBModel;
 import com.firstems.erp.databinding.SelectCompanyFragmentBinding;
+import com.firstems.erp.loading.LoadingActivity;
 import com.firstems.erp.sharedpreferences.SharedPreferencesManager;
+import com.firstems.erp.ui.config.ConfigActivity;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -131,6 +133,7 @@ public class SelectCompanyFragment extends CommonFragment {
         dialog.show();
     }
     private void doLoginByLocation(String compCode, String locationCode,List<LocationResponse> locationList) {
+        showLoadingDialog("Đang đăng nhập...");
         LoginLocationRequest loginLocationRequest= new LoginLocationRequest();
         loginLocationRequest.setComCode(compCode);
         loginLocationRequest.setLoctCode(locationCode);
@@ -141,6 +144,7 @@ public class SelectCompanyFragment extends CommonFragment {
                 if (response.isSuccessful()){
                     LoginReponse loginReponse= response.body();
                     System.out.println("Second TOKEN: "+loginReponse.getSystemLoginApiResponse().getToken());
+                    DatabaseHelper.getInstance().deleteAllLocation();
                     DatabaseHelper.getInstance().insertMultiLocation(compCode, locationList, new InsertLocationCallback() {
                         @Override
                         public void onSuccess(List<LocationDBModel> locationDBModels) {
@@ -151,25 +155,33 @@ public class SelectCompanyFragment extends CommonFragment {
                     saveData(loginReponse.getSystemLoginApiResponse(), new SaveDataCallback() {
                         @Override
                         public void onSaveComplete() {
-                            Intent intent= new Intent(getContext(), MainActivity.class);
-                            startActivity(intent);
-                            getActivity().finish();
-                            setOveridePendingTransisi(getActivity());
+                            binding.recycleCompany.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    loadingDialog.dismiss();
+                                    Intent intent= new Intent(getContext(), MainActivity.class);
+                                    startActivity(intent);
+                                    getActivity().finish();
+                                    setOveridePendingTransisi(getActivity());
+                                }
+                            }, 1000);
                         }
 
                         @Override
                         public void onSaveFail() {
-
+                        
                         }
                     });
                 }
                 else {
+                    //loadingDialog.dismiss();
                     showOutTOKEN();
                 }
             }
 
             @Override
             public void onFailure(Call<LoginReponse> call, Throwable t) {
+              //  loadingDialog.dismiss();
                 showOutTOKEN();
             }
         });

@@ -388,6 +388,17 @@ public abstract class CommonFragment extends Fragment {
         if (!isNetworkAvailable()){
             showCustomDialog();
         }
+        new android.os.Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (loadingNonMessDialog!=null){
+                    if (loadingNonMessDialog.isShowing()){
+                        loadingNonMessDialog.dismiss();
+                        showOutTOKEN();
+                    }
+                }
+            }
+        }, 5000);
     }
     private void showCustomDialog() {
         final Dialog dialog = new Dialog(getContext());

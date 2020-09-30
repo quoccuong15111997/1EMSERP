@@ -21,6 +21,7 @@ import androidx.transition.TransitionManager;
 import com.firstems.erp.R;
 import com.firstems.erp.adapter.ApprovedItemAdapter;
 import com.firstems.erp.api.model.request.CommitDocumentRequest;
+import com.firstems.erp.api.model.request.DeleteDocumentRequest;
 import com.firstems.erp.api.model.request.askpermistion.AskPermistionRequest;
 import com.firstems.erp.api.model.response.ApiResponse;
 import com.firstems.erp.api.model.response.askpermistion.AskPermistionDetail;
@@ -45,6 +46,7 @@ import com.firstems.erp.model.approved.Approved;
 import com.firstems.erp.sharedpreferences.SharedPreferencesManager;
 import com.firstems.erp.ui.shared.reviewprocess.ReviewProcessFragment;
 import com.firstems.erp.ui.signature.askpermission.info.AskPermissionInfoActivity;
+import com.google.android.material.imageview.ShapeableImageView;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
@@ -117,6 +119,51 @@ public class AskPermissionFragment extends CommonFragment {
     }
 
     private void addEvents() {
+        binding.llDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               if (signatureItemApiResponse!=null){
+                   showConfirmMessage(SharedPreferencesManager.getSystemLabel(49) /*Xác nhận*/,
+                           SharedPreferencesManager.getSystemLabel(53) /*Bạn chắc chắn muốn xóa chứng từ này?*/,
+                           SharedPreferencesManager.getSystemLabel(54) /*Đồng ý*/,
+                           SharedPreferencesManager.getSystemLabel(55) /*Hủy*/, new ConfirmCallback() {
+                               @Override
+                               public void onAccept() {
+                                   DeleteDocumentRequest deleteDocumentRequest = new DeleteDocumentRequest();
+                                   deleteDocumentRequest.setDcmnCode(signatureItemApiResponse.getDcmnCode());
+                                   deleteDocumentRequest.setKeyCode(signatureItemApiResponse.getKeyCode());
+                                   ApiServices.getInstance().deleteDocument(SharedPreferencesManager.getInstance().getPrefToken(), deleteDocumentRequest.convertToJson(), new Callback<ApiResponse>() {
+                                       @Override
+                                       public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
+                                           if (response.isSuccessful()){
+                                               if (response.body().isRETNCODE()){
+                                                   showSuccessDialog(SharedPreferencesManager.getSystemLabel(50) /*Thông báo*/,!response.body().getRETNMSSG().equals("") ? response.body().getRETNMSSG(): SharedPreferencesManager.getSystemLabel(52) /*Xóa chứng từ thành công!*/ );
+                                               }
+                                               else {
+                                                   showErrorDialog(SharedPreferencesManager.getSystemLabel(50) /*Thông báo*/,!response.body().getRETNMSSG().equals("") ? response.body().getRETNMSSG(): SharedPreferencesManager.getSystemLabel(51) /*Không thể xóa chứng từ này!*/);
+                                               }
+                                           }
+                                           else {
+                                               showOutTOKEN();
+                                           }
+                                       }
+    
+                                       @Override
+                                       public void onFailure(Call<ApiResponse> call, Throwable t) {
+                                           showOutTOKEN();
+                                       }
+                                   });
+                    
+                               }
+                
+                               @Override
+                               public void onCancel() {
+                    
+                               }
+                           });
+               }
+            }
+        });
         binding.imgAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

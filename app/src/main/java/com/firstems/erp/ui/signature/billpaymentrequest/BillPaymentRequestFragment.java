@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.NotificationCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -34,6 +35,7 @@ import com.firstems.erp.api.model.response.bill_payment.BillPaymentApiResponse;
 import com.firstems.erp.api.model.response.bill_payment.BillPaymentDetail;
 import com.firstems.erp.api.model.response.bill_payment.BillPaymentHeader;
 import com.firstems.erp.api.model.response.currency.CurrencyItem;
+import com.firstems.erp.api.model.response.document_category.DocumentCategory;
 import com.firstems.erp.api.model.response.doi_tuong_nhan.DoiTuongNhanItem;
 import com.firstems.erp.api.model.response.loai_de_nghi.LoaiDeNghiItem;
 import com.firstems.erp.api.model.response.loai_doi_tuong_lien_quan.LoaiDoiTuongLienQuanItem;
@@ -49,6 +51,7 @@ import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Constant;
 import com.firstems.erp.common.Util;
 import com.firstems.erp.databinding.BillPaymentRequestFragmentBinding;
+import com.firstems.erp.helper.NumberTextWatcher;
 import com.firstems.erp.helper.accessrole.AccessRole;
 import com.firstems.erp.helper.animation.AnimationHelper;
 import com.firstems.erp.helper.file.GetFileHelper;
@@ -100,6 +103,8 @@ public class BillPaymentRequestFragment extends CommonFragment {
     private AccessRole accessRole;
     private Date mainDate;
     private int CODE_SELECT_SO_PHIEU_TAM_UNG = 145;
+    private String soTamUngNeuCo = "";
+    
     
     private List<TicketBillPaymentDetail> listDetail;
     private DetailTicketDetailAdapter detailTicketDetailAdapter;
@@ -390,6 +395,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
                 startActivityForResult(intent,CODE_ADD_DETAIL);
             }
         });
+        billPaymentRequestFragmentBinding.edtSoTienTamUng.addTextChangedListener(new NumberTextWatcher(billPaymentRequestFragmentBinding.edtSoTienTamUng, null));
     }
     
     private void doCommit() {
@@ -413,6 +419,17 @@ public class BillPaymentRequestFragment extends CommonFragment {
         else {
             billPaymentHeader.setcUOMRATE(Double.parseDouble(billPaymentRequestFragmentBinding.edtTiGia.getText().toString()));
         }
+    
+        if (loaiDeNghiItem.getiTEMCODE().equals("003")){
+            billPaymentHeader.setaDVNCODE(billPaymentRequestFragmentBinding.txtSoPhieuTamUng.getText().toString().trim());
+            try {
+                billPaymentHeader.setrCPTCRAM(Double.parseDouble(billPaymentRequestFragmentBinding.edtSoTienTamUng.getText().toString().replace(".","").trim()));
+            }
+            catch (Exception ex){
+                ex.printStackTrace();
+            }
+        }
+        
         try {
             billPaymentHeader.setsGSTCRAM(Double.parseDouble(billPaymentRequestFragmentBinding.edtSoTiendeNghiChi.getText().toString().replace(".","").trim()));
         
@@ -570,6 +587,15 @@ public class BillPaymentRequestFragment extends CommonFragment {
         catch (Exception ex){
             ex.printStackTrace();
         }
+        if (loaiDeNghiItem.getiTEMCODE().equals("003")){
+            billPaymentHeader.setaDVNCODE(billPaymentRequestFragmentBinding.txtSoPhieuTamUng.getText().toString().trim());
+            try {
+                billPaymentHeader.setrCPTCRAM(Double.parseDouble(billPaymentRequestFragmentBinding.edtSoTienTamUng.getText().toString().replace(".","").trim()));
+            }
+            catch (Exception ex){
+                ex.printStackTrace();
+            }
+        }
         List<BillPaymentDetail> billPaymentDetailList = new ArrayList<>();
         for (int i =0;i<listDetail.size();i++){
             TicketBillPaymentDetail ticketBillPaymentDetail = listDetail.get(i);
@@ -671,6 +697,15 @@ public class BillPaymentRequestFragment extends CommonFragment {
         catch (Exception ex){
             ex.printStackTrace();
         }
+        if (loaiDeNghiItem.getiTEMCODE().equals("003")){
+            billPaymentHeader.setaDVNCODE(billPaymentRequestFragmentBinding.txtSoPhieuTamUng.getText().toString().trim());
+            try {
+                billPaymentHeader.setrCPTCRAM(Double.parseDouble(billPaymentRequestFragmentBinding.edtSoTienTamUng.getText().toString().replace(".","").trim()));
+            }
+            catch (Exception ex){
+                ex.printStackTrace();
+            }
+        }
         List<BillPaymentDetail> billPaymentDetailList = new ArrayList<>();
         for (int i =0;i<listDetail.size();i++){
             TicketBillPaymentDetail ticketBillPaymentDetail = listDetail.get(i);
@@ -765,6 +800,15 @@ public class BillPaymentRequestFragment extends CommonFragment {
         }
         catch (Exception ex){
             ex.printStackTrace();
+        }
+        if (loaiDeNghiItem.getiTEMCODE().equals("003")){
+            billPaymentHeader.setaDVNCODE(billPaymentRequestFragmentBinding.txtSoPhieuTamUng.getText().toString().trim());
+            try {
+                billPaymentHeader.setrCPTCRAM(Double.parseDouble(billPaymentRequestFragmentBinding.edtSoTienTamUng.getText().toString().replace(".","").trim()));
+            }
+            catch (Exception ex){
+                ex.printStackTrace();
+            }
         }
         List<BillPaymentDetail> billPaymentDetailList = new ArrayList<>();
         for (int i =0;i<listDetail.size();i++){
@@ -1073,85 +1117,98 @@ public class BillPaymentRequestFragment extends CommonFragment {
                     mViewModel.getLiveDataBillPaymentResponse().observe(getViewLifecycleOwner(), new Observer<BillPaymentApiResponse>() {
                         @Override
                         public void onChanged(BillPaymentApiResponse billPaymentApiResponse) {
-                            BillPaymentHeader billPaymentHeader = billPaymentApiResponse.getBillPaymentHeaders().get(0);
-                            accessRole=checkAccessRole(billPaymentHeader.getsTTESIGN(),billPaymentHeader.getaCCERGHT(),
-                                    billPaymentRequestFragmentBinding.constraintLayout8,
-                                    billPaymentRequestFragmentBinding.constraintLayout9,
-                                    billPaymentRequestFragmentBinding.llDelete,
-                                    billPaymentRequestFragmentBinding.imgAdd);
-                            detailTicketDetailAdapter.setEditable(accessRole.isEdit());
-                            billPaymentRequestFragmentBinding.setIsEditable(accessRole.isEdit());
-                            
-                            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_progress_switch_shift,
-                                    new ReviewProcessFragment(signatureItemApiResponse.getDcmnCode(),signatureItemApiResponse.getKeyCode()))
-                                    .commit();
-                            billPaymentRequestFragmentBinding.edtSoTienChi.setText(dfnd.format((int) billPaymentHeader.getsUMCRAM()));
-                            billPaymentRequestFragmentBinding.edtSoTiendeNghiChi.setText(dfnd.format((int) billPaymentHeader.getsGSTCRAM()));
-                            billPaymentRequestFragmentBinding.edtInfo.setText(billPaymentHeader.getmEXLNNTE());
-                            
-                            billPaymentRequestFragmentBinding.txtTenDoiTuongNhan.setText(billPaymentHeader.getoBJCNAME());
-                            doiTuongNhanItemSelected = new DoiTuongNhanItem();
-                            doiTuongNhanItemSelected.setiTEMNAME(billPaymentHeader.getoBJCNAME());
-                            doiTuongNhanItemSelected.setiTEMCODE(billPaymentHeader.getoBJCCODE());
-                            
-                            for (int i=0;i<loaiDeNghiItemList.size();i++){
-                                LoaiDeNghiItem loaiDeNghiItem = loaiDeNghiItemList.get(i);
-                                if (loaiDeNghiItem.getiTEMCODE().equals(billPaymentHeader.getdCMNSBCD())){
-                                    billPaymentRequestFragmentBinding.spinerLoaiDeNghi.setSelection(i);
-                                    break;
+                            try {
+                                BillPaymentHeader billPaymentHeader = billPaymentApiResponse.getBillPaymentHeaders().get(0);
+                                accessRole=checkAccessRole(billPaymentHeader.getsTTESIGN(),billPaymentHeader.getaCCERGHT(),
+                                        billPaymentRequestFragmentBinding.constraintLayout8,
+                                        billPaymentRequestFragmentBinding.constraintLayout9,
+                                        billPaymentRequestFragmentBinding.llDelete,
+                                        billPaymentRequestFragmentBinding.imgAdd);
+                                detailTicketDetailAdapter.setEditable(accessRole.isEdit());
+                                billPaymentRequestFragmentBinding.setIsEditable(accessRole.isEdit());
+    
+                                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_progress_switch_shift,
+                                        new ReviewProcessFragment(signatureItemApiResponse.getDcmnCode(),signatureItemApiResponse.getKeyCode()))
+                                        .commit();
+                                billPaymentRequestFragmentBinding.edtSoTienChi.setText(dfnd.format((int) billPaymentHeader.getsUMCRAM()));
+                                billPaymentRequestFragmentBinding.edtSoTiendeNghiChi.setText(dfnd.format((int) billPaymentHeader.getsGSTCRAM()));
+                                billPaymentRequestFragmentBinding.edtInfo.setText(billPaymentHeader.getmEXLNNTE());
+    
+                                billPaymentRequestFragmentBinding.txtTenDoiTuongNhan.setText(billPaymentHeader.getoBJCNAME());
+                                doiTuongNhanItemSelected = new DoiTuongNhanItem();
+                                doiTuongNhanItemSelected.setiTEMNAME(billPaymentHeader.getoBJCNAME());
+                                doiTuongNhanItemSelected.setiTEMCODE(billPaymentHeader.getoBJCCODE());
+    
+                                billPaymentRequestFragmentBinding.txtSoPhieuTamUng.setText(billPaymentHeader.getaDVNCODE());
+                                try {
+                                    billPaymentRequestFragmentBinding.edtSoTienTamUng.setText(String.valueOf((int) billPaymentHeader.getrCPTCRAM()));
                                 }
-                            }
-                            for (int i=0;i<loaiChiTieuItemList.size();i++){
-                                LoaiDeNghiItem loaiDeNghiItem = loaiDeNghiItemList.get(i);
-                                if (loaiDeNghiItem.getiTEMCODE().equals(billPaymentHeader.getsCTNCODE())){
-                                    billPaymentRequestFragmentBinding.spinerLoaiChiTieu.setSelection(i);
-                                    break;
+                                catch (Exception ex){
+                                    ex.printStackTrace();
                                 }
-                            }
-                            for (int i = 0;i<loaiDoiTuongList.size();i++){
-                                LoaiDoiTuongLienQuanItem loaiDoiTuongNhanItem = loaiDoiTuongList.get(i);
-                                if (loaiDoiTuongNhanItem.getiTEMCODE().equals(String.valueOf(billPaymentHeader.getoBJCTYPE()))){
-                                    billPaymentRequestFragmentBinding.spinerLoaiDoiTuongNhan.setSelection(i);
-                                    break;
+    
+                                for (int i=0;i<loaiDeNghiItemList.size();i++){
+                                    LoaiDeNghiItem loaiDeNghiItem = loaiDeNghiItemList.get(i);
+                                    if (loaiDeNghiItem.getiTEMCODE().equals(billPaymentHeader.getdCMNSBCD())){
+                                        billPaymentRequestFragmentBinding.spinerLoaiDeNghi.setSelection(i);
+                                        break;
+                                    }
                                 }
-                            }
-                            for (int i = 0 ;i< currencyItemList.size();i++){
-                                CurrencyItem currencyItem = currencyItemList.get(i);
-                                if (currencyItem.getiTEMCODE().equals(billPaymentHeader.getcUOMCODE())){
-                                    billPaymentRequestFragmentBinding.spinerDonViTienTe.setSelection(i);
-                                    break;
+                                for (int i=0;i<loaiChiTieuItemList.size();i++){
+                                    LoaiDeNghiItem loaiDeNghiItem = loaiDeNghiItemList.get(i);
+                                    if (loaiDeNghiItem.getiTEMCODE().equals(billPaymentHeader.getsCTNCODE())){
+                                        billPaymentRequestFragmentBinding.spinerLoaiChiTieu.setSelection(i);
+                                        break;
+                                    }
                                 }
-                            }
-                            if (billPaymentHeader.getcUOMCODE().equals("VND")){
-                                billPaymentRequestFragmentBinding.edtTiGia.setText("1");
-                            }
-                            else {
-                                billPaymentRequestFragmentBinding.edtTiGia.setText(String.valueOf((int) billPaymentHeader.getcUOMRATE()));
-                            }
-                            
-                            billPaymentRequestFragmentBinding.edtNgayTamUng.setText(Util.formatDate(billPaymentHeader.getaDVNDATE()));
-                            
-                            if (billPaymentHeader.getdETAIL()!=null){
-                                if (billPaymentHeader.getdETAIL().size()>0){
-                                   if (billPaymentHeader.getdETAIL().get(0).getmEXLNNTED()!=null){
-                                       for (BillPaymentDetail billPaymentDetail : billPaymentHeader.getdETAIL()){
-                                           TicketBillPaymentDetail ticket = new TicketBillPaymentDetail();
-                                           ticket.setContent(billPaymentDetail.getmEXLNNTED());
-                                           ticket.setNumberPrice(billPaymentDetail.getmNEYCRAM());
-                                           ticket.setBillCode(billPaymentDetail.getrFRNCODE());
-                                           ticket.setDateBill(Util.convertStringToDate(Util.formatDate(billPaymentDetail.getrFRNDATE()),"dd-MM-yyyy"));
-        
-                                           listDetail.add(ticket);
-                                           detailTicketDetailAdapter.notifyDataSetChanged();
-                                       }
-                                   }
+                                for (int i = 0;i<loaiDoiTuongList.size();i++){
+                                    LoaiDoiTuongLienQuanItem loaiDoiTuongNhanItem = loaiDoiTuongList.get(i);
+                                    if (loaiDoiTuongNhanItem.getiTEMCODE().equals(String.valueOf(billPaymentHeader.getoBJCTYPE()))){
+                                        billPaymentRequestFragmentBinding.spinerLoaiDoiTuongNhan.setSelection(i);
+                                        break;
+                                    }
                                 }
+                                for (int i = 0 ;i< currencyItemList.size();i++){
+                                    CurrencyItem currencyItem = currencyItemList.get(i);
+                                    if (currencyItem.getiTEMCODE().equals(billPaymentHeader.getcUOMCODE())){
+                                        billPaymentRequestFragmentBinding.spinerDonViTienTe.setSelection(i);
+                                        break;
+                                    }
+                                }
+                                if (billPaymentHeader.getcUOMCODE().equals("VND")){
+                                    billPaymentRequestFragmentBinding.edtTiGia.setText("1");
+                                }
+                                else {
+                                    billPaymentRequestFragmentBinding.edtTiGia.setText(String.valueOf((int) billPaymentHeader.getcUOMRATE()));
+                                }
+    
+                                billPaymentRequestFragmentBinding.edtNgayTamUng.setText(Util.formatDate(billPaymentHeader.getaDVNDATE()));
+    
+                                if (billPaymentHeader.getdETAIL()!=null){
+                                    if (billPaymentHeader.getdETAIL().size()>0){
+                                        if (billPaymentHeader.getdETAIL().get(0).getmEXLNNTED()!=null){
+                                            for (BillPaymentDetail billPaymentDetail : billPaymentHeader.getdETAIL()){
+                                                TicketBillPaymentDetail ticket = new TicketBillPaymentDetail();
+                                                ticket.setContent(billPaymentDetail.getmEXLNNTED());
+                                                ticket.setNumberPrice(billPaymentDetail.getmNEYCRAM());
+                                                ticket.setBillCode(billPaymentDetail.getrFRNCODE());
+                                                ticket.setDateBill(Util.convertStringToDate(Util.formatDate(billPaymentDetail.getrFRNDATE()),"dd-MM-yyyy"));
+                    
+                                                listDetail.add(ticket);
+                                                detailTicketDetailAdapter.notifyDataSetChanged();
+                                            }
+                                        }
+                                    }
+                                }
+                                if (billPaymentHeader.getsTTESIGN() == 0) {
+                                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_file_include, new FileFragment(billPaymentHeader.getdCMNFILE())).commit();
+                                }
+                                loadingNonMessDialog.dismiss();
+                                setAminHeader();
                             }
-                            if (billPaymentHeader.getsTTESIGN() == 0) {
-                                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_file_include, new FileFragment(billPaymentHeader.getdCMNFILE())).commit();
+                            catch (Exception ex){
+                                showOutTOKEN();
                             }
-                            loadingNonMessDialog.dismiss();
-                            setAminHeader();
                         }
                     });
                 }
@@ -1197,7 +1254,14 @@ public class BillPaymentRequestFragment extends CommonFragment {
         if (requestCode ==CODE_SELECT_SO_PHIEU_TAM_UNG && resultCode == Activity.RESULT_OK){
             PhieuTamUngItem phieuTamUngItem = (PhieuTamUngItem) data.getSerializableExtra(Constant.NAME_PUT_PHIEU_TAM_UNG_NEU_CO);
             if (phieuTamUngItem!=null){
-                billPaymentRequestFragmentBinding.txtSoPhieuTamUng.setText(phieuTamUngItem.getiTEMNAME());
+                try {
+                    String mainCodeAndVaue[] = phieuTamUngItem.getiTEMNAME().split("-");
+                    billPaymentRequestFragmentBinding.edtSoTienTamUng.setText(mainCodeAndVaue[1].trim().replace(",",""));
+                    billPaymentRequestFragmentBinding.txtSoPhieuTamUng.setText(mainCodeAndVaue[0].trim());
+                }
+                catch (Exception ex){
+                
+                }
             }
         }
     }

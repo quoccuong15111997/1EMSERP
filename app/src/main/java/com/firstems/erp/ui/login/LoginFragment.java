@@ -175,6 +175,7 @@ public class LoginFragment extends CommonFragment {
     
             @Override
             public void onServerFail() {
+                loadingDialog.dismiss();
                 showOutTOKEN();
             }
         });
@@ -277,7 +278,6 @@ public class LoginFragment extends CommonFragment {
             FirebaseInstanceId.getInstance().getInstanceId()
                     .addOnCompleteListener(task -> {
                         if (!task.isSuccessful()) {
-                            
                             return;
                         }
                         
@@ -288,5 +288,6 @@ public class LoginFragment extends CommonFragment {
                         }
                     });
         }
+        System.out.println("FCM "+ SharedPreferencesManager.getFCMToken());
     }
 }

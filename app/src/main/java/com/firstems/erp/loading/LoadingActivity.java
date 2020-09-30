@@ -45,7 +45,6 @@ public class LoadingActivity extends CommonActivity {
         addEvents();
         start();
     }
-    
     private void start() {
         new android.os.Handler().postDelayed(
                 new Runnable() {
@@ -59,10 +58,16 @@ public class LoadingActivity extends CommonActivity {
     private void initControl() {
         if (SharedPreferencesManager.getInstance().isFirstSetup()){
             progressBar.setVisibility(View.INVISIBLE);
-            Intent intent= new Intent(LoadingActivity.this, ConfigActivity.class);
-            startActivity(intent);
-            setOveridePendingTransisi(LoadingActivity.this);
-            finish();
+            new android.os.Handler().postDelayed(
+                    new Runnable() {
+                        public void run() {
+                            Intent intent= new Intent(LoadingActivity.this, ConfigActivity.class);
+                            startActivity(intent);
+                            setOveridePendingTransisi(LoadingActivity.this);
+                            finish();
+                        }
+                    },
+                    100);
         }
         else {
             if (SharedPreferencesManager.getInstance().isSyslabelBaseLoad()){
@@ -95,11 +100,18 @@ public class LoadingActivity extends CommonActivity {
                         doLoginByLocation(SharedPreferencesManager.getInstance().getPrefCompcode(),SharedPreferencesManager.getInstance().getPrefLctcode());
                     }
                     else {
-                        Intent intent= new Intent(LoadingActivity.this, SelectCompanyActivity.class);
-                        intent.putExtra(Constant.NAME_PUT_LIST_COMPANY, (Serializable) loginApiResponse.getCompanyList());
-                        startActivity(intent);
-                        setOveridePendingTransisi(LoadingActivity.this);
-                        finish();
+                        progressBar.setVisibility(View.INVISIBLE);
+                        new android.os.Handler().postDelayed(
+                                new Runnable() {
+                                    public void run() {
+                                        Intent intent= new Intent(LoadingActivity.this, SelectCompanyActivity.class);
+                                        intent.putExtra(Constant.NAME_PUT_LIST_COMPANY, (Serializable) loginApiResponse.getCompanyList());
+                                        startActivity(intent);
+                                        setOveridePendingTransisi(LoadingActivity.this);
+                                        finish();
+                                    }
+                                },
+                                100);
                     }
                 }
             
@@ -115,10 +127,17 @@ public class LoadingActivity extends CommonActivity {
             });
         }
         else {
-            Intent intent= new Intent(LoadingActivity.this, LoginActivity.class);
-            startActivity(intent);
-            setOveridePendingTransisi(LoadingActivity.this);
-            finish();
+            progressBar.setVisibility(View.INVISIBLE);
+            new android.os.Handler().postDelayed(
+                    new Runnable() {
+                        public void run() {
+                            Intent intent= new Intent(LoadingActivity.this, LoginActivity.class);
+                            startActivity(intent);
+                            setOveridePendingTransisi(LoadingActivity.this);
+                            finish();
+                        }
+                    },
+                    100);
         }
     }
     
@@ -199,10 +218,16 @@ public class LoadingActivity extends CommonActivity {
                         @Override
                         public void onSaveComplete() {
                             progressBar.setVisibility(View.INVISIBLE);
-                            Intent intent= new Intent(LoadingActivity.this, MainActivity.class);
-                            startActivity(intent);
-                            setOveridePendingTransisi(LoadingActivity.this);
-                            finish();
+                            new android.os.Handler().postDelayed(
+                                    new Runnable() {
+                                        public void run() {
+                                            Intent intent= new Intent(LoadingActivity.this, MainActivity.class);
+                                            startActivity(intent);
+                                            setOveridePendingTransisi(LoadingActivity.this);
+                                            finish();
+                                        }
+                                    },
+                                    100);
                         }
                         
                         @Override
@@ -239,5 +264,6 @@ public class LoadingActivity extends CommonActivity {
                         }
                     });
         }
+        System.out.println("FCM: "+SharedPreferencesManager.getFCMToken());
     }
 }

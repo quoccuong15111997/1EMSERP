@@ -11,9 +11,6 @@
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
-
-    <uses-feature android:name="android.hardware.camera" />
-
     <application
         android:name=".common.Application"
         android:allowBackup="true"
@@ -27,7 +24,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.signature.billpaymentrequest.sophieutamung.SoPhieuTamUngActivity"></activity>
+        <activity android:name=".loading.FlashActivity"></activity>
+        <activity android:name=".ui.signature.billpaymentrequest.sophieutamung.SoPhieuTamUngActivity" />
         <activity
             android:name=".ui.more.password.ChangePasswordActivity"
             android:windowSoftInputMode="stateVisible|adjustResize" />
@@ -35,9 +33,6 @@
         <activity android:name=".ui.document.detail.DocumnetDetailActivity" />
         <activity android:name=".ui.document.list.DocumentListActivity" />
         <activity android:name=".ui.signature.defaultsignature.DefaultSignatureActivity" />
-        <activity
-            android:name=".ui.shared.camera.CameraUIKitActivity"
-            android:hardwareAccelerated="true" />
         <activity android:name=".ui.shared.loaidoituongnhan.DoiTuongNhanActivity" />
         <activity android:name=".ui.shared.image.ImageViewActivity" />
         <activity android:name=".ui.shared.viewer.PDFViewerActivity" />
@@ -45,7 +40,7 @@
         <activity android:name=".ui.shared.national.NationalActivity" />
         <activity android:name=".WebViewActivity" />
         <activity android:name=".ui.shared.relatedfields.RelatedFieldsActivity" />
-        <activity android:name=".TestActivity"></activity>
+        <activity android:name=".TestActivity" />
         <activity android:name=".ui.shared.department.DepartmentActivity" />
         <activity android:name=".ui.shared.employee.EmployeeActivity" />
         <activity android:name=".ui.company.SelectCompanyActivity" />
@@ -106,7 +101,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".loading.LoadingActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -136,6 +132,14 @@
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_launcher" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+
     </application>
 
 </manifest>

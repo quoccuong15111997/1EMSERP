@@ -46,7 +46,7 @@ public class DocumentAdapter extends RecyclerView.Adapter<DocumentAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         DocumentItemApiResponse documentItemApiResponse = list.get(position);
         holder.txtName.setText(documentItemApiResponse.getcNTNBRIF());
-        holder.txtStt.setText(String.valueOf(position)+".");
+        holder.txtStt.setText(String.valueOf(position+1)+".");
         holder.txtName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

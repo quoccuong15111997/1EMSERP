@@ -3,6 +3,7 @@ package com.firstems.erp;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -21,6 +22,7 @@ import com.firstems.erp.common.CommonActivity;
 import com.firstems.erp.data.DataStructureProvider;
 import com.firstems.erp.database.helper.DatabaseHelper;
 import com.firstems.erp.database.model.RunCodeData;
+import com.firstems.erp.helper.toast.ToastHelper;
 import com.firstems.erp.sharedpreferences.SharedPreferencesManager;
 import com.firstems.erp.system.SysConfig;
 import com.firstems.erp.ui.approved.ApprovedFragment;
@@ -41,6 +43,7 @@ public class MainActivity extends CommonActivity implements BackToHomeCallback, 
     private BottomNavigationView navView;
     private FragmentManager fragmentManager;
     private Fragment fragmentSignature, fragmentApproved, fragmentDocument, fragmentReport, fragmentAccount, fragmentDashboard, fragmentMore;
+    private int flagBackPress = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -213,6 +216,17 @@ public class MainActivity extends CommonActivity implements BackToHomeCallback, 
         }
         loadFragment(fragmentDashboard);
         navView.getMenu().getItem(0).setChecked(true);
+    }
+    
+    @Override
+    public void onBackPressed() {
+        if (flagBackPress == 0){
+            ToastHelper.getInstance().toastIconInfo("Nhấn back lần nữa để thoát", Toast.LENGTH_SHORT);
+            flagBackPress+= 1;
+        }
+        else if (flagBackPress == 1){
+            super.onBackPressed();
+        }
     }
     
     @Override
