@@ -207,14 +207,6 @@ attr buttonStyle
 attr buttonStyleSmall
 attr buttonTint
 attr buttonTintMode
-attr camera_aspectRatio
-attr camera_facing
-attr camera_flash
-attr camera_focus
-attr camera_imageJpegQuality
-attr camera_imageMegaPixels
-attr camera_permissions
-attr camera_zoomFactor
 attr cardBackgroundColor
 attr cardCornerRadius
 attr cardElevation
@@ -2857,7 +2849,6 @@ id action_mode_close_button
 id action_select
 id action_text
 id actions
-id activityMain
 id activity_chooser_view_content
 id add
 id adjust_height
@@ -2875,12 +2866,10 @@ id appbar_layout
 id arc
 id asConfigured
 id async
-id audio
 id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
-id back
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -2915,7 +2904,6 @@ id button
 id button2
 id buttonPanel
 id calendarView
-id camera
 id cancel_action
 id cancel_button
 id cardSystemSetting
@@ -2996,7 +2984,6 @@ id constraintLayoutRevenue
 id container
 id content
 id contentPanel
-id continuous
 id contrainsSearch
 id contraintDate
 id coordinator
@@ -3084,9 +3071,6 @@ id expand_activities_button
 id expandabler
 id expanded_menu
 id fabFilter
-id facingBackButton
-id facingFrontButton
-id facingText
 id fade
 id file_iv
 id file_name_tv
@@ -3098,14 +3082,10 @@ id fill_vertical
 id filled
 id fitToContents
 id fixed
-id flashOffButton
-id flashOnButton
-id flashText
 id flex_end
 id flex_start
 id flip
 id floating
-id floatingShot
 id folder_count
 id folder_title
 id forever
@@ -3135,7 +3115,6 @@ id frame_select_date
 id frame_so_phieu_tam_ung
 id frame_tab_approved
 id frame_table
-id front
 id ghost_view
 id ghost_view_holder
 id glide_custom_view_target_tag
@@ -3256,7 +3235,6 @@ id include27
 id include3
 id include4
 id include5
-id include6
 id include7
 id include8
 id include9
@@ -3387,7 +3365,6 @@ id llThisMonth
 id llThisWeek
 id llToi
 id llYesterday
-id location
 id lyt_action
 id lyt_content
 id lyt_parent
@@ -3521,13 +3498,9 @@ id pbLoadingProfile
 id pdfView
 id peekHeight
 id percent
-id permissionsButton
-id photoButton
-id photoSizeText
 id pin
 id position
 id postLayout
-id previewSizeText
 id progressBar
 id progress_bar
 id progress_circular
@@ -3660,7 +3633,6 @@ id staticLayout
 id staticPostLayout
 id status_bar_latest_event_content
 id stop
-id storage
 id stretch
 id submenuarrow
 id submit_area
@@ -3781,7 +3753,6 @@ id top
 id topBarChart
 id topPanel
 id top_to_bottom
-id torch
 id touch_outside
 id transformationLayout
 id transitionToEnd
@@ -4079,7 +4050,6 @@ layout activity_bill_payment_request
 layout activity_business_registration
 layout activity_business_registration_info
 layout activity_camera_capture
-layout activity_camera_u_i_kit
 layout activity_change_password
 layout activity_chart_view
 layout activity_config
@@ -4127,7 +4097,6 @@ layout bill_payment_fragment
 layout bill_payment_request_fragment
 layout business_registration_fragment
 layout business_registration_info_fragment
-layout camera_u_i_kit_fragment
 layout chart_view_fragment
 layout config_fragment
 layout custom_dialog
@@ -5451,7 +5420,6 @@ styleable BottomAppBar backgroundTint elevation fabAlignmentMode fabAnimationMod
 styleable BottomNavigationView backgroundTint elevation itemBackground itemHorizontalTranslationEnabled itemIconSize itemIconTint itemRippleColor itemTextAppearanceActive itemTextAppearanceInactive itemTextColor labelVisibilityMode menu
 styleable BottomSheetBehavior_Layout android_elevation backgroundTint behavior_draggable behavior_expandedOffset behavior_fitToContents behavior_halfExpandedRatio behavior_hideable behavior_peekHeight behavior_saveFlags behavior_skipCollapsed gestureInsetBottomIgnored shapeAppearance shapeAppearanceOverlay
 styleable ButtonBarLayout allowStacking
-styleable CameraKitView android_adjustViewBounds camera_aspectRatio camera_facing camera_flash camera_focus camera_imageJpegQuality camera_imageMegaPixels camera_permissions camera_zoomFactor
 styleable CardView android_minWidth android_minHeight cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
 styleable CheckBoxPreference android_summaryOn android_summaryOff android_disableDependentsState disableDependentsState summaryOff summaryOn
 styleable Chip android_textAppearance android_textSize android_textColor android_ellipsize android_maxWidth android_text android_checkable checkedIcon checkedIconEnabled checkedIconTint checkedIconVisible chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipIconTint chipIconVisible chipMinHeight chipMinTouchTargetSize chipStartPadding chipStrokeColor chipStrokeWidth chipSurfaceColor closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint closeIconVisible ensureMinTouchTargetSize hideMotionSpec iconEndPadding iconStartPadding rippleColor shapeAppearance shapeAppearanceOverlay showMotionSpec textEndPadding textStartPadding

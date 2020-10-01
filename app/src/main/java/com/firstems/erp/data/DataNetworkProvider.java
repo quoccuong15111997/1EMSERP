@@ -78,6 +78,7 @@ public class DataNetworkProvider {
     }
     // Get list signature
     public void getListSignatureApi(FilterModel filterModel ,DataApiCallback dataApiCallback) {
+        System.out.println("Load API List Trình ký :"+System.currentTimeMillis());
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         int para = (filterModel.isWaitsignature() ? 1 : 0 ) +(filterModel.isWaitApproved() ? 2 : 0) +(filterModel.isDone() ? 4 : 0);
         System.out.println("para: "+para);

@@ -309,29 +309,26 @@ public class ApproveDetailFragment extends CommonFragment {
                 mutableLiveData.observe(getViewLifecycleOwner(), new Observer<ApproveInfoApiResponse>() {
                     @Override
                     public void onChanged(ApproveInfoApiResponse approveInfoApiResponse) {
-                        ApproveInfoItemApiResponse item = approveInfoApiResponse.getResponseList().get(0);
-                        
-                        checkPermision(item);
-                        
-                        binding.txtUserName.setText(item.getEmpSgName());
-                        binding.txtRoom.setText(item.getDpsgName());
-                        binding.txtDate.setText(Util.formatDate(item.getMainDate()));
-                        binding.txtMoney.setText(Util.convertToCurrencyVN(item.getCurrentValue()));
-                        binding.txtTitleMoney.setText(item.getLabelName());
-                        binding.txtContent.setText(item.getNoteSgst());
-                        txtTitle.setText(item.getDcmnName()+" - "+item.getMainCode());
-                        
-                        getActivity().getSupportFragmentManager()
-                                .beginTransaction()
-                                .replace(R.id.frame_progress, new ReviewProcessFragment(item.getDcmnCode(),item.getKeyCode()))
-                                .commit();
-                        
                         binding.include9.postDelayed(new Runnable() {
                             @Override
                             public void run() {
                                 loadingNonMessDialog.dismiss();
+                                ApproveInfoItemApiResponse item = approveInfoApiResponse.getResponseList().get(0);
+                                checkPermision(item);
+                                binding.txtUserName.setText(item.getEmpSgName());
+                                binding.txtRoom.setText(item.getDpsgName());
+                                binding.txtDate.setText(Util.formatDate(item.getMainDate()));
+                                binding.txtMoney.setText(Util.convertToCurrencyVN(item.getCurrentValue()));
+                                binding.txtTitleMoney.setText(item.getLabelName());
+                                binding.txtContent.setText(item.getNoteSgst());
+                                txtTitle.setText(item.getDcmnName()+" - "+item.getMainCode());
+    
+                                getActivity().getSupportFragmentManager()
+                                        .beginTransaction()
+                                        .replace(R.id.frame_progress, new ReviewProcessFragment(item.getDcmnCode(),item.getKeyCode()))
+                                        .commit();
                             }
-                        },700);
+                        },1000);
                     }
                 });
             }

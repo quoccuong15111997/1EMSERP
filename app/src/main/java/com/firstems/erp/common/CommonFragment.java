@@ -388,17 +388,6 @@ public abstract class CommonFragment extends Fragment {
         if (!isNetworkAvailable()){
             showCustomDialog();
         }
-        new android.os.Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (loadingNonMessDialog!=null){
-                    if (loadingNonMessDialog.isShowing()){
-                        loadingNonMessDialog.dismiss();
-                        showOutTOKEN();
-                    }
-                }
-            }
-        }, 5000);
     }
     private void showCustomDialog() {
         final Dialog dialog = new Dialog(getContext());
@@ -441,20 +430,25 @@ public abstract class CommonFragment extends Fragment {
         loadingDialog.show();
     }
     protected void showLoadingNonMessDialog(){
-        loadingNonMessDialog= new Dialog(getContext());
-        loadingNonMessDialog.setContentView(R.layout.item_loading_dialog_non__message);
-        loadingNonMessDialog.setCancelable(true);
-        loadingNonMessDialog.getWindow().getAttributes().windowAnimations = R.style.PauseDialogAnimation;
-        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
-        lp.copyFrom(loadingNonMessDialog.getWindow().getAttributes());
-        lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
-        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
-        
-        loadingNonMessDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-        
-        loadingNonMessDialog.setCancelable(false);
-        loadingNonMessDialog.getWindow().setAttributes(lp);
-        loadingNonMessDialog.show();
+        if (loadingNonMessDialog== null){
+            loadingNonMessDialog= new Dialog(getContext());
+            loadingNonMessDialog.setContentView(R.layout.item_loading_dialog_non__message);
+            loadingNonMessDialog.setCancelable(true);
+            loadingNonMessDialog.getWindow().getAttributes().windowAnimations = R.style.PauseDialogAnimation;
+            WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+            lp.copyFrom(loadingNonMessDialog.getWindow().getAttributes());
+            lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
+            lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+    
+            loadingNonMessDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+    
+            loadingNonMessDialog.setCancelable(false);
+            loadingNonMessDialog.getWindow().setAttributes(lp);
+            loadingNonMessDialog.show();
+        }
+        else {
+            loadingNonMessDialog.show();
+        }
     }
     protected void setAnimViewVisible(@NotNull final View lParentContent, @NotNull final View vTarget, long duration) {
         Intrinsics.checkParameterIsNotNull(lParentContent, "lParentContent");

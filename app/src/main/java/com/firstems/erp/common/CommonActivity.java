@@ -21,6 +21,7 @@ import androidx.transition.TransitionManager;
 import com.firstems.erp.R;
 import com.firstems.erp.loading.LoadingActivity;
 import com.firstems.erp.sharedpreferences.SharedPreferencesManager;
+import com.firstems.erp.ui.config.ConfigFragment;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -113,6 +114,48 @@ public abstract class CommonActivity extends AppCompatActivity {
         
         AppCompatButton appCompatButton = dialog.findViewById(R.id.bt_close);
         appCompatButton.setText(SharedPreferencesManager.getSystemLabel(4));
+        
+        appCompatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                Intent intent = new Intent(CommonActivity.this, LoadingActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        
+        dialog.show();
+        dialog.getWindow().setAttributes(lp);
+    }
+    protected void showServerIsDead() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // before
+        dialog.setContentView(R.layout.dialog_server_error);
+        dialog.setCancelable(false);
+        
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialog.getWindow().getAttributes());
+        lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        
+        TextView txtContent = dialog.findViewById(R.id.content);
+        
+        AppCompatButton appCompatButton = dialog.findViewById(R.id.bt_close);
+        appCompatButton.setText("Thử lại");
+        AppCompatButton appCompatButtonSetting = dialog.findViewById(R.id.bt_setting);
+        appCompatButtonSetting.setText("Cài đặt");
+        
+        appCompatButtonSetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CommonActivity.this, ConfigFragment.class);
+                startActivity(intent);
+                if (dialog!=null){
+                    dialog.dismiss();
+                }
+            }
+        });
         
         appCompatButton.setOnClickListener(new View.OnClickListener() {
             @Override

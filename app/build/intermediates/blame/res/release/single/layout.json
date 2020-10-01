@@ -76,10 +76,6 @@
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\business_registration_fragment.xml"
     },
     {
-        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\camera_u_i_kit_fragment.xml",
-        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\camera_u_i_kit_fragment.xml"
-    },
-    {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\sell_fragment.xml",
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\sell_fragment.xml"
     },

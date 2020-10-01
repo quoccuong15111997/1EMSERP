@@ -6891,53 +6891,6 @@
              enough space to lay them out side-by-side. -->
         <attr format="boolean" name="allowStacking"/>
     </declare-styleable>
-    <declare-styleable name="CameraKitView">
-
-        <!-- Should the view handle layout_width or layout_height set as wrap_content. -->
-        <attr name="android:adjustViewBounds"/>
-
-        <!-- Aspect ratio to force the view to measure to. Depends on a adjustViewBounds and
-             having one dimension set as wrap_content. -->
-        <attr format="float" name="camera_aspectRatio"/>
-
-        <!-- Default camera orientation to use. -->
-        <attr format="enum" name="camera_facing">
-            <enum name="back" value="0"/>
-            <enum name="front" value="1"/>
-        </attr>
-
-        <!-- Default camera flash mode to use. -->
-        <attr format="enum" name="camera_flash">
-            <enum name="off" value="0"/>
-            <enum name="on" value="1"/>
-            <enum name="auto" value="2"/>
-            <enum name="torch" value="3"/>
-        </attr>
-
-        <!-- How should the lens continuously focus. -->
-        <attr format="enum" name="camera_focus">
-            <enum name="off" value="0"/>
-            <enum name="auto" value="1"/>
-            <enum name="continuous" value="2"/>
-        </attr>
-
-        <!-- Default zoom. Accepts a float representing the factor to zoom by. -->
-        <attr format="float" name="camera_zoomFactor"/>
-
-        <attr name="camera_permissions">
-            <flag name="none" value="0"/>
-            <flag name="camera" value="1"/>
-            <flag name="audio" value="2"/>
-            <flag name="storage" value="4"/>
-            <flag name="location" value="8"/>
-            <flag name="all" value="15"/>
-        </attr>
-
-        <attr format="float" name="camera_imageMegaPixels"/>
-
-        <attr format="integer" name="camera_imageJpegQuality"/>
-
-    </declare-styleable>
     <declare-styleable name="CardView">
         <!-- Background color for CardView. -->
         <attr format="color" name="cardBackgroundColor"/>

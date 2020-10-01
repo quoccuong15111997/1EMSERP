@@ -38,10 +38,10 @@ public class SignatureGirdDiffViewModel extends ViewModel {
         
         initTilte();
         fakeData();
-        loadDataSignature(new FilterModel(SysConfig.createDateLoadSign().get(0), SysConfig.createDateLoadSign().get(1),
+       /* loadDataSignature(new FilterModel(SysConfig.createDateLoadSign().get(0), SysConfig.createDateLoadSign().get(1),
                 SharedPreferencesManager.getInstance().getWaitSignature(),
                 SharedPreferencesManager.getInstance().getWaitAppreoved(),
-                SharedPreferencesManager.getInstance().getCompleteSignature()));
+                SharedPreferencesManager.getInstance().getCompleteSignature()));*/
     }
     
     public void setServerCheckCallback(ServerCheckCallback serverCheckCallback) {

@@ -19,7 +19,6 @@
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/include9">
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -117,35 +116,35 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:text="09/07/2020"
                         android:textColor="@color/text_color"
                         app:layout_constraintBottom_toBottomOf="@+id/txtTitleDate"
                         app:layout_constraintStart_toEndOf="@+id/txtTitleDate"
-                        app:layout_constraintTop_toTopOf="@+id/txtTitleDate" />
+                        app:layout_constraintTop_toTopOf="@+id/txtTitleDate"
+                        tools:text="09/07/2020" />
 
                     <TextView
                         android:id="@+id/txtRoom"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="16dp"
-                        android:text="VP Giám đốc"
                         android:textColor="@color/text_color"
                         app:layout_constraintBottom_toTopOf="@+id/txtDate"
                         app:layout_constraintEnd_toEndOf="@+id/txtDate"
                         app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/txtDate" />
+                        app:layout_constraintStart_toStartOf="@+id/txtDate"
+                        tools:text="VP Giám đốc" />
 
                     <TextView
                         android:id="@+id/txtUserName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="16dp"
-                        android:text="Nguyễn Quốc Cường"
                         android:textColor="@color/text_color"
                         app:layout_constraintBottom_toTopOf="@+id/txtRoom"
                         app:layout_constraintEnd_toEndOf="@+id/txtRoom"
                         app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/txtRoom" />
+                        app:layout_constraintStart_toStartOf="@+id/txtRoom"
+                        tools:text="Nguyễn Quốc Cường" />
 
                     <TextView
                         android:id="@+id/txtMoney"
@@ -164,12 +163,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:text="Uống Cà Phê"
                         android:textColor="@color/text_color"
                         app:layout_constraintEnd_toEndOf="@+id/txtMoney"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="@+id/txtMoney"
-                        app:layout_constraintTop_toBottomOf="@+id/txtMoney" />
+                        app:layout_constraintTop_toBottomOf="@+id/txtMoney"
+                        tools:text="Uống Cà Phê" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -352,10 +352,6 @@
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable\\ic_baseline_build_24.xml"
     },
     {
-        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_camera_u_i_kit.xml.flat",
-        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\activity_camera_u_i_kit.xml"
-    },
-    {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
     },
@@ -942,10 +938,6 @@
     {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\release\\drawable_btn_rounded_grey_blue.xml.flat",
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable\\btn_rounded_grey_blue.xml"
-    },
-    {
-        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\release\\layout_camera_u_i_kit_fragment.xml.flat",
-        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\camera_u_i_kit_fragment.xml"
     },
     {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\release\\layout_item_signature_diff.xml.flat",

@@ -234,6 +234,7 @@ public class DocumnetListFragment extends CommonFragment {
                 binding.recycleview.post(new Runnable() {
                     @Override
                     public void run() {
+                        loadingNonMessDialog.dismiss();
                         documentAdapter.notifyDataSetChanged();
                         if (listCurrent.size() > 0){
                             binding.recycleview.setVisibility(View.VISIBLE);
@@ -243,7 +244,6 @@ public class DocumnetListFragment extends CommonFragment {
                             binding.llNoItem.setVisibility(View.VISIBLE);
                             binding.recycleview.setVisibility(View.GONE);
                         }
-                        loadingNonMessDialog.dismiss();
                     }
                 });
             }

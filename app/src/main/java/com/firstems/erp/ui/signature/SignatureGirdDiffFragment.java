@@ -3,6 +3,7 @@ package com.firstems.erp.ui.signature;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,6 +70,7 @@ public class SignatureGirdDiffFragment extends CommonFragment {
     private int CODE_OPEN_SIGNATURE = 1211;
     private FilterModel filterModel;
     private List<SignatureModel> modelList;
+    private int flagLoad  = 0;
     
     public SignatureGirdDiffFragment(BackToHomeCallback backToHomeCallback) {
         this.backToHomeCallback = backToHomeCallback;
@@ -82,7 +84,6 @@ public class SignatureGirdDiffFragment extends CommonFragment {
         view = signatureFragmentBinding.getRoot();
         initProgressDialog(SharedPreferencesManager.getSystemLabel(83),SharedPreferencesManager.getSystemLabel(63));
         // progressdialog.show();
-        showLoadingNonMessDialog();
         addControls();
         addEvents();
         return view;
@@ -194,7 +195,7 @@ public class SignatureGirdDiffFragment extends CommonFragment {
         txtDateEnd = view.findViewById(R.id.txtDateEnd);
         txtDateBegin.setText(dateBegin[0] !=null ? simpleDateFormatDisplay.format(dateBegin[0]) : "");
         txtDateEnd.setText(dateEnd[0] !=null ? simpleDateFormatDisplay.format(dateEnd[0]) : "");
-    
+        
         CheckBox chkChuaTrinhKy,chkChoDuyet,chkHoanTat;
         chkChoDuyet = view.findViewById(R.id.chkChoDuyet);
         chkChuaTrinhKy = view.findViewById(R.id.chkChuaTrinhKy);
@@ -203,24 +204,24 @@ public class SignatureGirdDiffFragment extends CommonFragment {
         chkChuaTrinhKy.setChecked(SharedPreferencesManager.getInstance().getWaitSignature());
         chkChoDuyet.setChecked(SharedPreferencesManager.getInstance().getWaitAppreoved());
         chkHoanTat.setChecked(SharedPreferencesManager.getInstance().getCompleteSignature());
-    
-       Button btnDone = view.findViewById(R.id.btnSort);
-       btnDone.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               FilterModel filterModel = new FilterModel();
-               filterModel.setBeginDate(dateBegin[0]);
-               filterModel.setEndDate(dateEnd[0]);
-               filterModel.setDone(chkHoanTat.isChecked());
-               filterModel.setWaitApproved(chkChoDuyet.isChecked());
-               filterModel.setWaitsignature(chkChuaTrinhKy.isChecked());
-    
-               dialogSignatureCallback.onDoneClick(filterModel);
-               if (dialog!=null){
-                   dialog.dismiss();
-               }
-           }
-       });
+        
+        Button btnDone = view.findViewById(R.id.btnSort);
+        btnDone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FilterModel filterModel = new FilterModel();
+                filterModel.setBeginDate(dateBegin[0]);
+                filterModel.setEndDate(dateEnd[0]);
+                filterModel.setDone(chkHoanTat.isChecked());
+                filterModel.setWaitApproved(chkChoDuyet.isChecked());
+                filterModel.setWaitsignature(chkChuaTrinhKy.isChecked());
+                
+                dialogSignatureCallback.onDoneClick(filterModel);
+                if (dialog!=null){
+                    dialog.dismiss();
+                }
+            }
+        });
         ConstraintLayout layoutFrom, layoutTo;
         layoutFrom = view.findViewById(R.id.layoutDateForm);
         layoutTo = view.findViewById(R.id.layoutDateEnd);
@@ -280,7 +281,6 @@ public class SignatureGirdDiffFragment extends CommonFragment {
                 });
             }
         });
-        
         dialog.show();
     }
     
@@ -341,16 +341,23 @@ public class SignatureGirdDiffFragment extends CommonFragment {
                 SharedPreferencesManager.getInstance().getWaitAppreoved(),
                 SharedPreferencesManager.getInstance().getCompleteSignature());
         //mViewModel.loadDataSignature(filterModel);
-        if (loadingNonMessDialog!=null && !loadingNonMessDialog.isShowing()){
-            showLoadingNonMessDialog();
-        }
+        
+        
+        showLoadingNonMessDialog();
+        
+        
         mViewModel.loadDataSignatureResume(filterModel, new LoadSignatureDataDiffListCallback() {
             @Override
             public void onLoaded(List<SignatureModel> signatureModels) {
-                signatuneListAdapter.setSignatureModelList(signatureModels);
-                if (loadingNonMessDialog.isShowing()){
-                    loadingNonMessDialog.dismiss();
-                }
+                new android.os.Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (loadingNonMessDialog.isShowing()){
+                            loadingNonMessDialog.dismiss();
+                            signatuneListAdapter.setSignatureModelList(signatureModels);
+                        }
+                    }
+                },1000);
             }
         });
     }

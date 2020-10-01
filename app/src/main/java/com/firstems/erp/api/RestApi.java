@@ -305,7 +305,7 @@ public interface RestApi {
     @POST("/Api/data/runApi_Data?run_Code=SYS001.06.008")
     Call<DocumentApiResponse> getListDocument(@Header("TOKEN") String token, @Body JsonObject body);
     
-    @POST("/Api/data/runApi_Data?run_Code=CTL001.01.005")
+    @POST("/Api/data/runApi_Data?run_Code=`CTL001.01.005`")
     Call<LocationApiResponse> getAllLocation(@Header("TOKEN") String token);
     
     // Danh sách nơi phát hành

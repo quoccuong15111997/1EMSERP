@@ -77,7 +77,14 @@ public class TabApprovedFragment extends CommonFragment implements AprrovedDetai
         mViewModel.getDataListApprove().observe(getViewLifecycleOwner(), new Observer<List<ApprovedItemApiResponse>>() {
             @Override
             public void onChanged(List<ApprovedItemApiResponse> approveModels) {
-                approveAdapter.setDate(approveModels);
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        loadingNonMessDialog.dismiss();
+                        approveAdapter.setDate(approveModels);
+                    }
+                },1000);
             }
         });
     }
@@ -95,15 +102,8 @@ public class TabApprovedFragment extends CommonFragment implements AprrovedDetai
     public void onResume() {
         super.onResume();
         if (mViewModel!=null){
-            mViewModel.loadDataApproved();
             showLoadingNonMessDialog();
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    loadingNonMessDialog.dismiss();
-                }
-            },1000);
+            mViewModel.loadDataApproved();
         }
     }
 }

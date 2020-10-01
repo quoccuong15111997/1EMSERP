@@ -25,8 +25,8 @@
 
     <com.tuyenmonkey.mkloader.MKLoader
         android:id="@+id/progressBar"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/margin50"
+        android:layout_height="@dimen/margin50"
         android:layout_below="@+id/imgLogo"
         app:mk_type="TwinFishesSpinner"
         app:mk_color="@color/colorPrimary"

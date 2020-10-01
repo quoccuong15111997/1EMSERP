@@ -20,11 +20,10 @@ public class TabWaitApproveViewModel extends ViewModel {
     private MutableLiveData<List<ApprovedItemApiResponse>> dataListApprove;
     public TabWaitApproveViewModel() {
         dataListApprove= new MutableLiveData<>();
-
-        loadDataApproved();
     }
 
     public void loadDataApproved() {
+        System.out.println("loadDataApproved in TabWaitApprove is call");
         String beginDate = "1990-01-01";
         String endDate = "1990-01-01";
         DataSourceProvider.getInstance().getDataSource(Constant.RUN_CODE_APPROVED_LIST, beginDate+"."+endDate, new LoadApiCallback() {

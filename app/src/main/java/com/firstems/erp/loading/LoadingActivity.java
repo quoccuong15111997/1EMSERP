@@ -80,7 +80,8 @@ public class LoadingActivity extends CommonActivity {
             
                     @Override
                     public void onLoadFail() {
-                        showOutTOKEN();
+                        progressBar.setVisibility(View.INVISIBLE);
+                        showServerIsDead();
                     }
                 });
             }

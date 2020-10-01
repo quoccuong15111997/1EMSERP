@@ -54,10 +54,9 @@ MERGED from [org.fabiomsr:moneytextview:1.1.0] C:\Users\PC\.gradle\caches\transf
 MERGED from [androidx.room:room-runtime:2.0.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\e0566b7153d37b10cf8d8ecd53365817\room-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.gridlayout:gridlayout:1.0.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f6c8a96fb2f2e11664f3eee94c8b08ff\gridlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.facebook.shimmer:shimmer:0.5.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\16c614678cc0cda73b42fa6807acfec1\jetified-shimmer-0.5.0\AndroidManifest.xml:2:1-7:12
-MERGED from [com.camerakit:camerakit:1.0.0-beta3.11] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\094189ff884971efafd90ff9f0024df0\jetified-camerakit-1.0.0-beta3.11\AndroidManifest.xml:2:1-24:12
-MERGED from [com.camerakit:jpegkit:0.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\5943057cb9e5533be9b6941e36bf5412\jetified-jpegkit-0.1.0\AndroidManifest.xml:2:1-10:12
 MERGED from [com.droidninja:filepicker:2.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:2:1-36:12
 MERGED from [com.google.android:flexbox:0.3.2] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\a395c2e3bc899e49a60f4de94321cd5f\jetified-flexbox-0.3.2\AndroidManifest.xml:17:1-27:12
+MERGED from [com.github.ybq:Android-SpinKit:1.4.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\33c1a04dd5457cbf00a5f57e56398571\jetified-Android-SpinKit-1.4.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.stetho:stetho-js-rhino:1.5.1] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1e5c282f1a9696b1ae467603f155c1d3\jetified-stetho-js-rhino-1.5.1\AndroidManifest.xml:2:1-13:12
 MERGED from [com.facebook.stetho:stetho-okhttp3:1.5.1] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\6a6c510448e55c5b7060c17a28debb9f\jetified-stetho-okhttp3-1.5.1\AndroidManifest.xml:2:1-13:12
 MERGED from [com.facebook.stetho:stetho:1.5.1] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\513d74edb8831e38fa34dcee31f4022a\jetified-stetho-1.5.1\AndroidManifest.xml:2:1-13:12
@@ -169,8 +168,6 @@ MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Us
 		ADDED from C:\Users\PC\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:7:22-64
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from C:\Users\PC\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:8:5-81
-MERGED from [com.camerakit:camerakit:1.0.0-beta3.11] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\094189ff884971efafd90ff9f0024df0\jetified-camerakit-1.0.0-beta3.11\AndroidManifest.xml:9:5-81
-MERGED from [com.camerakit:camerakit:1.0.0-beta3.11] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\094189ff884971efafd90ff9f0024df0\jetified-camerakit-1.0.0-beta3.11\AndroidManifest.xml:9:5-81
 MERGED from [com.droidninja:filepicker:2.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:12:5-81
 MERGED from [com.droidninja:filepicker:2.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:12:5-81
 	android:name
@@ -197,8 +194,6 @@ ADDED from C:\Users\PC\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManife
 		ADDED from C:\Users\PC\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:12:22-73
 uses-permission#android.permission.CAMERA
 ADDED from C:\Users\PC\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:13:5-65
-MERGED from [com.camerakit:camerakit:1.0.0-beta3.11] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\094189ff884971efafd90ff9f0024df0\jetified-camerakit-1.0.0-beta3.11\AndroidManifest.xml:7:5-65
-MERGED from [com.camerakit:camerakit:1.0.0-beta3.11] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\094189ff884971efafd90ff9f0024df0\jetified-camerakit-1.0.0-beta3.11\AndroidManifest.xml:7:5-65
 	android:name
 		ADDED from C:\Users\PC\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:13:22-62
 application
@@ -583,14 +578,12 @@ MERGED from [androidx.gridlayout:gridlayout:1.0.0] C:\Users\PC\.gradle\caches\tr
 MERGED from [androidx.gridlayout:gridlayout:1.0.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f6c8a96fb2f2e11664f3eee94c8b08ff\gridlayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.facebook.shimmer:shimmer:0.5.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\16c614678cc0cda73b42fa6807acfec1\jetified-shimmer-0.5.0\AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.shimmer:shimmer:0.5.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\16c614678cc0cda73b42fa6807acfec1\jetified-shimmer-0.5.0\AndroidManifest.xml:5:5-44
-MERGED from [com.camerakit:camerakit:1.0.0-beta3.11] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\094189ff884971efafd90ff9f0024df0\jetified-camerakit-1.0.0-beta3.11\AndroidManifest.xml:5:5-44
-MERGED from [com.camerakit:camerakit:1.0.0-beta3.11] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\094189ff884971efafd90ff9f0024df0\jetified-camerakit-1.0.0-beta3.11\AndroidManifest.xml:5:5-44
-MERGED from [com.camerakit:jpegkit:0.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\5943057cb9e5533be9b6941e36bf5412\jetified-jpegkit-0.1.0\AndroidManifest.xml:6:5-8:41
-MERGED from [com.camerakit:jpegkit:0.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\5943057cb9e5533be9b6941e36bf5412\jetified-jpegkit-0.1.0\AndroidManifest.xml:6:5-8:41
 MERGED from [com.droidninja:filepicker:2.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:8:5-10:41
 MERGED from [com.droidninja:filepicker:2.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:8:5-10:41
 MERGED from [com.google.android:flexbox:0.3.2] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\a395c2e3bc899e49a60f4de94321cd5f\jetified-flexbox-0.3.2\AndroidManifest.xml:23:5-25:41
 MERGED from [com.google.android:flexbox:0.3.2] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\a395c2e3bc899e49a60f4de94321cd5f\jetified-flexbox-0.3.2\AndroidManifest.xml:23:5-25:41
+MERGED from [com.github.ybq:Android-SpinKit:1.4.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\33c1a04dd5457cbf00a5f57e56398571\jetified-Android-SpinKit-1.4.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.ybq:Android-SpinKit:1.4.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\33c1a04dd5457cbf00a5f57e56398571\jetified-Android-SpinKit-1.4.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.stetho:stetho-js-rhino:1.5.1] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1e5c282f1a9696b1ae467603f155c1d3\jetified-stetho-js-rhino-1.5.1\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.stetho:stetho-js-rhino:1.5.1] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1e5c282f1a9696b1ae467603f155c1d3\jetified-stetho-js-rhino-1.5.1\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.stetho:stetho-okhttp3:1.5.1] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\6a6c510448e55c5b7060c17a28debb9f\jetified-stetho-okhttp3-1.5.1\AndroidManifest.xml:7:5-9:41
@@ -789,34 +782,6 @@ ADDED from [com.google.firebase:firebase-messaging:20.2.4] C:\Users\PC\.gradle\c
 		ADDED from [com.google.firebase:firebase-messaging:20.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:41:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-messaging:20.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:40:17-119
-uses-permission#android.permission.RECORD_AUDIO
-ADDED from [com.camerakit:camerakit:1.0.0-beta3.11] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\094189ff884971efafd90ff9f0024df0\jetified-camerakit-1.0.0-beta3.11\AndroidManifest.xml:8:5-71
-	android:name
-		ADDED from [com.camerakit:camerakit:1.0.0-beta3.11] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\094189ff884971efafd90ff9f0024df0\jetified-camerakit-1.0.0-beta3.11\AndroidManifest.xml:8:22-68
-uses-feature#android.hardware.camera
-ADDED from [com.camerakit:camerakit:1.0.0-beta3.11] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\094189ff884971efafd90ff9f0024df0\jetified-camerakit-1.0.0-beta3.11\AndroidManifest.xml:11:5-13:36
-	android:required
-		ADDED from [com.camerakit:camerakit:1.0.0-beta3.11] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\094189ff884971efafd90ff9f0024df0\jetified-camerakit-1.0.0-beta3.11\AndroidManifest.xml:13:9-33
-	android:name
-		ADDED from [com.camerakit:camerakit:1.0.0-beta3.11] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\094189ff884971efafd90ff9f0024df0\jetified-camerakit-1.0.0-beta3.11\AndroidManifest.xml:12:9-47
-uses-feature#android.hardware.camera.front
-ADDED from [com.camerakit:camerakit:1.0.0-beta3.11] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\094189ff884971efafd90ff9f0024df0\jetified-camerakit-1.0.0-beta3.11\AndroidManifest.xml:14:5-16:36
-	android:required
-		ADDED from [com.camerakit:camerakit:1.0.0-beta3.11] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\094189ff884971efafd90ff9f0024df0\jetified-camerakit-1.0.0-beta3.11\AndroidManifest.xml:16:9-33
-	android:name
-		ADDED from [com.camerakit:camerakit:1.0.0-beta3.11] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\094189ff884971efafd90ff9f0024df0\jetified-camerakit-1.0.0-beta3.11\AndroidManifest.xml:15:9-53
-uses-feature#android.hardware.camera.autofocus
-ADDED from [com.camerakit:camerakit:1.0.0-beta3.11] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\094189ff884971efafd90ff9f0024df0\jetified-camerakit-1.0.0-beta3.11\AndroidManifest.xml:17:5-19:36
-	android:required
-		ADDED from [com.camerakit:camerakit:1.0.0-beta3.11] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\094189ff884971efafd90ff9f0024df0\jetified-camerakit-1.0.0-beta3.11\AndroidManifest.xml:19:9-33
-	android:name
-		ADDED from [com.camerakit:camerakit:1.0.0-beta3.11] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\094189ff884971efafd90ff9f0024df0\jetified-camerakit-1.0.0-beta3.11\AndroidManifest.xml:18:9-57
-uses-feature#android.hardware.microphone
-ADDED from [com.camerakit:camerakit:1.0.0-beta3.11] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\094189ff884971efafd90ff9f0024df0\jetified-camerakit-1.0.0-beta3.11\AndroidManifest.xml:20:5-22:36
-	android:required
-		ADDED from [com.camerakit:camerakit:1.0.0-beta3.11] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\094189ff884971efafd90ff9f0024df0\jetified-camerakit-1.0.0-beta3.11\AndroidManifest.xml:22:9-33
-	android:name
-		ADDED from [com.camerakit:camerakit:1.0.0-beta3.11] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\094189ff884971efafd90ff9f0024df0\jetified-camerakit-1.0.0-beta3.11\AndroidManifest.xml:21:9-51
 activity#droidninja.filepicker.FilePickerActivity
 ADDED from [com.droidninja:filepicker:2.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:18:9-20:62
 	android:configChanges

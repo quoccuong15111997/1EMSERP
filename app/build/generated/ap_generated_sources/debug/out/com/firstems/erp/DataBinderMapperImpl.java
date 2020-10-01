@@ -19,7 +19,6 @@ import com.firstems.erp.databinding.BillPaymentFragmentBindingImpl;
 import com.firstems.erp.databinding.BillPaymentRequestFragmentBindingImpl;
 import com.firstems.erp.databinding.BusinessRegistrationFragmentBindingImpl;
 import com.firstems.erp.databinding.BusinessRegistrationInfoFragmentBindingImpl;
-import com.firstems.erp.databinding.CameraUIKitFragmentBindingImpl;
 import com.firstems.erp.databinding.ChartViewFragmentBindingImpl;
 import com.firstems.erp.databinding.ConfigFragmentBindingImpl;
 import com.firstems.erp.databinding.DashboardFragmentBindingImpl;
@@ -108,111 +107,109 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_BUSINESSREGISTRATIONINFOFRAGMENT = 13;
 
-  private static final int LAYOUT_CAMERAUIKITFRAGMENT = 14;
+  private static final int LAYOUT_CHARTVIEWFRAGMENT = 14;
 
-  private static final int LAYOUT_CHARTVIEWFRAGMENT = 15;
+  private static final int LAYOUT_CONFIGFRAGMENT = 15;
 
-  private static final int LAYOUT_CONFIGFRAGMENT = 16;
+  private static final int LAYOUT_DASHBOARDFRAGMENT = 16;
 
-  private static final int LAYOUT_DASHBOARDFRAGMENT = 17;
+  private static final int LAYOUT_DATATABLEFRAGMENT = 17;
 
-  private static final int LAYOUT_DATATABLEFRAGMENT = 18;
+  private static final int LAYOUT_DEFAULTSIGNATUREFRAGMENT = 18;
 
-  private static final int LAYOUT_DEFAULTSIGNATUREFRAGMENT = 19;
+  private static final int LAYOUT_DEPARTMENTFRAGMENT = 19;
 
-  private static final int LAYOUT_DEPARTMENTFRAGMENT = 20;
+  private static final int LAYOUT_DOCUMENTDETAILFRAGMENT = 20;
 
-  private static final int LAYOUT_DOCUMENTDETAILFRAGMENT = 21;
+  private static final int LAYOUT_DOCUMENTFRAGMENT = 21;
 
-  private static final int LAYOUT_DOCUMENTFRAGMENT = 22;
+  private static final int LAYOUT_DOCUMNETLISTFRAGMENT = 22;
 
-  private static final int LAYOUT_DOCUMNETLISTFRAGMENT = 23;
+  private static final int LAYOUT_EMPLOYEEFRAGMENT = 23;
 
-  private static final int LAYOUT_EMPLOYEEFRAGMENT = 24;
+  private static final int LAYOUT_FILEFRAGMENT = 24;
 
-  private static final int LAYOUT_FILEFRAGMENT = 25;
+  private static final int LAYOUT_FILTERSIGNATUREFRAGMENT = 25;
 
-  private static final int LAYOUT_FILTERSIGNATUREFRAGMENT = 26;
+  private static final int LAYOUT_HELPFRAGMENT = 26;
 
-  private static final int LAYOUT_HELPFRAGMENT = 27;
+  private static final int LAYOUT_HOMEFRAGMENT = 27;
 
-  private static final int LAYOUT_HOMEFRAGMENT = 28;
+  private static final int LAYOUT_HOMEFRAGMENTTYPEFLAT = 28;
 
-  private static final int LAYOUT_HOMEFRAGMENTTYPEFLAT = 29;
+  private static final int LAYOUT_LAYOUTDASHBOARD = 29;
 
-  private static final int LAYOUT_LAYOUTDASHBOARD = 30;
+  private static final int LAYOUT_LAYOUTDASHBOARDCARDBOTTOM = 30;
 
-  private static final int LAYOUT_LAYOUTDASHBOARDCARDBOTTOM = 31;
+  private static final int LAYOUT_LAYOUTDASHBOARDCARDTOP = 31;
 
-  private static final int LAYOUT_LAYOUTDASHBOARDCARDTOP = 32;
+  private static final int LAYOUT_LAYOUTDASHBOARDWAITTING = 32;
 
-  private static final int LAYOUT_LAYOUTDASHBOARDWAITTING = 33;
+  private static final int LAYOUT_LAYOUTOPTIONAPPROVED = 33;
 
-  private static final int LAYOUT_LAYOUTOPTIONAPPROVED = 34;
+  private static final int LAYOUT_LAYOUTSELECTDATE = 34;
 
-  private static final int LAYOUT_LAYOUTSELECTDATE = 35;
+  private static final int LAYOUT_LAYOUTSIGNATUREGIRD = 35;
 
-  private static final int LAYOUT_LAYOUTSIGNATUREGIRD = 36;
+  private static final int LAYOUT_LAYOUTTOPDASHBOARD = 36;
 
-  private static final int LAYOUT_LAYOUTTOPDASHBOARD = 37;
+  private static final int LAYOUT_LOAIDOITUONGNHANFRAGMENT = 37;
 
-  private static final int LAYOUT_LOAIDOITUONGNHANFRAGMENT = 38;
+  private static final int LAYOUT_LOGINFRAGMENT = 38;
 
-  private static final int LAYOUT_LOGINFRAGMENT = 39;
+  private static final int LAYOUT_LOGINLAYOUTTYPEFLAT = 39;
 
-  private static final int LAYOUT_LOGINLAYOUTTYPEFLAT = 40;
+  private static final int LAYOUT_MOREFRAGMENT = 40;
 
-  private static final int LAYOUT_MOREFRAGMENT = 41;
+  private static final int LAYOUT_NATIONALFRAGMENT = 41;
 
-  private static final int LAYOUT_NATIONALFRAGMENT = 42;
+  private static final int LAYOUT_PDFVIEWERFRAGMENT = 42;
 
-  private static final int LAYOUT_PDFVIEWERFRAGMENT = 43;
+  private static final int LAYOUT_PROCESSAPPROVEFRAGMENT = 43;
 
-  private static final int LAYOUT_PROCESSAPPROVEFRAGMENT = 44;
+  private static final int LAYOUT_PROVINCEFRAGMENT = 44;
 
-  private static final int LAYOUT_PROVINCEFRAGMENT = 45;
+  private static final int LAYOUT_RELATEDFIELDSFRAGMENT = 45;
 
-  private static final int LAYOUT_RELATEDFIELDSFRAGMENT = 46;
+  private static final int LAYOUT_REPORTFRAGMENT = 46;
 
-  private static final int LAYOUT_REPORTFRAGMENT = 47;
+  private static final int LAYOUT_REPORTINGFRAGMENT = 47;
 
-  private static final int LAYOUT_REPORTINGFRAGMENT = 48;
+  private static final int LAYOUT_REVIEWPROCESSFRAGMENT = 48;
 
-  private static final int LAYOUT_REVIEWPROCESSFRAGMENT = 49;
+  private static final int LAYOUT_SELECTCOMPANYFRAGMENT = 49;
 
-  private static final int LAYOUT_SELECTCOMPANYFRAGMENT = 50;
+  private static final int LAYOUT_SELECTCUSTOMFRAGMENT = 50;
 
-  private static final int LAYOUT_SELECTCUSTOMFRAGMENT = 51;
+  private static final int LAYOUT_SELECTDATEFRAGMENT = 51;
 
-  private static final int LAYOUT_SELECTDATEFRAGMENT = 52;
+  private static final int LAYOUT_SELECTDAYFRAGMENT = 52;
 
-  private static final int LAYOUT_SELECTDAYFRAGMENT = 53;
+  private static final int LAYOUT_SELECTMONTHFRAGMENT = 53;
 
-  private static final int LAYOUT_SELECTMONTHFRAGMENT = 54;
+  private static final int LAYOUT_SELECTWEEKFRAGMENT = 54;
 
-  private static final int LAYOUT_SELECTWEEKFRAGMENT = 55;
+  private static final int LAYOUT_SELLFRAGMENT = 55;
 
-  private static final int LAYOUT_SELLFRAGMENT = 56;
+  private static final int LAYOUT_SERVICECONTACTSFRAGMENT = 56;
 
-  private static final int LAYOUT_SERVICECONTACTSFRAGMENT = 57;
+  private static final int LAYOUT_SIGNATUREFRAGMENT = 57;
 
-  private static final int LAYOUT_SIGNATUREFRAGMENT = 58;
+  private static final int LAYOUT_SIGNATUREGIRDFRAGMENT = 58;
 
-  private static final int LAYOUT_SIGNATUREGIRDFRAGMENT = 59;
+  private static final int LAYOUT_SWITCHSHIFTFRAGMENT = 59;
 
-  private static final int LAYOUT_SWITCHSHIFTFRAGMENT = 60;
+  private static final int LAYOUT_SWITCHSHIFTINFOFRAGMENT = 60;
 
-  private static final int LAYOUT_SWITCHSHIFTINFOFRAGMENT = 61;
+  private static final int LAYOUT_TABAPPROVEDFRAGMENT = 61;
 
-  private static final int LAYOUT_TABAPPROVEDFRAGMENT = 62;
+  private static final int LAYOUT_TABWAITAPPROVEFRAGMENT = 62;
 
-  private static final int LAYOUT_TABWAITAPPROVEFRAGMENT = 63;
+  private static final int LAYOUT_TICKETBILLPAYMENTREQUESTFRAGMENT = 63;
 
-  private static final int LAYOUT_TICKETBILLPAYMENTREQUESTFRAGMENT = 64;
+  private static final int LAYOUT_VIEWIMAGEFRAGMENT = 64;
 
-  private static final int LAYOUT_VIEWIMAGEFRAGMENT = 65;
-
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(65);
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(64);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.firstems.erp.R.layout.account_fragment, LAYOUT_ACCOUNTFRAGMENT);
@@ -228,7 +225,6 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.firstems.erp.R.layout.bill_payment_request_fragment, LAYOUT_BILLPAYMENTREQUESTFRAGMENT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.firstems.erp.R.layout.business_registration_fragment, LAYOUT_BUSINESSREGISTRATIONFRAGMENT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.firstems.erp.R.layout.business_registration_info_fragment, LAYOUT_BUSINESSREGISTRATIONINFOFRAGMENT);
-    INTERNAL_LAYOUT_ID_LOOKUP.put(com.firstems.erp.R.layout.camera_u_i_kit_fragment, LAYOUT_CAMERAUIKITFRAGMENT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.firstems.erp.R.layout.chart_view_fragment, LAYOUT_CHARTVIEWFRAGMENT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.firstems.erp.R.layout.config_fragment, LAYOUT_CONFIGFRAGMENT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.firstems.erp.R.layout.dashboard_fragment, LAYOUT_DASHBOARDFRAGMENT);
@@ -362,12 +358,6 @@ public class DataBinderMapperImpl extends DataBinderMapper {
           return new BusinessRegistrationInfoFragmentBindingImpl(component, view);
         }
         throw new IllegalArgumentException("The tag for business_registration_info_fragment is invalid. Received: " + tag);
-      }
-      case  LAYOUT_CAMERAUIKITFRAGMENT: {
-        if ("layout/camera_u_i_kit_fragment_0".equals(tag)) {
-          return new CameraUIKitFragmentBindingImpl(component, view);
-        }
-        throw new IllegalArgumentException("The tag for camera_u_i_kit_fragment is invalid. Received: " + tag);
       }
       case  LAYOUT_CHARTVIEWFRAGMENT: {
         if ("layout/chart_view_fragment_0".equals(tag)) {
@@ -585,6 +575,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
         }
         throw new IllegalArgumentException("The tag for select_company_fragment is invalid. Received: " + tag);
       }
+      case  LAYOUT_SELECTCUSTOMFRAGMENT: {
+        if ("layout/select_custom_fragment_0".equals(tag)) {
+          return new SelectCustomFragmentBindingImpl(component, view);
+        }
+        throw new IllegalArgumentException("The tag for select_custom_fragment is invalid. Received: " + tag);
+      }
     }
     return null;
   }
@@ -592,12 +588,6 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   private final ViewDataBinding internalGetViewDataBinding1(DataBindingComponent component,
       View view, int internalId, Object tag) {
     switch(internalId) {
-      case  LAYOUT_SELECTCUSTOMFRAGMENT: {
-        if ("layout/select_custom_fragment_0".equals(tag)) {
-          return new SelectCustomFragmentBindingImpl(component, view);
-        }
-        throw new IllegalArgumentException("The tag for select_custom_fragment is invalid. Received: " + tag);
-      }
       case  LAYOUT_SELECTDATEFRAGMENT: {
         if ("layout/select_date_fragment_0".equals(tag)) {
           return new SelectDateFragmentBindingImpl(component, view);
@@ -793,7 +783,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(65);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(64);
 
     static {
       sKeys.put("layout/account_fragment_0", com.firstems.erp.R.layout.account_fragment);
@@ -809,7 +799,6 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put("layout/bill_payment_request_fragment_0", com.firstems.erp.R.layout.bill_payment_request_fragment);
       sKeys.put("layout/business_registration_fragment_0", com.firstems.erp.R.layout.business_registration_fragment);
       sKeys.put("layout/business_registration_info_fragment_0", com.firstems.erp.R.layout.business_registration_info_fragment);
-      sKeys.put("layout/camera_u_i_kit_fragment_0", com.firstems.erp.R.layout.camera_u_i_kit_fragment);
       sKeys.put("layout/chart_view_fragment_0", com.firstems.erp.R.layout.chart_view_fragment);
       sKeys.put("layout/config_fragment_0", com.firstems.erp.R.layout.config_fragment);
       sKeys.put("layout/dashboard_fragment_0", com.firstems.erp.R.layout.dashboard_fragment);

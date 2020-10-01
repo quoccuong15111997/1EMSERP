@@ -25,8 +25,6 @@ public class TabApprovedViewModel extends ViewModel {
     private MutableLiveData<List<ApprovedItemApiResponse>> dataListApprove;
     public TabApprovedViewModel() {
         dataListApprove= new MutableLiveData<>();
-
-        loadDataApproved();
     }
     
     public void setServerCheckCallback(ServerCheckCallback serverCheckCallback) {
@@ -34,6 +32,7 @@ public class TabApprovedViewModel extends ViewModel {
     }
     
     public void loadDataApproved() {
+        System.out.println("loadDataApproved in Tab approved is call");
         String beginDate = DateTimeHelper.getInstance().minusDate(SharedPreferencesManager.getInstance().getNumberDaySignature());
         String endDate = DateTimeHelper.getInstance().apiDateFormat.format(new Date(System.currentTimeMillis()));
         DataSourceProvider.getInstance().getDataSource(Constant.RUN_CODE_APPROVED_LIST, beginDate+endDate, new LoadApiCallback() {
