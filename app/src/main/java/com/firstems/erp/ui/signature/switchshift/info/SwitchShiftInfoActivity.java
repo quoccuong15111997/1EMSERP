@@ -13,13 +13,13 @@ public class SwitchShiftInfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_switch_shift_info);
-        AnimationHelper.getInstance().setAnimationBottomToTop(this);
+        AnimationHelper.getInstance().setAnimationRightToLeft(this);
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_container,new SwitchShiftInfoFragment()).commit();
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        AnimationHelper.getInstance().setAnimationTopToBottom(this);
+        AnimationHelper.getInstance().setAnimationLeftToRight(this);
     }
 }

@@ -71,6 +71,9 @@ public class TabApprovedFragment extends CommonFragment implements AprrovedDetai
         mViewModel.setServerCheckCallback(new ServerCheckCallback() {
             @Override
             public void onServerLoadFail() {
+                if (loadingNonMessDialog!=null){
+                    loadingNonMessDialog.dismiss();
+                }
                 showOutTOKEN();
             }
         });

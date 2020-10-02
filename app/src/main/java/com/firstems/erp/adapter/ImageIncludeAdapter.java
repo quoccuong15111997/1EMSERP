@@ -52,7 +52,12 @@ public class ImageIncludeAdapter extends RecyclerView.Adapter<ImageIncludeAdapte
         if (imageModel.getType() == 1){
             String url = imageModel.getImgUrl();
             if (!url.startsWith(SharedPreferencesManager.getInstance().getDomain())){
-                url = SharedPreferencesManager.getInstance().getDomain()+url;
+                if (SharedPreferencesManager.getInstance().getDomain().endsWith("/")){
+                    url = SharedPreferencesManager.getInstance().getDomain().substring(0,SharedPreferencesManager.getInstance().getDomain().length() - 1)+url;
+                }
+                else {
+                    url = SharedPreferencesManager.getInstance().getDomain()+url;
+                }
             }
             GlideUrl urlGlide = new GlideUrl(url, new LazyHeaders.Builder()
                     .addHeader("TOKEN", SharedPreferencesManager.getInstance().getPrefToken())

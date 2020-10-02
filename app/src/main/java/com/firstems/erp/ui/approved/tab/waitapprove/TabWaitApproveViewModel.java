@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel;
 
 import com.firstems.erp.api.model.response.approved.ApprovedApiResponse;
 import com.firstems.erp.api.model.response.approved.ApprovedItemApiResponse;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.callback.data.ConvertJsonCallback;
 import com.firstems.erp.callback.data.DataApiCallback;
 import com.firstems.erp.callback.data.DataSourceProviderCallback;
@@ -18,10 +19,15 @@ import java.util.List;
 
 public class TabWaitApproveViewModel extends ViewModel {
     private MutableLiveData<List<ApprovedItemApiResponse>> dataListApprove;
+    private ServerCheckCallback serverCheckCallback;
     public TabWaitApproveViewModel() {
         dataListApprove= new MutableLiveData<>();
     }
-
+    
+    public void setServerCheckCallback(ServerCheckCallback serverCheckCallback) {
+        this.serverCheckCallback = serverCheckCallback;
+    }
+    
     public void loadDataApproved() {
         System.out.println("loadDataApproved in TabWaitApprove is call");
         String beginDate = "1990-01-01";
@@ -31,10 +37,9 @@ public class TabWaitApproveViewModel extends ViewModel {
             public void onApiLoadSuccess(DataApiCallback dataApiCallback) {
                 DataNetworkProvider.getInstance().getListApprovedApi(beginDate,endDate,dataApiCallback);
             }
-
             @Override
             public void onApiLoadFail() {
-
+                serverCheckCallback.onServerLoadFail();
             }
         }, new DataSourceProviderCallback() {
             @Override

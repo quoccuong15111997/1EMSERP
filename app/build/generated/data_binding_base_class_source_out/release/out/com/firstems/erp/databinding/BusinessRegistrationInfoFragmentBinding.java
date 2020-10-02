@@ -4,6 +4,7 @@ package com.firstems.erp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -14,8 +15,8 @@ import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import com.balysv.materialripple.MaterialRippleLayout;
 import com.firstems.erp.R;
-import com.firstems.erp.helper.widgets.EMSButtonSecond;
 import com.firstems.erp.helper.widgets.EMSConstrainLayoutBorder;
 import com.firstems.erp.helper.widgets.EMSTextviewHighLineNonBorder;
 import java.lang.Deprecated;
@@ -23,7 +24,7 @@ import java.lang.Object;
 
 public abstract class BusinessRegistrationInfoFragmentBinding extends ViewDataBinding {
   @NonNull
-  public final EMSButtonSecond btnDone;
+  public final Button btnDone;
 
   @NonNull
   public final CardView cardView;
@@ -54,6 +55,9 @@ public abstract class BusinessRegistrationInfoFragmentBinding extends ViewDataBi
 
   @NonNull
   public final LinearLayout linearLayout;
+
+  @NonNull
+  public final LinearLayout linearLayout16;
 
   @NonNull
   public final LinearLayout linearLayout2;
@@ -87,6 +91,9 @@ public abstract class BusinessRegistrationInfoFragmentBinding extends ViewDataBi
 
   @NonNull
   public final LinearLayout linearLayoutLocateType;
+
+  @NonNull
+  public final MaterialRippleLayout materialRippleLayout;
 
   @NonNull
   public final Spinner spinerLoaiChamCongChieu;
@@ -131,17 +138,17 @@ public abstract class BusinessRegistrationInfoFragmentBinding extends ViewDataBi
   public final TextView txtTitleLoaiChamCongToi;
 
   protected BusinessRegistrationInfoFragmentBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, EMSButtonSecond btnDone, CardView cardView, CheckBox chkAfternoon,
+      int _localFieldCount, Button btnDone, CardView cardView, CheckBox chkAfternoon,
       CheckBox chkEverning, CheckBox chkMorning, ImageView imageView24, ImageView imageView242,
       View include10, EMSConstrainLayoutBorder layoutDateEnd,
       EMSConstrainLayoutBorder layoutDateForm, LinearLayout linearLayout,
-      LinearLayout linearLayout2, LinearLayout linearLayout222, LinearLayout linearLayout22222,
-      LinearLayout linearLayout6, LinearLayout linearLayout7,
+      LinearLayout linearLayout16, LinearLayout linearLayout2, LinearLayout linearLayout222,
+      LinearLayout linearLayout22222, LinearLayout linearLayout6, LinearLayout linearLayout7,
       LinearLayout linearLayoutLoaiChamCongChieu, LinearLayout linearLayoutLoaiChamCongSang,
       LinearLayout linearLayoutLoaiChamCongToi, LinearLayout linearLayoutLocate,
       LinearLayout linearLayoutLocateDetail, LinearLayout linearLayoutLocateType,
-      Spinner spinerLoaiChamCongChieu, Spinner spinerLoaiChamCongSang,
-      Spinner spinerLoaiChamCongToi, Spinner spinerLocateType,
+      MaterialRippleLayout materialRippleLayout, Spinner spinerLoaiChamCongChieu,
+      Spinner spinerLoaiChamCongSang, Spinner spinerLoaiChamCongToi, Spinner spinerLocateType,
       EMSTextviewHighLineNonBorder txtDateBegin, EMSTextviewHighLineNonBorder txtDateEnd,
       TextView txtLocate, TextView txtTileNoiCongTac, TextView txtTitle, TextView txtTitleDateBegin,
       TextView txtTitleDateEnd, TextView txtTitleLoaiChamCongChieu,
@@ -158,6 +165,7 @@ public abstract class BusinessRegistrationInfoFragmentBinding extends ViewDataBi
     this.layoutDateEnd = layoutDateEnd;
     this.layoutDateForm = layoutDateForm;
     this.linearLayout = linearLayout;
+    this.linearLayout16 = linearLayout16;
     this.linearLayout2 = linearLayout2;
     this.linearLayout222 = linearLayout222;
     this.linearLayout22222 = linearLayout22222;
@@ -169,6 +177,7 @@ public abstract class BusinessRegistrationInfoFragmentBinding extends ViewDataBi
     this.linearLayoutLocate = linearLayoutLocate;
     this.linearLayoutLocateDetail = linearLayoutLocateDetail;
     this.linearLayoutLocateType = linearLayoutLocateType;
+    this.materialRippleLayout = materialRippleLayout;
     this.spinerLoaiChamCongChieu = spinerLoaiChamCongChieu;
     this.spinerLoaiChamCongSang = spinerLoaiChamCongSang;
     this.spinerLoaiChamCongToi = spinerLoaiChamCongToi;

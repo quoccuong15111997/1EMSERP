@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
@@ -17,6 +18,9 @@ import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class ReviewProcessFragmentBinding extends ViewDataBinding {
+  @NonNull
+  public final CardView cardView3;
+
   @NonNull
   public final ConstraintLayout constraintLayout4;
 
@@ -48,10 +52,11 @@ public abstract class ReviewProcessFragmentBinding extends ViewDataBinding {
   public final TextView txtTitleImage;
 
   protected ReviewProcessFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ConstraintLayout constraintLayout4, ImageView imgDown, ImageView imgUp,
+      CardView cardView3, ConstraintLayout constraintLayout4, ImageView imgDown, ImageView imgUp,
       RecyclerView recycleFile, RecyclerView recycleImage, RecyclerView recycleProgress,
       TextView textView11, TextView textView3, TextView txtNon, TextView txtTitleImage) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.cardView3 = cardView3;
     this.constraintLayout4 = constraintLayout4;
     this.imgDown = imgDown;
     this.imgUp = imgUp;

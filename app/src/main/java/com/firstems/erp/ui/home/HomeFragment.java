@@ -1,5 +1,6 @@
 package com.firstems.erp.ui.home;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -64,14 +66,23 @@ public class HomeFragment extends CommonFragment {
                              @Nullable Bundle savedInstanceState) {
     
         binding = DataBindingUtil.inflate(inflater, R.layout.home_fragment_type_flat, container, false);
-    
+        
+        hideSoftKeyboard(getActivity());
         setAminHeader();
         addControls();
         addEvents();
         
+        hideKeyboard();
         return binding.getRoot();
     }
-    
+    protected void hideSoftKeyboard(Activity activity) {
+        InputMethodManager inputMethodManager = (InputMethodManager)  activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        View focusedView = activity.getCurrentFocus();
+        if (focusedView != null) {
+            inputMethodManager.hideSoftInputFromWindow(focusedView.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+            focusedView.clearFocus();
+        }
+    }
     private void addEvents() {
         binding.tvTitleToolbar.setOnClickListener(new View.OnClickListener() {
             @Override

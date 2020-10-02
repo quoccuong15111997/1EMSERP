@@ -252,14 +252,28 @@ public class ReviewProcessFragment extends CommonFragment {
                                         }
                                       }
                                   }
+                                  if (fileIncludeList.size() == 0 && imageModelList.size() == 0){
+                                      binding.cardView3.setVisibility(View.GONE);
+                                  }
+                                  else {
+                                      binding.cardView3.setVisibility(View.VISIBLE);
+                                  }
                                   fileInludeAdapter.notifyDataSetChanged();
                                   reviewProgressAdapter.notifyDataSetChanged();
+                                  imageIncludeAdapter.notifyDataSetChanged();
                               }
                           }
                       }
                    }
                    catch (Exception ex){
                        ex.printStackTrace();
+                   }
+                   System.out.println("Size of image list :"+imageModelList.size());
+                   if (fileIncludeList.size() == 0 && imageModelList.size() == 0){
+                       binding.cardView3.setVisibility(View.GONE);
+                   }
+                   else {
+                       binding.cardView3.setVisibility(View.VISIBLE);
                    }
                    if (imageModelList.size()==0){
                        recyclerImage.setVisibility(View.GONE);

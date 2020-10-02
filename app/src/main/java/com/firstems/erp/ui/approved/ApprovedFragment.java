@@ -93,6 +93,9 @@ public class ApprovedFragment extends CommonFragment {
         mViewModel.setServerCheckCallback(new ServerCheckCallback() {
             @Override
             public void onServerLoadFail() {
+                if(loadingNonMessDialog!=null){
+                    loadingNonMessDialog.dismiss();
+                }
                 showOutTOKEN();
             }
         });

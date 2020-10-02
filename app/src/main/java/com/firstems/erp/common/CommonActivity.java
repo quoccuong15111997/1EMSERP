@@ -7,10 +7,13 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.PersistableBundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -35,7 +38,6 @@ public abstract class CommonActivity extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
-        
         tfRegular = Typeface.createFromAsset(getAssets(), "OpenSans-Regular.ttf");
         tfLight = Typeface.createFromAsset(getAssets(), "OpenSans-Light.ttf");
     }
@@ -127,6 +129,40 @@ public abstract class CommonActivity extends AppCompatActivity {
         
         dialog.show();
         dialog.getWindow().setAttributes(lp);
+    }
+    protected void hideSoftKeyboard(Activity activity) {
+        InputMethodManager inputMethodManager = (InputMethodManager)  activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        View focusedView = activity.getCurrentFocus();
+        if (focusedView != null) {
+            inputMethodManager.hideSoftInputFromWindow(focusedView.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+            focusedView.clearFocus();
+        }
+    }
+    protected void setupHideKeyboard(View view) {
+        
+        //Set up touch listener for non-text box views to hide keyboard.
+        if(!(view instanceof EditText)) {
+            
+            view.setOnTouchListener(new View.OnTouchListener() {
+                
+                public boolean onTouch(View v, MotionEvent event) {
+                    hideSoftKeyboard(CommonActivity.this);
+                    return false;
+                }
+                
+            });
+        }
+        
+        //If a layout container, iterate over children and seed recursion.
+        if (view instanceof ViewGroup) {
+            
+            for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
+                
+                View innerView = ((ViewGroup) view).getChildAt(i);
+                
+                setupHideKeyboard(innerView);
+            }
+        }
     }
     protected void showServerIsDead() {
         final Dialog dialog = new Dialog(this);

@@ -1,6 +1,7 @@
 package com.firstems.erp.loading;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -71,6 +72,7 @@ public class LoadingActivity extends CommonActivity {
         }
         else {
             if (SharedPreferencesManager.getInstance().isSyslabelBaseLoad()){
+                
                 System.out.println("Label is emty - Begin download label");
                 SystemLabelProvider.getInstance().getDataSystemLabel(new LoadSystemLabelCallback() {
                     @Override

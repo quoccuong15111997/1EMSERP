@@ -87,13 +87,10 @@ public class BusinessRegistrationFragment extends CommonFragment implements Buss
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         binding= DataBindingUtil.inflate(inflater,R.layout.business_registration_fragment, container, false);
-
-        setAminHeader();
-        loadingAndDisplayContent();
+        
         initText();
         addControls();
         addEvents();
-
         return binding.getRoot();
     }
     
@@ -138,16 +135,6 @@ public class BusinessRegistrationFragment extends CommonFragment implements Buss
             ex.printStackTrace();
         }
     }
-    private void loadingAndDisplayContent() {
-        initProgressDialogLoad(SharedPreferencesManager.getSystemLabel(83),SharedPreferencesManager.getSystemLabel(63));
-        progressdialogLoad.show();
-        initComponent();
-    }
-
-    private void initComponent() {
-        binding.nestedScrollView.setVisibility(View.VISIBLE);
-    }
-
     private void addEvents() {
         binding.imgAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -789,12 +776,6 @@ public class BusinessRegistrationFragment extends CommonFragment implements Buss
             binding.txtNumberDay.setText(String.valueOf(1 + numberDay));
         }
         binding.setIsEditable(true);
-        binding.lParentContent.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                loadingNonMessDialog.dismiss();
-            }
-        }, 1000);
     }
 
     @Override
@@ -875,12 +856,27 @@ public class BusinessRegistrationFragment extends CommonFragment implements Buss
                                     }
                                 }
                             }
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    loadingNonMessDialog.dismiss();
+                                    setAminHeader();
+                                }
+                            }, 750);
                             long numberDay = (dateEnd.getTime() - dateBegin.getTime())/ (1000 * 60 * 60 * 24) % 365;
                             binding.txtNumberDay.setText(String.valueOf(1 + numberDay));
                         }
                     });
                 }
-                progressdialogLoad.dismiss();
+                else {
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            loadingNonMessDialog.dismiss();
+                            setAminHeader();
+                        }
+                    }, 750);
+                }
             }
         });
     }

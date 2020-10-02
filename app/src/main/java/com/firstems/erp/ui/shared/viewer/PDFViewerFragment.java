@@ -105,30 +105,41 @@ public class PDFViewerFragment extends CommonFragment {
                 }
             }).start();
         }
-        GetFileHelper.getInstance().doGetFile("http://api-dev.firstems.com" + fileIncludeModel.getLink(),
-                SharedPreferencesManager.getInstance().getPrefToken(),
-                String.valueOf(fileIncludeModel.getFileName()+System.currentTimeMillis()),
-                fileIncludeModel.getFileType()
-                ,getContext(), new GetFileHelper.GetPdfFileCallback() {
-                    @Override
-                    public void onGetFile(File file) {
-                        // open_File(file);
-                        progressDoalog.dismiss();
-                        startOpen(file);
-                    }
-                });
+        if (fileIncludeModel.getLoadType() == 1 || fileIncludeModel.getLink() !=null){
+            GetFileHelper.getInstance().doGetFile(SharedPreferencesManager.getInstance().getDomain() + fileIncludeModel.getLink(),
+                    SharedPreferencesManager.getInstance().getPrefToken(),
+                    String.valueOf(fileIncludeModel.getFileName()+System.currentTimeMillis()),
+                    fileIncludeModel.getFileType()
+                    ,getContext(), new GetFileHelper.GetPdfFileCallback() {
+                        @Override
+                        public void onGetFile(File file) {
+                            // open_File(file);
+                            progressDoalog.dismiss();
+                            startOpen(file);
+                        }
+                    });
+        }
+        else if (fileIncludeModel.getLoadType() !=1 && fileIncludeModel.getFilePath()!=null){
+            startOpen(new File(fileIncludeModel.getFilePath()));
+        }
+        
         
         txtTitle.setText(fileIncludeModel.getFileName());
     }
     
     private void startOpen(File file) {
-        switch (fileIncludeModel.getFileType().toLowerCase()){
-            case "pdf" : {openPDF(file); break;}
-            case "xlsx" : {openExcelFile(file,"xlsx"); break;}
-            case "xls" : {openExcelFile(file,"xls"); break;}
-            case "docx" : {openExcelFile(file,"docx"); break;}
-            case "doc" : {openExcelFile(file,"doc"); break;}
-            default: {noFileSupport(); break;}
+        try {
+            switch (fileIncludeModel.getFileType().toLowerCase()){
+                case "pdf" : {openPDF(file); break;}
+                case "xlsx" : {openExcelFile(file,"xlsx"); break;}
+                case "xls" : {openExcelFile(file,"xls"); break;}
+                case "docx" : {openExcelFile(file,"docx"); break;}
+                case "doc" : {openExcelFile(file,"doc"); break;}
+                default: {noFileSupport(); break;}
+            }
+        }
+        catch (Exception ex){
+            noFileSupport();
         }
     }
     
@@ -150,46 +161,56 @@ public class PDFViewerFragment extends CommonFragment {
     }
     
     private void openExcelFile(File file,String ext) {
-        Intent myIntent = new Intent(Intent.ACTION_VIEW);
-        myIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-        Uri fileUri = FileProvider.getUriForFile(getContext(), getActivity().getApplicationContext().getPackageName() + ".provider", file);
-        String mime= null;
         try {
-            mime = URLConnection.guessContentTypeFromStream(new FileInputStream(file));
-        } catch (IOException e) {
-            e.printStackTrace();
+            Intent myIntent = new Intent(Intent.ACTION_VIEW);
+            myIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            Uri fileUri = FileProvider.getUriForFile(getContext(), getActivity().getApplicationContext().getPackageName() + ".provider", file);
+            String mime= null;
+            try {
+                mime = URLConnection.guessContentTypeFromStream(new FileInputStream(file));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if(mime==null) mime=URLConnection.guessContentTypeFromName(file.getName());
+            myIntent.setDataAndType(fileUri, mime);
+    
+            try {
+                startActivity(myIntent);
+                getActivity().finish();
+            }
+            catch (ActivityNotFoundException e) {
+                showDialogNonSoft();
+            }
         }
-        if(mime==null) mime=URLConnection.guessContentTypeFromName(file.getName());
-        myIntent.setDataAndType(fileUri, mime);
-        
-        try {
-            startActivity(myIntent);
-            getActivity().finish();
-        }
-        catch (ActivityNotFoundException e) {
-            showDialogNonSoft();
+        catch (Exception ex){
+            noFileSupport();
         }
     }
     
     private void openPDF(File file) {
-        binding.pdfView.fromFile(file)
-                .enableAnnotationRendering(true)
-                .onLoad(new OnLoadCompleteListener() {
-                    @Override
-                    public void loadComplete(int nbPages) {
+        try {
+            binding.pdfView.fromFile(file)
+                    .enableAnnotationRendering(true)
+                    .onLoad(new OnLoadCompleteListener() {
+                        @Override
+                        public void loadComplete(int nbPages) {
                     
-                    }
-                })
-                .scrollHandle(new DefaultScrollHandle(getContext()))
-                .spacing(10) // in dp
-                .onPageError(new OnPageErrorListener() {
-                    @Override
-                    public void onPageError(int page, Throwable t) {
+                        }
+                    })
+                    .scrollHandle(new DefaultScrollHandle(getContext()))
+                    .spacing(10) // in dp
+                    .onPageError(new OnPageErrorListener() {
+                        @Override
+                        public void onPageError(int page, Throwable t) {
                     
-                    }
-                })
-                .load();
-        binding.pdfView.useBestQuality(true);
+                        }
+                    })
+                    .load();
+            binding.pdfView.useBestQuality(true);
+        }
+        catch (Exception ex){
+            noFileSupport();
+        }
     }
     
     @Override

@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.firstems.erp"
     android:targetSandboxVersion="2"
-    android:versionCode="3"
-    android:versionName="1.0.1" >
+    android:versionCode="5"
+    android:versionName="1.0.2" >
 
     <uses-sdk
         android:minSdkVersion="21"
@@ -35,34 +35,89 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.firstems.erp.ui.shared.office.OfficeViewActivity" />
         <activity android:name="com.firstems.erp.loading.FlashActivity" />
         <activity android:name="com.firstems.erp.ui.signature.billpaymentrequest.sophieutamung.SoPhieuTamUngActivity" />
         <activity
             android:name="com.firstems.erp.ui.more.password.ChangePasswordActivity"
             android:windowSoftInputMode="stateVisible|adjustResize" />
-        <activity android:name="com.firstems.erp.ui.home.HomeActivity" />
-        <activity android:name="com.firstems.erp.ui.document.detail.DocumnetDetailActivity" />
-        <activity android:name="com.firstems.erp.ui.document.list.DocumentListActivity" />
-        <activity android:name="com.firstems.erp.ui.signature.defaultsignature.DefaultSignatureActivity" />
-        <activity android:name="com.firstems.erp.ui.shared.loaidoituongnhan.DoiTuongNhanActivity" />
-        <activity android:name="com.firstems.erp.ui.shared.image.ImageViewActivity" />
-        <activity android:name="com.firstems.erp.ui.shared.viewer.PDFViewerActivity" />
-        <activity android:name="com.firstems.erp.ui.shared.province.ProvinceActivity" />
-        <activity android:name="com.firstems.erp.ui.shared.national.NationalActivity" />
-        <activity android:name="com.firstems.erp.WebViewActivity" />
-        <activity android:name="com.firstems.erp.ui.shared.relatedfields.RelatedFieldsActivity" />
+        <activity
+            android:name="com.firstems.erp.ui.home.HomeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.firstems.erp.ui.document.detail.DocumnetDetailActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.firstems.erp.ui.document.list.DocumentListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.firstems.erp.ui.signature.defaultsignature.DefaultSignatureActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.firstems.erp.ui.shared.loaidoituongnhan.DoiTuongNhanActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.firstems.erp.ui.shared.image.ImageViewActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.firstems.erp.ui.shared.viewer.PDFViewerActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.firstems.erp.ui.shared.province.ProvinceActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.firstems.erp.ui.shared.national.NationalActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.firstems.erp.WebViewActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.firstems.erp.ui.shared.relatedfields.RelatedFieldsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity android:name="com.firstems.erp.TestActivity" />
-        <activity android:name="com.firstems.erp.ui.shared.department.DepartmentActivity" />
-        <activity android:name="com.firstems.erp.ui.shared.employee.EmployeeActivity" />
-        <activity android:name="com.firstems.erp.ui.company.SelectCompanyActivity" />
-        <activity android:name="com.firstems.erp.ui.more.help.HelpActivity" />
-        <activity android:name="com.firstems.erp.ui.table.TableActivity" />
-        <activity android:name="com.firstems.erp.ui.date.SelectDateActivity" />
+        <activity
+            android:name="com.firstems.erp.ui.shared.department.DepartmentActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.firstems.erp.ui.shared.employee.EmployeeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.firstems.erp.ui.company.SelectCompanyActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.firstems.erp.ui.more.help.HelpActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.firstems.erp.ui.table.TableActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.firstems.erp.ui.date.SelectDateActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name="com.firstems.erp.ui.chart.ChartViewActivity"
             android:screenOrientation="landscape" />
         <activity android:name="com.firstems.erp.ui.more.report.ReporttingActivity" />
-        <activity android:name="com.firstems.erp.ui.dashboard.DashboardActivity" />
+        <activity
+            android:name="com.firstems.erp.ui.dashboard.DashboardActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name="com.firstems.erp.ui.login.LoginActivity"
             android:screenOrientation="portrait"
@@ -70,46 +125,60 @@
             android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name="com.firstems.erp.ui.config.ConfigActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name="com.firstems.erp.ui.signature.businessregistration.info.BusinessRegistrationInfoActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name="com.firstems.erp.ui.approved.detail.ApproveDetailActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name="com.firstems.erp.ui.signature.filtersignature.FilterSignatureActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name="com.firstems.erp.ui.signature.advanceproposalform.AdvanceProposalFormActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name="com.firstems.erp.ui.signature.billpaymentrequest.ticket.TicketBillPaymentRequestActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name="com.firstems.erp.ui.signature.billpaymentrequest.BillPaymentRequestActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name="com.firstems.erp.ui.signature.businessregistration.BusinessRegistrationActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name="com.firstems.erp.ui.signature.servicecontacts.ServiceContactsActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name="com.firstems.erp.ui.signature.askpermission.AskPermissionActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name="com.firstems.erp.ui.signature.switchshift.info.SwitchShiftInfoActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name="com.firstems.erp.ui.signature.switchshift.SwitchShiftActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name="com.firstems.erp.ui.signature.askpermission.info.AskPermissionInfoActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name="com.firstems.erp.MainActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name="com.firstems.erp.loading.LoadingActivity"
             android:screenOrientation="portrait"

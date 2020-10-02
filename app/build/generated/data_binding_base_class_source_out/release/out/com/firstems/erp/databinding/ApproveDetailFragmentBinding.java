@@ -5,10 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
@@ -35,7 +35,7 @@ public abstract class ApproveDetailFragmentBinding extends ViewDataBinding {
   public final ConstraintLayout lParentContent;
 
   @NonNull
-  public final ConstraintLayout layoutInfo;
+  public final CardView layoutInfo;
 
   @NonNull
   public final LayoutOptionApprovedBinding layoutOption;
@@ -47,7 +47,7 @@ public abstract class ApproveDetailFragmentBinding extends ViewDataBinding {
   public final ConstraintLayout layoutTitlePheDuyet;
 
   @NonNull
-  public final LinearLayout linearLayoutNoidungDeNghi;
+  public final CardView linearLayoutNoidungDeNghi;
 
   @NonNull
   public final TextView textView2;
@@ -87,11 +87,11 @@ public abstract class ApproveDetailFragmentBinding extends ViewDataBinding {
 
   protected ApproveDetailFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount,
       EMSButtonSecond btnSend, EMSEditText edtInfo, FrameLayout frameProgress, View include9,
-      ConstraintLayout lParentContent, ConstraintLayout layoutInfo,
+      ConstraintLayout lParentContent, CardView layoutInfo,
       LayoutOptionApprovedBinding layoutOption, ConstraintLayout layoutTitleNoiDung,
-      ConstraintLayout layoutTitlePheDuyet, LinearLayout linearLayoutNoidungDeNghi,
-      TextView textView2, TextView txtContent, TextView txtDate, TextView txtMoney,
-      TextView txtRoom, TextView txtTitleContent, TextView txtTitleDate, TextView txtTitleInfo,
+      ConstraintLayout layoutTitlePheDuyet, CardView linearLayoutNoidungDeNghi, TextView textView2,
+      TextView txtContent, TextView txtDate, TextView txtMoney, TextView txtRoom,
+      TextView txtTitleContent, TextView txtTitleDate, TextView txtTitleInfo,
       TextView txtTitleMoney, TextView txtTitleRoom, TextView txtTitleUser, TextView txtUserName) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnSend = btnSend;

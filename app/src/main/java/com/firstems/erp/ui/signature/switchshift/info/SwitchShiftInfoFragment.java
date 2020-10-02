@@ -75,6 +75,7 @@ public class SwitchShiftInfoFragment extends CommonFragment {
             @Override
             public void onClick(View v) {
                 getActivity().finish();
+                AnimationHelper.getInstance().setAnimationLeftToRight(getActivity());
             }
         });
         switchShiftInfoFragmentBinding.include3.findViewById(R.id.imgDone).setOnClickListener(new View.OnClickListener() {
@@ -96,7 +97,6 @@ public class SwitchShiftInfoFragment extends CommonFragment {
                 intent.putExtra(Constant.NAME_PUT_TITLE_EMPLOYEE,SharedPreferencesManager.getSystemLabel(41));
                 intent.putExtra(Constant.NAME_PUT_EMPLOYEE,switchShiftInfoFragmentBinding.getEmployDiLam());
                 startActivityForResult(intent,CODE_OPEN_EMPLOYEE_1);
-                AnimationHelper.getInstance().setAnimationBottomToTop(getActivity());
             }
         });
         switchShiftInfoFragmentBinding.edtNhanVienDuocChamCong.setOnClickListener(new View.OnClickListener() {
@@ -106,7 +106,6 @@ public class SwitchShiftInfoFragment extends CommonFragment {
                 intent.putExtra(Constant.NAME_PUT_TITLE_EMPLOYEE,SharedPreferencesManager.getSystemLabel(42));
                 intent.putExtra(Constant.NAME_PUT_EMPLOYEE,switchShiftInfoFragmentBinding.getEmployDuocChamCong());
                 startActivityForResult(intent, CODE_OPEN_EMPLOYEE_2);
-                AnimationHelper.getInstance().setAnimationBottomToTop(getActivity());
             }
         });
         switchShiftInfoFragmentBinding.edtLoaiChamCongSang.setOnClickListener(new View.OnClickListener() {
@@ -255,6 +254,7 @@ public class SwitchShiftInfoFragment extends CommonFragment {
         intent.putExtra(Constant.NAME_PUT_SWITCH_SHIFT,switchShift);
         getActivity().setResult(Activity.RESULT_OK,intent);
         getActivity().finish();
+        AnimationHelper.getInstance().setAnimationLeftToRight(getActivity());
 
     }
     private void selectType(TextView textView,final TimekeepingTypeDC timekeeping){

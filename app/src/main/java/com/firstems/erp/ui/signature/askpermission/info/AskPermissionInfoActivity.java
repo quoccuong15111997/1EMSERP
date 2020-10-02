@@ -13,14 +13,13 @@ public class AskPermissionInfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ask_permission_info);
-        AnimationHelper.getInstance().setAnimationBottomToTop(this);
+        AnimationHelper.getInstance().setAnimationRightToLeft(this);
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_container,new AskPermissionInfoFragment()).commit();
     }
 
     @Override
     public void onBackPressed() {
-
         super.onBackPressed();
-        AnimationHelper.getInstance().setAnimationTopToBottom(AskPermissionInfoActivity.this);
+        AnimationHelper.getInstance().setAnimationLeftToRight(this);
     }
 }

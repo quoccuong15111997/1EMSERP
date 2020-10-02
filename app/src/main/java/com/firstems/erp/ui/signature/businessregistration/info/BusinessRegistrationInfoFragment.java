@@ -27,6 +27,7 @@ import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Constant;
 import com.firstems.erp.databinding.BusinessRegistrationInfoFragmentBinding;
+import com.firstems.erp.helper.animation.AnimationHelper;
 import com.firstems.erp.helper.dialog.DatePickerDialog;
 import com.firstems.erp.helper.snackbar.SnackbarHelper;
 import com.firstems.erp.helper.validation.ValidationData;
@@ -131,6 +132,7 @@ public class BusinessRegistrationInfoFragment extends CommonFragment {
             @Override
             public void onClick(View v) {
                 getActivity().finish();
+                AnimationHelper.getInstance().setAnimationLeftToRight(getActivity());
             }
         });
         binding.txtLocate.setOnClickListener(new View.OnClickListener() {
@@ -416,6 +418,7 @@ public class BusinessRegistrationInfoFragment extends CommonFragment {
                         intent.putExtra(Constant.NAME_PUT_BUSINESS_REGISTRATION,business);
                         getActivity().setResult(Activity.RESULT_OK,intent);
                         getActivity().finish();
+                        AnimationHelper.getInstance().setAnimationLeftToRight(getActivity());
                     }
                     else {
                         SnackbarHelper.getInstance().snackBarIconError(getView(),SharedPreferencesManager.getSystemLabel(104));

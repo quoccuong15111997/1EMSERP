@@ -78,6 +78,7 @@ public class AskPermissionInfoFragment extends CommonFragment {
             @Override
             public void onClick(View v) {
                 getActivity().finish();
+                AnimationHelper.getInstance().setAnimationLeftToRight(getActivity());
             }
         });
         binding.include3.findViewById(R.id.imgDone).setOnClickListener(new View.OnClickListener() {
@@ -237,6 +238,7 @@ public class AskPermissionInfoFragment extends CommonFragment {
         intent.putExtra(Constant.NAME_PUT_APPROVED,approved);
         getActivity().setResult(Activity.RESULT_OK,intent);
         getActivity().finish();
+        AnimationHelper.getInstance().setAnimationLeftToRight(getActivity());
         
     }
     private void selectType(TextView textView, TimekeepingTypeDC timekeepingTypeDC){

@@ -99,7 +99,7 @@ public class SignatureItemAdapter extends RecyclerView.Adapter<SignatureItemAdap
             holder.txtLabel.setVisibility(View.VISIBLE);
 
             holder.txtUom.setText(item.getUomExpr());
-            holder.txtlabelValue.setText(String.valueOf((int) item.getValueFld()));
+            holder.txtlabelValue.setText(Util.formatDecimal(item.getValueFld()));
             holder.txtLabel.setText(item.getValueName());
         }
         holder.itemView.setOnClickListener(new View.OnClickListener() {

@@ -21,6 +21,7 @@ import com.firstems.erp.api.model.response.approved.ApprovedItemApiResponse;
 import com.firstems.erp.api.model.response.approved.ApprovedItemDetail_1;
 import com.firstems.erp.api.model.response.approved.ApprovedItemDetail_2;
 import com.firstems.erp.callback.AprrovedDetail_1_ClickListener;
+import com.firstems.erp.callback.ServerCheckCallback;
 import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Constant;
 import com.firstems.erp.databinding.TabWaitApproveFragmentBinding;
@@ -62,6 +63,15 @@ public class TabWaitApproveFragment extends CommonFragment implements AprrovedDe
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(TabWaitApproveViewModel.class);
+        mViewModel.setServerCheckCallback(new ServerCheckCallback() {
+            @Override
+            public void onServerLoadFail() {
+                if (loadingNonMessDialog!=null){
+                    loadingNonMessDialog.dismiss();
+                }
+                showOutTOKEN();
+            }
+        });
         mViewModel.getDataListApprove().observe(getViewLifecycleOwner(), new Observer<List<ApprovedItemApiResponse>>() {
             @Override
             public void onChanged(List<ApprovedItemApiResponse> approveModels) {

@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.ImageView;
@@ -351,7 +352,7 @@ public abstract class CommonFragment extends Fragment {
         final Dialog dialog = new Dialog(getContext());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // before
         dialog.setContentView(R.layout.dialog_info);
-        dialog.setCancelable(true);
+        dialog.setCancelable(false);
         
         TextView txtTitle = dialog.findViewById(R.id.title);
         TextView txtContent = dialog.findViewById(R.id.content);
@@ -505,5 +506,12 @@ public abstract class CommonFragment extends Fragment {
             var3.printStackTrace();
         }
         
+    }
+    protected void hideKeyboard(){
+        View view = getActivity().getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 }

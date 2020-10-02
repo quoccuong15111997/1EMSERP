@@ -435,9 +435,35 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                                     });
                         }
                         else {
-                            progressdialog.dismiss();
-                            showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
-                            System.out.println(response.body().getRETNMSSG());
+                            CommitDocumentRequest commitDocumentRequest = new CommitDocumentRequest();
+                            commitDocumentRequest.setDcmnCode(signatureItemApiResponse.getDcmnCode());
+                            commitDocumentRequest.setKeyCode(response.body().getAdvanceProposalAddNewResponseItem().get(0).getKeyCode());
+                            ApiServices.getInstance().commitDocument(SharedPreferencesManager.getInstance().getPrefToken(), commitDocumentRequest.convertToJson(), new Callback<ApiResponse>() {
+                                @Override
+                                public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
+                                    if (response.isSuccessful()){
+                                        if (response.body().isRETNCODE()){
+                                            progressdialog.dismiss();
+                                            showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(59));
+                                        }
+                                        else {
+                                            progressdialog.dismiss();
+                                            showErrorDialog(SharedPreferencesManager.getSystemLabel(50), SharedPreferencesManager.getSystemLabel(60));
+                                            System.out.println("Advance Proposal " + response.body().getRETNMSSG());
+                                        }
+                                    }
+                                    else {
+                                        progressdialog.dismiss();
+                                        showOutTOKEN();
+                                    }
+                                }
+        
+                                @Override
+                                public void onFailure(Call<ApiResponse> call, Throwable t) {
+                                    progressdialog.dismiss();
+                                    showOutTOKEN();
+                                }
+                            });
                         }
                     }
                     else {
@@ -932,8 +958,8 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                                             binding.txtDateCreate.setText(Util.formatDate(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getmAINDATE()));
                                             binding.edtInfo.setText(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getmEXLNNTE());
                                             binding.edtTiGia.setText(String.valueOf((int) advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getcUOMRATE()));
-                                            binding.edtSoTienTamUng.setText(String.valueOf((int) advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getaDVNCRAM()));
-                                            binding.edtSoTienDuocDuyet.setText(String.valueOf((int) advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getaCPTCRAM()));
+                                            binding.edtSoTienTamUng.setText(Util.formatDecimal(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getaDVNCRAM()));
+                                            binding.edtSoTienDuocDuyet.setText(Util.formatDecimal(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getaCPTCRAM()));
                                             doiTuongNhanItemSelected = new DoiTuongNhanItem();
                                             doiTuongNhanItemSelected.setCheck(true);
                                             doiTuongNhanItemSelected.setiTEMCODE(advanceProposalFormApiResponse.getAdvanceProposalFormHeaders().get(0).getoBJCCODE());

@@ -20,6 +20,7 @@ import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Constant;
 import com.firstems.erp.databinding.TicketBillPaymentRequestFragmentBinding;
 import com.firstems.erp.helper.NumberTextWatcher;
+import com.firstems.erp.helper.animation.AnimationHelper;
 import com.firstems.erp.helper.dialog.DatePickerDialog;
 import com.firstems.erp.sharedpreferences.SharedPreferencesManager;
 import com.firstems.erp.ui.signature.billpaymentrequest.model.TicketBillPaymentDetail;
@@ -67,10 +68,23 @@ public class TicketBillPaymentRequestFragment extends CommonFragment {
                 });
             }
         });
+        binding.edtDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatePickerDialog.getInstance().showDialogSelectDate(0, 0, getContext(), new PickDateCallback() {
+                    @Override
+                    public void onDatePicker(Date d) {
+                        date = d;
+                        binding.edtDate.setText(simpleDateFormatDisplay.format(d));
+                    }
+                });
+            }
+        });
         binding.header.findViewById(R.id.imgClose).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getActivity().finish();
+                AnimationHelper.getInstance().setAnimationLeftToRight(getActivity());
             }
         });
         binding.header.findViewById(R.id.imgDone).setOnClickListener(new View.OnClickListener() {
@@ -100,6 +114,7 @@ public class TicketBillPaymentRequestFragment extends CommonFragment {
                 intent.putExtra(Constant.NAME_PUT_TICKET_BILL_PAYMENT, ticketBillPaymentDetail);
                 getActivity().setResult(Activity.RESULT_OK,intent);
                 getActivity().finish();
+                AnimationHelper.getInstance().setAnimationLeftToRight(getActivity());
             }
             else {
                 showToastError(SharedPreferencesManager.getSystemLabel(119));

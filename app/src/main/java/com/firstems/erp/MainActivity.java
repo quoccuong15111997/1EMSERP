@@ -3,6 +3,7 @@ package com.firstems.erp;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -48,10 +49,15 @@ public class MainActivity extends CommonActivity implements BackToHomeCallback, 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    
+        FrameLayout frame_container = findViewById(R.id.frame_container);
+        setupHideKeyboard(frame_container);
+        
         getDataUpdate();
         addControls();
         addEvents();
         setText();
+        hideSoftKeyboard(this);
     }
 
     private void getDataUpdate() {
@@ -191,7 +197,6 @@ public class MainActivity extends CommonActivity implements BackToHomeCallback, 
 
     private void addControls() {
         navView = findViewById(R.id.nav_view);
-
        fragmentDashboard= new HomeFragment(this::onItemClick);
         //fragmentDashboard= new SignatureGirdDiffFragment(MainActivity.this::onBackPress);
         //ReviewProcessFragment  reviewProcessFragment = new ReviewProcessFragment("LHCV","TTN00104000118120005");

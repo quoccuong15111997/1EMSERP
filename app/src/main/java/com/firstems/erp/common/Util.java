@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.text.Normalizer;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
@@ -133,6 +134,28 @@ public class Util {
         else
             return date;
     }
+    public static String formatDateCustomChar(String date, String ch){
+        String arr[] = date.split("T");
+        if (arr.length>0){
+            String dateCurrent = arr[0];
+            String arrDateCurrent[] = dateCurrent.split("-");
+            if (arrDateCurrent.length>2){
+                String dateFormated = arrDateCurrent[2]+ch+arrDateCurrent[1]+ch+arrDateCurrent[0];
+                return dateFormated;
+            }
+            return date;
+        }
+        else
+            return date;
+    }
+    
+    public static String formatDecimal(Double value){
+        DecimalFormat format = new DecimalFormat("0.#");
+        DecimalFormat dfnd = new DecimalFormat("#,###");
+        Double ab = Double.valueOf(format.format(value));
+        return dfnd.format(ab);
+    }
+    
     public static String formatDateSystem(String date){
         String arr[] = date.split("T");
         if (arr.length>0){
@@ -160,6 +183,7 @@ public class Util {
         }
         return date;
     }
+    
     
     public static String convertTime(String fullDateTime) {
         String result = "";

@@ -167,14 +167,14 @@ public class BillPaymentRequestFragment extends CommonFragment {
             public void onClick(View view) {
                 LoaiDeNghiItem loaiDeNghiItem = (LoaiDeNghiItem) billPaymentRequestFragmentBinding.spinerLoaiDeNghi.getSelectedItem();
                 if (loaiDeNghiItem.getiTEMCODE().equals("003")){
-                   if (doiTuongNhanItemSelected != null){
-                       Intent intent = new Intent(getContext(), SoPhieuTamUngActivity.class);
-                       intent.putExtra(Constant.NAME_PUT_DOI_TUONG_NHAN, doiTuongNhanItemSelected);
-                       startActivityForResult(intent,CODE_SELECT_SO_PHIEU_TAM_UNG);
-                   }
-                   else {
-                       showToastError(SharedPreferencesManager.getSystemLabel(122) /*Vui lòng chọn đối tượng nhận*/);
-                   }
+                    if (doiTuongNhanItemSelected != null){
+                        Intent intent = new Intent(getContext(), SoPhieuTamUngActivity.class);
+                        intent.putExtra(Constant.NAME_PUT_DOI_TUONG_NHAN, doiTuongNhanItemSelected);
+                        startActivityForResult(intent,CODE_SELECT_SO_PHIEU_TAM_UNG);
+                    }
+                    else {
+                        showToastError(SharedPreferencesManager.getSystemLabel(122) /*Vui lòng chọn đối tượng nhận*/);
+                    }
                 }
             }
         });
@@ -191,24 +191,24 @@ public class BillPaymentRequestFragment extends CommonFragment {
                                     public void onAccept() {
                                         doCommit();
                                     }
-            
+                                    
                                     @Override
                                     public void onCancel() {
-                
+                                    
                                     }
                                 });
                             }
                             else {
                                 if (doiTuongNhanItemSelected!=null){
-                                       showConfirmMessage(SharedPreferencesManager.getSystemLabel(49), SharedPreferencesManager.getSystemLabel(56), SharedPreferencesManager.getSystemLabel(54), SharedPreferencesManager.getSystemLabel(55), new ConfirmCallback() {
+                                    showConfirmMessage(SharedPreferencesManager.getSystemLabel(49), SharedPreferencesManager.getSystemLabel(56), SharedPreferencesManager.getSystemLabel(54), SharedPreferencesManager.getSystemLabel(55), new ConfirmCallback() {
                                         @Override
                                         public void onAccept() {
                                             doSaveAndCommit();
                                         }
-        
+                                        
                                         @Override
                                         public void onCancel() {
-            
+                                        
                                         }
                                     });
                                 }
@@ -219,7 +219,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
                         }
                         else {
                             showToastError(SharedPreferencesManager.getSystemLabel(134));
-                
+                            
                         }
                     }
                     else {
@@ -261,7 +261,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
                                     System.out.println(response.message());
                                 }
                             }
-    
+                            
                             @Override
                             public void onFailure(Call<ApiResponse> call, Throwable t) {
                                 progressdialog.dismiss();
@@ -270,10 +270,10 @@ public class BillPaymentRequestFragment extends CommonFragment {
                             }
                         });
                     }
-    
+                    
                     @Override
                     public void onCancel() {
-        
+                    
                     }
                 });
             }
@@ -292,10 +292,10 @@ public class BillPaymentRequestFragment extends CommonFragment {
                                         public void onAccept() {
                                             doSave();
                                         }
-            
+                                        
                                         @Override
                                         public void onCancel() {
-                
+                                        
                                         }
                                     });
                                 }
@@ -306,17 +306,17 @@ public class BillPaymentRequestFragment extends CommonFragment {
                                         public void onAccept() {
                                             doUpdate();
                                         }
-            
+                                        
                                         @Override
                                         public void onCancel() {
-                
+                                        
                                         }
                                     });
                                 }
                             }
                             else {
                                 showToastError(SharedPreferencesManager.getSystemLabel(134));
-    
+                                
                             }
                         }
                         else {
@@ -341,7 +341,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
                 intent.putExtra(Constant.NAME_PUT_TICKET_BILL_PAYMENT,listDetail.get(position));
                 startActivityForResult(intent, CODE_EDIT_DETAIL);
             }
-    
+            
             @Override
             public void onDeleteClick(TicketBillPaymentDetail detail, int position) {
                 showConfirmMessage(SharedPreferencesManager.getSystemLabel(49), SharedPreferencesManager.getSystemLabel(53), SharedPreferencesManager.getSystemLabel(54), SharedPreferencesManager.getSystemLabel(55), new ConfirmCallback() {
@@ -356,10 +356,10 @@ public class BillPaymentRequestFragment extends CommonFragment {
                             }
                         });
                     }
-    
+                    
                     @Override
                     public void onCancel() {
-        
+                    
                     }
                 });
             }
@@ -408,7 +408,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
         billPaymentHeader.setsCTNCODE(loaiChiTieu.getiTEMCODE());
         LoaiDoiTuongLienQuanItem loaiDoiTuongLienQuanItem = (LoaiDoiTuongLienQuanItem) billPaymentRequestFragmentBinding.spinerLoaiDoiTuongNhan.getSelectedItem();
         billPaymentHeader.setoBJCTYPE(Integer.parseInt(loaiDoiTuongLienQuanItem.getiTEMCODE()));
-        billPaymentHeader.setoBJCCODE(doiTuongNhanItemSelected.getiTEMCODE());
+        billPaymentHeader.setoBJCCODE(doiTuongNhanItemSelected.getiTEMCODE().split("\\*")[0]);
         billPaymentHeader.setmEXLNNTE(billPaymentRequestFragmentBinding.edtInfo.getText().toString());
         CurrencyItem currencyItem = (CurrencyItem) billPaymentRequestFragmentBinding.spinerDonViTienTe.getSelectedItem();
         billPaymentHeader.setcUOMCODE(currencyItem.getiTEMCODE());
@@ -419,7 +419,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
         else {
             billPaymentHeader.setcUOMRATE(Double.parseDouble(billPaymentRequestFragmentBinding.edtTiGia.getText().toString()));
         }
-    
+        
         if (loaiDeNghiItem.getiTEMCODE().equals("003")){
             billPaymentHeader.setaDVNCODE(billPaymentRequestFragmentBinding.txtSoPhieuTamUng.getText().toString().trim());
             try {
@@ -432,14 +432,14 @@ public class BillPaymentRequestFragment extends CommonFragment {
         
         try {
             billPaymentHeader.setsGSTCRAM(Double.parseDouble(billPaymentRequestFragmentBinding.edtSoTiendeNghiChi.getText().toString().replace(".","").trim()));
-        
+            
         }
         catch (Exception ex){
             ex.printStackTrace();
         }
         try {
             billPaymentHeader.setsUMCRAM(Double.parseDouble(billPaymentRequestFragmentBinding.edtSoTienChi.getText().toString().replace(".","").trim()));
-        
+            
         }
         catch (Exception ex){
             ex.printStackTrace();
@@ -466,7 +466,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
         billPaymentHeaderList.add(billPaymentHeader);
         BillPaymentRequest billPaymentRequest = new BillPaymentRequest();
         billPaymentRequest.setBillPaymentHeaders(billPaymentHeaderList);
-    
+        
         JsonObject jsonObject = new Gson().fromJson(new Gson().toJson(billPaymentRequest), JsonObject.class);
         ApiServices.getInstance().editBillPayment(SharedPreferencesManager.getInstance().getPrefToken(), jsonObject, new Callback<AddNewPaymentResponse>() {
             @Override
@@ -482,6 +482,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
                                             CommitDocumentRequest commitDocumentRequest = new CommitDocumentRequest();
                                             commitDocumentRequest.setDcmnCode(signatureItemApiResponse.getDcmnCode());
                                             commitDocumentRequest.setKeyCode(response.body().getAddNewPaymentItems().get(0).getKeyCode());
+                                            System.out.println(commitDocumentRequest.convertToJson());
                                             ApiServices.getInstance().commitDocument(SharedPreferencesManager.getInstance().getPrefToken(), commitDocumentRequest.convertToJson(), new Callback<ApiResponse>() {
                                                 @Override
                                                 public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
@@ -500,7 +501,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
                                                         showOutTOKEN();
                                                     }
                                                 }
-        
+                                                
                                                 @Override
                                                 public void onFailure(Call<ApiResponse> call, Throwable t) {
                                                     progressdialog.dismiss();
@@ -508,9 +509,9 @@ public class BillPaymentRequestFragment extends CommonFragment {
                                                     System.out.println(t.getMessage());
                                                 }
                                             });
-    
+                                            
                                         }
-    
+                                        
                                         @Override
                                         public void onUploadFail(String mess) {
                                             progressdialog.dismiss();
@@ -520,9 +521,36 @@ public class BillPaymentRequestFragment extends CommonFragment {
                                     });
                         }
                         else {
-                            progressdialog.dismiss();
-                            showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
-                            System.out.println(response.body().getRETNMSSG());
+                            CommitDocumentRequest commitDocumentRequest = new CommitDocumentRequest();
+                            commitDocumentRequest.setDcmnCode(signatureItemApiResponse.getDcmnCode());
+                            commitDocumentRequest.setKeyCode(response.body().getAddNewPaymentItems().get(0).getKeyCode());
+                            System.out.println(commitDocumentRequest.convertToJson());
+                            ApiServices.getInstance().commitDocument(SharedPreferencesManager.getInstance().getPrefToken(), commitDocumentRequest.convertToJson(), new Callback<ApiResponse>() {
+                                @Override
+                                public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
+                                    if (response.isSuccessful()){
+                                        if (response.body().isRETNCODE()){
+                                            progressdialog.dismiss();
+                                            showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(59));
+                                        }
+                                        else {
+                                            progressdialog.dismiss();
+                                            showErrorDialog(SharedPreferencesManager.getSystemLabel(50),SharedPreferencesManager.getSystemLabel(60));
+                                        }
+                                    }
+                                    else {
+                                        progressdialog.dismiss();
+                                        showOutTOKEN();
+                                    }
+                                }
+                                
+                                @Override
+                                public void onFailure(Call<ApiResponse> call, Throwable t) {
+                                    progressdialog.dismiss();
+                                    showOutTOKEN();
+                                    System.out.println(t.getMessage());
+                                }
+                            });
                         }
                     }
                     else {
@@ -537,7 +565,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
                     showOutTOKEN();
                 }
             }
-        
+            
             @Override
             public void onFailure(Call<AddNewPaymentResponse> call, Throwable t) {
                 progressdialog.dismiss();
@@ -557,7 +585,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
         billPaymentHeader.setsCTNCODE(loaiChiTieu.getiTEMCODE());
         LoaiDoiTuongLienQuanItem loaiDoiTuongLienQuanItem = (LoaiDoiTuongLienQuanItem) billPaymentRequestFragmentBinding.spinerLoaiDoiTuongNhan.getSelectedItem();
         billPaymentHeader.setoBJCTYPE(Integer.parseInt(loaiDoiTuongLienQuanItem.getiTEMCODE()));
-        billPaymentHeader.setoBJCCODE(doiTuongNhanItemSelected.getiTEMCODE());
+        billPaymentHeader.setoBJCCODE(doiTuongNhanItemSelected.getiTEMCODE().split("\\*")[0]);
         billPaymentHeader.setmEXLNNTE(billPaymentRequestFragmentBinding.edtInfo.getText().toString());
         CurrencyItem currencyItem = (CurrencyItem) billPaymentRequestFragmentBinding.spinerDonViTienTe.getSelectedItem();
         billPaymentHeader.setcUOMCODE(currencyItem.getiTEMCODE());
@@ -569,14 +597,14 @@ public class BillPaymentRequestFragment extends CommonFragment {
         }
         try {
             billPaymentHeader.setsGSTCRAM(Double.parseDouble(billPaymentRequestFragmentBinding.edtSoTiendeNghiChi.getText().toString().replace(".","").trim()));
-        
+            
         }
         catch (Exception ex){
             ex.printStackTrace();
         }
         try {
             billPaymentHeader.setsUMCRAM(Double.parseDouble(billPaymentRequestFragmentBinding.edtSoTienChi.getText().toString().replace(".","").trim()));
-        
+            
         }
         catch (Exception ex){
             ex.printStackTrace();
@@ -612,7 +640,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
         billPaymentHeaderList.add(billPaymentHeader);
         BillPaymentRequest billPaymentRequest = new BillPaymentRequest();
         billPaymentRequest.setBillPaymentHeaders(billPaymentHeaderList);
-    
+        
         JsonObject jsonObject = new Gson().fromJson(new Gson().toJson(billPaymentRequest), JsonObject.class);
         ApiServices.getInstance().addAndCommitBillpayment(SharedPreferencesManager.getInstance().getPrefToken(), jsonObject, new Callback<AddNewPaymentResponse>() {
             @Override
@@ -634,7 +662,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
                     showOutTOKEN();
                 }
             }
-        
+            
             @Override
             public void onFailure(Call<AddNewPaymentResponse> call, Throwable t) {
                 progressdialog.dismiss();
@@ -666,7 +694,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
         billPaymentHeader.setsCTNCODE(loaiChiTieu.getiTEMCODE());
         LoaiDoiTuongLienQuanItem loaiDoiTuongLienQuanItem = (LoaiDoiTuongLienQuanItem) billPaymentRequestFragmentBinding.spinerLoaiDoiTuongNhan.getSelectedItem();
         billPaymentHeader.setoBJCTYPE(Integer.parseInt(loaiDoiTuongLienQuanItem.getiTEMCODE()));
-        billPaymentHeader.setoBJCCODE(doiTuongNhanItemSelected.getiTEMCODE());
+        billPaymentHeader.setoBJCCODE(doiTuongNhanItemSelected.getiTEMCODE().split("\\*")[0]);
         billPaymentHeader.setmEXLNNTE(billPaymentRequestFragmentBinding.edtInfo.getText().toString());
         CurrencyItem currencyItem = (CurrencyItem) billPaymentRequestFragmentBinding.spinerDonViTienTe.getSelectedItem();
         billPaymentHeader.setcUOMCODE(currencyItem.getiTEMCODE());
@@ -679,14 +707,14 @@ public class BillPaymentRequestFragment extends CommonFragment {
         }
         try {
             billPaymentHeader.setsGSTCRAM(Double.parseDouble(billPaymentRequestFragmentBinding.edtSoTiendeNghiChi.getText().toString().replace(".","").trim()));
-        
+            
         }
         catch (Exception ex){
             ex.printStackTrace();
         }
         try {
             billPaymentHeader.setsUMCRAM(Double.parseDouble(billPaymentRequestFragmentBinding.edtSoTienChi.getText().toString().replace(".","").trim()));
-        
+            
         }
         catch (Exception ex){
             ex.printStackTrace();
@@ -722,7 +750,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
         billPaymentHeaderList.add(billPaymentHeader);
         BillPaymentRequest billPaymentRequest = new BillPaymentRequest();
         billPaymentRequest.setBillPaymentHeaders(billPaymentHeaderList);
-    
+        
         JsonObject jsonObject = new Gson().fromJson(new Gson().toJson(billPaymentRequest), JsonObject.class);
         ApiServices.getInstance().editBillPayment(SharedPreferencesManager.getInstance().getPrefToken(), jsonObject, new Callback<AddNewPaymentResponse>() {
             @Override
@@ -731,11 +759,15 @@ public class BillPaymentRequestFragment extends CommonFragment {
                     if (response.body().isRETNCODE()){
                         deleteFile(response.body().getAddNewPaymentItems().get(0).getKeyCode());
                         if (FileFragment.listFilePath.size()>0 || FileFragment.fileIncludeList.size()>0){
-                            upLoadFile(response.body().getAddNewPaymentItems().get(0).getKeyCode(), response.body().getRETNMSSG(), getListImage(), FileFragment.fileIncludeList);
+                            upLoadFile(response.body().getAddNewPaymentItems().get(0).getKeyCode(),
+                                    response.body().getRETNMSSG().equals("")
+                                            ? SharedPreferencesManager.getSystemLabel(67) /*Cập nhật thành công*/
+                                            : response.body().getRETNMSSG(), getListImage(), FileFragment.fileIncludeList);
                         }
                         else {
                             progressdialog.dismiss();
-                            showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),response.body().getRETNMSSG());
+                            showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),
+                                    response.body().getRETNMSSG().equals("") ? SharedPreferencesManager.getSystemLabel(67) /*Cập nhật thành công*/ : response.body().getRETNMSSG());
                             System.out.println(response.body().getRETNMSSG());
                         }
                     }
@@ -751,7 +783,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
                     showOutTOKEN();
                 }
             }
-        
+            
             @Override
             public void onFailure(Call<AddNewPaymentResponse> call, Throwable t) {
                 progressdialog.dismiss();
@@ -771,7 +803,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
         billPaymentHeader.setsCTNCODE(loaiChiTieu.getiTEMCODE());
         LoaiDoiTuongLienQuanItem loaiDoiTuongLienQuanItem = (LoaiDoiTuongLienQuanItem) billPaymentRequestFragmentBinding.spinerLoaiDoiTuongNhan.getSelectedItem();
         billPaymentHeader.setoBJCTYPE(Integer.parseInt(loaiDoiTuongLienQuanItem.getiTEMCODE()));
-        billPaymentHeader.setoBJCCODE(doiTuongNhanItemSelected.getiTEMCODE());
+        billPaymentHeader.setoBJCCODE(doiTuongNhanItemSelected.getiTEMCODE().split("\\*")[0]);
         billPaymentHeader.setmEXLNNTE(billPaymentRequestFragmentBinding.edtInfo.getText().toString());
         CurrencyItem currencyItem = (CurrencyItem) billPaymentRequestFragmentBinding.spinerDonViTienTe.getSelectedItem();
         billPaymentHeader.setcUOMCODE(currencyItem.getiTEMCODE());
@@ -783,14 +815,14 @@ public class BillPaymentRequestFragment extends CommonFragment {
         }
         try {
             billPaymentHeader.setsGSTCRAM(Double.parseDouble(billPaymentRequestFragmentBinding.edtSoTiendeNghiChi.getText().toString().replace(".","").trim()));
-    
+            
         }
         catch (Exception ex){
             ex.printStackTrace();
         }
         try {
             billPaymentHeader.setsUMCRAM(Double.parseDouble(billPaymentRequestFragmentBinding.edtSoTienChi.getText().toString().replace(".","").trim()));
-    
+            
         }
         catch (Exception ex){
             ex.printStackTrace();
@@ -826,7 +858,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
         billPaymentHeaderList.add(billPaymentHeader);
         BillPaymentRequest billPaymentRequest = new BillPaymentRequest();
         billPaymentRequest.setBillPaymentHeaders(billPaymentHeaderList);
-    
+        
         JsonObject jsonObject = new Gson().fromJson(new Gson().toJson(billPaymentRequest), JsonObject.class);
         ApiServices.getInstance().addNewBillPayment(SharedPreferencesManager.getInstance().getPrefToken(), jsonObject, new Callback<AddNewPaymentResponse>() {
             @Override
@@ -834,7 +866,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
                 if (response.isSuccessful()){
                     if (response.body().isRETNCODE()){
                         progressdialog.dismiss();
-                       upLoadFile(response.body().getAddNewPaymentItems().get(0).getKeyCode(),response.body().getRETNMSSG(), getListImage(),FileFragment.fileIncludeList);
+                        upLoadFile(response.body().getAddNewPaymentItems().get(0).getKeyCode(),response.body().getRETNMSSG(), getListImage(),FileFragment.fileIncludeList);
                     }
                     else {
                         progressdialog.dismiss();
@@ -848,7 +880,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
                     showOutTOKEN();
                 }
             }
-    
+            
             @Override
             public void onFailure(Call<AddNewPaymentResponse> call, Throwable t) {
                 progressdialog.dismiss();
@@ -961,9 +993,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
                     });
         }
         else {
-            progressdialog.dismiss();
-            showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),mess);
-            FileFragment.fileIncludeList.clear();
+            uploadFileCallback.onUpLoadSuccess();
         }
     }
     private boolean checkFileInclude(List<FileIncludeModel> listFile) {
@@ -1031,17 +1061,17 @@ public class BillPaymentRequestFragment extends CommonFragment {
         adapterLoaiDeNghi = new ArrayAdapter(getContext(),R.layout.spiner_item, loaiDeNghiItemList);
         adapterLoaiDeNghi.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         billPaymentRequestFragmentBinding.spinerLoaiDeNghi.setAdapter(adapterLoaiDeNghi);
-    
+        
         loaiDoiTuongList= new ArrayList<>();
         adapterLoaiDoiTuong = new ArrayAdapter(getContext(), R.layout.spiner_item, loaiDoiTuongList);
         adapterLoaiDoiTuong.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         billPaymentRequestFragmentBinding.spinerLoaiDoiTuongNhan.setAdapter(adapterLoaiDoiTuong);
-    
+        
         loaiChiTieuItemList= new ArrayList<>();
         adapterLoaiChiTieu= new ArrayAdapter(getContext(),R.layout.spiner_item, loaiChiTieuItemList);
         adapterLoaiChiTieu.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         billPaymentRequestFragmentBinding.spinerLoaiChiTieu.setAdapter(adapterLoaiChiTieu);
-    
+        
         listDetail = new ArrayList<>();
         detailTicketDetailAdapter = new DetailTicketDetailAdapter(listDetail);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
@@ -1052,7 +1082,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
         billPaymentRequestFragmentBinding.recycleview.addItemDecoration(dividerItemDecoration);
         
         billPaymentRequestFragmentBinding.setIsEditable(true);
-    
+        
         mainDate = new Date(System.currentTimeMillis());
         billPaymentRequestFragmentBinding.txtDateCreate.setText(simpleDateFormatDisplay.format(mainDate));
     }
@@ -1083,13 +1113,13 @@ public class BillPaymentRequestFragment extends CommonFragment {
             @Override
             public void onLoadSuccess() {
                 mViewModel.getLiveDataCurrencyList().observe(getViewLifecycleOwner(), new Observer<List<CurrencyItem>>() {
-                @Override
-                public void onChanged(List<CurrencyItem> currencyItems) {
-                    currencyItemList.clear();
-                    currencyItemList.addAll(currencyItems);
-                    adapterCurrency.notifyDataSetChanged();
-                }
-            });
+                    @Override
+                    public void onChanged(List<CurrencyItem> currencyItems) {
+                        currencyItemList.clear();
+                        currencyItemList.addAll(currencyItems);
+                        adapterCurrency.notifyDataSetChanged();
+                    }
+                });
                 mViewModel.getLiveDataLoaiDeNghi().observe(getViewLifecycleOwner(), new Observer<List<LoaiDeNghiItem>>() {
                     @Override
                     public void onChanged(List<LoaiDeNghiItem> loaiDeNghiItems) {
@@ -1126,19 +1156,19 @@ public class BillPaymentRequestFragment extends CommonFragment {
                                         billPaymentRequestFragmentBinding.imgAdd);
                                 detailTicketDetailAdapter.setEditable(accessRole.isEdit());
                                 billPaymentRequestFragmentBinding.setIsEditable(accessRole.isEdit());
-    
+                                
                                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_progress_switch_shift,
                                         new ReviewProcessFragment(signatureItemApiResponse.getDcmnCode(),signatureItemApiResponse.getKeyCode()))
                                         .commit();
                                 billPaymentRequestFragmentBinding.edtSoTienChi.setText(dfnd.format((int) billPaymentHeader.getsUMCRAM()));
                                 billPaymentRequestFragmentBinding.edtSoTiendeNghiChi.setText(dfnd.format((int) billPaymentHeader.getsGSTCRAM()));
                                 billPaymentRequestFragmentBinding.edtInfo.setText(billPaymentHeader.getmEXLNNTE());
-    
+                                
                                 billPaymentRequestFragmentBinding.txtTenDoiTuongNhan.setText(billPaymentHeader.getoBJCNAME());
                                 doiTuongNhanItemSelected = new DoiTuongNhanItem();
                                 doiTuongNhanItemSelected.setiTEMNAME(billPaymentHeader.getoBJCNAME());
                                 doiTuongNhanItemSelected.setiTEMCODE(billPaymentHeader.getoBJCCODE());
-    
+                                
                                 billPaymentRequestFragmentBinding.txtSoPhieuTamUng.setText(billPaymentHeader.getaDVNCODE());
                                 try {
                                     billPaymentRequestFragmentBinding.edtSoTienTamUng.setText(String.valueOf((int) billPaymentHeader.getrCPTCRAM()));
@@ -1146,7 +1176,7 @@ public class BillPaymentRequestFragment extends CommonFragment {
                                 catch (Exception ex){
                                     ex.printStackTrace();
                                 }
-    
+                                
                                 for (int i=0;i<loaiDeNghiItemList.size();i++){
                                     LoaiDeNghiItem loaiDeNghiItem = loaiDeNghiItemList.get(i);
                                     if (loaiDeNghiItem.getiTEMCODE().equals(billPaymentHeader.getdCMNSBCD())){
@@ -1181,9 +1211,9 @@ public class BillPaymentRequestFragment extends CommonFragment {
                                 else {
                                     billPaymentRequestFragmentBinding.edtTiGia.setText(String.valueOf((int) billPaymentHeader.getcUOMRATE()));
                                 }
-    
+                                
                                 billPaymentRequestFragmentBinding.edtNgayTamUng.setText(Util.formatDate(billPaymentHeader.getaDVNDATE()));
-    
+                                
                                 if (billPaymentHeader.getdETAIL()!=null){
                                     if (billPaymentHeader.getdETAIL().size()>0){
                                         if (billPaymentHeader.getdETAIL().get(0).getmEXLNNTED()!=null){
@@ -1192,8 +1222,8 @@ public class BillPaymentRequestFragment extends CommonFragment {
                                                 ticket.setContent(billPaymentDetail.getmEXLNNTED());
                                                 ticket.setNumberPrice(billPaymentDetail.getmNEYCRAM());
                                                 ticket.setBillCode(billPaymentDetail.getrFRNCODE());
-                                                ticket.setDateBill(Util.convertStringToDate(Util.formatDate(billPaymentDetail.getrFRNDATE()),"dd-MM-yyyy"));
-                    
+                                                ticket.setDateBill(Util.convertStringToDate(Util.formatDateCustomChar(billPaymentDetail.getrFRNDATE(),"-"),"dd-MM-yyyy"));
+                                                
                                                 listDetail.add(ticket);
                                                 detailTicketDetailAdapter.notifyDataSetChanged();
                                             }

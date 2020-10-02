@@ -92,7 +92,6 @@ public class GetFileHelper {
         protected void onPostExecute(Object o) {
             super.onPostExecute(o);
             File file = (File) o;
-            System.out.println(file.getAbsolutePath());
             getPdfFileCallback.onGetFile((File) o);
         }
 

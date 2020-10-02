@@ -16,25 +16,27 @@
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <!-- -->
+            <!--  -->
             <LinearLayout
                 android:id="@+id/lParentContent"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layoutAnimation="@anim/layout_animation_float"
                 android:orientation="vertical">
+
                 <LinearLayout
                     android:id="@+id/linearLayoutDateCreate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_weight="1"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:visibility="visible">
+                    tools:visibility="gone">
 
                     <TextView
                         android:id="@+id/txtTitleNgayTamUng"
@@ -238,7 +240,7 @@
                         android:id="@+id/linearLayout6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
+
                         android:layout_marginRight="3dp"
                         android:layout_weight="1"
                         android:orientation="vertical"
@@ -272,7 +274,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
-                        android:layout_marginTop="5dp"
                         android:layout_weight="1"
                         android:orientation="vertical"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -324,7 +325,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
-                        android:layout_marginTop="5dp"
                         android:layout_weight="1"
                         android:orientation="vertical"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -362,7 +362,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
-                        android:layout_marginTop="5dp"
                         android:layout_weight="1"
                         android:orientation="vertical"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -432,9 +431,8 @@
                     android:id="@+id/constraintLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/linearLayoutMaDuAn">
@@ -564,9 +562,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@drawable/ic_baseline_save_24"
-                            android:tint="@color/text__white"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/text__white" />
 
                         <TextView
                             android:id="@+id/textView5"

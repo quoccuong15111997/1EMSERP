@@ -14,13 +14,13 @@ public class TicketBillPaymentRequestActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ticket_bill_payment_request);
-        AnimationHelper.getInstance().setAnimationBottomToTop(this);
+        AnimationHelper.getInstance().setAnimationRightToLeft(this);
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, new TicketBillPaymentRequestFragment()).commit();
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        AnimationHelper.getInstance().setAnimationTopToBottom(this);
+        AnimationHelper.getInstance().setAnimationLeftToRight(this);
     }
 }

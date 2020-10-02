@@ -35,7 +35,9 @@
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@+id/materialRippleLayout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/include3">
 
             <LinearLayout
@@ -434,35 +436,36 @@
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
+                <com.balysv.materialripple.MaterialRippleLayout
+                    android:id="@+id/materialRippleLayout"
+                    style="@style/RippleStyleWhite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <Button
+                        android:id="@+id/btnDone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_rounded_btn_accent"
+                        android:paddingLeft="@dimen/margin65"
+                        android:paddingRight="@dimen/margin65"
+                        android:text="Hoàn thành"
+                        android:textAllCaps="false"
+                        android:textColor="@color/text__white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutGraphsearch" />
+                </com.balysv.materialripple.MaterialRippleLayout>
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
 
-        <com.balysv.materialripple.MaterialRippleLayout
-            android:id="@+id/materialRippleLayout"
-            style="@style/RippleStyleWhite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <Button
-                android:id="@+id/btnDone"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:background="@drawable/bg_rounded_btn_accent"
-                android:paddingLeft="@dimen/margin65"
-                android:paddingRight="@dimen/margin65"
-                android:text="Hoàn thành"
-                android:textAllCaps="false"
-                android:textColor="@color/text__white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/layoutGraphsearch" />
-        </com.balysv.materialripple.MaterialRippleLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
