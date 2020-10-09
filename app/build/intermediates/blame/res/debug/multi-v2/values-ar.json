@@ -138,6 +138,23 @@
                         "endColumns": "109,110",
                         "endOffsets": "6957,7068"
                     }
+                },
+                {
+                    "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-2\\files-2.1\\1913dbaf24280fccddd68fe43241e849\\jetified-zxing-android-embedded-4.1.0\\res\\values-ar\\values-ar.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,117,167,300",
+                        "endColumns": "61,49,132,109",
+                        "endOffsets": "112,162,295,405"
+                    },
+                    "to": {
+                        "startLines": "72,73,74,75",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "7804,7866,7916,8049",
+                        "endColumns": "61,49,132,109",
+                        "endOffsets": "7861,7911,8044,8154"
+                    }
                 }
             ]
         }

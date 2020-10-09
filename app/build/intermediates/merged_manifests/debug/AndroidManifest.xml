@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.firstems.erp"
-    android:versionCode="4"
+    android:versionCode="5"
     android:versionName="1.0.2" >
 
     <uses-sdk
@@ -17,6 +17,28 @@
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
+    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.screen.landscape"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+
     <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
@@ -34,9 +56,15 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.firstems.erp.ui.product.progress.ProductProgressActivity" />
+        <activity android:name="com.firstems.erp.ui.product.ProductActivity" />
         <activity android:name="com.firstems.erp.ui.shared.office.OfficeViewActivity" />
         <activity android:name="com.firstems.erp.loading.FlashActivity" />
+        <activity
+            android:name="com.firstems.erp.ui.product.barcode.ScannerActivity"
+            android:screenOrientation="portrait" />
         <activity android:name="com.firstems.erp.ui.signature.billpaymentrequest.sophieutamung.SoPhieuTamUngActivity" />
         <activity
             android:name="com.firstems.erp.ui.more.password.ChangePasswordActivity"
@@ -271,6 +299,14 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
+
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:clearTaskOnLaunch="true"
+            android:screenOrientation="sensorLandscape"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
 
         <receiver
             android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"

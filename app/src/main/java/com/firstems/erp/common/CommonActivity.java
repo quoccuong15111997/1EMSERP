@@ -24,6 +24,7 @@ import androidx.transition.TransitionManager;
 import com.firstems.erp.R;
 import com.firstems.erp.loading.LoadingActivity;
 import com.firstems.erp.sharedpreferences.SharedPreferencesManager;
+import com.firstems.erp.ui.config.ConfigActivity;
 import com.firstems.erp.ui.config.ConfigFragment;
 
 import org.jetbrains.annotations.NotNull;
@@ -185,7 +186,7 @@ public abstract class CommonActivity extends AppCompatActivity {
         appCompatButtonSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CommonActivity.this, ConfigFragment.class);
+                Intent intent = new Intent(CommonActivity.this, ConfigActivity.class);
                 startActivity(intent);
                 if (dialog!=null){
                     dialog.dismiss();

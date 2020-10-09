@@ -55,6 +55,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-2\\files-2.1\\1913dbaf24280fccddd68fe43241e849\\jetified-zxing-android-embedded-4.1.0\\res\\values-ja\\values-ja.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,109,156,256",
+                        "endColumns": "53,46,99,81",
+                        "endOffsets": "104,151,251,333"
+                    },
+                    "to": {
+                        "startLines": "72,73,74,75",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "7438,7492,7539,7639",
+                        "endColumns": "53,46,99,81",
+                        "endOffsets": "7487,7534,7634,7716"
+                    }
+                },
+                {
                     "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-2\\files-2.1\\d63ef329458d68430c53b3c6d9f2b6cf\\jetified-materialdatetimepicker-3.2.0\\res\\values-ja\\values-ja.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",

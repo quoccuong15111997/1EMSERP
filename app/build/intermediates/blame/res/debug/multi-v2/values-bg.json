@@ -106,6 +106,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-2\\files-2.1\\1913dbaf24280fccddd68fe43241e849\\jetified-zxing-android-embedded-4.1.0\\res\\values-bg\\values-bg.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,112,159,311",
+                        "endColumns": "56,46,151,110",
+                        "endOffsets": "107,154,306,417"
+                    },
+                    "to": {
+                        "startLines": "72,73,74,75",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "8155,8212,8259,8411",
+                        "endColumns": "56,46,151,110",
+                        "endOffsets": "8207,8254,8406,8517"
+                    }
+                },
+                {
                     "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-2\\files-2.1\\9d9f5eefb5bcc469207d44112eb03d4a\\jetified-play-services-base-17.0.0\\res\\values-bg\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",

@@ -49,6 +49,8 @@ import com.firstems.erp.databinding.MoreFragmentBindingImpl;
 import com.firstems.erp.databinding.NationalFragmentBindingImpl;
 import com.firstems.erp.databinding.PDFViewerFragmentBindingImpl;
 import com.firstems.erp.databinding.ProcessApproveFragmentBindingImpl;
+import com.firstems.erp.databinding.ProductFragmentBindingImpl;
+import com.firstems.erp.databinding.ProductProgressFragmentBindingImpl;
 import com.firstems.erp.databinding.ProvinceFragmentBindingImpl;
 import com.firstems.erp.databinding.RelatedFieldsFragmentBindingImpl;
 import com.firstems.erp.databinding.ReportFragmentBindingImpl;
@@ -167,49 +169,53 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_PROCESSAPPROVEFRAGMENT = 43;
 
-  private static final int LAYOUT_PROVINCEFRAGMENT = 44;
+  private static final int LAYOUT_PRODUCTFRAGMENT = 44;
 
-  private static final int LAYOUT_RELATEDFIELDSFRAGMENT = 45;
+  private static final int LAYOUT_PRODUCTPROGRESSFRAGMENT = 45;
 
-  private static final int LAYOUT_REPORTFRAGMENT = 46;
+  private static final int LAYOUT_PROVINCEFRAGMENT = 46;
 
-  private static final int LAYOUT_REPORTINGFRAGMENT = 47;
+  private static final int LAYOUT_RELATEDFIELDSFRAGMENT = 47;
 
-  private static final int LAYOUT_REVIEWPROCESSFRAGMENT = 48;
+  private static final int LAYOUT_REPORTFRAGMENT = 48;
 
-  private static final int LAYOUT_SELECTCOMPANYFRAGMENT = 49;
+  private static final int LAYOUT_REPORTINGFRAGMENT = 49;
 
-  private static final int LAYOUT_SELECTCUSTOMFRAGMENT = 50;
+  private static final int LAYOUT_REVIEWPROCESSFRAGMENT = 50;
 
-  private static final int LAYOUT_SELECTDATEFRAGMENT = 51;
+  private static final int LAYOUT_SELECTCOMPANYFRAGMENT = 51;
 
-  private static final int LAYOUT_SELECTDAYFRAGMENT = 52;
+  private static final int LAYOUT_SELECTCUSTOMFRAGMENT = 52;
 
-  private static final int LAYOUT_SELECTMONTHFRAGMENT = 53;
+  private static final int LAYOUT_SELECTDATEFRAGMENT = 53;
 
-  private static final int LAYOUT_SELECTWEEKFRAGMENT = 54;
+  private static final int LAYOUT_SELECTDAYFRAGMENT = 54;
 
-  private static final int LAYOUT_SELLFRAGMENT = 55;
+  private static final int LAYOUT_SELECTMONTHFRAGMENT = 55;
 
-  private static final int LAYOUT_SERVICECONTACTSFRAGMENT = 56;
+  private static final int LAYOUT_SELECTWEEKFRAGMENT = 56;
 
-  private static final int LAYOUT_SIGNATUREFRAGMENT = 57;
+  private static final int LAYOUT_SELLFRAGMENT = 57;
 
-  private static final int LAYOUT_SIGNATUREGIRDFRAGMENT = 58;
+  private static final int LAYOUT_SERVICECONTACTSFRAGMENT = 58;
 
-  private static final int LAYOUT_SWITCHSHIFTFRAGMENT = 59;
+  private static final int LAYOUT_SIGNATUREFRAGMENT = 59;
 
-  private static final int LAYOUT_SWITCHSHIFTINFOFRAGMENT = 60;
+  private static final int LAYOUT_SIGNATUREGIRDFRAGMENT = 60;
 
-  private static final int LAYOUT_TABAPPROVEDFRAGMENT = 61;
+  private static final int LAYOUT_SWITCHSHIFTFRAGMENT = 61;
 
-  private static final int LAYOUT_TABWAITAPPROVEFRAGMENT = 62;
+  private static final int LAYOUT_SWITCHSHIFTINFOFRAGMENT = 62;
 
-  private static final int LAYOUT_TICKETBILLPAYMENTREQUESTFRAGMENT = 63;
+  private static final int LAYOUT_TABAPPROVEDFRAGMENT = 63;
 
-  private static final int LAYOUT_VIEWIMAGEFRAGMENT = 64;
+  private static final int LAYOUT_TABWAITAPPROVEFRAGMENT = 64;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(64);
+  private static final int LAYOUT_TICKETBILLPAYMENTREQUESTFRAGMENT = 65;
+
+  private static final int LAYOUT_VIEWIMAGEFRAGMENT = 66;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(66);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.firstems.erp.R.layout.account_fragment, LAYOUT_ACCOUNTFRAGMENT);
@@ -255,6 +261,8 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.firstems.erp.R.layout.national_fragment, LAYOUT_NATIONALFRAGMENT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.firstems.erp.R.layout.p_d_f_viewer_fragment, LAYOUT_PDFVIEWERFRAGMENT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.firstems.erp.R.layout.process_approve_fragment, LAYOUT_PROCESSAPPROVEFRAGMENT);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.firstems.erp.R.layout.product_fragment, LAYOUT_PRODUCTFRAGMENT);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.firstems.erp.R.layout.product_progress_fragment, LAYOUT_PRODUCTPROGRESSFRAGMENT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.firstems.erp.R.layout.province_fragment, LAYOUT_PROVINCEFRAGMENT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.firstems.erp.R.layout.related_fields_fragment, LAYOUT_RELATEDFIELDSFRAGMENT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.firstems.erp.R.layout.report_fragment, LAYOUT_REPORTFRAGMENT);
@@ -539,6 +547,18 @@ public class DataBinderMapperImpl extends DataBinderMapper {
         }
         throw new IllegalArgumentException("The tag for process_approve_fragment is invalid. Received: " + tag);
       }
+      case  LAYOUT_PRODUCTFRAGMENT: {
+        if ("layout/product_fragment_0".equals(tag)) {
+          return new ProductFragmentBindingImpl(component, view);
+        }
+        throw new IllegalArgumentException("The tag for product_fragment is invalid. Received: " + tag);
+      }
+      case  LAYOUT_PRODUCTPROGRESSFRAGMENT: {
+        if ("layout/product_progress_fragment_0".equals(tag)) {
+          return new ProductProgressFragmentBindingImpl(component, view);
+        }
+        throw new IllegalArgumentException("The tag for product_progress_fragment is invalid. Received: " + tag);
+      }
       case  LAYOUT_PROVINCEFRAGMENT: {
         if ("layout/province_fragment_0".equals(tag)) {
           return new ProvinceFragmentBindingImpl(component, view);
@@ -569,6 +589,13 @@ public class DataBinderMapperImpl extends DataBinderMapper {
         }
         throw new IllegalArgumentException("The tag for review_process_fragment is invalid. Received: " + tag);
       }
+    }
+    return null;
+  }
+
+  private final ViewDataBinding internalGetViewDataBinding1(DataBindingComponent component,
+      View view, int internalId, Object tag) {
+    switch(internalId) {
       case  LAYOUT_SELECTCOMPANYFRAGMENT: {
         if ("layout/select_company_fragment_0".equals(tag)) {
           return new SelectCompanyFragmentBindingImpl(component, view);
@@ -581,13 +608,6 @@ public class DataBinderMapperImpl extends DataBinderMapper {
         }
         throw new IllegalArgumentException("The tag for select_custom_fragment is invalid. Received: " + tag);
       }
-    }
-    return null;
-  }
-
-  private final ViewDataBinding internalGetViewDataBinding1(DataBindingComponent component,
-      View view, int internalId, Object tag) {
-    switch(internalId) {
       case  LAYOUT_SELECTDATEFRAGMENT: {
         if ("layout/select_date_fragment_0".equals(tag)) {
           return new SelectDateFragmentBindingImpl(component, view);
@@ -783,7 +803,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(64);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(66);
 
     static {
       sKeys.put("layout/account_fragment_0", com.firstems.erp.R.layout.account_fragment);
@@ -829,6 +849,8 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put("layout/national_fragment_0", com.firstems.erp.R.layout.national_fragment);
       sKeys.put("layout/p_d_f_viewer_fragment_0", com.firstems.erp.R.layout.p_d_f_viewer_fragment);
       sKeys.put("layout/process_approve_fragment_0", com.firstems.erp.R.layout.process_approve_fragment);
+      sKeys.put("layout/product_fragment_0", com.firstems.erp.R.layout.product_fragment);
+      sKeys.put("layout/product_progress_fragment_0", com.firstems.erp.R.layout.product_progress_fragment);
       sKeys.put("layout/province_fragment_0", com.firstems.erp.R.layout.province_fragment);
       sKeys.put("layout/related_fields_fragment_0", com.firstems.erp.R.layout.related_fields_fragment);
       sKeys.put("layout/report_fragment_0", com.firstems.erp.R.layout.report_fragment);

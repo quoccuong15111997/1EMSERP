@@ -123,5 +123,8 @@ dependencies {
     //Animation
     implementation "com.github.skydoves:transformationlayout:1.0.6"
 
-    //Office
+    //barcode
+    implementation('com.journeyapps:zxing-android-embedded:4.1.0') { transitive = false }
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'com.google.zxing:core:3.3.0'
 }

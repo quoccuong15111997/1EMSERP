@@ -60,6 +60,8 @@ public class Constant {
     public static String RUN_CODE_LABEL = "SYS001.01.001";
     public static String RUN_CODE_EXPORT_PLACE = "SYS001.06.009";
     public static String RUN_CODE_PHIEU_TAM_UNG_NEU_CO = "ACC001.01.003";
+    public static String RUN_CODE_GET_ALL_PROGRESS_PRODUCT = "PRD001.02.006";
+    public static String RUN_CODE_GET_DETAIL_PROGRESS_PRODUCT = "PRD001.02.003";
 
     public static String NANE_PUT_TYPE_SELECT = "name_put_type_slect";
     public static String NANE_PUT_DEPARTMENT_LIST = "department_list";
@@ -85,6 +87,7 @@ public class Constant {
     public static String NAME_PUT_DIFF_LIST = "name_put_diff_list";
     public static String NAME_PUT_DIFF_FLAG = "name_put_diff_flag";
     public static String NAME_PUT_PHIEU_TAM_UNG_NEU_CO = "name_put_phieu_tam_ung_neu_co";
-    
+    public static String NAME_PUT_PROGRESS_PRODUCT = "name_put_progress_product";
+    public static String NAME_PUT_RESULT_BARCODE = "name_put_barcode";
     
 }

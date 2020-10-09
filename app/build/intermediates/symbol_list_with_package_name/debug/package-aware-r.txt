@@ -1146,6 +1146,16 @@ attr windowNoTitle
 attr yearSelectedStyle
 attr yearStyle
 attr yearTodayStyle
+attr zxing_framing_rect_height
+attr zxing_framing_rect_width
+attr zxing_possible_result_points
+attr zxing_preview_scaling_strategy
+attr zxing_result_view
+attr zxing_scanner_layout
+attr zxing_use_texture_view
+attr zxing_viewfinder_laser
+attr zxing_viewfinder_laser_visibility
+attr zxing_viewfinder_mask
 bool abc_action_bar_embed_tabs
 bool abc_allow_stacked_button_bar
 bool abc_config_actionMenuItemAllCaps
@@ -1822,6 +1832,16 @@ color yellow_A100
 color yellow_A200
 color yellow_A400
 color yellow_A700
+color zxing_custom_possible_result_points
+color zxing_custom_result_view
+color zxing_custom_viewfinder_laser
+color zxing_custom_viewfinder_mask
+color zxing_possible_result_points
+color zxing_result_view
+color zxing_status_text
+color zxing_transparent
+color zxing_viewfinder_laser
+color zxing_viewfinder_mask
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -2500,6 +2520,7 @@ drawable avata
 drawable avd_hide_password
 drawable avd_show_password
 drawable background_login
+drawable barcode_scan
 drawable bg_button
 drawable bg_gradient_login
 drawable bg_home
@@ -2756,6 +2777,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable preference_list_divider_material
+drawable qr_icon
 drawable shape_circle
 drawable shape_circle_outline
 drawable shape_circle_outline_2dp
@@ -2936,6 +2958,7 @@ id cell_container
 id cell_data
 id cell_image_button
 id center
+id centerCrop
 id centerHorizontal
 id centerVertical
 id center_horizontal
@@ -2993,6 +3016,7 @@ id constraintLayout14
 id constraintLayout15
 id constraintLayout16
 id constraintLayout17
+id constraintLayout18
 id constraintLayout2
 id constraintLayout3
 id constraintLayout4
@@ -3058,11 +3082,13 @@ id edtDocumentCode
 id edtDocumentName
 id edtDomain
 id edtEmployee
+id edtGhiChu
 id edtInfo
 id edtLoaiChamCongChieu
 id edtLoaiChamCongSang
 id edtLoaiChamCongToi
 id edtLocate
+id edtMaLenhSanXuat
 id edtNgayTamUng
 id edtNhanVienDuocChamCong
 id edtNumberDay
@@ -3076,6 +3102,7 @@ id edtSoTienTamUng
 id edtSoTiendeNghiChi
 id edtStack
 id edtSumDay
+id edtTenLenhSanXuat
 id edtTiGia
 id empty_view
 id end
@@ -3101,7 +3128,9 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id fitCenter
 id fitToContents
+id fitXY
 id fixed
 id flex_end
 id flex_start
@@ -3125,6 +3154,8 @@ id frame_image_view
 id frame_loai_doi_tuong_nhan
 id frame_national
 id frame_pdf_view
+id frame_product
+id frame_product_progress
 id frame_progress
 id frame_progress_switch_shift
 id frame_province
@@ -3208,6 +3239,7 @@ id imageViewCalenda
 id img
 id imgAdd
 id imgBack
+id imgBarcode
 id imgCalenda
 id imgChart
 id imgClose
@@ -3256,6 +3288,7 @@ id include27
 id include3
 id include4
 id include5
+id include6
 id include7
 id include8
 id include9
@@ -3264,7 +3297,9 @@ id info
 id invisible
 id italic
 id item_touch_helper_previous_elevation
+id ivBack
 id ivCheckAssets
+id ivFlash
 id ivImage
 id ivImageArrow
 id ivPhotoProfile
@@ -3333,12 +3368,15 @@ id linearLayout8
 id linearLayout9
 id linearLayoutCategory
 id linearLayoutCompanyBranch
+id linearLayoutCongDoan
 id linearLayoutContactContent
 id linearLayoutContent
 id linearLayoutDate
 id linearLayoutDateComplete
 id linearLayoutDateCreate
 id linearLayoutEmployee
+id linearLayoutGhiChu
+id linearLayoutLenSanXuat
 id linearLayoutListReceiver
 id linearLayoutListRefer
 id linearLayoutLoaiChamCongChieu
@@ -3354,6 +3392,7 @@ id linearLayoutMaDuAn
 id linearLayoutMoney
 id linearLayoutNgay
 id linearLayoutNgayTamUng
+id linearLayoutNgayTaoLenhSanXuat
 id linearLayoutNgayThanhToan
 id linearLayoutNhanVienDuocChamCong
 id linearLayoutNoidungDeNghi
@@ -3366,6 +3405,7 @@ id linearLayoutSoTienChi
 id linearLayoutSoTienDeNghiChi
 id linearLayoutStack
 id linearLayoutTenDoiTuongNhan
+id linearLayoutTenLenhSanXuat
 id linearLayoutTienDeNghi
 id linearLayoutTienDuocDuyet
 id linearLayoutTienTamUng
@@ -3556,6 +3596,7 @@ id recycleEmployee
 id recycleFile
 id recycleImage
 id recycleItem
+id recycleProduct
 id recycleProgress
 id recycleSignature
 id recycledepartment
@@ -3622,6 +3663,7 @@ id space_around
 id space_between
 id spacer
 id spinerCategory
+id spinerCongDoan
 id spinerContent
 id spinerDonViTienTe
 id spinerLang
@@ -3666,6 +3708,7 @@ id switchResquestFormPart
 id switchWaitApproved
 id switchWaitSignature
 id switchWidget
+id switch_flashlight
 id tabApproved
 id tabLayout
 id tabLayout2
@@ -3750,7 +3793,10 @@ id textView53
 id textView54
 id textView55
 id textView56
+id textView58
 id textView6
+id textView61
+id textView62
 id textView7
 id textView8
 id textView9
@@ -3847,6 +3893,7 @@ id txtMonth_8
 id txtMonth_9
 id txtName
 id txtNgayTamUng
+id txtNgayTaoLenhSanXuat
 id txtNgayThanhToan
 id txtNhanVien
 id txtNon
@@ -3864,6 +3911,12 @@ id txtPassNew
 id txtPassOld
 id txtPhongBan
 id txtPositioName
+id txtProductName
+id txtProductQuatity
+id txtProductQuatityFail
+id txtProductQuatityPass
+id txtProgressCode
+id txtProgressName
 id txtReceiver
 id txtRoom
 id txtSoPhieuTamUng
@@ -3886,6 +3939,7 @@ id txtTitleBill2
 id txtTitleCategory
 id txtTitleCode
 id txtTitleCompanyBranch
+id txtTitleCongDoan
 id txtTitleContactContent
 id txtTitleContent
 id txtTitleDate
@@ -3899,6 +3953,7 @@ id txtTitleDocumentCode
 id txtTitleDocumentName
 id txtTitleDomain
 id txtTitleEmployee
+id txtTitleGhiChu
 id txtTitleHelp
 id txtTitleImage
 id txtTitleInclude
@@ -3917,6 +3972,7 @@ id txtTitleMaDuAn
 id txtTitleMoney
 id txtTitleNgayPhatHanh
 id txtTitleNgayTamUng
+id txtTitleNgayTaoLenhSanXuat
 id txtTitleNgayThanhToan
 id txtTitleNhanVienDuocChamCong
 id txtTitleNoiDungChiTiet
@@ -3948,6 +4004,7 @@ id txtTitleStatus
 id txtTitleSum
 id txtTitleSystemSetting
 id txtTitleTenDoiTuongNhan
+id txtTitleTenLenhSanXuat
 id txtTitleTiGia
 id txtTitleTime
 id txtTitleTrangThai
@@ -3999,6 +4056,19 @@ id wrap
 id wrap_content
 id wrap_reverse
 id zero_corner_chip
+id zxing_back_button
+id zxing_barcode_scanner
+id zxing_barcode_surface
+id zxing_camera_closed
+id zxing_camera_error
+id zxing_decode
+id zxing_decode_failed
+id zxing_decode_succeeded
+id zxing_possible_result_points
+id zxing_preview_failed
+id zxing_prewiew_size_ready
+id zxing_status_view
+id zxing_viewfinder_view
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer app_bar_elevation_anim_duration
@@ -4095,9 +4165,12 @@ layout activity_media_details
 layout activity_national
 layout activity_office_view
 layout activity_p_d_f_viewer
+layout activity_product
+layout activity_product_progress
 layout activity_province
 layout activity_related_fields
 layout activity_reportting
+layout activity_scanner
 layout activity_select_company
 layout activity_select_date
 layout activity_service_contacts
@@ -4122,11 +4195,13 @@ layout business_registration_fragment
 layout business_registration_info_fragment
 layout chart_view_fragment
 layout config_fragment
+layout custom_barcode_scanner
 layout custom_dialog
 layout custom_spinner_item
 layout custom_toolbar
 layout custom_toolbar_done
 layout custom_toolbar_menu
+layout custom_toolbar_save
 layout dashboard_fragment
 layout data_table_fragment
 layout default_signature_fragment
@@ -4195,6 +4270,8 @@ layout item_loading_dialog_non__message
 layout item_location
 layout item_location_select
 layout item_photo_layout
+layout item_product_list
+layout item_product_progress
 layout item_progress_approve
 layout item_signature
 layout item_signature_card_custom
@@ -4320,6 +4397,8 @@ layout preference_widget_seekbar_material
 layout preference_widget_switch
 layout preference_widget_switch_compat
 layout process_approve_fragment
+layout product_fragment
+layout product_progress_fragment
 layout province_fragment
 layout related_fields_fragment
 layout report_fragment
@@ -4372,6 +4451,8 @@ layout ticket_bill_payment_request_fragment
 layout toast_icon_text
 layout view_image_fragment
 layout warehouse_fragment
+layout zxing_barcode_scanner
+layout zxing_capture
 menu bottom_nav_menu
 menu doc_picker_menu
 menu media_detail_menu
@@ -4412,6 +4493,7 @@ mipmap ic_zip
 mipmap logo_ems
 navigation mobile_navigation
 plurals mtrl_badge_content_description
+raw zxing_beep
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -4445,6 +4527,7 @@ string all_images
 string all_photos
 string all_videos
 string app_name
+string app_version
 string appbar_scrolling_view_behavior
 string attachment_summary_off
 string attachment_summary_on
@@ -4480,6 +4563,7 @@ string default_decimal_separator
 string default_format
 string default_notification_channel_id
 string default_web_client_id
+string define_zxingandroidembedded
 string done
 string dummy_button
 string dummy_content
@@ -4501,6 +4585,15 @@ string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string images
 string item_view_role_description
+string library_zxingandroidembedded_author
+string library_zxingandroidembedded_authorWebsite
+string library_zxingandroidembedded_isOpenSource
+string library_zxingandroidembedded_libraryDescription
+string library_zxingandroidembedded_libraryName
+string library_zxingandroidembedded_libraryVersion
+string library_zxingandroidembedded_libraryWebsite
+string library_zxingandroidembedded_licenseId
+string library_zxingandroidembedded_repositoryLink
 string material_clock_display_divider
 string material_clock_toggle_content_description
 string material_hour_selection
@@ -4631,6 +4724,10 @@ string v7_preference_off
 string v7_preference_on
 string videos
 string word_title
+string zxing_app_name
+string zxing_button_ok
+string zxing_msg_camera_framework_bug
+string zxing_msg_default_status
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow
@@ -5467,6 +5564,7 @@ style mdtp_done_button_light
 style mdtp_time_label
 style mdtp_time_label_small
 style mdtp_time_label_thin
+style zxing_CaptureTheme
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth
@@ -5640,6 +5738,9 @@ styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
+styleable zxing_camera_preview zxing_framing_rect_height zxing_framing_rect_width zxing_preview_scaling_strategy zxing_use_texture_view
+styleable zxing_finder zxing_possible_result_points zxing_result_view zxing_viewfinder_laser zxing_viewfinder_laser_visibility zxing_viewfinder_mask
+styleable zxing_view zxing_scanner_layout
 xml file_paths
 xml network_security_config
 xml provider_paths

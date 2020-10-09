@@ -33,6 +33,8 @@ import com.firstems.erp.api.model.response.locationtype.LocationTypeApiResponse;
 import com.firstems.erp.api.model.response.login.LoginReponse;
 import com.firstems.erp.api.model.response.national.NationalApiResponse;
 import com.firstems.erp.api.model.response.phieu_tam_ung.PhieuTamUngApiResponse;
+import com.firstems.erp.api.model.response.product.ProgressApiResponse;
+import com.firstems.erp.api.model.response.product.ProgressProductDetailApiResponse;
 import com.firstems.erp.api.model.response.project_list.ProjectListApiResponse;
 import com.firstems.erp.api.model.response.province.ProvinceApiResponse;
 import com.firstems.erp.api.model.response.reviewprocess.ReviewProcessApiResponse;
@@ -583,6 +585,21 @@ public class ApiServices {
         if (retrofit!=null){
             Call<PhieuTamUngApiResponse> phieuTamUngApiResponseCall = retrofit.create(RestApi.class).getListPhieuTamUngNeuCo(token,body);
             phieuTamUngApiResponseCall.enqueue(callback);
+        }
+    }
+    /*===========================/PRODUCT/===========================/*/
+    // Get all progress
+    public void getAllProgress(String token, Callback<ProgressApiResponse> callback){
+        if (retrofit!=null){
+            Call<ProgressApiResponse> progressApiResponseCall = retrofit.create(RestApi.class).getAllProgress(token);
+            progressApiResponseCall.enqueue(callback);
+        }
+    }
+    // get progress product detail
+    public void getProgressProductDetail(String token,JsonObject body, Callback<ProgressProductDetailApiResponse> callback){
+        if (retrofit!=null){
+            Call<ProgressProductDetailApiResponse> progressProductDetailApiResponseCall = retrofit.create(RestApi.class).getProgressProductDetail(token,body);
+            progressProductDetailApiResponseCall.enqueue(callback);
         }
     }
 }

@@ -28,6 +28,8 @@ import com.firstems.erp.api.model.response.locationtype.LocationTypeApiResponse;
 import com.firstems.erp.api.model.response.login.LoginReponse;
 import com.firstems.erp.api.model.response.national.NationalApiResponse;
 import com.firstems.erp.api.model.response.phieu_tam_ung.PhieuTamUngApiResponse;
+import com.firstems.erp.api.model.response.product.ProgressApiResponse;
+import com.firstems.erp.api.model.response.product.ProgressProductDetailApiResponse;
 import com.firstems.erp.api.model.response.project_list.ProjectListApiResponse;
 import com.firstems.erp.api.model.response.province.ProvinceApiResponse;
 import com.firstems.erp.api.model.response.reviewprocess.ReviewProcessApiResponse;
@@ -321,4 +323,10 @@ public interface RestApi {
     
     @POST("/Api/data/runApi_data?run_Code=ACC001.01.003")
     Call<PhieuTamUngApiResponse> getListPhieuTamUngNeuCo(@Header("TOKEN") String token, @Body JsonObject body);
+
+    /*===========================/PRODUCT/===========================/*/
+    @POST("/Api/data/runApi_Data?run_Code=PRD001.02.006")
+    Call<ProgressApiResponse> getAllProgress(@Header("TOKEN") String token);
+    @POST("/Api/data/runApi_Data?run_Code=PRD001.02.003")
+    Call<ProgressProductDetailApiResponse> getProgressProductDetail(@Header("TOKEN") String token, @Body JsonObject body);
 }

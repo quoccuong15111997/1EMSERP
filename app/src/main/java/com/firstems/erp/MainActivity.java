@@ -1,5 +1,6 @@
 package com.firstems.erp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -30,6 +31,7 @@ import com.firstems.erp.ui.approved.ApprovedFragment;
 import com.firstems.erp.ui.document.DocumentFragment;
 import com.firstems.erp.ui.home.HomeFragment;
 import com.firstems.erp.ui.more.MoreFragment;
+import com.firstems.erp.ui.product.ProductActivity;
 import com.firstems.erp.ui.signature.SignatureGirdDiffFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -260,6 +262,11 @@ public class MainActivity extends CommonActivity implements BackToHomeCallback, 
                 }
                 loadFragment(fragmentDocument);
                 navView.getMenu().getItem(3).setChecked(true);
+                break;
+            }
+            case 3 : {
+                Intent intent = new Intent(MainActivity.this, ProductActivity.class);
+                startActivity(intent);
                 break;
             }
             default : {

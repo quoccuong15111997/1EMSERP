@@ -239,6 +239,14 @@ public class HomeFragment extends CommonFragment {
         dataHome2.setDescription2(SharedPreferencesManager.getSystemLabel(18));
         dataHome2.setImage(R.drawable.ic_product_assets);
         dataHomeList.add(dataHome2);
+
+        DataHome dataHome3 = new DataHome();
+        dataHome3.setTitle("Quản lý sản xuất");
+        dataHome3.setDescription1("Giám sát quá trình sản xuất");
+        dataHome3.setDescription2("Cập nhật dữ liệu");
+        dataHome3.setImage(R.drawable.ic_product_assets);
+        dataHomeList.add(dataHome3);
+
         homeAdapter.notifyDataSetChanged();
     }
     

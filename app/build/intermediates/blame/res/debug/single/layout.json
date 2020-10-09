@@ -180,6 +180,10 @@
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\layout_dashboard.xml"
     },
     {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\product_progress_fragment.xml",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\product_progress_fragment.xml"
+    },
+    {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\business_registration_fragment.xml",
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\business_registration_fragment.xml"
     },
@@ -246,6 +250,10 @@
     {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\data_table_fragment.xml",
         "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\data_table_fragment.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\product_fragment.xml",
+        "source": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\product_fragment.xml"
     },
     {
         "merged": "C:\\Users\\PC\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\more_fragment.xml",
