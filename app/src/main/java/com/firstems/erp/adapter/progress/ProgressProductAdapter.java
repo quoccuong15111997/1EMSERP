@@ -30,6 +30,7 @@ public class ProgressProductAdapter extends RecyclerView.Adapter<ProgressProduct
 
     public interface ProgressProductOnlickListener {
         void onItemClick(ProgressItem progressItem);
+        void onBarCodeClick(ProgressItem progressItem);
     }
 
     public ProgressProductAdapter(List<ProgressItem> progressItemList) {
@@ -77,6 +78,12 @@ public class ProgressProductAdapter extends RecyclerView.Adapter<ProgressProduct
             @Override
             public void onClick(View view) {
                 progressProductOnlickListener.onItemClick(progressItem);
+            }
+        });
+        holder.imgBarCode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progressProductOnlickListener.onBarCodeClick(progressItem);
             }
         });
     }

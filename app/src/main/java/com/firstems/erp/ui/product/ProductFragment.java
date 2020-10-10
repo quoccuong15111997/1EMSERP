@@ -18,17 +18,21 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.transition.TransitionManager;
 
 import android.os.Handler;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.firstems.erp.R;
+import com.firstems.erp.adapter.progress.ErrorCodeAdapter;
 import com.firstems.erp.adapter.progress.ProductAdapter;
 import com.firstems.erp.api.model.response.product.ProgressItem;
 import com.firstems.erp.api.model.response.product.ProgressProductDetailItem;
@@ -38,6 +42,7 @@ import com.firstems.erp.common.Constant;
 import com.firstems.erp.common.Util;
 import com.firstems.erp.databinding.ProductFragmentBinding;
 import com.firstems.erp.helper.animation.AnimationHelper;
+import com.firstems.erp.model.product.ErrorCodeModel;
 import com.firstems.erp.ui.product.barcode.ScannerActivity;
 import com.firstems.erp.ui.product.progress.ProductProgressActivity;
 import com.firstems.erp.ui.product.progress.ProductProgressFragment;
@@ -254,11 +259,146 @@ public class ProductFragment extends CommonFragment {
         EditText edtQuatityBad = dialog.findViewById(R.id.edtQuatityBad);
         TextView txtError = dialog.findViewById(R.id.txtError);
         TextView txtSumQuatity = dialog.findViewById(R.id.txtSumQuatity);
+
+        ImageButton imgPlusGood = dialog.findViewById(R.id.imgPlusGood);
+        ImageButton imgSubGood = dialog.findViewById(R.id.imgSubGood);
+        ImageButton imgPlusBad = dialog.findViewById(R.id.imgPlusBad);
+        ImageButton imgSubBad = dialog.findViewById(R.id.imgsubBad);
+
         Spinner spinnerError = dialog.findViewById(R.id.spinnerError);
 
+        List<ErrorCodeModel> errorCodeModels = new ArrayList<>();
+        errorCodeModels.add(new ErrorCodeModel("0","Ấn để chọn",false));
+        errorCodeModels.add(new ErrorCodeModel("ss","Quên",false));
+        errorCodeModels.add(new ErrorCodeModel("ss","Tại",false));
+        errorCodeModels.add(new ErrorCodeModel("ss","Bị",false));
+        errorCodeModels.add(new ErrorCodeModel("ss","Thì",false));
+        errorCodeModels.add(new ErrorCodeModel("ss","Là",false));
+
+        ErrorCodeAdapter errorCodeAdapter = new ErrorCodeAdapter(errorCodeModels,dialog.getContext());
+        spinnerError.setAdapter(errorCodeAdapter);
+
+        errorCodeAdapter.setOnSpinnerMultiCheckListener(new ErrorCodeAdapter.OnSpinnerMultiCheckListener() {
+            @Override
+            public void onIteCheck(int position) {
+                errorCodeModels.get(position).setCheck(!errorCodeModels.get(position).isCheck());
+                new Handler().post(new Runnable() {
+                    @Override
+                    public void run() {
+                        String s = "";
+                        for (ErrorCodeModel errorCodeModel : errorCodeModels){
+                            if (errorCodeModel.isCheck()){
+                                s+=errorCodeModel.getErrorName()+",";
+                            }
+                        }
+                        if (!s.equals("")){
+                            txtError.setText(s);
+                            txtError.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            txtError.setVisibility(View.GONE);
+                        }
+                    }
+                });
+            }
+        });
         txtTitle.setText(item.getPrdcname());
         txtSumQuatity.setText(String.valueOf((long) item.getPrdcqtty()));
 
+        imgPlusGood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onPlusClick(edtQuatityGood,(long) item.getPrdcqtty(),Long.parseLong(edtQuatityBad.getText().toString()));
+            }
+        });
+        imgPlusBad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onPlusClick(edtQuatityBad, (long) item.getPrdcqtty(), Long.parseLong(edtQuatityGood.getText().toString()));
+            }
+        });
+        imgSubGood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onSubClick(edtQuatityGood);
+            }
+        });
+        imgSubBad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onSubClick(edtQuatityBad);
+            }
+        });
+        edtQuatityGood.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+               new Handler().post(new Runnable() {
+                   @Override
+                   public void run() {
+                       try {
+                           if (!s.toString().equals("")){
+                               long number = Long.parseLong(s.toString());
+                               long quatityBad = Long.parseLong(edtQuatityBad.getText().toString());
+                               if (number + quatityBad > (long) item.getPrdcqtty()){
+                                   edtQuatityGood.setText(String.valueOf((long) item.getPrdcqtty() - quatityBad));
+                               }
+                           }
+                           else {
+                               edtQuatityGood.setText("0");
+                           }
+                       }
+                       catch (Exception ex){
+                           ex.printStackTrace();
+                       }
+                   }
+               });
+            }
+        });
+        edtQuatityBad.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                new Handler().post(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            if (!s.toString().equals("")){
+                                long number = Long.parseLong(s.toString());
+                                long quatityGood = Long.parseLong(edtQuatityGood.getText().toString());
+                                if (number + quatityGood > (long) item.getPrdcqtty()){
+                                    edtQuatityBad.setText(String.valueOf((long) item.getPrdcqtty() - quatityGood));
+                                }
+                            }
+                            else {
+                                edtQuatityBad.setText("0");
+                            }
+                        }
+                        catch (Exception ex){
+                            ex.printStackTrace();
+                        }
+                    }
+                });
+            }
+        });
 
         WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
         lp.copyFrom(dialog.getWindow().getAttributes());
@@ -267,5 +407,36 @@ public class ProductFragment extends CommonFragment {
 
         dialog.show();
         dialog.getWindow().setAttributes(lp);
+    }
+
+    private void onSubClick(EditText edt) {
+        if (!edt.getText().toString().equals("0")){
+            try {
+                long number = Long.parseLong(edt.getText().toString());
+                number-=1;
+                edt.setText(String.valueOf(number));
+            }
+            catch (Exception ex){
+                ex.printStackTrace();
+            }
+        }
+    }
+
+    private void onPlusClick(EditText edt, long maxValue, long tempValue) {
+        if (!edt.getText().toString().equals("0")){
+            try {
+                long number = Long.parseLong(edt.getText().toString());
+                if (number + tempValue < maxValue){
+                    number+=1;
+                    edt.setText(String.valueOf(number));
+                }
+            }
+            catch (Exception ex){
+                ex.printStackTrace();
+            }
+        }
+        else {
+            edt.setText("1");
+        }
     }
 }

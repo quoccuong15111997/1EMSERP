@@ -1,10 +1,12 @@
 package com.firstems.erp.ui.product.progress;
 
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -20,6 +22,8 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -31,6 +35,7 @@ import com.firstems.erp.common.CommonFragment;
 import com.firstems.erp.common.Constant;
 import com.firstems.erp.databinding.ProductProgressFragmentBinding;
 import com.firstems.erp.helper.animation.AnimationHelper;
+import com.firstems.erp.helper.barcode.BarCodeHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,6 +68,11 @@ public class ProductProgressFragment extends CommonFragment {
                 getActivity().setResult(Activity.RESULT_OK, intent);
                 getActivity().finish();
                 AnimationHelper.getInstance().setAnimationLeftToRight(getActivity());
+            }
+
+            @Override
+            public void onBarCodeClick(ProgressItem progressItem) {
+                showBarCodeDialog(progressItem.getCmmdcode());
             }
         });
         imgBack.setOnClickListener(new View.OnClickListener() {
@@ -149,5 +159,22 @@ public class ProductProgressFragment extends CommonFragment {
             }
         });
     }
+    private void showBarCodeDialog(String barCodeData) {
+        final Dialog dialog = new Dialog(getContext());
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // before
+        dialog.setContentView(R.layout.dialog_barcode);
+        dialog.setCancelable(true);
 
+        ImageView imageView = dialog.findViewById(R.id.imgQr);
+        imageView.setImageBitmap(BarCodeHelper.getInstance().generateBarCode(barCodeData));
+
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialog.getWindow().getAttributes());
+        lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        dialog.getWindow().setBackgroundDrawable(null);
+
+        dialog.show();
+        dialog.getWindow().setAttributes(lp);
+    }
 }

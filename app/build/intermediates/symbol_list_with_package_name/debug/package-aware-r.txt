@@ -3098,6 +3098,8 @@ id edtNgayTamUng
 id edtNhanVienDuocChamCong
 id edtNumberDay
 id edtPurposeContact
+id edtQuatityBad
+id edtQuatityGood
 id edtReleaseYear
 id edtSoHoaDon
 id edtSoTien
@@ -3263,13 +3265,18 @@ id imgLogo
 id imgMenu
 id imgNotification
 id imgOpen
+id imgPlusBad
+id imgPlusGood
+id imgQr
 id imgRemove
 id imgSearch
 id imgSetting
 id imgSort
+id imgSubGood
 id imgUp
 id img_custom_view_alert_dialog_icon
 id img_view_pager_product
+id imgsubBad
 id in
 id include
 id include10
@@ -3685,6 +3692,7 @@ id spinerMaDuAn
 id spinerRelatedField
 id spinner
 id spinnerCompanyBranch
+id spinnerError
 id spinnerTime
 id spline
 id split_action_bar
@@ -3874,6 +3882,7 @@ id txtDelete
 id txtDen
 id txtDocumentName
 id txtEndDate
+id txtError
 id txtHyphen
 id txtLabel
 id txtLabelValue
@@ -3929,6 +3938,7 @@ id txtSoTien
 id txtStatus
 id txtStt
 id txtSum
+id txtSumQuatity
 id txtTenDoiTuongNhan
 id txtTileNoiCongTac
 id txtTileStatus
@@ -3954,6 +3964,7 @@ id txtTitleDateCreate
 id txtTitleDateEnd
 id txtTitleDateEnd1
 id txtTitleDateEnd11
+id txtTitleDialog
 id txtTitleDocumentCode
 id txtTitleDocumentName
 id txtTitleDomain
@@ -4229,6 +4240,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialog_about
 layout dialog_about_company
+layout dialog_barcode
 layout dialog_confirm
 layout dialog_filter
 layout dialog_grid

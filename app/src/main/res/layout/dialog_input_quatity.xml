@@ -117,6 +117,7 @@
                            android:inputType="number"
                            android:paddingLeft="@dimen/text_padding_left"
                            android:text="0"
+                           android:textAlignment="textEnd"
                            android:textColor="@color/md_black_1000"
                            android:textSize="14sp"
                            tools:text="500" />
@@ -175,6 +176,7 @@
                         android:inputType="number"
                         android:paddingLeft="@dimen/text_padding_left"
                         android:text="0"
+                        android:textAlignment="textEnd"
                         android:textColor="@color/md_black_1000"
                         android:textSize="14sp"
                         tools:text="1200" />
@@ -235,7 +237,7 @@
                         android:background="@drawable/custom_bg_textview"
                         android:gravity="left"
                         android:paddingLeft="10dp"
-                        android:text="Nhấn để chọn"
+                        android:visibility="gone"
                         android:textColor="@color/md_black_1000" />
                     <Spinner
                         android:id="@+id/spinnerError"
