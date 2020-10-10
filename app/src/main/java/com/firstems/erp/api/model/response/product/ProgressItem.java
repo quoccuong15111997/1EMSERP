@@ -1,10 +1,13 @@
 package com.firstems.erp.api.model.response.product;
 
+import android.graphics.Bitmap;
+
+import com.firstems.erp.helper.barcode.BarCodeHelper;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class ProgressItem implements Serializable {
+public class ProgressItem implements Serializable, Comparable{
     @SerializedName("CMMDCODE")
     private final String cmmdcode;
 
@@ -31,6 +34,12 @@ public class ProgressItem implements Serializable {
 
     @SerializedName("KKKK0000")
     private final String kkkk0000;
+
+    private Bitmap barCode;
+
+    public Bitmap getBarCode() {
+        return BarCodeHelper.getInstance().generateBarCode(getCmmdcode());
+    }
 
     public ProgressItem(String cmmdcode, String cmmddate, String pcpdcode, String pcpdname,
                         String dddd, int accerght, int sttesign, String sttename, String kkkk0000) {
@@ -79,5 +88,15 @@ public class ProgressItem implements Serializable {
 
     public String getKkkk0000() {
         return kkkk0000;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        ProgressItem compare = (ProgressItem) o;
+        if (compare.getCmmdcode().equals(this.cmmdcode) && compare.getPcpdcode().equals(this.pcpdcode) && compare.getSttesign() == this.getSttesign()){
+            return 0;
+        }
+        else
+            return 1;
     }
 }

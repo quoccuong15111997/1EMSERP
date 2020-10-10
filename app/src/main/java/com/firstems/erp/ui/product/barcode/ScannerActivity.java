@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.firstems.erp.R;
 import com.firstems.erp.common.Constant;
+import com.firstems.erp.helper.animation.AnimationHelper;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.journeyapps.barcodescanner.BarcodeCallback;
@@ -24,12 +26,15 @@ public class ScannerActivity extends AppCompatActivity implements DecoratedBarco
     private CaptureManager capture;
     private DecoratedBarcodeView barcodeScannerView;
     private Button switchFlashlightButton;
+    private ImageView imgBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanner);
-
+        AnimationHelper.getInstance().setAnimationRightToLeft(this);
+        addControls();
+        addEvents();
         BarcodeCallback barcodeCallback = new BarcodeCallback() {
             @Override
             public void barcodeResult(BarcodeResult result) {
@@ -39,6 +44,7 @@ public class ScannerActivity extends AppCompatActivity implements DecoratedBarco
                     setResult(Activity.RESULT_OK, intent);
                     System.out.println(result.getText());
                     finish();
+                    AnimationHelper.getInstance().setAnimationLeftToRight(ScannerActivity.this);
                 }
             }
         };
@@ -55,6 +61,27 @@ public class ScannerActivity extends AppCompatActivity implements DecoratedBarco
             switchFlashlightButton.setVisibility(View.GONE);
         }
     }
+
+    private void addEvents() {
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                AnimationHelper.getInstance().setAnimationLeftToRight(ScannerActivity.this);
+            }
+        });
+    }
+
+    private void addControls() {
+        imgBack = findViewById(R.id.ivBack);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        AnimationHelper.getInstance().setAnimationLeftToRight(ScannerActivity.this);
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);

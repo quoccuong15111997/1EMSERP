@@ -15,25 +15,27 @@ public class ProductFragmentBindingImpl extends ProductFragmentBinding  {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.include6, 1);
-        sViewsWithIds.put(R.id.linearLayoutLenSanXuat, 2);
-        sViewsWithIds.put(R.id.txtTitleDateCreate, 3);
-        sViewsWithIds.put(R.id.edtMaLenhSanXuat, 4);
-        sViewsWithIds.put(R.id.imgBarcode, 5);
-        sViewsWithIds.put(R.id.linearLayoutTenLenhSanXuat, 6);
-        sViewsWithIds.put(R.id.txtTitleTenLenhSanXuat, 7);
-        sViewsWithIds.put(R.id.edtTenLenhSanXuat, 8);
-        sViewsWithIds.put(R.id.linearLayoutCongDoan, 9);
-        sViewsWithIds.put(R.id.txtTitleCongDoan, 10);
-        sViewsWithIds.put(R.id.spinerCongDoan, 11);
-        sViewsWithIds.put(R.id.linearLayoutNgayTaoLenhSanXuat, 12);
-        sViewsWithIds.put(R.id.txtTitleNgayTaoLenhSanXuat, 13);
-        sViewsWithIds.put(R.id.txtNgayTaoLenhSanXuat, 14);
-        sViewsWithIds.put(R.id.imageViewCalenda, 15);
-        sViewsWithIds.put(R.id.linearLayoutGhiChu, 16);
-        sViewsWithIds.put(R.id.txtTitleGhiChu, 17);
-        sViewsWithIds.put(R.id.edtGhiChu, 18);
-        sViewsWithIds.put(R.id.recycleProduct, 19);
-        sViewsWithIds.put(R.id.btnDone, 20);
+        sViewsWithIds.put(R.id.parent, 2);
+        sViewsWithIds.put(R.id.linearLayoutLenSanXuat, 3);
+        sViewsWithIds.put(R.id.txtTitleDateCreate, 4);
+        sViewsWithIds.put(R.id.edtMaLenhSanXuat, 5);
+        sViewsWithIds.put(R.id.imgBarcode, 6);
+        sViewsWithIds.put(R.id.linearLayoutTenLenhSanXuat, 7);
+        sViewsWithIds.put(R.id.txtTitleTenLenhSanXuat, 8);
+        sViewsWithIds.put(R.id.edtTenLenhSanXuat, 9);
+        sViewsWithIds.put(R.id.linearLayoutCongDoan, 10);
+        sViewsWithIds.put(R.id.txtTitleCongDoan, 11);
+        sViewsWithIds.put(R.id.spinerCongDoan, 12);
+        sViewsWithIds.put(R.id.linearLayoutNgayTaoLenhSanXuat, 13);
+        sViewsWithIds.put(R.id.txtTitleNgayTaoLenhSanXuat, 14);
+        sViewsWithIds.put(R.id.txtNgayTaoLenhSanXuat, 15);
+        sViewsWithIds.put(R.id.imageViewCalenda, 16);
+        sViewsWithIds.put(R.id.linearLayoutGhiChu, 17);
+        sViewsWithIds.put(R.id.txtTitleGhiChu, 18);
+        sViewsWithIds.put(R.id.edtGhiChu, 19);
+        sViewsWithIds.put(R.id.recycleProduct, 20);
+        sViewsWithIds.put(R.id.txtNon, 21);
+        sViewsWithIds.put(R.id.btnDone, 22);
     }
     // views
     @NonNull
@@ -44,30 +46,32 @@ public class ProductFragmentBindingImpl extends ProductFragmentBinding  {
     // Inverse Binding Event Handlers
 
     public ProductFragmentBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 21, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 23, sIncludes, sViewsWithIds));
     }
     private ProductFragmentBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.Button) bindings[20]
-            , (com.firstems.erp.helper.widgets.EMSEditText) bindings[18]
-            , (android.widget.TextView) bindings[4]
-            , (android.widget.EditText) bindings[8]
-            , (android.widget.ImageView) bindings[15]
-            , (android.widget.ImageView) bindings[5]
+            , (android.widget.Button) bindings[22]
+            , (com.firstems.erp.helper.widgets.EMSEditText) bindings[19]
+            , (android.widget.TextView) bindings[5]
+            , (android.widget.EditText) bindings[9]
+            , (android.widget.ImageView) bindings[16]
+            , (android.widget.ImageView) bindings[6]
             , (android.view.View) bindings[1]
-            , (android.widget.LinearLayout) bindings[9]
-            , (android.widget.LinearLayout) bindings[16]
+            , (android.widget.LinearLayout) bindings[10]
+            , (android.widget.LinearLayout) bindings[17]
+            , (android.widget.LinearLayout) bindings[3]
+            , (android.widget.LinearLayout) bindings[13]
+            , (android.widget.LinearLayout) bindings[7]
             , (android.widget.LinearLayout) bindings[2]
-            , (android.widget.LinearLayout) bindings[12]
-            , (android.widget.LinearLayout) bindings[6]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[19]
-            , (android.widget.Spinner) bindings[11]
-            , (com.firstems.erp.helper.widgets.EMSTextviewHighLineNonBorder) bindings[14]
-            , (android.widget.TextView) bindings[10]
-            , (android.widget.TextView) bindings[3]
-            , (android.widget.TextView) bindings[17]
-            , (android.widget.TextView) bindings[13]
-            , (android.widget.TextView) bindings[7]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[20]
+            , (android.widget.Spinner) bindings[12]
+            , (com.firstems.erp.helper.widgets.EMSTextviewHighLineNonBorder) bindings[15]
+            , (android.widget.TextView) bindings[21]
+            , (android.widget.TextView) bindings[11]
+            , (android.widget.TextView) bindings[4]
+            , (android.widget.TextView) bindings[18]
+            , (android.widget.TextView) bindings[14]
+            , (android.widget.TextView) bindings[8]
             );
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);

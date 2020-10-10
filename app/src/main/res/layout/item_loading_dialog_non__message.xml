@@ -5,7 +5,7 @@
     android:layout_gravity="center"
     app:mk_color="@color/text__white"
     style="@style/DialogLight"
-    app:mk_type="TwinFishesSpinner"
+    app:mk_type="Whirlpool"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 </com.tuyenmonkey.mkloader.MKLoader>

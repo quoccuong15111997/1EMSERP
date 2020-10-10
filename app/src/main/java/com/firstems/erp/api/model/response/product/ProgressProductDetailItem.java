@@ -2,7 +2,9 @@ package com.firstems.erp.api.model.response.product;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ProgressProductDetailItem {
+import java.io.Serializable;
+
+public class ProgressProductDetailItem implements Serializable, Comparable {
     @SerializedName("ODERCODE")
     private final String odercode;
 
@@ -110,5 +112,10 @@ public class ProgressProductDetailItem {
 
     public String getKkkk0000() {
         return kkkk0000;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }

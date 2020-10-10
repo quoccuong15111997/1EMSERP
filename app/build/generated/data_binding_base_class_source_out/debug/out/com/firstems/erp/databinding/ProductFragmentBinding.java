@@ -59,6 +59,9 @@ public abstract class ProductFragmentBinding extends ViewDataBinding {
   public final LinearLayout linearLayoutTenLenhSanXuat;
 
   @NonNull
+  public final LinearLayout parent;
+
+  @NonNull
   public final RecyclerView recycleProduct;
 
   @NonNull
@@ -66,6 +69,9 @@ public abstract class ProductFragmentBinding extends ViewDataBinding {
 
   @NonNull
   public final EMSTextviewHighLineNonBorder txtNgayTaoLenhSanXuat;
+
+  @NonNull
+  public final TextView txtNon;
 
   @NonNull
   public final TextView txtTitleCongDoan;
@@ -87,10 +93,10 @@ public abstract class ProductFragmentBinding extends ViewDataBinding {
       ImageView imageViewCalenda, ImageView imgBarcode, View include6,
       LinearLayout linearLayoutCongDoan, LinearLayout linearLayoutGhiChu,
       LinearLayout linearLayoutLenSanXuat, LinearLayout linearLayoutNgayTaoLenhSanXuat,
-      LinearLayout linearLayoutTenLenhSanXuat, RecyclerView recycleProduct, Spinner spinerCongDoan,
-      EMSTextviewHighLineNonBorder txtNgayTaoLenhSanXuat, TextView txtTitleCongDoan,
-      TextView txtTitleDateCreate, TextView txtTitleGhiChu, TextView txtTitleNgayTaoLenhSanXuat,
-      TextView txtTitleTenLenhSanXuat) {
+      LinearLayout linearLayoutTenLenhSanXuat, LinearLayout parent, RecyclerView recycleProduct,
+      Spinner spinerCongDoan, EMSTextviewHighLineNonBorder txtNgayTaoLenhSanXuat, TextView txtNon,
+      TextView txtTitleCongDoan, TextView txtTitleDateCreate, TextView txtTitleGhiChu,
+      TextView txtTitleNgayTaoLenhSanXuat, TextView txtTitleTenLenhSanXuat) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnDone = btnDone;
     this.edtGhiChu = edtGhiChu;
@@ -104,9 +110,11 @@ public abstract class ProductFragmentBinding extends ViewDataBinding {
     this.linearLayoutLenSanXuat = linearLayoutLenSanXuat;
     this.linearLayoutNgayTaoLenhSanXuat = linearLayoutNgayTaoLenhSanXuat;
     this.linearLayoutTenLenhSanXuat = linearLayoutTenLenhSanXuat;
+    this.parent = parent;
     this.recycleProduct = recycleProduct;
     this.spinerCongDoan = spinerCongDoan;
     this.txtNgayTaoLenhSanXuat = txtNgayTaoLenhSanXuat;
+    this.txtNon = txtNon;
     this.txtTitleCongDoan = txtTitleCongDoan;
     this.txtTitleDateCreate = txtTitleDateCreate;
     this.txtTitleGhiChu = txtTitleGhiChu;

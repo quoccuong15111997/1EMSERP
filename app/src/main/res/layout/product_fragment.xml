@@ -18,15 +18,18 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            android:measureAllChildren="true"
             app:layout_constraintTop_toBottomOf="@+id/include6">
-
+            android:layoutAnimation="@anim/layout_animation_float"
             <LinearLayout
+                android:id="@+id/parent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+
                 app:layout_constraintTop_toBottomOf="@+id/include6"
                 app:layout_constraintVertical_bias="0.0">
 
@@ -272,14 +275,25 @@
                         android:id="@+id/recycleProduct"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        tools:listitem="@layout/item_product_list"
-                        android:layout_marginTop="5dp"/>
+                        android:visibility="gone"
+                        tools:listitem="@layout/item_product_list" />
+                    <TextView
+                        android:id="@+id/txtNon"
+                        android:text="Không có sản phẩm nào"
+                        android:textStyle="italic"
+                        android:padding="5dp"
+                        android:visibility="gone"
+                        android:textAlignment="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
                 </LinearLayout>
                 <Button
                     android:id="@+id/btnDone"
+                    android:visibility="gone"
                     android:background="@drawable/custom_background_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:textColor="@color/text__white"
                     android:text="Hoàn thành"/>
             </LinearLayout>
