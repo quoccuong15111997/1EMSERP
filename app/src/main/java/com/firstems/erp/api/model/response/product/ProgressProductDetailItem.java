@@ -1,10 +1,14 @@
 package com.firstems.erp.api.model.response.product;
 
+import androidx.annotation.NonNull;
+
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Closeable;
+import java.io.IOException;
 import java.io.Serializable;
 
-public class ProgressProductDetailItem implements Serializable, Comparable {
+public class ProgressProductDetailItem implements Serializable, Comparable, Cloneable {
     @SerializedName("ODERCODE")
     private final String odercode;
 
@@ -43,6 +47,43 @@ public class ProgressProductDetailItem implements Serializable, Comparable {
 
     @SerializedName("KKKK0000")
     private final String kkkk0000;
+
+    private long quatityGood = 0;
+    private long quatityBad = 0;
+    private String errorCode;
+    private boolean isEdit = false;
+
+    public boolean isEdit() {
+        return isEdit;
+    }
+
+    public void setEdit(boolean edit) {
+        isEdit = edit;
+    }
+
+    public long getQuatityGood() {
+        return quatityGood;
+    }
+
+    public void setQuatityGood(long quatityGood) {
+        this.quatityGood = quatityGood;
+    }
+
+    public long getQuatityBad() {
+        return quatityBad;
+    }
+
+    public void setQuatityBad(long quatityBad) {
+        this.quatityBad = quatityBad;
+    }
+
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
 
     public ProgressProductDetailItem(String odercode, String stepcode, String stepname,
                                      String prdccode, String prdcname, double prdcqtty, int orgncode, int sortcode,
@@ -116,6 +157,16 @@ public class ProgressProductDetailItem implements Serializable, Comparable {
 
     @Override
     public int compareTo(Object o) {
-        return 0;
+        ProgressProductDetailItem compare = (ProgressProductDetailItem) o;
+        if (compare.getPrdccode().equals(this.prdccode) && compare.getQuatityBad() == this.quatityBad && compare.getQuatityGood() == this.quatityGood && compare.getErrorCode().equals(this.errorCode)){
+            return 0;
+        }
+        return 1;
+    }
+
+    @NonNull
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

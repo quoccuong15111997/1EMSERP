@@ -700,6 +700,10 @@
         "source": "C:\\Users\\kkkk\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\item_file.xml"
     },
     {
+        "merged": "C:\\Users\\kkkk\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_edit_24_grey.xml.flat",
+        "source": "C:\\Users\\kkkk\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\drawable\\ic_baseline_edit_24_grey.xml"
+    },
+    {
         "merged": "C:\\Users\\kkkk\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_test.xml.flat",
         "source": "C:\\Users\\kkkk\\AndroidStudioProjects\\1EMSERP1\\app\\src\\main\\res\\layout\\activity_test.xml"
     },

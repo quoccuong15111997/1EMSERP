@@ -2632,6 +2632,7 @@ drawable ic_baseline_cloud_off_24
 drawable ic_baseline_date_range_24
 drawable ic_baseline_delete_forever_24
 drawable ic_baseline_done_all_24
+drawable ic_baseline_edit_24_grey
 drawable ic_baseline_error_outline_24
 drawable ic_baseline_event_note_24
 drawable ic_baseline_exit_to_app_24

@@ -25,6 +25,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -115,8 +116,8 @@ public class ProductFragment extends CommonFragment {
         });
         productAdapter.setProductItemClickListener(new ProductAdapter.ProductItemClickListener() {
             @Override
-            public void ontemClick(ProgressProductDetailItem item) {
-                showInputQuatity(item);
+            public void ontemClick(ProgressProductDetailItem item, int position) {
+                showInputQuatity(item, position);
             }
         });
         binding.imgBarcode.setOnClickListener(new View.OnClickListener() {
@@ -245,18 +246,20 @@ public class ProductFragment extends CommonFragment {
         super.onResume();
         showLoadingNonMessDialog();
     }
-    private void showInputQuatity(ProgressProductDetailItem item) {
+    private void showInputQuatity(ProgressProductDetailItem item, int position) {
         final Dialog dialog = new Dialog(getContext());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // before
         dialog.setContentView(R.layout.dialog_input_quatity);
-        dialog.setCancelable(true);
+        dialog.setCancelable(false);
 
         AppBarLayout appBarLayout = dialog.findViewById(R.id.app_bar_layout);
         ImageView imgClose = appBarLayout.findViewById(R.id.bt_close);
         ImageView imgSave = appBarLayout.findViewById(R.id.bt_save);
         TextView txtTitle = appBarLayout.findViewById(R.id.txtTitleDialog);
         EditText edtQuatityGood = dialog.findViewById(R.id.edtQuatityGood);
+        edtQuatityGood.setText(String.valueOf(item.getQuatityGood()));
         EditText edtQuatityBad = dialog.findViewById(R.id.edtQuatityBad);
+        edtQuatityBad.setText(String.valueOf(item.getQuatityBad()));
         TextView txtError = dialog.findViewById(R.id.txtError);
         TextView txtSumQuatity = dialog.findViewById(R.id.txtSumQuatity);
 
@@ -264,6 +267,9 @@ public class ProductFragment extends CommonFragment {
         ImageButton imgSubGood = dialog.findViewById(R.id.imgSubGood);
         ImageButton imgPlusBad = dialog.findViewById(R.id.imgPlusBad);
         ImageButton imgSubBad = dialog.findViewById(R.id.imgsubBad);
+
+        Button btnCancel = dialog.findViewById(R.id.btnCancel);
+        Button btnSave = dialog.findViewById(R.id.btnSave);
 
         Spinner spinnerError = dialog.findViewById(R.id.spinnerError);
 
@@ -277,6 +283,34 @@ public class ProductFragment extends CommonFragment {
 
         ErrorCodeAdapter errorCodeAdapter = new ErrorCodeAdapter(errorCodeModels,dialog.getContext());
         spinnerError.setAdapter(errorCodeAdapter);
+
+        imgClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (dialog!=null){
+                    dialog.dismiss();
+                }
+            }
+        });
+
+        imgSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                doSaveQuatity(position,item, Long.parseLong(edtQuatityGood.getText().toString()) ,Long.parseLong(edtQuatityBad.getText().toString()),txtError.getText().toString());
+               /* if (dialog!=null){
+                    dialog.dismiss();
+                }*/
+            }
+        });
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                doSaveQuatity(position,item, Long.parseLong(edtQuatityGood.getText().toString()) ,Long.parseLong(edtQuatityBad.getText().toString()),txtError.getText().toString());
+             /*  if (dialog!=null){
+                   dialog.dismiss();
+               }*/
+            }
+        });
 
         errorCodeAdapter.setOnSpinnerMultiCheckListener(new ErrorCodeAdapter.OnSpinnerMultiCheckListener() {
             @Override
@@ -407,6 +441,19 @@ public class ProductFragment extends CommonFragment {
 
         dialog.show();
         dialog.getWindow().setAttributes(lp);
+    }
+
+    private void doSaveQuatity(int position,ProgressProductDetailItem item,long numGood, long numBad, String errorCode) {
+        try {
+            list.get(position).setQuatityBad(numBad);
+            list.get(position).setErrorCode(errorCode);
+            list.get(position).setQuatityGood(numGood);
+            list.get(position).setEdit(true);
+            productAdapter.notifyItemChanged(position);
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+        }
     }
 
     private void onSubClick(EditText edt) {
