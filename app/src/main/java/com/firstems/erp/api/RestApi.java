@@ -329,4 +329,7 @@ public interface RestApi {
     Call<ProgressApiResponse> getAllProgress(@Header("TOKEN") String token);
     @POST("/Api/data/runApi_Data?run_Code=PRD001.02.003")
     Call<ProgressProductDetailApiResponse> getProgressProductDetail(@Header("TOKEN") String token, @Body JsonObject body);
+    // Cập nhật lệnh sản xuất
+    @POST("/Api/data/runApi_Data?run_Code=PRD001.02.004")
+    Call<ApiResponse> upDateProgressProduct(@Header("TOKEN") String token, @Body JsonObject body);
 }

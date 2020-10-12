@@ -36,6 +36,8 @@ import com.firstems.erp.common.Constant;
 import com.firstems.erp.databinding.ProductProgressFragmentBinding;
 import com.firstems.erp.helper.animation.AnimationHelper;
 import com.firstems.erp.helper.barcode.BarCodeHelper;
+import com.firstems.erp.ui.product.ProductActivity;
+import com.firstems.erp.ui.product.barcode.ScannerActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +51,7 @@ public class ProductProgressFragment extends CommonFragment {
     private TextView txtTite;
     private ImageView imgBack;
     private List<ProgressItem> listCurrent;
+    private int CODE_OPEN_SCANER = 452;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -63,11 +66,9 @@ public class ProductProgressFragment extends CommonFragment {
         progressProductAdapter.setProgressProductOnlickListener(new ProgressProductAdapter.ProgressProductOnlickListener() {
             @Override
             public void onItemClick(ProgressItem progressItem) {
-                Intent intent = new Intent();
+                Intent intent = new Intent(getContext(), ProductActivity.class);
                 intent.putExtra(Constant.NAME_PUT_PROGRESS_PRODUCT, progressItem);
-                getActivity().setResult(Activity.RESULT_OK, intent);
-                getActivity().finish();
-                AnimationHelper.getInstance().setAnimationLeftToRight(getActivity());
+                startActivity(intent);
             }
 
             @Override
@@ -79,9 +80,10 @@ public class ProductProgressFragment extends CommonFragment {
             @Override
             public void onClick(View view) {
                 getActivity().finish();
+                AnimationHelper.getInstance().setAnimationLeftToRight(getActivity());
             }
         });
-        binding.etSearch.addTextChangedListener(new TextWatcher() {
+        binding.edtSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -95,6 +97,13 @@ public class ProductProgressFragment extends CommonFragment {
             @Override
             public void afterTextChanged(Editable editable) {
                 doSearch(editable.toString());
+            }
+        });
+        binding.imgBarcode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), ScannerActivity.class);
+                startActivityForResult(intent, CODE_OPEN_SCANER);
             }
         });
     }
@@ -123,7 +132,7 @@ public class ProductProgressFragment extends CommonFragment {
         txtTite = binding.toolbar.findViewById(R.id.txtTitle);
         imgBack = binding.toolbar.findViewById(R.id.imgBack);
 
-        binding.etSearch.clearFocus();
+        binding.edtSearch.clearFocus();
         txtTite.setText("Chọn lệnh sản xuất");
     }
 
@@ -176,5 +185,11 @@ public class ProductProgressFragment extends CommonFragment {
 
         dialog.show();
         dialog.getWindow().setAttributes(lp);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
     }
 }

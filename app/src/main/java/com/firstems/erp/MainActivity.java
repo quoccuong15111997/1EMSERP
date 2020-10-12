@@ -32,6 +32,7 @@ import com.firstems.erp.ui.document.DocumentFragment;
 import com.firstems.erp.ui.home.HomeFragment;
 import com.firstems.erp.ui.more.MoreFragment;
 import com.firstems.erp.ui.product.ProductActivity;
+import com.firstems.erp.ui.product.progress.ProductProgressActivity;
 import com.firstems.erp.ui.signature.SignatureGirdDiffFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -265,7 +266,7 @@ public class MainActivity extends CommonActivity implements BackToHomeCallback, 
                 break;
             }
             case 3 : {
-                Intent intent = new Intent(MainActivity.this, ProductActivity.class);
+                Intent intent = new Intent(MainActivity.this, ProductProgressActivity.class);
                 startActivity(intent);
                 break;
             }

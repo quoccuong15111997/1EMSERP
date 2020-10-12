@@ -25,8 +25,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                app:srcCompat="@drawable/ic_close_white"
-                android:padding="5dp"
+                app:srcCompat="@drawable/ic_baseline_close_24"
+                android:padding="10dp"
                 app:tint="@color/text__white" />
 
             <TextView
@@ -34,6 +34,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:singleLine="true"
                 android:gravity="center_vertical"
                 android:text="Chảo chống dính"
                 android:textColor="@android:color/white" />
@@ -43,9 +44,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="5dp"
+                android:padding="10dp"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_check_white"
+                android:src="@drawable/ic_baseline_check_24"
                 android:paddingRight="@dimen/spacing_xsmall"/>
 
         </LinearLayout>
@@ -113,6 +114,7 @@
                            android:layout_marginStart="5dp"
                            android:layout_marginEnd="5dp"
                            android:layout_weight="6"
+                           android:paddingRight="5dp"
                            android:background="@drawable/custom_bg_textview"
                            android:inputType="number"
                            android:paddingLeft="@dimen/text_padding_left"
@@ -121,6 +123,7 @@
                            android:textColor="@color/md_black_1000"
                            android:textSize="14sp"
                            tools:text="500" />
+
                        <LinearLayout
                            android:layout_width="match_parent"
                            android:layout_height="wrap_content"
@@ -176,6 +179,7 @@
                         android:inputType="number"
                         android:paddingLeft="@dimen/text_padding_left"
                         android:text="0"
+                        android:paddingRight="5dp"
                         android:textAlignment="textEnd"
                         android:textColor="@color/md_black_1000"
                         android:textSize="14sp"

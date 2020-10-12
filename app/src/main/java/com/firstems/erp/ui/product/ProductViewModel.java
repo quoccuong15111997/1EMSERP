@@ -18,6 +18,7 @@ import com.firstems.erp.sharedpreferences.SharedPreferencesManager;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -71,6 +72,38 @@ public class ProductViewModel extends ViewModel {
                     @Override
                     public void onConvertSuccess(Object obj) {
                         ProgressProductDetailApiResponse progressProductDetailApiResponse = (ProgressProductDetailApiResponse) obj;
+                        List<ProgressProductDetailItem> progressProductDetailItems = new ArrayList<>();
+                     /*   for (int i= 0; i< 100;i++){
+                            try {
+                                ProgressProductDetailItem item = (ProgressProductDetailItem) progressProductDetailApiResponse.getProgressProductDetailItems().get(0).clone();
+                                item.setPrdcname(item.getPrdcname()+" - "+i);
+                                item.setPrdccode(item.getPrdccode()+i);
+                                item.setPrdcqtty(item.getPrdcqtty()+i);
+                                if (i < 20){
+                                    item.setStepcode(item.getStepcode()+20);
+                                    item.setStepname(item.getStepname()+" - "+20);
+                                }
+                                else if (i > 21 && i< 40){
+                                    item.setStepcode(item.getStepcode()+40);
+                                    item.setStepname(item.getStepname()+" - "+40);
+                                }
+                                else if (i > 41 && i < 60){
+                                    item.setStepcode(item.getStepcode()+60);
+                                    item.setStepname(item.getStepname()+" - "+60);
+                                }
+                                else if (i > 61 && i < 80){
+                                    item.setStepcode(item.getStepcode()+80);
+                                    item.setStepname(item.getStepname()+" - "+80);
+                                }
+                                else if (i > 81 && i < 100){
+                                    item.setStepcode(item.getStepcode()+100);
+                                    item.setStepname(item.getStepname()+" - "+100);
+                                }
+                                progressProductDetailItems.add(item);
+                            } catch (CloneNotSupportedException e) {
+                                e.printStackTrace();
+                            }
+                        }*/
                         mutableLiveDataProgressDetail.setValue(progressProductDetailApiResponse.getProgressProductDetailItems());
                     }
                 });

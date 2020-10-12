@@ -362,7 +362,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/edit/baseline_edit_24.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/remove_red_eye/baseline_remove_red_eye_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -372,9 +372,10 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="858585" />
-                            <entry key="outputName" value="ic_baseline_edit_24_grey" />
-                            <entry key="sourceFile" value="C:\Users\PC\AndroidStudioProjects\1EMSERP" />
+                            <entry key="assetSourceType" value="FILE" />
+                            <entry key="color" value="ffffff" />
+                            <entry key="outputName" value="ic_barscode_with_a_magnifier_business_symbol" />
+                            <entry key="sourceFile" value="C:\Users\PC\Downloads\111075-logistics-delivery\111075-logistics-delivery\svg\barscode-with-a-magnifier-business-symbol.svg" />
                           </map>
                         </option>
                       </PersistentState>

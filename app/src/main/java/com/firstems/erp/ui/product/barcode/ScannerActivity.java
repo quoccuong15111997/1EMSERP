@@ -13,8 +13,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.firstems.erp.R;
+import com.firstems.erp.api.model.response.product.ProgressItem;
+import com.firstems.erp.api.model.response.product.ProgressStep;
 import com.firstems.erp.common.Constant;
 import com.firstems.erp.helper.animation.AnimationHelper;
+import com.firstems.erp.ui.product.ProductActivity;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.journeyapps.barcodescanner.BarcodeCallback;
@@ -39,12 +42,13 @@ public class ScannerActivity extends AppCompatActivity implements DecoratedBarco
             @Override
             public void barcodeResult(BarcodeResult result) {
                 if (result!=null){
-                    Intent intent = new Intent();
-                    intent.putExtra(Constant.NAME_PUT_RESULT_BARCODE, result.getText());
-                    setResult(Activity.RESULT_OK, intent);
-                    System.out.println(result.getText());
+                    Intent intent = new Intent(ScannerActivity.this, ProductActivity.class);
+                    ProgressItem progressItem = new ProgressItem();
+                    progressItem.setCmmdcode(result.getText());
+                    progressItem.setCmmddate("2020-10-12T00:00:00");
+                    intent.putExtra(Constant.NAME_PUT_PROGRESS_PRODUCT, progressItem);
+                    startActivity(intent);
                     finish();
-                    AnimationHelper.getInstance().setAnimationLeftToRight(ScannerActivity.this);
                 }
             }
         };

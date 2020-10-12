@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -59,6 +60,9 @@ public abstract class ProductFragmentBinding extends ViewDataBinding {
   public final LinearLayout linearLayoutTenLenhSanXuat;
 
   @NonNull
+  public final ProgressBar loadingInList;
+
+  @NonNull
   public final LinearLayout parent;
 
   @NonNull
@@ -93,8 +97,9 @@ public abstract class ProductFragmentBinding extends ViewDataBinding {
       ImageView imageViewCalenda, ImageView imgBarcode, View include6,
       LinearLayout linearLayoutCongDoan, LinearLayout linearLayoutGhiChu,
       LinearLayout linearLayoutLenSanXuat, LinearLayout linearLayoutNgayTaoLenhSanXuat,
-      LinearLayout linearLayoutTenLenhSanXuat, LinearLayout parent, RecyclerView recycleProduct,
-      Spinner spinerCongDoan, EMSTextviewHighLineNonBorder txtNgayTaoLenhSanXuat, TextView txtNon,
+      LinearLayout linearLayoutTenLenhSanXuat, ProgressBar loadingInList, LinearLayout parent,
+      RecyclerView recycleProduct, Spinner spinerCongDoan,
+      EMSTextviewHighLineNonBorder txtNgayTaoLenhSanXuat, TextView txtNon,
       TextView txtTitleCongDoan, TextView txtTitleDateCreate, TextView txtTitleGhiChu,
       TextView txtTitleNgayTaoLenhSanXuat, TextView txtTitleTenLenhSanXuat) {
     super(_bindingComponent, _root, _localFieldCount);
@@ -110,6 +115,7 @@ public abstract class ProductFragmentBinding extends ViewDataBinding {
     this.linearLayoutLenSanXuat = linearLayoutLenSanXuat;
     this.linearLayoutNgayTaoLenhSanXuat = linearLayoutNgayTaoLenhSanXuat;
     this.linearLayoutTenLenhSanXuat = linearLayoutTenLenhSanXuat;
+    this.loadingInList = loadingInList;
     this.parent = parent;
     this.recycleProduct = recycleProduct;
     this.spinerCongDoan = spinerCongDoan;

@@ -56,6 +56,7 @@ public class ProgressProductAdapter extends RecyclerView.Adapter<ProgressProduct
         holder.txtMainCode.setText(progressItem.getCmmdcode());
         holder.txtDate.setText(Util.formatDateCustomChar(progressItem.getCmmddate(), "-"));
         holder.txtProgressCode.setText(progressItem.getPcpdcode());
+        holder.imgSeen.setVisibility(progressItem.isCheck() ? View.VISIBLE : View.INVISIBLE);
         holder.txtProgressName.setText(progressItem.getPcpdname());
         holder.itemView.post(new Runnable() {
             @Override
@@ -78,6 +79,8 @@ public class ProgressProductAdapter extends RecyclerView.Adapter<ProgressProduct
             @Override
             public void onClick(View view) {
                 progressProductOnlickListener.onItemClick(progressItem);
+                holder.imgSeen.setVisibility(View.VISIBLE);
+                progressItemList.get(position).setCheck(true);
             }
         });
         holder.imgBarCode.setOnClickListener(new View.OnClickListener() {
@@ -97,6 +100,7 @@ public class ProgressProductAdapter extends RecyclerView.Adapter<ProgressProduct
         TextView txtMainCode, txtDate, txtProgressCode, txtProgressName;
         ImageView imgBarCode;
         MaterialRippleLayout materialRippleLayout;
+        ImageView imgSeen;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -106,6 +110,8 @@ public class ProgressProductAdapter extends RecyclerView.Adapter<ProgressProduct
             txtProgressName = itemView.findViewById(R.id.txtProgressName);
             imgBarCode = itemView.findViewById(R.id.imgBarcode);
             materialRippleLayout = itemView.findViewById(R.id.materialRippleLayout);
+            imgSeen = itemView.findViewById(R.id.imgSeen);
+            imgSeen.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -129,6 +135,7 @@ public class ProgressProductAdapter extends RecyclerView.Adapter<ProgressProduct
                     holder.txtDate.setText(Util.formatDateCustomChar(progressItem.getCmmddate(), "-"));
                     holder.txtProgressCode.setText(progressItem.getPcpdcode());
                     holder.txtProgressName.setText(progressItem.getPcpdname());
+                    holder.imgSeen.setVisibility(progressItem.isCheck() ? View.VISIBLE : View.INVISIBLE);
                     holder.itemView.post(new Runnable() {
                         @Override
                         public void run() {

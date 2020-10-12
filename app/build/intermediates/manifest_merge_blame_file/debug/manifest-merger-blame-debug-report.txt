@@ -5,687 +5,687 @@
 5    android:versionName="1.0.2" >
 6
 7    <uses-sdk
-7-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:5:5-73
+7-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:5:5-73
 8        android:minSdkVersion="21"
-8-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:5:5-73
+8-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:5:5-73
 9        android:targetSdkVersion="29" />
-9-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:5:5-73
+9-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:5:5-73
 10
 11    <uses-permission android:name="android.permission.CALL_PHONE" />
-11-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:6:5-69
-11-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:6:22-66
+11-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:6:5-69
+11-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:6:22-66
 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:7:5-79
-12-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:7:22-76
+12-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:7:5-79
+12-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:7:22-76
 13    <uses-permission android:name="android.permission.INTERNET" />
-13-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:8:5-67
-13-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:8:22-64
+13-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:8:5-67
+13-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:8:22-64
 14    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-14-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:9:5-81
-14-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:9:22-78
+14-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:9:5-81
+14-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:9:22-78
 15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-15-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:10:5-80
-15-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:10:22-77
+15-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:10:5-80
+15-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:10:22-77
 16    <uses-permission android:name="android.permission.VIBRATE" />
-16-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:11:5-66
-16-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:11:22-63
+16-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:11:5-66
+16-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:11:22-63
 17    <uses-permission android:name="android.permission.GET_TASKS" />
-17-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:12:5-68
-17-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:12:22-65
+17-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:12:5-68
+17-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:12:22-65
 18    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-18-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:13:5-76
-18-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:13:22-73
+18-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:13:5-76
+18-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:13:22-73
 19    <uses-permission android:name="android.permission.CAMERA" />
-19-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:14:5-65
-19-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:14:22-62
+19-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:14:5-65
+19-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:14:22-62
 20
 21    <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
 22    <uses-feature
-22-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:25:5-27:36
+22-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:25:5-27:36
 23        android:name="android.hardware.camera"
-23-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:26:9-47
+23-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:26:9-47
 24        android:required="false" />
-24-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:27:9-33
+24-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:27:9-33
 25    <uses-feature
-25-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:28:5-30:36
+25-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:28:5-30:36
 26        android:name="android.hardware.camera.front"
-26-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:29:9-53
+26-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:29:9-53
 27        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
-27-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:30:9-33
+27-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:30:9-33
 28    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
 29    <uses-feature
-29-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:33:5-35:36
+29-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:33:5-35:36
 30        android:name="android.hardware.camera.autofocus"
-30-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:34:9-57
+30-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:34:9-57
 31        android:required="false" />
-31-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:35:9-33
+31-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:35:9-33
 32    <uses-feature
-32-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:36:5-38:36
+32-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:36:5-38:36
 33        android:name="android.hardware.camera.flash"
-33-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:37:9-53
+33-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:37:9-53
 34        android:required="false" />
-34-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:38:9-33
+34-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:38:9-33
 35    <uses-feature
-35-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:39:5-41:36
+35-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:39:5-41:36
 36        android:name="android.hardware.screen.landscape"
-36-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:40:9-57
+36-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:40:9-57
 37        android:required="false" />
-37-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:41:9-33
+37-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:41:9-33
 38    <uses-feature
-38-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:42:5-44:36
+38-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:42:5-44:36
 39        android:name="android.hardware.wifi"
-39-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:43:9-45
+39-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:43:9-45
 40        android:required="false" />
-40-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:44:9-33
+40-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:44:9-33
 41
 42    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
-42-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:24:5-68
-42-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:24:22-65
+42-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:24:5-68
+42-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:24:22-65
 43    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-43-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:26:5-82
-43-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:26:22-79
+43-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:26:5-82
+43-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:26:22-79
 44
 45    <application
-45-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:16:5-217:19
+45-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:16:5-217:19
 46        android:name="com.firstems.erp.common.Application"
-46-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:17:9-43
+46-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:17:9-43
 47        android:allowBackup="true"
-47-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:18:9-35
+47-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:18:9-35
 48        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-48-->[androidx.core:core:1.3.1] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\980630e158f38ced2d00e440ae193d30\core-1.3.1\AndroidManifest.xml:24:18-86
+48-->[androidx.core:core:1.3.1] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\980630e158f38ced2d00e440ae193d30\core-1.3.1\AndroidManifest.xml:24:18-86
 49        android:configChanges="locale|layoutDirection"
-49-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:19:9-55
+49-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:19:9-55
 50        android:debuggable="true"
 51        android:hardwareAccelerated="true"
-51-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:20:9-43
+51-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:20:9-43
 52        android:icon="@mipmap/ic_launcher"
-52-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:21:9-43
+52-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:21:9-43
 53        android:label="@string/app_name"
-53-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:22:9-41
+53-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:22:9-41
 54        android:largeHeap="true"
-54-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:23:9-33
+54-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:23:9-33
 55        android:networkSecurityConfig="@xml/network_security_config"
-55-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:24:9-69
+55-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:24:9-69
 56        android:requestLegacyExternalStorage="true"
-56-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:25:9-52
+56-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:25:9-52
 57        android:roundIcon="@mipmap/ic_launcher_round"
-57-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:26:9-54
+57-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:26:9-54
 58        android:supportsRtl="true"
-58-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:27:9-35
+58-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:27:9-35
 59        android:testOnly="true"
 60        android:theme="@style/AppTheme" >
-60-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:28:9-40
+60-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:28:9-40
 61        <activity android:name="com.firstems.erp.ui.product.progress.ProductProgressActivity" />
-61-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:29:9-90
-61-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:29:19-78
+61-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:29:9-90
+61-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:29:19-78
 62        <activity android:name="com.firstems.erp.ui.product.ProductActivity" />
-62-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:30:9-64
-62-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:30:19-61
+62-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:30:9-64
+62-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:30:19-61
 63        <activity android:name="com.firstems.erp.ui.shared.office.OfficeViewActivity" />
-63-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:31:9-73
-63-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:31:19-70
+63-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:31:9-73
+63-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:31:19-70
 64        <activity android:name="com.firstems.erp.loading.FlashActivity" />
-64-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:32:9-59
-64-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:32:19-56
+64-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:32:9-59
+64-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:32:19-56
 65        <activity
-65-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:33:9-34:51
+65-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:33:9-34:51
 66            android:name="com.firstems.erp.ui.product.barcode.ScannerActivity"
-66-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:33:19-69
+66-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:33:19-69
 67            android:screenOrientation="portrait" />
-67-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:34:13-49
+67-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:34:13-49
 68        <activity android:name="com.firstems.erp.ui.signature.billpaymentrequest.sophieutamung.SoPhieuTamUngActivity" />
-68-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:35:9-105
-68-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:35:19-102
+68-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:35:9-105
+68-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:35:19-102
 69        <activity
-69-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:36:9-38:71
+69-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:36:9-38:71
 70            android:name="com.firstems.erp.ui.more.password.ChangePasswordActivity"
-70-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:37:13-68
+70-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:37:13-68
 71            android:windowSoftInputMode="stateVisible|adjustResize" />
-71-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:38:13-68
+71-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:38:13-68
 72        <activity
-72-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:39:9-42:71
+72-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:39:9-42:71
 73            android:name="com.firstems.erp.ui.home.HomeActivity"
-73-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:40:13-49
+73-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:40:13-49
 74            android:screenOrientation="portrait"
-74-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:41:13-49
+74-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:41:13-49
 75            android:windowSoftInputMode="stateVisible|adjustResize" />
-75-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:42:13-68
+75-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:42:13-68
 76        <activity
-76-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:43:9-46:71
+76-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:43:9-46:71
 77            android:name="com.firstems.erp.ui.document.detail.DocumnetDetailActivity"
-77-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:44:13-70
+77-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:44:13-70
 78            android:screenOrientation="portrait"
-78-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:45:13-49
+78-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:45:13-49
 79            android:windowSoftInputMode="stateVisible|adjustResize" />
-79-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:46:13-68
+79-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:46:13-68
 80        <activity
-80-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:47:9-50:71
+80-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:47:9-50:71
 81            android:name="com.firstems.erp.ui.document.list.DocumentListActivity"
-81-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:48:13-66
+81-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:48:13-66
 82            android:screenOrientation="portrait"
-82-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:49:13-49
+82-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:49:13-49
 83            android:windowSoftInputMode="stateVisible|adjustResize" />
-83-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:50:13-68
+83-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:50:13-68
 84        <activity
-84-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:51:9-54:71
+84-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:51:9-54:71
 85            android:name="com.firstems.erp.ui.signature.defaultsignature.DefaultSignatureActivity"
-85-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:52:13-83
+85-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:52:13-83
 86            android:screenOrientation="portrait"
-86-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:53:13-49
+86-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:53:13-49
 87            android:windowSoftInputMode="stateVisible|adjustResize" />
-87-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:54:13-68
+87-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:54:13-68
 88        <activity
-88-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:55:9-58:71
+88-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:55:9-58:71
 89            android:name="com.firstems.erp.ui.shared.loaidoituongnhan.DoiTuongNhanActivity"
-89-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:56:13-76
+89-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:56:13-76
 90            android:screenOrientation="portrait"
-90-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:57:13-49
+90-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:57:13-49
 91            android:windowSoftInputMode="stateVisible|adjustResize" />
-91-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:58:13-68
+91-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:58:13-68
 92        <activity
-92-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:59:9-62:71
+92-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:59:9-62:71
 93            android:name="com.firstems.erp.ui.shared.image.ImageViewActivity"
-93-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:60:13-62
+93-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:60:13-62
 94            android:screenOrientation="portrait"
-94-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:61:13-49
+94-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:61:13-49
 95            android:windowSoftInputMode="stateVisible|adjustResize" />
-95-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:62:13-68
+95-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:62:13-68
 96        <activity
-96-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:63:9-66:71
+96-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:63:9-66:71
 97            android:name="com.firstems.erp.ui.shared.viewer.PDFViewerActivity"
-97-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:64:13-63
+97-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:64:13-63
 98            android:screenOrientation="portrait"
-98-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:65:13-49
+98-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:65:13-49
 99            android:windowSoftInputMode="stateVisible|adjustResize" />
-99-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:66:13-68
+99-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:66:13-68
 100        <activity
-100-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:67:9-70:71
+100-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:67:9-70:71
 101            android:name="com.firstems.erp.ui.shared.province.ProvinceActivity"
-101-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:68:13-64
+101-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:68:13-64
 102            android:screenOrientation="portrait"
-102-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:69:13-49
+102-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:69:13-49
 103            android:windowSoftInputMode="stateVisible|adjustResize" />
-103-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:70:13-68
+103-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:70:13-68
 104        <activity
-104-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:71:9-74:71
+104-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:71:9-74:71
 105            android:name="com.firstems.erp.ui.shared.national.NationalActivity"
-105-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:72:13-64
+105-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:72:13-64
 106            android:screenOrientation="portrait"
-106-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:73:13-49
+106-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:73:13-49
 107            android:windowSoftInputMode="stateVisible|adjustResize" />
-107-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:74:13-68
+107-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:74:13-68
 108        <activity
-108-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:75:9-78:71
+108-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:75:9-78:71
 109            android:name="com.firstems.erp.WebViewActivity"
-109-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:76:13-44
+109-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:76:13-44
 110            android:screenOrientation="portrait"
-110-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:77:13-49
+110-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:77:13-49
 111            android:windowSoftInputMode="stateVisible|adjustResize" />
-111-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:78:13-68
+111-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:78:13-68
 112        <activity
-112-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:79:9-82:71
+112-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:79:9-82:71
 113            android:name="com.firstems.erp.ui.shared.relatedfields.RelatedFieldsActivity"
-113-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:80:13-74
+113-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:80:13-74
 114            android:screenOrientation="portrait"
-114-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:81:13-49
+114-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:81:13-49
 115            android:windowSoftInputMode="stateVisible|adjustResize" />
-115-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:82:13-68
+115-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:82:13-68
 116        <activity android:name="com.firstems.erp.TestActivity" />
-116-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:83:9-50
-116-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:83:19-47
+116-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:83:9-50
+116-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:83:19-47
 117        <activity
-117-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:84:9-87:71
+117-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:84:9-87:71
 118            android:name="com.firstems.erp.ui.shared.department.DepartmentActivity"
-118-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:85:13-68
+118-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:85:13-68
 119            android:screenOrientation="portrait"
-119-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:86:13-49
+119-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:86:13-49
 120            android:windowSoftInputMode="stateVisible|adjustResize" />
-120-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:87:13-68
+120-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:87:13-68
 121        <activity
-121-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:88:9-91:71
+121-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:88:9-91:71
 122            android:name="com.firstems.erp.ui.shared.employee.EmployeeActivity"
-122-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:89:13-64
+122-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:89:13-64
 123            android:screenOrientation="portrait"
-123-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:90:13-49
+123-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:90:13-49
 124            android:windowSoftInputMode="stateVisible|adjustResize" />
-124-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:91:13-68
+124-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:91:13-68
 125        <activity
-125-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:92:9-95:71
+125-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:92:9-95:71
 126            android:name="com.firstems.erp.ui.company.SelectCompanyActivity"
-126-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:93:13-61
+126-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:93:13-61
 127            android:screenOrientation="portrait"
-127-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:94:13-49
+127-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:94:13-49
 128            android:windowSoftInputMode="stateVisible|adjustResize" />
-128-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:95:13-68
+128-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:95:13-68
 129        <activity
-129-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:96:9-99:71
+129-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:96:9-99:71
 130            android:name="com.firstems.erp.ui.more.help.HelpActivity"
-130-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:97:13-54
+130-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:97:13-54
 131            android:screenOrientation="portrait"
-131-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:98:13-49
+131-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:98:13-49
 132            android:windowSoftInputMode="stateVisible|adjustResize" />
-132-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:99:13-68
+132-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:99:13-68
 133        <activity
-133-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:100:9-103:71
+133-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:100:9-103:71
 134            android:name="com.firstems.erp.ui.table.TableActivity"
-134-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:101:13-51
+134-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:101:13-51
 135            android:screenOrientation="portrait"
-135-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:102:13-49
+135-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:102:13-49
 136            android:windowSoftInputMode="stateVisible|adjustResize" />
-136-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:103:13-68
+136-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:103:13-68
 137        <activity
-137-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:104:9-107:71
+137-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:104:9-107:71
 138            android:name="com.firstems.erp.ui.date.SelectDateActivity"
-138-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:105:13-55
+138-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:105:13-55
 139            android:screenOrientation="portrait"
-139-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:106:13-49
+139-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:106:13-49
 140            android:windowSoftInputMode="stateVisible|adjustResize" />
-140-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:107:13-68
+140-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:107:13-68
 141        <activity
-141-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:108:9-110:53
+141-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:108:9-110:53
 142            android:name="com.firstems.erp.ui.chart.ChartViewActivity"
-142-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:109:13-55
+142-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:109:13-55
 143            android:screenOrientation="landscape" />
-143-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:110:13-50
+143-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:110:13-50
 144        <activity android:name="com.firstems.erp.ui.more.report.ReporttingActivity" />
-144-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:111:9-71
-144-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:111:19-68
+144-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:111:9-71
+144-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:111:19-68
 145        <activity
-145-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:112:9-115:71
+145-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:112:9-115:71
 146            android:name="com.firstems.erp.ui.dashboard.DashboardActivity"
-146-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:113:13-59
+146-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:113:13-59
 147            android:screenOrientation="portrait"
-147-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:114:13-49
+147-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:114:13-49
 148            android:windowSoftInputMode="stateVisible|adjustResize" />
-148-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:115:13-68
+148-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:115:13-68
 149        <activity
-149-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:116:9-120:71
+149-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:116:9-120:71
 150            android:name="com.firstems.erp.ui.login.LoginActivity"
-150-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:117:13-51
+150-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:117:13-51
 151            android:screenOrientation="portrait"
-151-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:118:13-49
+151-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:118:13-49
 152            android:theme="@style/BaseTheme"
-152-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:119:13-45
+152-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:119:13-45
 153            android:windowSoftInputMode="stateVisible|adjustResize" />
-153-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:120:13-68
+153-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:120:13-68
 154        <activity
-154-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:121:9-124:71
+154-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:121:9-124:71
 155            android:name="com.firstems.erp.ui.config.ConfigActivity"
-155-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:122:13-53
+155-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:122:13-53
 156            android:screenOrientation="portrait"
-156-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:123:13-49
+156-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:123:13-49
 157            android:windowSoftInputMode="stateVisible|adjustResize" />
-157-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:124:13-68
+157-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:124:13-68
 158        <activity
-158-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:125:9-128:71
+158-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:125:9-128:71
 159            android:name="com.firstems.erp.ui.signature.businessregistration.info.BusinessRegistrationInfoActivity"
-159-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:126:13-100
+159-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:126:13-100
 160            android:screenOrientation="portrait"
-160-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:127:13-49
+160-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:127:13-49
 161            android:windowSoftInputMode="stateVisible|adjustResize" />
-161-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:128:13-68
+161-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:128:13-68
 162        <activity
-162-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:129:9-132:71
+162-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:129:9-132:71
 163            android:name="com.firstems.erp.ui.approved.detail.ApproveDetailActivity"
-163-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:130:13-69
+163-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:130:13-69
 164            android:screenOrientation="portrait"
-164-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:131:13-49
+164-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:131:13-49
 165            android:windowSoftInputMode="stateVisible|adjustResize" />
-165-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:132:13-68
+165-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:132:13-68
 166        <activity
-166-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:133:9-136:71
+166-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:133:9-136:71
 167            android:name="com.firstems.erp.ui.signature.filtersignature.FilterSignatureActivity"
-167-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:134:13-81
+167-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:134:13-81
 168            android:screenOrientation="portrait"
-168-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:135:13-49
+168-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:135:13-49
 169            android:windowSoftInputMode="stateVisible|adjustResize" />
-169-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:136:13-68
+169-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:136:13-68
 170        <activity
-170-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:137:9-140:71
+170-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:137:9-140:71
 171            android:name="com.firstems.erp.ui.signature.advanceproposalform.AdvanceProposalFormActivity"
-171-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:138:13-89
+171-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:138:13-89
 172            android:screenOrientation="portrait"
-172-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:139:13-49
+172-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:139:13-49
 173            android:windowSoftInputMode="stateVisible|adjustResize" />
-173-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:140:13-68
+173-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:140:13-68
 174        <activity
-174-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:141:9-144:71
+174-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:141:9-144:71
 175            android:name="com.firstems.erp.ui.signature.billpaymentrequest.ticket.TicketBillPaymentRequestActivity"
-175-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:142:13-100
+175-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:142:13-100
 176            android:screenOrientation="portrait"
-176-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:143:13-49
+176-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:143:13-49
 177            android:windowSoftInputMode="stateVisible|adjustResize" />
-177-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:144:13-68
+177-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:144:13-68
 178        <activity
-178-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:145:9-148:71
+178-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:145:9-148:71
 179            android:name="com.firstems.erp.ui.signature.billpaymentrequest.BillPaymentRequestActivity"
-179-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:146:13-87
+179-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:146:13-87
 180            android:screenOrientation="portrait"
-180-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:147:13-49
+180-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:147:13-49
 181            android:windowSoftInputMode="stateVisible|adjustResize" />
-181-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:148:13-68
+181-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:148:13-68
 182        <activity
-182-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:149:9-152:71
+182-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:149:9-152:71
 183            android:name="com.firstems.erp.ui.signature.businessregistration.BusinessRegistrationActivity"
-183-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:150:13-91
+183-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:150:13-91
 184            android:screenOrientation="portrait"
-184-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:151:13-49
+184-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:151:13-49
 185            android:windowSoftInputMode="stateVisible|adjustResize" />
-185-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:152:13-68
+185-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:152:13-68
 186        <activity
-186-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:153:9-156:71
+186-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:153:9-156:71
 187            android:name="com.firstems.erp.ui.signature.servicecontacts.ServiceContactsActivity"
-187-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:154:13-81
+187-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:154:13-81
 188            android:screenOrientation="portrait"
-188-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:155:13-49
+188-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:155:13-49
 189            android:windowSoftInputMode="stateVisible|adjustResize" />
-189-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:156:13-68
+189-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:156:13-68
 190        <activity
-190-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:157:9-160:71
+190-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:157:9-160:71
 191            android:name="com.firstems.erp.ui.signature.askpermission.AskPermissionActivity"
-191-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:158:13-77
+191-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:158:13-77
 192            android:screenOrientation="portrait"
-192-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:159:13-49
+192-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:159:13-49
 193            android:windowSoftInputMode="stateVisible|adjustResize" />
-193-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:160:13-68
+193-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:160:13-68
 194        <activity
-194-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:161:9-164:71
+194-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:161:9-164:71
 195            android:name="com.firstems.erp.ui.signature.switchshift.info.SwitchShiftInfoActivity"
-195-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:162:13-82
+195-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:162:13-82
 196            android:screenOrientation="portrait"
-196-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:163:13-49
+196-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:163:13-49
 197            android:windowSoftInputMode="stateVisible|adjustResize" />
-197-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:164:13-68
+197-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:164:13-68
 198        <activity
-198-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:165:9-168:71
+198-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:165:9-168:71
 199            android:name="com.firstems.erp.ui.signature.switchshift.SwitchShiftActivity"
-199-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:166:13-73
+199-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:166:13-73
 200            android:screenOrientation="portrait"
-200-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:167:13-49
+200-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:167:13-49
 201            android:windowSoftInputMode="stateVisible|adjustResize" />
-201-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:168:13-68
+201-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:168:13-68
 202        <activity
-202-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:169:9-172:71
+202-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:169:9-172:71
 203            android:name="com.firstems.erp.ui.signature.askpermission.info.AskPermissionInfoActivity"
-203-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:170:13-86
+203-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:170:13-86
 204            android:screenOrientation="portrait"
-204-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:171:13-49
+204-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:171:13-49
 205            android:windowSoftInputMode="stateVisible|adjustResize" />
-205-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:172:13-68
+205-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:172:13-68
 206        <activity
-206-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:173:9-176:71
+206-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:173:9-176:71
 207            android:name="com.firstems.erp.MainActivity"
-207-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:174:13-41
+207-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:174:13-41
 208            android:screenOrientation="portrait"
-208-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:175:13-49
+208-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:175:13-49
 209            android:windowSoftInputMode="stateVisible|adjustResize" />
-209-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:176:13-68
+209-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:176:13-68
 210        <activity
-210-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:177:9-186:20
+210-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:177:9-186:20
 211            android:name="com.firstems.erp.loading.LoadingActivity"
-211-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:178:13-52
+211-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:178:13-52
 212            android:screenOrientation="portrait"
-212-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:179:13-49
+212-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:179:13-49
 213            android:theme="@style/SplashTheme" >
-213-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:180:13-47
+213-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:180:13-47
 214            <intent-filter>
-214-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:181:13-185:29
+214-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:181:13-185:29
 215                <action android:name="android.intent.action.MAIN" />
-215-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:182:17-69
-215-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:182:25-66
+215-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:182:17-69
+215-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:182:25-66
 216
 217                <category android:name="android.intent.category.LAUNCHER" />
-217-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:184:17-77
-217-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:184:27-74
+217-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:184:17-77
+217-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:184:27-74
 218            </intent-filter>
 219        </activity>
 220
 221        <provider
 222            android:name="androidx.core.content.FileProvider"
-222-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:189:13-62
+222-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:189:13-62
 223            android:authorities="com.firstems.erp"
-223-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:190:13-51
+223-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:190:13-51
 224            android:exported="false"
-224-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:191:13-37
+224-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:191:13-37
 225            android:grantUriPermissions="true" >
-225-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:192:13-47
+225-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:192:13-47
 226            <meta-data
-226-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:193:13-195:54
+226-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:193:13-195:54
 227                android:name="android.support.FILE_PROVIDER_PATHS"
-227-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:194:17-67
+227-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:194:17-67
 228                android:resource="@xml/file_paths" />
-228-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:195:17-51
+228-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:195:17-51
 229        </provider>
 230        <provider
 231            android:name="com.firstems.erp.common.GenericFileProvider"
-231-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:198:13-55
+231-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:198:13-55
 232            android:authorities="com.firstems.erp.provider"
-232-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:199:13-60
+232-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:199:13-60
 233            android:exported="false"
-233-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:200:13-37
+233-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:200:13-37
 234            android:grantUriPermissions="true" >
-234-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:201:13-47
+234-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:201:13-47
 235            <meta-data
-235-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:193:13-195:54
+235-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:193:13-195:54
 236                android:name="android.support.FILE_PROVIDER_PATHS"
-236-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:194:17-67
+236-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:194:17-67
 237                android:resource="@xml/provider_paths" />
-237-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:195:17-51
+237-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:195:17-51
 238        </provider>
 239
 240        <uses-library
-240-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:207:9-209:40
+240-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:207:9-209:40
 241            android:name="org.apache.http.legacy"
-241-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:208:13-50
+241-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:208:13-50
 242            android:required="false" />
-242-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:209:13-37
+242-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:209:13-37
 243
 244        <meta-data
-244-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:211:9-213:56
+244-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:211:9-213:56
 245            android:name="com.google.firebase.messaging.default_notification_icon"
-245-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:212:13-83
+245-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:212:13-83
 246            android:resource="@drawable/ic_launcher" />
-246-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:213:13-53
+246-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:213:13-53
 247        <meta-data
-247-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:214:9-216:71
+247-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:214:9-216:71
 248            android:name="com.google.firebase.messaging.default_notification_channel_id"
-248-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:215:13-89
+248-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:215:13-89
 249            android:value="@string/default_notification_channel_id" />
-249-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:216:13-68
+249-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:216:13-68
 250
 251        <activity
-251-->[pub.devrel:easypermissions:3.0.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\f92f1b292c21c42e3fc752d649f862a8\jetified-easypermissions-3.0.0\AndroidManifest.xml:12:9-16:66
+251-->[pub.devrel:easypermissions:3.0.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f92f1b292c21c42e3fc752d649f862a8\jetified-easypermissions-3.0.0\AndroidManifest.xml:12:9-16:66
 252            android:name="pub.devrel.easypermissions.AppSettingsDialogHolderActivity"
-252-->[pub.devrel:easypermissions:3.0.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\f92f1b292c21c42e3fc752d649f862a8\jetified-easypermissions-3.0.0\AndroidManifest.xml:13:13-86
+252-->[pub.devrel:easypermissions:3.0.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f92f1b292c21c42e3fc752d649f862a8\jetified-easypermissions-3.0.0\AndroidManifest.xml:13:13-86
 253            android:exported="false"
-253-->[pub.devrel:easypermissions:3.0.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\f92f1b292c21c42e3fc752d649f862a8\jetified-easypermissions-3.0.0\AndroidManifest.xml:14:13-37
+253-->[pub.devrel:easypermissions:3.0.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f92f1b292c21c42e3fc752d649f862a8\jetified-easypermissions-3.0.0\AndroidManifest.xml:14:13-37
 254            android:label=""
-254-->[pub.devrel:easypermissions:3.0.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\f92f1b292c21c42e3fc752d649f862a8\jetified-easypermissions-3.0.0\AndroidManifest.xml:15:13-29
+254-->[pub.devrel:easypermissions:3.0.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f92f1b292c21c42e3fc752d649f862a8\jetified-easypermissions-3.0.0\AndroidManifest.xml:15:13-29
 255            android:theme="@style/EasyPermissions.Transparent" />
-255-->[pub.devrel:easypermissions:3.0.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\f92f1b292c21c42e3fc752d649f862a8\jetified-easypermissions-3.0.0\AndroidManifest.xml:16:13-63
+255-->[pub.devrel:easypermissions:3.0.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f92f1b292c21c42e3fc752d649f862a8\jetified-easypermissions-3.0.0\AndroidManifest.xml:16:13-63
 256        <!--
 257             FirebaseMessagingService performs security checks at runtime,
 258             but set to not exported to explicitly avoid allowing another app to call it.
 259        -->
 260        <service
-260-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:28:9-35:19
+260-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:28:9-35:19
 261            android:name="com.google.firebase.messaging.FirebaseMessagingService"
-261-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:29:13-82
+261-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:29:13-82
 262            android:directBootAware="true"
-262-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:30:13-43
+262-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:30:13-43
 263            android:exported="false" >
-263-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:31:13-37
+263-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:31:13-37
 264            <intent-filter android:priority="-500" >
-264-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:32:13-34:29
-264-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:32:28-51
+264-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:32:13-34:29
+264-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:32:28-51
 265                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-265-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:33:17-78
-265-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:33:25-75
+265-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:33:17-78
+265-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:33:25-75
 266            </intent-filter>
 267        </service>
 268        <service
-268-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:36:9-42:19
+268-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:36:9-42:19
 269            android:name="com.google.firebase.components.ComponentDiscoveryService"
-269-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:37:13-84
+269-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:37:13-84
 270            android:directBootAware="true"
-270-->[com.google.firebase:firebase-common:19.3.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\d5ae2f905dca277d72c2333071856016\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
+270-->[com.google.firebase:firebase-common:19.3.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\d5ae2f905dca277d72c2333071856016\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
 271            android:exported="false" >
-271-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:38:13-37
+271-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:38:13-37
 272            <meta-data
-272-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:39:13-41:85
+272-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:39:13-41:85
 273                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
-273-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:40:17-119
+273-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:40:17-119
 274                android:value="com.google.firebase.components.ComponentRegistrar" />
-274-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:41:17-82
+274-->[com.google.firebase:firebase-messaging:20.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\a09ee83e403354c89c3f4b21a1fe3504\jetified-firebase-messaging-20.2.4\AndroidManifest.xml:41:17-82
 275            <meta-data
-275-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:32:13-34:85
+275-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:32:13-34:85
 276                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
-276-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:33:17-96
+276-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:33:17-96
 277                android:value="com.google.firebase.components.ComponentRegistrar" />
-277-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:34:17-82
+277-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:34:17-82
 278            <meta-data
-278-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\ec6ed60bc769c1397d2bb4044e417511\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:28:13-30:85
+278-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\ec6ed60bc769c1397d2bb4044e417511\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:28:13-30:85
 279                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
-279-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\ec6ed60bc769c1397d2bb4044e417511\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:29:17-115
+279-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\ec6ed60bc769c1397d2bb4044e417511\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:29:17-115
 280                android:value="com.google.firebase.components.ComponentRegistrar" />
-280-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\ec6ed60bc769c1397d2bb4044e417511\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:30:17-82
+280-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\ec6ed60bc769c1397d2bb4044e417511\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:30:17-82
 281            <meta-data
-281-->[com.google.firebase:firebase-installations:16.3.3] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1d3330b642962cbb46db7e48ab6d55d2\jetified-firebase-installations-16.3.3\AndroidManifest.xml:17:13-19:85
+281-->[com.google.firebase:firebase-installations:16.3.3] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1d3330b642962cbb46db7e48ab6d55d2\jetified-firebase-installations-16.3.3\AndroidManifest.xml:17:13-19:85
 282                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-282-->[com.google.firebase:firebase-installations:16.3.3] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1d3330b642962cbb46db7e48ab6d55d2\jetified-firebase-installations-16.3.3\AndroidManifest.xml:18:17-127
+282-->[com.google.firebase:firebase-installations:16.3.3] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1d3330b642962cbb46db7e48ab6d55d2\jetified-firebase-installations-16.3.3\AndroidManifest.xml:18:17-127
 283                android:value="com.google.firebase.components.ComponentRegistrar" />
-283-->[com.google.firebase:firebase-installations:16.3.3] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1d3330b642962cbb46db7e48ab6d55d2\jetified-firebase-installations-16.3.3\AndroidManifest.xml:19:17-82
+283-->[com.google.firebase:firebase-installations:16.3.3] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1d3330b642962cbb46db7e48ab6d55d2\jetified-firebase-installations-16.3.3\AndroidManifest.xml:19:17-82
 284        </service>
 285
 286        <activity
-286-->[com.droidninja:filepicker:2.2.4] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:18:9-20:62
+286-->[com.droidninja:filepicker:2.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:18:9-20:62
 287            android:name="droidninja.filepicker.FilePickerActivity"
-287-->[com.droidninja:filepicker:2.2.4] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:19:13-68
+287-->[com.droidninja:filepicker:2.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:19:13-68
 288            android:configChanges="orientation|screenSize" />
-288-->[com.droidninja:filepicker:2.2.4] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:20:13-59
+288-->[com.droidninja:filepicker:2.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:20:13-59
 289        <activity
-289-->[com.droidninja:filepicker:2.2.4] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:21:9-23:62
+289-->[com.droidninja:filepicker:2.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:21:9-23:62
 290            android:name="droidninja.filepicker.MediaDetailsActivity"
-290-->[com.droidninja:filepicker:2.2.4] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:22:13-70
+290-->[com.droidninja:filepicker:2.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:22:13-70
 291            android:configChanges="orientation|screenSize" />
-291-->[com.droidninja:filepicker:2.2.4] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:23:13-59
+291-->[com.droidninja:filepicker:2.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:23:13-59
 292
 293        <provider
-293-->[com.droidninja:filepicker:2.2.4] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:25:9-33:20
+293-->[com.droidninja:filepicker:2.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:25:9-33:20
 294            android:name="droidninja.filepicker.utils.FilePickerProvider"
-294-->[com.droidninja:filepicker:2.2.4] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:26:13-74
+294-->[com.droidninja:filepicker:2.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:26:13-74
 295            android:authorities="com.firstems.erp.droidninja.filepicker.provider"
-295-->[com.droidninja:filepicker:2.2.4] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:27:13-82
+295-->[com.droidninja:filepicker:2.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:27:13-82
 296            android:exported="false"
-296-->[com.droidninja:filepicker:2.2.4] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:28:13-37
+296-->[com.droidninja:filepicker:2.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:28:13-37
 297            android:grantUriPermissions="true" >
-297-->[com.droidninja:filepicker:2.2.4] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:29:13-47
+297-->[com.droidninja:filepicker:2.2.4] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\cb78e1977be5b27058b78cd0d688cec0\jetified-filepicker-2.2.4\AndroidManifest.xml:29:13-47
 298            <meta-data
-298-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:193:13-195:54
+298-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:193:13-195:54
 299                android:name="android.support.FILE_PROVIDER_PATHS"
-299-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:194:17-67
+299-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:194:17-67
 300                android:resource="@xml/provider_paths" />
-300-->C:\Users\kkkk\AndroidStudioProjects\1EMSERP1\app\src\main\AndroidManifest.xml:195:17-51
+300-->C:\Users\PC\Desktop\ERP\app\src\main\AndroidManifest.xml:195:17-51
 301        </provider>
 302
 303        <activity
-303-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:47:9-53:63
+303-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:47:9-53:63
 304            android:name="com.journeyapps.barcodescanner.CaptureActivity"
-304-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:48:13-74
+304-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:48:13-74
 305            android:clearTaskOnLaunch="true"
-305-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:49:13-45
+305-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:49:13-45
 306            android:screenOrientation="sensorLandscape"
-306-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:50:13-56
+306-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:50:13-56
 307            android:stateNotNeeded="true"
-307-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:51:13-42
+307-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:51:13-42
 308            android:theme="@style/zxing_CaptureTheme"
-308-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:52:13-54
+308-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:52:13-54
 309            android:windowSoftInputMode="stateAlwaysHidden" />
-309-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:53:13-60
+309-->[com.journeyapps:zxing-android-embedded:4.1.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\1913dbaf24280fccddd68fe43241e849\jetified-zxing-android-embedded-4.1.0\AndroidManifest.xml:53:13-60
 310
 311        <receiver
-311-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:37:9-44:20
+311-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:37:9-44:20
 312            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-312-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:38:13-78
+312-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:38:13-78
 313            android:exported="true"
-313-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:39:13-36
+313-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:39:13-36
 314            android:permission="com.google.android.c2dm.permission.SEND" >
-314-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:40:13-73
+314-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:40:13-73
 315            <intent-filter>
-315-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:41:13-43:29
+315-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:41:13-43:29
 316                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-316-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:42:17-81
-316-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:42:25-78
+316-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:42:17-81
+316-->[com.google.firebase:firebase-iid:20.2.3] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f664dd6348b9e6a7bebcc59e99301373\jetified-firebase-iid-20.2.3\AndroidManifest.xml:42:25-78
 317            </intent-filter>
 318        </receiver>
 319
 320        <provider
-320-->[com.google.firebase:firebase-common:19.3.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\d5ae2f905dca277d72c2333071856016\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
+320-->[com.google.firebase:firebase-common:19.3.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\d5ae2f905dca277d72c2333071856016\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
 321            android:name="com.google.firebase.provider.FirebaseInitProvider"
-321-->[com.google.firebase:firebase-common:19.3.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\d5ae2f905dca277d72c2333071856016\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
+321-->[com.google.firebase:firebase-common:19.3.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\d5ae2f905dca277d72c2333071856016\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
 322            android:authorities="com.firstems.erp.firebaseinitprovider"
-322-->[com.google.firebase:firebase-common:19.3.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\d5ae2f905dca277d72c2333071856016\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
+322-->[com.google.firebase:firebase-common:19.3.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\d5ae2f905dca277d72c2333071856016\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
 323            android:exported="false"
-323-->[com.google.firebase:firebase-common:19.3.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\d5ae2f905dca277d72c2333071856016\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
+323-->[com.google.firebase:firebase-common:19.3.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\d5ae2f905dca277d72c2333071856016\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
 324            android:initOrder="100" />
-324-->[com.google.firebase:firebase-common:19.3.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\d5ae2f905dca277d72c2333071856016\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
+324-->[com.google.firebase:firebase-common:19.3.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\d5ae2f905dca277d72c2333071856016\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
 325
 326        <activity
-326-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\9d9f5eefb5bcc469207d44112eb03d4a\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+326-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\9d9f5eefb5bcc469207d44112eb03d4a\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
 327            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-327-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\9d9f5eefb5bcc469207d44112eb03d4a\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+327-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\9d9f5eefb5bcc469207d44112eb03d4a\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
 328            android:exported="false"
-328-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\9d9f5eefb5bcc469207d44112eb03d4a\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+328-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\9d9f5eefb5bcc469207d44112eb03d4a\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
 329            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-329-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\9d9f5eefb5bcc469207d44112eb03d4a\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+329-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\9d9f5eefb5bcc469207d44112eb03d4a\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
 330
 331        <meta-data
-331-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\f258e3825c6af3b14c7ec1616fae4742\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+331-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f258e3825c6af3b14c7ec1616fae4742\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
 332            android:name="com.google.android.gms.version"
-332-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\f258e3825c6af3b14c7ec1616fae4742\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+332-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f258e3825c6af3b14c7ec1616fae4742\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
 333            android:value="@integer/google_play_services_version" />
-333-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\f258e3825c6af3b14c7ec1616fae4742\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+333-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\f258e3825c6af3b14c7ec1616fae4742\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
 334
 335        <provider
-335-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\fbb45a1792cf0e97ccf5507b087b63b1\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
+335-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\fbb45a1792cf0e97ccf5507b087b63b1\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
 336            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-336-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\fbb45a1792cf0e97ccf5507b087b63b1\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+336-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\fbb45a1792cf0e97ccf5507b087b63b1\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
 337            android:authorities="com.firstems.erp.lifecycle-process"
-337-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\fbb45a1792cf0e97ccf5507b087b63b1\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
+337-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\fbb45a1792cf0e97ccf5507b087b63b1\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
 338            android:exported="false"
-338-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\fbb45a1792cf0e97ccf5507b087b63b1\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
+338-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\fbb45a1792cf0e97ccf5507b087b63b1\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
 339            android:multiprocess="true" />
-339-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\fbb45a1792cf0e97ccf5507b087b63b1\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+339-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\fbb45a1792cf0e97ccf5507b087b63b1\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
 340
 341        <service
-341-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\8e8493fc4060d1a9e60e0e8b89d28daa\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:29:9-35:19
+341-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\8e8493fc4060d1a9e60e0e8b89d28daa\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:29:9-35:19
 342            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
-342-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\8e8493fc4060d1a9e60e0e8b89d28daa\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:30:13-103
+342-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\8e8493fc4060d1a9e60e0e8b89d28daa\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:30:13-103
 343            android:exported="false" >
-343-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\8e8493fc4060d1a9e60e0e8b89d28daa\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:31:13-37
+343-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\8e8493fc4060d1a9e60e0e8b89d28daa\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:31:13-37
 344            <meta-data
-344-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\8e8493fc4060d1a9e60e0e8b89d28daa\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:32:13-34:39
+344-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\8e8493fc4060d1a9e60e0e8b89d28daa\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:32:13-34:39
 345                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
-345-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\8e8493fc4060d1a9e60e0e8b89d28daa\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:33:17-94
+345-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\8e8493fc4060d1a9e60e0e8b89d28daa\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:33:17-94
 346                android:value="cct" />
-346-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\8e8493fc4060d1a9e60e0e8b89d28daa\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:34:17-36
+346-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\8e8493fc4060d1a9e60e0e8b89d28daa\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:34:17-36
 347        </service>
 348        <service
-348-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\09a4bf673ec4891d08a21c203c688e10\jetified-transport-runtime-2.2.0\AndroidManifest.xml:26:9-30:19
+348-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\09a4bf673ec4891d08a21c203c688e10\jetified-transport-runtime-2.2.0\AndroidManifest.xml:26:9-30:19
 349            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
-349-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\09a4bf673ec4891d08a21c203c688e10\jetified-transport-runtime-2.2.0\AndroidManifest.xml:27:13-117
+349-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\09a4bf673ec4891d08a21c203c688e10\jetified-transport-runtime-2.2.0\AndroidManifest.xml:27:13-117
 350            android:exported="false"
-350-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\09a4bf673ec4891d08a21c203c688e10\jetified-transport-runtime-2.2.0\AndroidManifest.xml:28:13-37
+350-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\09a4bf673ec4891d08a21c203c688e10\jetified-transport-runtime-2.2.0\AndroidManifest.xml:28:13-37
 351            android:permission="android.permission.BIND_JOB_SERVICE" >
-351-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\09a4bf673ec4891d08a21c203c688e10\jetified-transport-runtime-2.2.0\AndroidManifest.xml:29:13-69
+351-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\09a4bf673ec4891d08a21c203c688e10\jetified-transport-runtime-2.2.0\AndroidManifest.xml:29:13-69
 352        </service>
 353
 354        <receiver
-354-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\09a4bf673ec4891d08a21c203c688e10\jetified-transport-runtime-2.2.0\AndroidManifest.xml:32:9-34:40
+354-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\09a4bf673ec4891d08a21c203c688e10\jetified-transport-runtime-2.2.0\AndroidManifest.xml:32:9-34:40
 355            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
-355-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\09a4bf673ec4891d08a21c203c688e10\jetified-transport-runtime-2.2.0\AndroidManifest.xml:33:13-132
+355-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\09a4bf673ec4891d08a21c203c688e10\jetified-transport-runtime-2.2.0\AndroidManifest.xml:33:13-132
 356            android:exported="false" />
-356-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\kkkk\.gradle\caches\transforms-2\files-2.1\09a4bf673ec4891d08a21c203c688e10\jetified-transport-runtime-2.2.0\AndroidManifest.xml:34:13-37
+356-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\PC\.gradle\caches\transforms-2\files-2.1\09a4bf673ec4891d08a21c203c688e10\jetified-transport-runtime-2.2.0\AndroidManifest.xml:34:13-37
 357    </application>
 358
 359</manifest>

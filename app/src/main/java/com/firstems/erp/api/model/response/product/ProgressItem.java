@@ -7,38 +7,105 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class ProgressItem implements Serializable, Comparable{
+public class ProgressItem implements Serializable, Comparable {
     @SerializedName("CMMDCODE")
-    private final String cmmdcode;
+    private String cmmdcode;
 
     @SerializedName("CMMDDATE")
-    private final String cmmddate;
+    private String cmmddate;
 
     @SerializedName("PCPDCODE")
-    private final String pcpdcode;
+    private String pcpdcode;
 
     @SerializedName("PCPDNAME")
-    private final String pcpdname;
+    private String pcpdname;
 
     @SerializedName("DDDD")
-    private final String dddd;
+    private String dddd;
 
     @SerializedName("ACCERGHT")
-    private final int accerght;
+    private int accerght;
 
     @SerializedName("STTESIGN")
-    private final int sttesign;
+    private int sttesign;
 
     @SerializedName("STTENAME")
-    private final String sttename;
+    private String sttename;
 
     @SerializedName("KKKK0000")
-    private final String kkkk0000;
+    private String kkkk0000;
+
+    private boolean isCheck = false;
+
+    public boolean isCheck() {
+        return isCheck;
+    }
+
+    public void setCheck(boolean check) {
+        isCheck = check;
+    }
+
+    public ProgressItem(String cmmdcode, String cmmddate, String pcpdcode, String pcpdname, String dddd, int accerght, int sttesign, String sttename, String kkkk0000, boolean isCheck, Bitmap barCode) {
+        this.cmmdcode = cmmdcode;
+        this.cmmddate = cmmddate;
+        this.pcpdcode = pcpdcode;
+        this.pcpdname = pcpdname;
+        this.dddd = dddd;
+        this.accerght = accerght;
+        this.sttesign = sttesign;
+        this.sttename = sttename;
+        this.kkkk0000 = kkkk0000;
+        this.isCheck = isCheck;
+        this.barCode = barCode;
+    }
+
+    public void setCmmdcode(String cmmdcode) {
+        this.cmmdcode = cmmdcode;
+    }
+
+    public void setCmmddate(String cmmddate) {
+        this.cmmddate = cmmddate;
+    }
+
+    public void setPcpdcode(String pcpdcode) {
+        this.pcpdcode = pcpdcode;
+    }
+
+    public void setPcpdname(String pcpdname) {
+        this.pcpdname = pcpdname;
+    }
+
+    public void setDddd(String dddd) {
+        this.dddd = dddd;
+    }
+
+    public void setAccerght(int accerght) {
+        this.accerght = accerght;
+    }
+
+    public void setSttesign(int sttesign) {
+        this.sttesign = sttesign;
+    }
+
+    public void setSttename(String sttename) {
+        this.sttename = sttename;
+    }
+
+    public void setKkkk0000(String kkkk0000) {
+        this.kkkk0000 = kkkk0000;
+    }
+
+    public void setBarCode(Bitmap barCode) {
+        this.barCode = barCode;
+    }
 
     private Bitmap barCode;
 
     public Bitmap getBarCode() {
         return BarCodeHelper.getInstance().generateBarCode(getCmmdcode());
+    }
+
+    public ProgressItem() {
     }
 
     public ProgressItem(String cmmdcode, String cmmddate, String pcpdcode, String pcpdname,
@@ -93,10 +160,9 @@ public class ProgressItem implements Serializable, Comparable{
     @Override
     public int compareTo(Object o) {
         ProgressItem compare = (ProgressItem) o;
-        if (compare.getCmmdcode().equals(this.cmmdcode) && compare.getPcpdcode().equals(this.pcpdcode) && compare.getSttesign() == this.getSttesign()){
+        if (compare.getCmmdcode().equals(this.cmmdcode) && compare.getPcpdcode().equals(this.pcpdcode) && compare.getSttesign() == this.getSttesign()) {
             return 0;
-        }
-        else
+        } else
             return 1;
     }
 }

@@ -13,19 +13,19 @@ public class ProgressProductDetailItem implements Serializable, Comparable, Clon
     private final String odercode;
 
     @SerializedName("STEPCODE")
-    private final String stepcode;
+    private String stepcode;
 
     @SerializedName("STEPNAME")
-    private final String stepname;
+    private String stepname;
 
     @SerializedName("PRDCCODE")
-    private final String prdccode;
+    private String prdccode;
 
     @SerializedName("PRDCNAME")
-    private final String prdcname;
+    private String prdcname;
 
     @SerializedName("PRDCQTTY")
-    private final double prdcqtty;
+    private double prdcqtty;
 
     @SerializedName("ORGNCODE")
     private final int orgncode;
@@ -52,6 +52,12 @@ public class ProgressProductDetailItem implements Serializable, Comparable, Clon
     private long quatityBad = 0;
     private String errorCode;
     private boolean isEdit = false;
+
+    private ProgressStep progressStep;
+
+    public ProgressStep getProgressStep() {
+        return new ProgressStep(stepcode, stepname);
+    }
 
     public boolean isEdit() {
         return isEdit;
@@ -168,5 +174,29 @@ public class ProgressProductDetailItem implements Serializable, Comparable, Clon
     @Override
     public Object clone() throws CloneNotSupportedException {
         return super.clone();
+    }
+
+    public void setStepcode(String stepcode) {
+        this.stepcode = stepcode;
+    }
+
+    public void setStepname(String stepname) {
+        this.stepname = stepname;
+    }
+
+    public void setPrdccode(String prdccode) {
+        this.prdccode = prdccode;
+    }
+
+    public void setPrdcname(String prdcname) {
+        this.prdcname = prdcname;
+    }
+
+    public void setPrdcqtty(double prdcqtty) {
+        this.prdcqtty = prdcqtty;
+    }
+
+    public void setProgressStep(ProgressStep progressStep) {
+        this.progressStep = progressStep;
     }
 }

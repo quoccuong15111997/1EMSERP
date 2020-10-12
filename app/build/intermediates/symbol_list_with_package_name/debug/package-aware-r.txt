@@ -2520,6 +2520,7 @@ drawable avata
 drawable avd_hide_password
 drawable avd_show_password
 drawable background_login
+drawable bar_code_scan_ic
 drawable barcode_scan
 drawable bg_button
 drawable bg_gradient_login
@@ -2612,6 +2613,7 @@ drawable ic_add_white
 drawable ic_arrow_down_24dp
 drawable ic_back_white
 drawable ic_barang_masuk
+drawable ic_barscode_with_a_magnifier_business_symbol
 drawable ic_baseline_add_24
 drawable ic_baseline_add_circle_24
 drawable ic_baseline_apps_24
@@ -2633,6 +2635,8 @@ drawable ic_baseline_date_range_24
 drawable ic_baseline_delete_forever_24
 drawable ic_baseline_done_all_24
 drawable ic_baseline_edit_24_grey
+drawable ic_baseline_edit_24_white
+drawable ic_baseline_edit_black
 drawable ic_baseline_error_outline_24
 drawable ic_baseline_event_note_24
 drawable ic_baseline_exit_to_app_24
@@ -2659,6 +2663,7 @@ drawable ic_baseline_phone_in_talk_24
 drawable ic_baseline_picture_as_pdf_24
 drawable ic_baseline_receipt_24
 drawable ic_baseline_remove_24
+drawable ic_baseline_remove_red_eye_24
 drawable ic_baseline_save_24
 drawable ic_baseline_search_24
 drawable ic_baseline_security_24
@@ -2712,6 +2717,7 @@ drawable ic_outline_home_24
 drawable ic_outline_library_add_check_24
 drawable ic_outline_monetization_on_24
 drawable ic_outline_receipt_24
+drawable ic_package_on_rolling_transport
 drawable ic_pdf
 drawable ic_pdf_file
 drawable ic_peoples
@@ -2730,6 +2736,7 @@ drawable ic_signature
 drawable ic_signature_24
 drawable ic_sort
 drawable ic_stock_opname
+drawable ic_storage
 drawable ic_subject
 drawable ic_up
 drawable ic_word
@@ -2782,6 +2789,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable preference_list_divider_material
+drawable product
 drawable qr_icon
 drawable shape_circle
 drawable shape_circle_outline
@@ -3102,6 +3110,7 @@ id edtPurposeContact
 id edtQuatityBad
 id edtQuatityGood
 id edtReleaseYear
+id edtSearch
 id edtSoHoaDon
 id edtSoTien
 id edtSoTienChi
@@ -3126,6 +3135,8 @@ id exitUntilCollapsed
 id expand_activities_button
 id expandabler
 id expanded_menu
+id fabDone
+id fabEdit
 id fabFilter
 id fade
 id file_iv
@@ -3271,6 +3282,7 @@ id imgPlusGood
 id imgQr
 id imgRemove
 id imgSearch
+id imgSeen
 id imgSetting
 id imgSort
 id imgSubGood
@@ -3440,6 +3452,7 @@ id llThisMonth
 id llThisWeek
 id llToi
 id llYesterday
+id loadingInList
 id lyt_action
 id lyt_content
 id lyt_parent

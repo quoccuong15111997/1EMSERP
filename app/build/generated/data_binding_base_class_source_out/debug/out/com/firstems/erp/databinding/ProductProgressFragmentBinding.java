@@ -5,8 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
@@ -18,13 +17,10 @@ import java.lang.Object;
 
 public abstract class ProductProgressFragmentBinding extends ViewDataBinding {
   @NonNull
-  public final EditText etSearch;
+  public final EditText edtSearch;
 
   @NonNull
-  public final ImageButton imgSort;
-
-  @NonNull
-  public final LinearLayout linearLayout13;
+  public final ImageView imgBarcode;
 
   @NonNull
   public final RecyclerView recycleProgress;
@@ -33,12 +29,11 @@ public abstract class ProductProgressFragmentBinding extends ViewDataBinding {
   public final View toolbar;
 
   protected ProductProgressFragmentBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, EditText etSearch, ImageButton imgSort, LinearLayout linearLayout13,
-      RecyclerView recycleProgress, View toolbar) {
+      int _localFieldCount, EditText edtSearch, ImageView imgBarcode, RecyclerView recycleProgress,
+      View toolbar) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.etSearch = etSearch;
-    this.imgSort = imgSort;
-    this.linearLayout13 = linearLayout13;
+    this.edtSearch = edtSearch;
+    this.imgBarcode = imgBarcode;
     this.recycleProgress = recycleProgress;
     this.toolbar = toolbar;
   }

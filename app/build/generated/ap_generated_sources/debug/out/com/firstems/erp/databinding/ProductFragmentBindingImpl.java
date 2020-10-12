@@ -33,9 +33,10 @@ public class ProductFragmentBindingImpl extends ProductFragmentBinding  {
         sViewsWithIds.put(R.id.linearLayoutGhiChu, 17);
         sViewsWithIds.put(R.id.txtTitleGhiChu, 18);
         sViewsWithIds.put(R.id.edtGhiChu, 19);
-        sViewsWithIds.put(R.id.recycleProduct, 20);
-        sViewsWithIds.put(R.id.txtNon, 21);
-        sViewsWithIds.put(R.id.btnDone, 22);
+        sViewsWithIds.put(R.id.loadingInList, 20);
+        sViewsWithIds.put(R.id.recycleProduct, 21);
+        sViewsWithIds.put(R.id.txtNon, 22);
+        sViewsWithIds.put(R.id.btnDone, 23);
     }
     // views
     @NonNull
@@ -46,11 +47,11 @@ public class ProductFragmentBindingImpl extends ProductFragmentBinding  {
     // Inverse Binding Event Handlers
 
     public ProductFragmentBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 23, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 24, sIncludes, sViewsWithIds));
     }
     private ProductFragmentBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.Button) bindings[22]
+            , (android.widget.Button) bindings[23]
             , (com.firstems.erp.helper.widgets.EMSEditText) bindings[19]
             , (android.widget.TextView) bindings[5]
             , (android.widget.EditText) bindings[9]
@@ -62,11 +63,12 @@ public class ProductFragmentBindingImpl extends ProductFragmentBinding  {
             , (android.widget.LinearLayout) bindings[3]
             , (android.widget.LinearLayout) bindings[13]
             , (android.widget.LinearLayout) bindings[7]
+            , (android.widget.ProgressBar) bindings[20]
             , (android.widget.LinearLayout) bindings[2]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[20]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[21]
             , (android.widget.Spinner) bindings[12]
             , (com.firstems.erp.helper.widgets.EMSTextviewHighLineNonBorder) bindings[15]
-            , (android.widget.TextView) bindings[21]
+            , (android.widget.TextView) bindings[22]
             , (android.widget.TextView) bindings[11]
             , (android.widget.TextView) bindings[4]
             , (android.widget.TextView) bindings[18]

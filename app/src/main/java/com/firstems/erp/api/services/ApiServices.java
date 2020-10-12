@@ -3,6 +3,7 @@ package com.firstems.erp.api.services;
 import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.firstems.erp.api.RestApi;
 import com.firstems.erp.api.model.response.ApiResponse;
@@ -600,6 +601,13 @@ public class ApiServices {
         if (retrofit!=null){
             Call<ProgressProductDetailApiResponse> progressProductDetailApiResponseCall = retrofit.create(RestApi.class).getProgressProductDetail(token,body);
             progressProductDetailApiResponseCall.enqueue(callback);
+        }
+    }
+    // Cập nhật lệnh sản xuất
+    public void upDateProgressProduct(String token, JsonObject body, Callback<ApiResponse> callback){
+        if (retrofit!=null){
+            Call<ApiResponse> apiResponseCall = retrofit.create(RestApi.class).upDateProgressProduct(token, body);
+            apiResponseCall.enqueue(callback);
         }
     }
 }

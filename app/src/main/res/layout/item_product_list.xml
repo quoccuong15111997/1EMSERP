@@ -114,13 +114,26 @@
                         android:textColor="@color/red_800" />
                 </LinearLayout>
             </LinearLayout>
-            <ImageView
-                android:id="@+id/imgEdit"
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:fabSize="mini"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/grey_10"
                 android:layout_gravity="bottom|right"
-                android:padding="5dp"
-                android:src="@drawable/ic_baseline_edit_24_grey"/>
+                app:borderWidth="0dp"
+                android:src="@drawable/ic_baseline_edit_black"/>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabDone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fabSize="mini"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/green_A400"
+                android:layout_gravity="bottom|right"
+                app:borderWidth="0dp"
+                android:src="@drawable/ic_baseline_check_24"/>
         </FrameLayout>
     </com.balysv.materialripple.MaterialRippleLayout>
 </androidx.cardview.widget.CardView>

@@ -11,43 +11,47 @@
         <include
             android:id="@+id/toolbar"
             layout="@layout/custom_toolbar"/>
-        <LinearLayout
-            android:id="@+id/linearLayout13"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:background="@color/text__white"
-            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/custom_bg_textview"
+            android:enabled="false">
+
             <EditText
-                android:id="@+id/et_search"
+                android:id="@+id/edtSearch"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/text__white"
-                android:hint="Tìm kiếm nhanh"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/custom_bg_textview_non_border"
                 android:imeOptions="actionSearch"
-                android:maxLines="1"
-                android:paddingLeft="10dp"
-                android:singleLine="true">
+                android:padding="5dp"
+                android:paddingLeft="@dimen/text_padding_left"
+                android:singleLine="true"
+                android:hint="Nhập mã lệnh sản xuất"
+                android:textColor="@color/grey_80"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imgBarcode"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <requestFocus />
-
-            </EditText>
-
-            <ImageButton
-                android:id="@+id/imgSort"
-                android:layout_width="?attr/actionBarSize"
-                android:layout_height="?attr/actionBarSize"
-                android:background="@android:color/transparent"
-                android:tint="@color/grey_80"
-                android:visibility="visible"
-                app:srcCompat="@drawable/ic_sort" />
-
-        </LinearLayout>
-
+            <ImageView
+                android:id="@+id/imgBarcode"
+                android:layout_width="@dimen/margin20"
+                android:layout_height="@dimen/margin20"
+                android:layout_marginEnd="5dp"
+                android:src="@drawable/bar_code_scan_ic"
+                app:layout_constraintBottom_toBottomOf="@+id/edtSearch"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/edtSearch" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycleProgress"
             android:layout_width="match_parent"
