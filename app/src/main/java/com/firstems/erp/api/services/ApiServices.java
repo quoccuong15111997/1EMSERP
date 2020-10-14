@@ -66,6 +66,7 @@ import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Retrofit;
@@ -88,11 +89,17 @@ public class ApiServices {
                 .registerTypeAdapter(Date.class, new DateDeserializer())
                 .registerTypeAdapter(Date.class, new DateDeserializer.DateSerializer())
                 .create();
+
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder()
                 .callTimeout(10, TimeUnit.SECONDS)
                 .connectTimeout(10, TimeUnit.SECONDS)
                 .readTimeout(10, TimeUnit.SECONDS)
                 .writeTimeout(10, TimeUnit.SECONDS);
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+
+        httpClient.addInterceptor(logging);
+
         if (TextUtils.isEmpty(baseUrl)) {
             return;
         }

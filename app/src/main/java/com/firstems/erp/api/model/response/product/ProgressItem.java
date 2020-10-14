@@ -160,7 +160,7 @@ public class ProgressItem implements Serializable, Comparable {
     @Override
     public int compareTo(Object o) {
         ProgressItem compare = (ProgressItem) o;
-        if (compare.getCmmdcode().equals(this.cmmdcode) && compare.getPcpdcode().equals(this.pcpdcode) && compare.getSttesign() == this.getSttesign()) {
+        if (compare.getCmmdcode().equals(this.cmmdcode) && compare.getPcpdcode().equals(this.pcpdcode) && compare.getSttesign() == this.getSttesign() && compare.isCheck == this.isCheck) {
             return 0;
         } else
             return 1;

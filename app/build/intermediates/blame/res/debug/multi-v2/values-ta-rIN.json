@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\PC\\Desktop\\ERP\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ta-rIN\\values-ta-rIN.xml",
+            "outputFile": "C:\\Users\\kkkk\\AndroidStudioProjects\\1EMSERP1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ta-rIN\\values-ta-rIN.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-2\\files-2.1\\d63ef329458d68430c53b3c6d9f2b6cf\\jetified-materialdatetimepicker-3.2.0\\res\\values-ta-rIN\\values-ta-rIN.xml",
+                    "source": "C:\\Users\\kkkk\\.gradle\\caches\\transforms-2\\files-2.1\\8e9622554567f268583b979f2e4f6c84\\jetified-materialdatetimepicker-3.2.0\\res\\values-ta-rIN\\values-ta-rIN.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",

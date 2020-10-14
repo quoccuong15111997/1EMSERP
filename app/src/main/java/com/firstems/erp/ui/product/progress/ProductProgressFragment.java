@@ -69,6 +69,7 @@ public class ProductProgressFragment extends CommonFragment {
                 Intent intent = new Intent(getContext(), ProductActivity.class);
                 intent.putExtra(Constant.NAME_PUT_PROGRESS_PRODUCT, progressItem);
                 startActivity(intent);
+                updateSeen(progressItem);
             }
 
             @Override
@@ -106,6 +107,14 @@ public class ProductProgressFragment extends CommonFragment {
                 startActivityForResult(intent, CODE_OPEN_SCANER);
             }
         });
+    }
+
+    private void updateSeen(ProgressItem progressItem) {
+        for (ProgressItem item : listCurrent){
+            if (item.getCmmdcode().equals(progressItem.getCmmdcode())){
+                item.setCheck(true);
+            }
+        }
     }
 
     private void doSearch(String s) {

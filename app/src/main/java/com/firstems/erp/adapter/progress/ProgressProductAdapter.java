@@ -80,7 +80,7 @@ public class ProgressProductAdapter extends RecyclerView.Adapter<ProgressProduct
             public void onClick(View view) {
                 progressProductOnlickListener.onItemClick(progressItem);
                 holder.imgSeen.setVisibility(View.VISIBLE);
-                progressItemList.get(position).setCheck(true);
+                //progressItemList.get(position).setCheck(true);
             }
         });
         holder.imgBarCode.setOnClickListener(new View.OnClickListener() {
@@ -111,7 +111,6 @@ public class ProgressProductAdapter extends RecyclerView.Adapter<ProgressProduct
             imgBarCode = itemView.findViewById(R.id.imgBarcode);
             materialRippleLayout = itemView.findViewById(R.id.materialRippleLayout);
             imgSeen = itemView.findViewById(R.id.imgSeen);
-            imgSeen.setVisibility(View.INVISIBLE);
         }
     }
 
