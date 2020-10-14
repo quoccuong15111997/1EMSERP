@@ -2,6 +2,7 @@ package com.firstems.erp.adapter.progress;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.balysv.materialripple.MaterialRippleLayout;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.firstems.erp.R;
 import com.firstems.erp.adapter.diff.progress.ProgressProductDiffUtilCallback;
 import com.firstems.erp.adapter.diff.signature.SignatureDiffUtilCallBack;
@@ -20,6 +22,7 @@ import com.firstems.erp.api.model.response.product.ProgressItem;
 import com.firstems.erp.callback.barcode.BarCodeGenerateCallback;
 import com.firstems.erp.common.Util;
 import com.firstems.erp.helper.barcode.BarCodeHelper;
+import com.tuyenmonkey.mkloader.MKLoader;
 
 import org.mozilla.javascript.typedarrays.NativeUint8Array;
 
@@ -64,13 +67,23 @@ public class ProgressProductAdapter extends RecyclerView.Adapter<ProgressProduct
                 BarCodeHelper.getInstance().generate(progressItem.getCmmdcode(), new BarCodeGenerateCallback() {
                     @Override
                     public void onSuccess(Bitmap bitmap) {
-                        holder.imgBarCode.setImageBitmap(bitmap);
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                holder.loadding.setVisibility(View.GONE);
+                                holder.imgBarCode.setImageBitmap(bitmap);
+                                holder.imgBarCode.setVisibility(View.VISIBLE);
+                            }
+                        }, 700);
+
                     }
 
                     @Override
                     public void onFail(String mess) {
                         System.out.println(mess);
+                        holder.loadding.setVisibility(View.GONE);
                         holder.imgBarCode.setImageResource(R.drawable.qr_icon);
+                        holder.imgBarCode.setVisibility(View.VISIBLE);
                     }
                 });
             }
@@ -101,6 +114,7 @@ public class ProgressProductAdapter extends RecyclerView.Adapter<ProgressProduct
         ImageView imgBarCode;
         MaterialRippleLayout materialRippleLayout;
         ImageView imgSeen;
+        MKLoader loadding;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -111,6 +125,7 @@ public class ProgressProductAdapter extends RecyclerView.Adapter<ProgressProduct
             imgBarCode = itemView.findViewById(R.id.imgBarcode);
             materialRippleLayout = itemView.findViewById(R.id.materialRippleLayout);
             imgSeen = itemView.findViewById(R.id.imgSeen);
+            loadding = itemView.findViewById(R.id.loadding);
         }
     }
 

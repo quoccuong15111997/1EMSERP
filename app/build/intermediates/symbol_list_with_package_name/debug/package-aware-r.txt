@@ -3452,6 +3452,7 @@ id llThisMonth
 id llThisWeek
 id llToi
 id llYesterday
+id loadding
 id loadingInList
 id lyt_action
 id lyt_content
@@ -3672,6 +3673,7 @@ id select_dialog_listview
 id selected
 id selection_type
 id settings
+id shimmerLayout
 id shortcut
 id showCustom
 id showHome

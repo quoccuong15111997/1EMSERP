@@ -159,7 +159,6 @@ public class ProductProgressFragment extends CommonFragment {
             @Override
             public void onChanged(List<ProgressItem> list) {
                 listCurrent.addAll(list);
-                progressProductAdapter.setProgressItemList(listCurrent);
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -168,7 +167,8 @@ public class ProductProgressFragment extends CommonFragment {
                             binding.recycleProgress.post(new Runnable() {
                                 @Override
                                 public void run() {
-                                    progressProductAdapter.notifyDataSetChanged();
+                                    progressProductAdapter.setProgressItemList(listCurrent);
+                                    binding.recycleProgress.startLayoutAnimation();
                                 }
                             });
                         }

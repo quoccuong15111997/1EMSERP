@@ -44,7 +44,7 @@ public class ScannerActivity extends AppCompatActivity implements DecoratedBarco
                 if (result!=null){
                     Intent intent = new Intent(ScannerActivity.this, ProductActivity.class);
                     ProgressItem progressItem = new ProgressItem();
-                    progressItem.setCmmdcode(result.getText());
+                    progressItem.setCmmdcode(result.getText().trim());
                     progressItem.setCmmddate("2020-10-12T00:00:00");
                     intent.putExtra(Constant.NAME_PUT_PROGRESS_PRODUCT, progressItem);
                     startActivity(intent);
