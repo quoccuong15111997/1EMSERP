@@ -62,6 +62,7 @@ public class Constant {
     public static String RUN_CODE_PHIEU_TAM_UNG_NEU_CO = "ACC001.01.003";
     public static String RUN_CODE_GET_ALL_PROGRESS_PRODUCT = "PRD001.02.006";
     public static String RUN_CODE_GET_DETAIL_PROGRESS_PRODUCT = "PRD001.02.003";
+    public static String RUN_CODE_GET_LIST_ERROR = "SYS001.06.009";
 
     public static String NANE_PUT_TYPE_SELECT = "name_put_type_slect";
     public static String NANE_PUT_DEPARTMENT_LIST = "department_list";

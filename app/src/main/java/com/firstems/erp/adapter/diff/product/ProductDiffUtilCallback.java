@@ -36,6 +36,9 @@ public class ProductDiffUtilCallback extends DiffUtil.Callback {
 
     @Override
     public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
+        if (newList.size()!=oldList.size()){
+            return false;
+        }
         int result = newList.get(newItemPosition).compareTo(oldList.get(oldItemPosition));
         return result == 0;
     }

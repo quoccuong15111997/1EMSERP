@@ -3,6 +3,9 @@ package com.firstems.erp.ui.product;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.firstems.erp.api.model.response.ApiResponse;
+import com.firstems.erp.api.model.response.error.ErrorApiResponse;
+import com.firstems.erp.api.model.response.error.ErrorItem;
 import com.firstems.erp.api.model.response.product.ProgressProductDetailApiResponse;
 import com.firstems.erp.api.model.response.product.ProgressProductDetailItem;
 import com.firstems.erp.api.services.ApiServices;
@@ -15,6 +18,7 @@ import com.firstems.erp.common.Constant;
 import com.firstems.erp.data.DataConvertProvider;
 import com.firstems.erp.data.DataSourceProvider;
 import com.firstems.erp.sharedpreferences.SharedPreferencesManager;
+import com.google.android.gms.common.api.internal.LifecycleFragment;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
@@ -28,6 +32,7 @@ import retrofit2.Response;
 public class ProductViewModel extends ViewModel {
     private MutableLiveData<List<ProgressProductDetailItem>> mutableLiveDataProgressDetail;
     private ServerCheckCallback serverCheckCallback;
+    private MutableLiveData<List<ErrorItem>> liveDataErrorList;
 
     public void setServerCheckCallback(ServerCheckCallback serverCheckCallback) {
         this.serverCheckCallback = serverCheckCallback;
@@ -35,10 +40,58 @@ public class ProductViewModel extends ViewModel {
 
     public ProductViewModel() {
         mutableLiveDataProgressDetail = new MutableLiveData<>();
+        liveDataErrorList= new MutableLiveData<>();
 
+        getListError();
     }
-    public void getData(String code){
 
+    private void getListError() {
+        DataSourceProvider.getInstance().getDataSource(Constant.RUN_CODE_GET_LIST_ERROR, "lstPrdcErro", new LoadApiCallback() {
+            @Override
+            public void onApiLoadSuccess(DataApiCallback dataApiCallback) {
+                JsonObject  jsonObject = new JsonObject();
+                jsonObject.addProperty("LISTCODE","lstPrdcErro");
+                ApiServices.getInstance().getListError(SharedPreferencesManager.getInstance().getPrefToken(), jsonObject, new Callback<ErrorApiResponse>() {
+                    @Override
+                    public void onResponse(Call<ErrorApiResponse> call, Response<ErrorApiResponse> response) {
+                        if (response.isSuccessful()){
+                            dataApiCallback.onDataApi(new Gson().toJson(response.body()));
+                        }
+                        else {
+                            dataApiCallback.onApiLoadFail(response.message());
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ErrorApiResponse> call, Throwable t) {
+                        dataApiCallback.onApiLoadFail(t.getMessage());
+                    }
+                });
+            }
+            @Override
+            public void onApiLoadFail() {
+                serverCheckCallback.onServerLoadFail();
+            }
+        }, new DataSourceProviderCallback() {
+            @Override
+            public void onDataSource(String data) {
+                DataConvertProvider.getInstance().convertJsonToObject(data, new ErrorApiResponse(), new ConvertJsonCallback() {
+                    @Override
+                    public void onConvertSuccess(Object obj) {
+                        ErrorApiResponse errorApiResponse = (ErrorApiResponse) obj;
+                        liveDataErrorList.setValue(errorApiResponse.getErrorItemList());
+                    }
+                });
+            }
+
+            @Override
+            public void onUpdateImage(int status) {
+
+            }
+        });
+    }
+
+    public void getData(String code){
         DataSourceProvider.getInstance().getDataSource(Constant.RUN_CODE_GET_DETAIL_PROGRESS_PRODUCT, code, new LoadApiCallback() {
             @Override
             public void onApiLoadSuccess(DataApiCallback dataApiCallback) {
@@ -118,5 +171,9 @@ public class ProductViewModel extends ViewModel {
 
     public MutableLiveData<List<ProgressProductDetailItem>> getMutableLiveDataProgressDetail() {
         return mutableLiveDataProgressDetail;
+    }
+
+    public MutableLiveData<List<ErrorItem>> getLiveDataErrorList() {
+        return liveDataErrorList;
     }
 }

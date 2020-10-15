@@ -106,4 +106,10 @@ public class ApprovedFragment extends CommonFragment {
             }
         });
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        System.out.println("On Resume in Approved Fragment");
+    }
 }

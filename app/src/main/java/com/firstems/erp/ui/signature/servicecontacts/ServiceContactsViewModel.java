@@ -114,6 +114,9 @@ public class ServiceContactsViewModel extends ViewModel {
                                     @Override
                                     public void onConvertSuccess(Object obj) {
                                         ServiceContactsApiResponse serviceContactsApiResponse = (ServiceContactsApiResponse) obj;
+                                        if (serviceContactsApiResponse.getServiceContactsItems().size() > 0){
+                                            serverCheckCallback.onServerLoadFail();
+                                        }
                                         contactsItemMutableLiveData.setValue(serviceContactsApiResponse.getServiceContactsItems().get(0));
                                     }
                                 });

@@ -4,8 +4,6 @@ import androidx.annotation.NonNull;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.io.Closeable;
-import java.io.IOException;
 import java.io.Serializable;
 
 public class ProgressProductDetailItem implements Serializable, Comparable, Cloneable {
@@ -48,10 +46,28 @@ public class ProgressProductDetailItem implements Serializable, Comparable, Clon
     @SerializedName("KKKK0000")
     private final String kkkk0000;
 
+    @SerializedName("CMMDDATE")
+    private final String cmndDate;
+
+    @SerializedName("PCPDNAME")
+    private final String pcpdName;
+
+    @SerializedName("PCPDCODE")
+    private final String pcpdCode;
+
+
     private long quatityGood = 0;
     private long quatityBad = 0;
     private String errorCode;
     private boolean isEdit = false;
+
+    public String getPcpdName() {
+        return pcpdName;
+    }
+
+    public String getPcpdCode() {
+        return pcpdCode;
+    }
 
     private ProgressStep progressStep;
 
@@ -93,7 +109,7 @@ public class ProgressProductDetailItem implements Serializable, Comparable, Clon
 
     public ProgressProductDetailItem(String odercode, String stepcode, String stepname,
                                      String prdccode, String prdcname, double prdcqtty, int orgncode, int sortcode,
-                                     String dddd, int accerght, int sttesign, String sttename, String kkkk0000) {
+                                     String dddd, int accerght, int sttesign, String sttename, String kkkk0000, String cmndDate, String pcpdName, String pcpdCode) {
         this.odercode = odercode;
         this.stepcode = stepcode;
         this.stepname = stepname;
@@ -107,6 +123,9 @@ public class ProgressProductDetailItem implements Serializable, Comparable, Clon
         this.sttesign = sttesign;
         this.sttename = sttename;
         this.kkkk0000 = kkkk0000;
+        this.cmndDate = cmndDate;
+        this.pcpdName = pcpdName;
+        this.pcpdCode = pcpdCode;
     }
 
     public String getOdercode() {
@@ -159,6 +178,10 @@ public class ProgressProductDetailItem implements Serializable, Comparable, Clon
 
     public String getKkkk0000() {
         return kkkk0000;
+    }
+
+    public String getCmndDate() {
+        return cmndDate;
     }
 
     @Override

@@ -17,6 +17,7 @@ import com.firstems.erp.api.model.response.document.DocumentApiResponse;
 import com.firstems.erp.api.model.response.document_category.DocumentCategoryApiResponse;
 import com.firstems.erp.api.model.response.doi_tuong_nhan.DoiTuongNhanApiResponse;
 import com.firstems.erp.api.model.response.employee.EmployeeApiResponse;
+import com.firstems.erp.api.model.response.error.ErrorApiResponse;
 import com.firstems.erp.api.model.response.export_place.ExportPlaceApiResponse;
 import com.firstems.erp.api.model.response.label.SystemLabelApiResponse;
 import com.firstems.erp.api.model.response.lanh_vuc_lien_quan.LanhVucLienQuanApiResponse;
@@ -307,7 +308,7 @@ public interface RestApi {
     @POST("/Api/data/runApi_Data?run_Code=SYS001.06.008")
     Call<DocumentApiResponse> getListDocument(@Header("TOKEN") String token, @Body JsonObject body);
     
-    @POST("/Api/data/runApi_Data?run_Code=`CTL001.01.005`")
+    @POST("/Api/data/runApi_Data?run_Code=CTL001.01.005")
     Call<LocationApiResponse> getAllLocation(@Header("TOKEN") String token);
     
     // Danh sách nơi phát hành
@@ -332,4 +333,8 @@ public interface RestApi {
     // Cập nhật lệnh sản xuất
     @POST("/Api/data/runApi_Data?run_Code=PRD001.02.004")
     Call<ApiResponse> upDateProgressProduct(@Header("TOKEN") String token, @Body JsonObject body);
+
+    // Lấy danh sách lỗi
+    @POST("/Api/data/runApi_Data?run_Code=SYS001.06.009")
+    Call<ErrorApiResponse> getListError(@Header("TOKEN") String token, @Body JsonObject body);
 }

@@ -26,8 +26,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.product.progress.ProductProgressActivity"></activity>
-        <activity android:name=".ui.product.ProductActivity" />
+        <activity android:name=".ui.product.progress.ProductProgressActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize"></activity>
+        <activity android:name=".ui.product.ProductActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize"/>
         <activity android:name=".ui.shared.office.OfficeViewActivity" />
         <activity android:name=".loading.FlashActivity" />
         <activity android:name=".ui.product.barcode.ScannerActivity"

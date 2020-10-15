@@ -17,7 +17,8 @@ public class ProductProgressFragmentBindingImpl extends ProductProgressFragmentB
         sViewsWithIds.put(R.id.toolbar, 1);
         sViewsWithIds.put(R.id.edtSearch, 2);
         sViewsWithIds.put(R.id.imgBarcode, 3);
-        sViewsWithIds.put(R.id.recycleProgress, 4);
+        sViewsWithIds.put(R.id.swipeRefesh, 4);
+        sViewsWithIds.put(R.id.recycleProgress, 5);
     }
     // views
     @NonNull
@@ -28,13 +29,14 @@ public class ProductProgressFragmentBindingImpl extends ProductProgressFragmentB
     // Inverse Binding Event Handlers
 
     public ProductProgressFragmentBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
     }
     private ProductProgressFragmentBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (android.widget.EditText) bindings[2]
             , (android.widget.ImageView) bindings[3]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[4]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[5]
+            , (androidx.swiperefreshlayout.widget.SwipeRefreshLayout) bindings[4]
             , (android.view.View) bindings[1]
             );
         this.mboundView0 = (android.widget.LinearLayout) bindings[0];

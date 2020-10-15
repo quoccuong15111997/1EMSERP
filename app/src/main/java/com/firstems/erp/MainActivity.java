@@ -280,4 +280,10 @@ public class MainActivity extends CommonActivity implements BackToHomeCallback, 
             }
         }
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        System.out.println("On resume in main activity");
+    }
 }

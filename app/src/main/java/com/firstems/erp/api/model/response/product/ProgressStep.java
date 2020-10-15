@@ -29,6 +29,6 @@ public class ProgressStep implements Serializable {
 
     @Override
     public String toString() {
-        return stepCode + " - " + stepName;
+        return stepName;
     }
 }

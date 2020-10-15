@@ -13,12 +13,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.firstems.erp.R;
+import com.firstems.erp.api.model.response.error.ErrorItem;
 import com.firstems.erp.model.product.ErrorCodeModel;
 
 import java.util.List;
 
 public class ErrorCodeAdapter extends BaseAdapter {
-    private List<ErrorCodeModel> errorCodeModels;
+    private List<ErrorItem> errorCodeModels;
     private Context context;
     public interface OnSpinnerMultiCheckListener{
         void onIteCheck(int position);
@@ -29,7 +30,7 @@ public class ErrorCodeAdapter extends BaseAdapter {
         this.onSpinnerMultiCheckListener = onSpinnerMultiCheckListener;
     }
 
-    public ErrorCodeAdapter(List<ErrorCodeModel> errorCodeModels, Context context) {
+    public ErrorCodeAdapter(List<ErrorItem> errorCodeModels, Context context) {
         this.errorCodeModels = errorCodeModels;
         this.context = context;
     }
@@ -55,7 +56,7 @@ public class ErrorCodeAdapter extends BaseAdapter {
         View view = layoutInflater.inflate(R.layout.item_spinner_multiple_check, parent, false);
         TextView txtName = view.findViewById(R.id.text);
         CheckBox checkBox = view.findViewById(R.id.checkbox);
-        txtName.setText(errorCodeModels.get(position).getErrorName());
+        txtName.setText(errorCodeModels.get(position).getItemname());
         checkBox.setChecked(errorCodeModels.get(position).isCheck());
         if (position == 0){
             checkBox.setVisibility(View.INVISIBLE);

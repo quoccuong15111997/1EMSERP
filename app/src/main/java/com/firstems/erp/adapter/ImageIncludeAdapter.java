@@ -62,13 +62,14 @@ public class ImageIncludeAdapter extends RecyclerView.Adapter<ImageIncludeAdapte
             GlideUrl urlGlide = new GlideUrl(url, new LazyHeaders.Builder()
                     .addHeader("TOKEN", SharedPreferencesManager.getInstance().getPrefToken())
                     .build());
-            Glide.with(holder.itemView.getContext()).load(urlGlide).diskCacheStrategy(DiskCacheStrategy.NONE).into(holder.img);
+            Glide.with(holder.itemView.getContext()).load(urlGlide).timeout(60000).diskCacheStrategy(DiskCacheStrategy.NONE).into(holder.img);
         }
         if (imageModel.getType() == 2){
             File file = new File(imageModel.getImgPath());
             Uri imageUri = Uri.fromFile(file);
             Glide.with(holder.itemView.getContext())
                     .load(imageUri)
+                    .timeout(60000)
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
                     .into(holder.img);
         }

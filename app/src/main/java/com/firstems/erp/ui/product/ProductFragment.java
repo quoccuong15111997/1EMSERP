@@ -13,6 +13,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.transition.TransitionManager;
@@ -20,6 +21,7 @@ import androidx.transition.TransitionManager;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,10 +39,12 @@ import android.widget.TextView;
 import com.firstems.erp.R;
 import com.firstems.erp.adapter.progress.ErrorCodeAdapter;
 import com.firstems.erp.adapter.progress.ProductAdapter;
+import com.firstems.erp.adapter.progress.ProductTableAdapter;
 import com.firstems.erp.api.model.request.progress.ProgressProductDetail;
 import com.firstems.erp.api.model.request.progress.ProgressProductHeader;
 import com.firstems.erp.api.model.request.progress.ProgressProductRequest;
 import com.firstems.erp.api.model.response.ApiResponse;
+import com.firstems.erp.api.model.response.error.ErrorItem;
 import com.firstems.erp.api.model.response.product.ProgressItem;
 import com.firstems.erp.api.model.response.product.ProgressProductDetailItem;
 import com.firstems.erp.api.model.response.product.ProgressStep;
@@ -81,9 +85,13 @@ public class ProductFragment extends CommonFragment {
     private List<ProgressProductDetailItem> listCurrent;
     private List<ProgressProductDetailItem> list;
     private ProductAdapter productAdapter;
+    private ProductTableAdapter productTableAdapter;
     private ArrayAdapter<ProgressStep> arrayAdapterProgressStep;
     private Dialog dialog;
     private ProgressItem progressItemSelected;
+    private List<ErrorItem> errorItemList;
+    private int VIEW_TYPE = 1;
+    private DividerItemDecoration dividerItemDecoration;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -115,6 +123,25 @@ public class ProductFragment extends CommonFragment {
     }
 
     private void addEvents() {
+        binding.imgViewType.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (VIEW_TYPE == 1){
+                    binding.recycleProduct.setAdapter(productTableAdapter);
+                    binding.llHeaderTable.setVisibility(View.VISIBLE);
+                    binding.imgViewType.setImageResource(R.drawable.ic_baseline_view_column_24);
+                    binding.recycleProduct.addItemDecoration(dividerItemDecoration);
+                    VIEW_TYPE = 2;
+                }
+                else {
+                    binding.recycleProduct.setAdapter(productAdapter);
+                    binding.llHeaderTable.setVisibility(View.GONE);
+                    binding.imgViewType.setImageResource(R.drawable.ic_baseline_view_list_24);
+                    binding.recycleProduct.removeItemDecoration(dividerItemDecoration);
+                    VIEW_TYPE = 1;
+                }
+            }
+        });
         imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -131,8 +158,8 @@ public class ProductFragment extends CommonFragment {
         binding.edtMaLenhSanXuat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), ProductProgressActivity.class);
-                startActivityForResult(intent, CODE_OPEN_PRODUCT_PROGRESS);
+               /* Intent intent = new Intent(getContext(), ProductProgressActivity.class);
+                startActivityForResult(intent, CODE_OPEN_PRODUCT_PROGRESS);*/
             }
         });
         productAdapter.setProductItemClickListener(new ProductAdapter.ProductItemClickListener() {
@@ -143,18 +170,39 @@ public class ProductFragment extends CommonFragment {
                 }
             }
         });
+        productTableAdapter.setProductItemClickListener(new ProductTableAdapter.ProductItemClickListener() {
+            @Override
+            public void ontemClick(ProgressProductDetailItem item, int position) {
+                if (dialog==null){
+                    showInputQuatity(item, position);
+                }
+            }
+        });
+
         binding.spinerCongDoan.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 try {
                     ProgressStep progressStep = arrayAdapterProgressStep.getItem(i);
                     List<ProgressProductDetailItem> listTemp = new ArrayList<>();
-                    for (ProgressProductDetailItem item : listCurrent) {
-                        if (item.getStepcode().equals(progressStep.getStepCode())) {
-                            listTemp.add(item);
+                    if (progressStep.getStepCode().equals("0000")){
+                        listTemp.addAll(listCurrent);
+                    }
+                    else {
+                        for (ProgressProductDetailItem item : listCurrent) {
+                            if (item.getStepcode().equals(progressStep.getStepCode())) {
+                                listTemp.add(item);
+                            }
                         }
                     }
-                    productAdapter.setData(listTemp);
+                    if (VIEW_TYPE == 1){
+                        productAdapter.setData(listTemp);
+                    }
+                    else {
+                        productTableAdapter.setData(listTemp);
+                    }
+
+                    binding.txtNumberProduct.setText("("+listTemp.size()+")");
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
@@ -272,11 +320,18 @@ public class ProductFragment extends CommonFragment {
         binding.recycleProduct.setLayoutManager(linearLayoutManager);
         binding.recycleProduct.setAdapter(productAdapter);
 
+        productTableAdapter = new ProductTableAdapter(list);
+
         arrayAdapterProgressStep = new ArrayAdapter<>(getContext(), R.layout.spiner_item);
         arrayAdapterProgressStep.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         binding.spinerCongDoan.setAdapter(arrayAdapterProgressStep);
 
         txtTitle.setText("Quản lý sản xuất");
+
+        errorItemList = new ArrayList<>();
+        errorItemList.add(new ErrorItem("0000","Ấn để chọn"));
+
+        dividerItemDecoration= new DividerItemDecoration(getContext(), linearLayoutManager.getOrientation());
 
     }
 
@@ -293,8 +348,14 @@ public class ProductFragment extends CommonFragment {
         if (progressItemSelected!=null){
             mViewModel.getData(progressItemSelected.getCmmdcode());
             binding.edtMaLenhSanXuat.setText(progressItemSelected.getCmmdcode());
-            binding.txtNgayTaoLenhSanXuat.setText(Util.formatDateCustomChar(progressItemSelected.getCmmddate(), "-"));
+            //binding.txtNgayTaoLenhSanXuat.setText(Util.formatDateCustomChar(progressItemSelected.getCmmddate(), "-"));
         }
+        mViewModel.getLiveDataErrorList().observe(getViewLifecycleOwner(), new Observer<List<ErrorItem>>() {
+            @Override
+            public void onChanged(List<ErrorItem> errorItems) {
+                errorItemList.addAll(errorItems);
+            }
+        });
         mViewModel.getMutableLiveDataProgressDetail().observe(getViewLifecycleOwner(), new Observer<List<ProgressProductDetailItem>>() {
             @Override
             public void onChanged(List<ProgressProductDetailItem> progressProductDetailItems) {
@@ -307,10 +368,20 @@ public class ProductFragment extends CommonFragment {
                         binding.loadingInList.setVisibility(View.VISIBLE);
                         listCurrent.clear();
                         listCurrent.addAll(progressProductDetailItems);
+                        try {
+                            if (listCurrent.size() > 0){
+                                binding.txtNgayTaoLenhSanXuat.setText(Util.formatDateCustomChar(listCurrent.get(0).getCmndDate(),"-"));
+                                binding.edtTenLenhSanXuat.setText(listCurrent.get(0).getPcpdName());
+                            }
+                        }
+                        catch (Exception ex){
+                            ex.printStackTrace();
+                        }
                         new Handler().post(new Runnable() {
                             @Override
                             public void run() {
                                 arrayAdapterProgressStep.clear();
+                                arrayAdapterProgressStep.add(new ProgressStep("0000","Tất cả"));
                                 String strTemp = "";
                                 for (ProgressProductDetailItem item : listCurrent) {
                                     if (!strTemp.contains(item.getStepcode())) {
@@ -398,17 +469,21 @@ public class ProductFragment extends CommonFragment {
 
         Spinner spinnerError = dialog.findViewById(R.id.spinnerError);
 
-        List<ErrorCodeModel> errorCodeModels = new ArrayList<>();
-        errorCodeModels.add(new ErrorCodeModel("0", "Ấn để chọn", false));
-        errorCodeModels.add(new ErrorCodeModel("ss", "Quên", false));
-        errorCodeModels.add(new ErrorCodeModel("ss", "Tại", false));
-        errorCodeModels.add(new ErrorCodeModel("ss", "Bị", false));
-        errorCodeModels.add(new ErrorCodeModel("ss", "Thì", false));
-        errorCodeModels.add(new ErrorCodeModel("ss", "Là", false));
-
-        ErrorCodeAdapter errorCodeAdapter = new ErrorCodeAdapter(errorCodeModels, dialog.getContext());
+        ErrorCodeAdapter errorCodeAdapter = new ErrorCodeAdapter(errorItemList, dialog.getContext());
         spinnerError.setAdapter(errorCodeAdapter);
 
+        String s = "";
+        for (ErrorItem errorCodeModel : errorItemList) {
+            if (errorCodeModel.isCheck()) {
+                s += errorCodeModel.getItemname() + ", ";
+            }
+        }
+        if (!s.equals("")) {
+            txtError.setText(s);
+            txtError.setVisibility(View.VISIBLE);
+        } else {
+            txtError.setVisibility(View.GONE);
+        }
         imgClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -452,14 +527,14 @@ public class ProductFragment extends CommonFragment {
         errorCodeAdapter.setOnSpinnerMultiCheckListener(new ErrorCodeAdapter.OnSpinnerMultiCheckListener() {
             @Override
             public void onIteCheck(int position) {
-                errorCodeModels.get(position).setCheck(!errorCodeModels.get(position).isCheck());
+                errorItemList.get(position).setCheck(!errorItemList.get(position).isCheck());
                 new Handler().post(new Runnable() {
                     @Override
                     public void run() {
                         String s = "";
-                        for (ErrorCodeModel errorCodeModel : errorCodeModels) {
+                        for (ErrorItem errorCodeModel : errorItemList) {
                             if (errorCodeModel.isCheck()) {
-                                s += errorCodeModel.getErrorName() + ",";
+                                s += errorCodeModel.getItemname() + ", ";
                             }
                         }
                         if (!s.equals("")) {
@@ -570,6 +645,7 @@ public class ProductFragment extends CommonFragment {
         lp.copyFrom(dialog.getWindow().getAttributes());
         lp.width = WindowManager.LayoutParams.MATCH_PARENT;
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        lp.gravity = Gravity.TOP;
 
         dialog.show();
         dialog.getWindow().setAttributes(lp);
@@ -585,7 +661,13 @@ public class ProductFragment extends CommonFragment {
             System.out.println(listCurrent.get(indexCurrentProduct).getQuatityGood()+"Good");
             System.out.println(listCurrent.get(indexCurrentProduct).getQuatityBad()+"bad");
             System.out.println(indexCurrentProduct);
-            productAdapter.notifyItemChanged(position);
+            if (VIEW_TYPE == 1){
+                productAdapter.notifyItemChanged(position);
+            }
+            else {
+                productTableAdapter.notifyItemChanged(position);
+            }
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }

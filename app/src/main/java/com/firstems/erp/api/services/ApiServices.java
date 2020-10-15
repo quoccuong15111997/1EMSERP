@@ -23,6 +23,7 @@ import com.firstems.erp.api.model.response.document.DocumentApiResponse;
 import com.firstems.erp.api.model.response.document_category.DocumentCategoryApiResponse;
 import com.firstems.erp.api.model.response.doi_tuong_nhan.DoiTuongNhanApiResponse;
 import com.firstems.erp.api.model.response.employee.EmployeeApiResponse;
+import com.firstems.erp.api.model.response.error.ErrorApiResponse;
 import com.firstems.erp.api.model.response.export_place.ExportPlaceApiResponse;
 import com.firstems.erp.api.model.response.label.SystemLabelApiResponse;
 import com.firstems.erp.api.model.response.lanh_vuc_lien_quan.LanhVucLienQuanApiResponse;
@@ -615,6 +616,13 @@ public class ApiServices {
         if (retrofit!=null){
             Call<ApiResponse> apiResponseCall = retrofit.create(RestApi.class).upDateProgressProduct(token, body);
             apiResponseCall.enqueue(callback);
+        }
+    }
+    // Lấy danh sách lỗi
+    public void getListError(String token, JsonObject body, Callback<ErrorApiResponse> callback){
+        if (retrofit!=null){
+            Call<ErrorApiResponse> errorApiResponseCall = retrofit.create(RestApi.class).getListError(token, body);
+            errorApiResponseCall.enqueue(callback);
         }
     }
 }

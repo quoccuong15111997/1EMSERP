@@ -148,10 +148,10 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                         public void onAccept() {
                             doCommit();
                         }
-                        
+
                         @Override
                         public void onCancel() {
-                        
+
                         }
                     });
                 }
@@ -166,10 +166,10 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                                             public void onAccept() {
                                                 doSaveAndCommit();
                                             }
-                                            
+
                                             @Override
                                             public void onCancel() {
-                                            
+
                                             }
                                         });
                                     }
@@ -179,10 +179,10 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                                             public void onAccept() {
                                                 doUpdate();
                                             }
-                                            
+
                                             @Override
                                             public void onCancel() {
-                                            
+
                                             }
                                         });
                                     }
@@ -370,7 +370,9 @@ public class AdvanceProposalFormFragment extends CommonFragment {
         advanceProposalFormHeader.setaDVNCRAM(Double.parseDouble(binding.edtSoTienTamUng.getText().toString().replace(".","").trim()));
         advanceProposalFormHeader.setaCPTCRAM(Double.parseDouble(binding.edtSoTienTamUng.getText().toString().replace(".","").trim()));
         ProjectListItem projectListItem = (ProjectListItem) binding.spinerMaDuAn.getSelectedItem();
-        advanceProposalFormHeader.setaCOBCODE(projectListItem.getiTEMCODE());
+        if (!projectListItem.getiTEMCODE().equals("0000")){
+            advanceProposalFormHeader.setaCOBCODE(projectListItem.getiTEMCODE());
+        }
         LoaiDeNghiItem loaiDeNghiItem = (LoaiDeNghiItem) binding.spinerLoaiDeNghiTamUng.getSelectedItem();
         advanceProposalFormHeader.setdCMNSBCD(loaiDeNghiItem.getiTEMCODE());
         
@@ -503,7 +505,9 @@ public class AdvanceProposalFormFragment extends CommonFragment {
         advanceProposalFormHeader.setaDVNCRAM(Double.parseDouble(binding.edtSoTienTamUng.getText().toString().replace(".","").trim()));
         advanceProposalFormHeader.setaCPTCRAM(Double.parseDouble(binding.edtSoTienTamUng.getText().toString().replace(".","").trim()));
         ProjectListItem projectListItem = (ProjectListItem) binding.spinerMaDuAn.getSelectedItem();
-        advanceProposalFormHeader.setaCOBCODE(projectListItem.getiTEMCODE());
+        if (!projectListItem.getiTEMCODE().equals("0000")){
+            advanceProposalFormHeader.setaCOBCODE(projectListItem.getiTEMCODE());
+        }
         LoaiDeNghiItem loaiDeNghiItem = (LoaiDeNghiItem) binding.spinerLoaiDeNghiTamUng.getSelectedItem();
         advanceProposalFormHeader.setdCMNSBCD(loaiDeNghiItem.getiTEMCODE());
         
@@ -566,7 +570,9 @@ public class AdvanceProposalFormFragment extends CommonFragment {
         advanceProposalFormHeader.setaDVNCRAM(Double.parseDouble(binding.edtSoTienTamUng.getText().toString().replace(".","").trim()));
         advanceProposalFormHeader.setaCPTCRAM(Double.parseDouble(binding.edtSoTienTamUng.getText().toString().replace(".","").trim()));
         ProjectListItem projectListItem = (ProjectListItem) binding.spinerMaDuAn.getSelectedItem();
-        advanceProposalFormHeader.setaCOBCODE(projectListItem.getiTEMCODE());
+        if (!projectListItem.getiTEMCODE().equals("0000")){
+            advanceProposalFormHeader.setaCOBCODE(projectListItem.getiTEMCODE());
+        }
         LoaiDeNghiItem loaiDeNghiItem = (LoaiDeNghiItem) binding.spinerLoaiDeNghiTamUng.getSelectedItem();
         advanceProposalFormHeader.setdCMNSBCD(loaiDeNghiItem.getiTEMCODE());
         
@@ -632,7 +638,9 @@ public class AdvanceProposalFormFragment extends CommonFragment {
         advanceProposalFormHeader.setaDVNCRAM(Double.parseDouble(binding.edtSoTienTamUng.getText().toString().replace(".","").trim()));
         advanceProposalFormHeader.setaCPTCRAM(Double.parseDouble(binding.edtSoTienTamUng.getText().toString().replace(".","").trim()));
         ProjectListItem projectListItem = (ProjectListItem) binding.spinerMaDuAn.getSelectedItem();
-        advanceProposalFormHeader.setaCOBCODE(projectListItem.getiTEMCODE());
+        if (!projectListItem.getiTEMCODE().equals("0000")){
+            advanceProposalFormHeader.setaCOBCODE(projectListItem.getiTEMCODE());
+        }
         LoaiDeNghiItem loaiDeNghiItem = (LoaiDeNghiItem) binding.spinerLoaiDeNghiTamUng.getSelectedItem();
         advanceProposalFormHeader.setdCMNSBCD(loaiDeNghiItem.getiTEMCODE());
         
@@ -813,9 +821,7 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                     });
         }
         else {
-            progressdialog.dismiss();
-            showSuccessDialog(SharedPreferencesManager.getSystemLabel(50),mess);
-            FileFragment.fileIncludeList.clear();
+            uploadFileCallback.onUpLoadSuccess();
         }
     }
     private void deleteFile(String keyCode) {
@@ -898,6 +904,12 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                 currencyItemList.clear();
                 currencyItemList.addAll(currencyItems);
                 adapterCurrency.notifyDataSetChanged();
+                for (int i =0; i < currencyItemList.size();i++){
+                    if (currencyItemList.get(i).getiTEMCODE().equals("VND")){
+                        binding.spinerDonViTienTe.setSelection(i);
+                        break;
+                    }
+                }
             }
         });
         
@@ -918,6 +930,7 @@ public class AdvanceProposalFormFragment extends CommonFragment {
                     @Override
                     public void onChanged(List<ProjectListItem> projectListItems) {
                         projectListItemList.clear();
+                        projectListItemList.add(new ProjectListItem("0000",""));
                         projectListItemList.addAll(projectListItems);
                         projectListAdapter.notifyDataSetChanged();
                     }

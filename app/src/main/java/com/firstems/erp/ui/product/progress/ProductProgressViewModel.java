@@ -33,11 +33,9 @@ public class ProductProgressViewModel extends ViewModel {
 
     public ProductProgressViewModel() {
         mutableLiveDataProgressItem = new MutableLiveData<>();
-
-        loadData();
     }
 
-    private void loadData() {
+    public void loadData() {
         DataSourceProvider.getInstance().getDataSource(Constant.RUN_CODE_GET_ALL_PROGRESS_PRODUCT, "", new LoadApiCallback() {
             @Override
             public void onApiLoadSuccess(DataApiCallback dataApiCallback) {

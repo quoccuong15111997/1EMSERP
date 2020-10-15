@@ -53,11 +53,13 @@
     <style name="BottomNavigationView" parent="@style/TextAppearance.AppCompat.Caption">
         <item name="color">@color/colorAccent</item>
         <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/md_black_1000</item>
     </style>
 
     <style name="BottomNavigationView.Active" parent="@style/TextAppearance.AppCompat.Caption">
         <item name="android:textSize">11sp</item>
         <item name="color">@color/colorAccent</item>
+        <item name="android:textColor">@color/md_black_1000</item>
     </style>
     <style name="FilePickerTheme" parent="LibAppTheme">
         <!-- Customize your theme here. -->

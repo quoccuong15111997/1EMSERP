@@ -52,6 +52,7 @@ import com.firstems.erp.sharedpreferences.SharedPreferencesManager;
 import com.firstems.erp.ui.shared.image.ImageViewActivity;
 import com.firstems.erp.ui.shared.viewer.PDFViewerActivity;
 import com.firstems.erp.utils.Tools;
+import com.github.mikephil.charting.formatter.IFillFormatter;
 
 import org.apache.commons.io.FilenameUtils;
 
@@ -70,6 +71,7 @@ import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
 
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 import static android.app.Activity.RESULT_OK;
 
 public class FileFragment extends CommonFragment implements EasyPermissions.PermissionCallbacks {
@@ -95,6 +97,7 @@ public class FileFragment extends CommonFragment implements EasyPermissions.Perm
     public static List<ImageModel> imageModelListRemove = new ArrayList<>();
     
     public static final int RC_PHOTO_PICKER_PERM = 123;
+    public static final int RC_STORGARE_PERM = 124;
     public static final int RC_FILE_PICKER_PERM = 321;
     private static final int CUSTOM_REQUEST_CODE = 532;
     private int MAX_ATTACHMENT_COUNT = 10;
@@ -155,8 +158,21 @@ public class FileFragment extends CommonFragment implements EasyPermissions.Perm
             openFileSelect();
         }
     }
+    @AfterPermissionGranted(RC_STORGARE_PERM)
     private void openFileSelect(){
-        pickDocClicked();
+        if (EasyPermissions.hasPermissions(getContext(), READ_EXTERNAL_STORAGE)){
+            if (EasyPermissions.hasPermissions(getContext(),WRITE_EXTERNAL_STORAGE)){
+                pickDocClicked();
+            }
+            else {
+                EasyPermissions.requestPermissions(getActivity(), SharedPreferencesManager.getSystemLabel(193) /*Truy cập bộ nhớ thiết bị*/,
+                        RC_STORGARE_PERM, WRITE_EXTERNAL_STORAGE);
+            }
+        }
+        else {
+            EasyPermissions.requestPermissions(getActivity(), SharedPreferencesManager.getSystemLabel(193) /*Truy cập bộ nhớ thiết bị*/,
+                    RC_STORGARE_PERM, READ_EXTERNAL_STORAGE);
+        }
     }
     @AfterPermissionGranted(RC_PHOTO_PICKER_PERM)
     public void pickPhotoClicked() {
@@ -205,7 +221,7 @@ public class FileFragment extends CommonFragment implements EasyPermissions.Perm
     
     private void onPickDoc() {
         String[] zips = {"zip", "rar"};
-        String[] pdfs = {"aac"};
+        String[] pdfs = {"aac","pdf"};
         int maxCount = MAX_ATTACHMENT_COUNT - photoPaths.size();
         if ((docPaths.size() + photoPaths.size()) == MAX_ATTACHMENT_COUNT) {
             Toast.makeText(getContext(), "Không thể chọn quá " + MAX_ATTACHMENT_COUNT + " file",
@@ -237,6 +253,8 @@ public class FileFragment extends CommonFragment implements EasyPermissions.Perm
     private void addControls() {
         EasyPermissions.requestPermissions(getActivity(), SharedPreferencesManager.getSystemLabel(193) /*Truy cập bộ nhớ thiết bị*/,
                 RC_PHOTO_PICKER_PERM, FilePickerConst.PERMISSIONS_FILE_PICKER);
+        EasyPermissions.requestPermissions(getActivity(), SharedPreferencesManager.getSystemLabel(193) /*Truy cập bộ nhớ thiết bị*/,
+                RC_STORGARE_PERM, READ_EXTERNAL_STORAGE);
         imageModelList = new ArrayList<>();
         fileIncludeList = new ArrayList<>();
         recyclerViewFileInclude=binding.recycleFile;
@@ -436,6 +454,13 @@ public class FileFragment extends CommonFragment implements EasyPermissions.Perm
         else if (requestCode== com.firstems.erp.utils.Constant.CODE_REQUEST_PERMISSION_CAMERA){
             if (grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                 checkPermissionCamera();
+            }
+            else
+                showFailPermission();
+        }
+        else if (requestCode== RC_STORGARE_PERM){
+            if (grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                openFileSelect();
             }
             else
                 showFailPermission();

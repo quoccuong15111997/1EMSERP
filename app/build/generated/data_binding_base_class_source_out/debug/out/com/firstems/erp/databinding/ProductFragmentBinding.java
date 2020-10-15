@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -18,7 +17,7 @@ import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import com.firstems.erp.R;
 import com.firstems.erp.helper.widgets.EMSEditText;
-import com.firstems.erp.helper.widgets.EMSTextviewHighLineNonBorder;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -33,13 +32,25 @@ public abstract class ProductFragmentBinding extends ViewDataBinding {
   public final TextView edtMaLenhSanXuat;
 
   @NonNull
-  public final EditText edtTenLenhSanXuat;
+  public final TextView edtTenLenhSanXuat;
+
+  @NonNull
+  public final FloatingActionButton fabDone;
+
+  @NonNull
+  public final FloatingActionButton fabEdit;
 
   @NonNull
   public final ImageView imageViewCalenda;
 
   @NonNull
   public final ImageView imgBarcode;
+
+  @NonNull
+  public final ImageView imgBarcode1;
+
+  @NonNull
+  public final ImageView imgViewType;
 
   @NonNull
   public final View include6;
@@ -60,6 +71,9 @@ public abstract class ProductFragmentBinding extends ViewDataBinding {
   public final LinearLayout linearLayoutTenLenhSanXuat;
 
   @NonNull
+  public final LinearLayout llHeaderTable;
+
+  @NonNull
   public final ProgressBar loadingInList;
 
   @NonNull
@@ -72,10 +86,28 @@ public abstract class ProductFragmentBinding extends ViewDataBinding {
   public final Spinner spinerCongDoan;
 
   @NonNull
-  public final EMSTextviewHighLineNonBorder txtNgayTaoLenhSanXuat;
+  public final TextView textView57;
+
+  @NonNull
+  public final TextView txtNgayTaoLenhSanXuat;
 
   @NonNull
   public final TextView txtNon;
+
+  @NonNull
+  public final TextView txtNumberProduct;
+
+  @NonNull
+  public final TextView txtProductName;
+
+  @NonNull
+  public final TextView txtProductQuatity;
+
+  @NonNull
+  public final TextView txtProductQuatityFail;
+
+  @NonNull
+  public final TextView txtProductQuatityPass;
 
   @NonNull
   public final TextView txtTitleCongDoan;
@@ -93,34 +125,48 @@ public abstract class ProductFragmentBinding extends ViewDataBinding {
   public final TextView txtTitleTenLenhSanXuat;
 
   protected ProductFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button btnDone, EMSEditText edtGhiChu, TextView edtMaLenhSanXuat, EditText edtTenLenhSanXuat,
-      ImageView imageViewCalenda, ImageView imgBarcode, View include6,
+      Button btnDone, EMSEditText edtGhiChu, TextView edtMaLenhSanXuat, TextView edtTenLenhSanXuat,
+      FloatingActionButton fabDone, FloatingActionButton fabEdit, ImageView imageViewCalenda,
+      ImageView imgBarcode, ImageView imgBarcode1, ImageView imgViewType, View include6,
       LinearLayout linearLayoutCongDoan, LinearLayout linearLayoutGhiChu,
       LinearLayout linearLayoutLenSanXuat, LinearLayout linearLayoutNgayTaoLenhSanXuat,
-      LinearLayout linearLayoutTenLenhSanXuat, ProgressBar loadingInList, LinearLayout parent,
-      RecyclerView recycleProduct, Spinner spinerCongDoan,
-      EMSTextviewHighLineNonBorder txtNgayTaoLenhSanXuat, TextView txtNon,
-      TextView txtTitleCongDoan, TextView txtTitleDateCreate, TextView txtTitleGhiChu,
-      TextView txtTitleNgayTaoLenhSanXuat, TextView txtTitleTenLenhSanXuat) {
+      LinearLayout linearLayoutTenLenhSanXuat, LinearLayout llHeaderTable,
+      ProgressBar loadingInList, LinearLayout parent, RecyclerView recycleProduct,
+      Spinner spinerCongDoan, TextView textView57, TextView txtNgayTaoLenhSanXuat, TextView txtNon,
+      TextView txtNumberProduct, TextView txtProductName, TextView txtProductQuatity,
+      TextView txtProductQuatityFail, TextView txtProductQuatityPass, TextView txtTitleCongDoan,
+      TextView txtTitleDateCreate, TextView txtTitleGhiChu, TextView txtTitleNgayTaoLenhSanXuat,
+      TextView txtTitleTenLenhSanXuat) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnDone = btnDone;
     this.edtGhiChu = edtGhiChu;
     this.edtMaLenhSanXuat = edtMaLenhSanXuat;
     this.edtTenLenhSanXuat = edtTenLenhSanXuat;
+    this.fabDone = fabDone;
+    this.fabEdit = fabEdit;
     this.imageViewCalenda = imageViewCalenda;
     this.imgBarcode = imgBarcode;
+    this.imgBarcode1 = imgBarcode1;
+    this.imgViewType = imgViewType;
     this.include6 = include6;
     this.linearLayoutCongDoan = linearLayoutCongDoan;
     this.linearLayoutGhiChu = linearLayoutGhiChu;
     this.linearLayoutLenSanXuat = linearLayoutLenSanXuat;
     this.linearLayoutNgayTaoLenhSanXuat = linearLayoutNgayTaoLenhSanXuat;
     this.linearLayoutTenLenhSanXuat = linearLayoutTenLenhSanXuat;
+    this.llHeaderTable = llHeaderTable;
     this.loadingInList = loadingInList;
     this.parent = parent;
     this.recycleProduct = recycleProduct;
     this.spinerCongDoan = spinerCongDoan;
+    this.textView57 = textView57;
     this.txtNgayTaoLenhSanXuat = txtNgayTaoLenhSanXuat;
     this.txtNon = txtNon;
+    this.txtNumberProduct = txtNumberProduct;
+    this.txtProductName = txtProductName;
+    this.txtProductQuatity = txtProductQuatity;
+    this.txtProductQuatityFail = txtProductQuatityFail;
+    this.txtProductQuatityPass = txtProductQuatityPass;
     this.txtTitleCongDoan = txtTitleCongDoan;
     this.txtTitleDateCreate = txtTitleDateCreate;
     this.txtTitleGhiChu = txtTitleGhiChu;

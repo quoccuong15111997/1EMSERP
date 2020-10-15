@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Handler;
 import android.text.Editable;
@@ -42,7 +43,7 @@ import com.firstems.erp.ui.product.barcode.ScannerActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductProgressFragment extends CommonFragment {
+public class ProductProgressFragment extends CommonFragment implements SwipeRefreshLayout.OnRefreshListener {
 
     private ProductProgressViewModel mViewModel;
     private List<ProgressItem> progressItems;
@@ -130,6 +131,24 @@ public class ProductProgressFragment extends CommonFragment {
     private void addControls() {
         showLoadingNonMessDialog();
 
+        binding.swipeRefesh.setOnRefreshListener(this::onRefresh);
+        binding.swipeRefesh.setColorSchemeResources(R.color.colorAccent,
+                android.R.color.holo_green_dark,
+                android.R.color.holo_orange_dark,
+                android.R.color.holo_blue_dark);
+        /*binding.swipeRefesh.post(new Runnable() {
+
+            @Override
+            public void run() {
+
+                if(binding.swipeRefesh != null) {
+                    binding.swipeRefesh.setRefreshing(true);
+                }
+                // TODO Fetching data from server
+                fetchData();
+            }
+        });*/
+
         listCurrent = new ArrayList<>();
         progressItems = new ArrayList<>();
         progressProductAdapter = new ProgressProductAdapter(progressItems);
@@ -145,6 +164,10 @@ public class ProductProgressFragment extends CommonFragment {
         txtTite.setText("Chọn lệnh sản xuất");
     }
 
+    private void fetchData() {
+        mViewModel.loadData();
+    }
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -155,9 +178,11 @@ public class ProductProgressFragment extends CommonFragment {
                 showOutTOKEN();
             }
         });
+        mViewModel.loadData();
         mViewModel.getMutableLiveDataProgressItem().observe(getViewLifecycleOwner(), new Observer<List<ProgressItem>>() {
             @Override
             public void onChanged(List<ProgressItem> list) {
+                listCurrent.clear();
                 listCurrent.addAll(list);
                 new Handler().postDelayed(new Runnable() {
                     @Override
@@ -167,6 +192,7 @@ public class ProductProgressFragment extends CommonFragment {
                             binding.recycleProgress.post(new Runnable() {
                                 @Override
                                 public void run() {
+                                    binding.swipeRefesh.setRefreshing(false);
                                     progressProductAdapter.setProgressItemList(listCurrent);
                                     binding.recycleProgress.startLayoutAnimation();
                                 }
@@ -200,5 +226,26 @@ public class ProductProgressFragment extends CommonFragment {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+    }
+
+    @Override
+    public void onRefresh() {
+        fetchData();
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (loadingNonMessDialog!=null){
+            if (loadingNonMessDialog.isShowing()){
+                loadingNonMessDialog.dismiss();
+            }
+        }
     }
 }

@@ -18,7 +18,6 @@
             app:zxing_framing_rect_height="250dp"/>
 
     </LinearLayout>
-
     <com.journeyapps.barcodescanner.ViewfinderView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

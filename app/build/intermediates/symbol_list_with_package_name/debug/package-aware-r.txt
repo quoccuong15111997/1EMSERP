@@ -2668,6 +2668,8 @@ drawable ic_baseline_save_24
 drawable ic_baseline_search_24
 drawable ic_baseline_security_24
 drawable ic_baseline_settings_24
+drawable ic_baseline_view_column_24
+drawable ic_baseline_view_list_24
 drawable ic_baseline_work_24
 drawable ic_baseline_work_outline_24
 drawable ic_calenda
@@ -3259,6 +3261,7 @@ id img
 id imgAdd
 id imgBack
 id imgBarcode
+id imgBarcode1
 id imgCalenda
 id imgChart
 id imgClose
@@ -3287,6 +3290,7 @@ id imgSetting
 id imgSort
 id imgSubGood
 id imgUp
+id imgViewType
 id img_custom_view_alert_dialog_icon
 id img_view_pager_product
 id imgsubBad
@@ -3442,6 +3446,7 @@ id llChieu
 id llCurrentDay
 id llDelete
 id llEnddate
+id llHeaderTable
 id llLastMonth
 id llLastWeek
 id llNoItem
@@ -3729,6 +3734,7 @@ id stop
 id stretch
 id submenuarrow
 id submit_area
+id swipeRefesh
 id switchCompleteSignature
 id switchInfoApproved
 id switchInfoSignature
@@ -3822,6 +3828,7 @@ id textView53
 id textView54
 id textView55
 id textView56
+id textView57
 id textView58
 id textView6
 id textView61
@@ -3932,6 +3939,7 @@ id txtNumber
 id txtNumberBill
 id txtNumberBill2
 id txtNumberDay
+id txtNumberProduct
 id txtNumberSelect
 id txtOpenGraphSearch
 id txtOrderValue
@@ -4305,6 +4313,7 @@ layout item_location
 layout item_location_select
 layout item_photo_layout
 layout item_product_list
+layout item_product_list_table
 layout item_product_progress
 layout item_progress_approve
 layout item_signature

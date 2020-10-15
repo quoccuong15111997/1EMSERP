@@ -99,6 +99,7 @@ public class TabWaitApproveFragment extends CommonFragment implements AprrovedDe
     @Override
     public void onResume() {
         super.onResume();
+        System.out.println("On resume in tab wait approve Fragmanet");
         if (mViewModel!=null){
             showLoadingNonMessDialog();
             mViewModel.loadDataApproved();

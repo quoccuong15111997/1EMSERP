@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.firstems.erp.R;
 import java.lang.Deprecated;
 import java.lang.Object;
@@ -26,15 +27,19 @@ public abstract class ProductProgressFragmentBinding extends ViewDataBinding {
   public final RecyclerView recycleProgress;
 
   @NonNull
+  public final SwipeRefreshLayout swipeRefesh;
+
+  @NonNull
   public final View toolbar;
 
   protected ProductProgressFragmentBinding(Object _bindingComponent, View _root,
       int _localFieldCount, EditText edtSearch, ImageView imgBarcode, RecyclerView recycleProgress,
-      View toolbar) {
+      SwipeRefreshLayout swipeRefesh, View toolbar) {
     super(_bindingComponent, _root, _localFieldCount);
     this.edtSearch = edtSearch;
     this.imgBarcode = imgBarcode;
     this.recycleProgress = recycleProgress;
+    this.swipeRefesh = swipeRefesh;
     this.toolbar = toolbar;
   }
 
