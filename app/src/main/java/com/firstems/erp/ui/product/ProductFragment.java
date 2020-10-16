@@ -61,6 +61,7 @@ import com.firstems.erp.sharedpreferences.SharedPreferencesManager;
 import com.firstems.erp.ui.product.barcode.ScannerActivity;
 import com.firstems.erp.ui.product.progress.ProductProgressActivity;
 import com.firstems.erp.ui.product.progress.ProductProgressFragment;
+import com.google.android.gms.common.api.internal.LifecycleFragment;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -254,7 +255,12 @@ public class ProductFragment extends CommonFragment {
             detail.setErroqtty(item.getQuatityBad());
             detail.setPrdcqtty(item.getQuatityGood());
             detail.setPrdccode(item.getPrdccode());
-            detail.setErrocode(item.getErrorCode());
+            for (ErrorItem errorItem : errorItemList){
+                if (errorItem.isCheck()){
+                    detail.setErrocode(errorItem.getItemcode());
+                    break;
+                }
+            }
             progressProductDetailList.add(detail);
         }
         progressProductHeader.setProgressProductDetailList(progressProductDetailList);

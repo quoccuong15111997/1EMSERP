@@ -421,7 +421,7 @@ public abstract class CommonFragment extends Fragment {
         loadingDialog.getWindow().getAttributes().windowAnimations = R.style.PauseDialogAnimation;
         WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
         lp.copyFrom(loadingDialog.getWindow().getAttributes());
-        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
         
         TextView textView =loadingDialog.findViewById(R.id.tvLoading);

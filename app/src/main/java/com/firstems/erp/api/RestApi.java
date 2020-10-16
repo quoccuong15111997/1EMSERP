@@ -72,7 +72,7 @@ public interface RestApi {
     
     //Login with locate
     @POST("/Api/data/runApi_data?run_Code=SYS001.02.002")
-    Call<LoginReponse> systemLoginLocate(@Header("TOKEN") String token, @Body JsonObject body);
+        Call<LoginReponse> systemLoginLocate(@Header("TOKEN") String token, @Body JsonObject body);
     
     //Update
     @POST("/Api/data/runApi_data?run_Code=SYS001.01.999")

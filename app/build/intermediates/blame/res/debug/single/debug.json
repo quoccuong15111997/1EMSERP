@@ -68,12 +68,12 @@
         "source": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\src\\main\\res\\drawable\\ic_baseline_markunread_mailbox_24.xml"
     },
     {
-        "merged": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_help.xml.flat",
-        "source": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\src\\main\\res\\layout\\activity_help.xml"
-    },
-    {
         "merged": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_signature.xml.flat",
         "source": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\src\\main\\res\\layout\\item_signature.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_help.xml.flat",
+        "source": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\src\\main\\res\\layout\\activity_help.xml"
     },
     {
         "merged": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_product_assets.png.flat",
@@ -168,28 +168,28 @@
         "source": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\build\\intermediates\\res\\merged\\debug\\drawable_custom_button_non_padding.xml.flat",
-        "source": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\src\\main\\res\\drawable\\custom_button_non_padding.xml"
-    },
-    {
         "merged": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo_ems.png.flat",
         "source": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\src\\main\\res\\drawable\\logo_ems.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\build\\intermediates\\res\\merged\\debug\\drawable_custom_button_non_padding.xml.flat",
+        "source": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\src\\main\\res\\drawable\\custom_button_non_padding.xml"
     },
     {
         "merged": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_bg_list_home.png.flat",
         "source": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\src\\main\\res\\drawable-xxxhdpi\\bg_list_home.png"
     },
     {
-        "merged": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_ticket_bill_payment_detail.xml.flat",
-        "source": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\src\\main\\res\\layout\\item_ticket_bill_payment_detail.xml"
+        "merged": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_add.png.flat",
+        "source": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\src\\main\\res\\drawable-xhdpi\\ic_add.png"
     },
     {
         "merged": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\build\\intermediates\\res\\merged\\debug\\layout_so_phieu_tam_ung_fragment.xml.flat",
         "source": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\src\\main\\res\\layout\\so_phieu_tam_ung_fragment.xml"
     },
     {
-        "merged": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_add.png.flat",
-        "source": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\src\\main\\res\\drawable-xhdpi\\ic_add.png"
+        "merged": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_ticket_bill_payment_detail.xml.flat",
+        "source": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\src\\main\\res\\layout\\item_ticket_bill_payment_detail.xml"
     },
     {
         "merged": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\build\\intermediates\\res\\merged\\debug\\layout_warehouse_fragment.xml.flat",
@@ -300,12 +300,12 @@
         "source": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\src\\main\\res\\drawable\\ic_package_on_rolling_transport.xml"
     },
     {
-        "merged": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_product_progress.xml.flat",
-        "source": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\src\\main\\res\\layout\\activity_product_progress.xml"
-    },
-    {
         "merged": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\build\\intermediates\\res\\merged\\debug\\layout_tab_wait_approve_fragment.xml.flat",
         "source": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\src\\main\\res\\layout\\tab_wait_approve_fragment.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_product_progress.xml.flat",
+        "source": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\src\\main\\res\\layout\\activity_product_progress.xml"
     },
     {
         "merged": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_test.xml.flat",
@@ -340,16 +340,16 @@
         "source": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\src\\main\\res\\drawable\\ic_error_image.png"
     },
     {
-        "merged": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\build\\intermediates\\res\\merged\\debug\\layout_approve_detail_fragment.xml.flat",
-        "source": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\src\\main\\res\\layout\\approve_detail_fragment.xml"
+        "merged": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_settings.xml.flat",
+        "source": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\src\\main\\res\\drawable-anydpi\\ic_settings.xml"
     },
     {
         "merged": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_settings.xml.flat",
-        "source": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\src\\main\\res\\drawable-anydpi\\ic_settings.xml"
+        "merged": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\build\\intermediates\\res\\merged\\debug\\layout_approve_detail_fragment.xml.flat",
+        "source": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\src\\main\\res\\layout\\approve_detail_fragment.xml"
     },
     {
         "merged": "C:\\Users\\PC\\Desktop\\1EMSERPNEW\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_folder_24.xml.flat",
